@@ -1,0 +1,114 @@
+/* colors for harvard 
+  Mortar: 8C8179
+  Crimson: A51C30
+  Ink: 1E1E1E
+  parchment: F3F3F1
+  slate:  8996A0
+  shade: BAC5C6
+  Indigo: 293352
+  bluebonnet: 4E84C4
+  ivy: 52854C
+  pear: C3D7A4
+  saffron:  D16103
+  Creme: F4EDCA
+  gold:  C4961A
+  lemon: FFDB6D
+
+*/
+
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1, .h1 {
+  font-family: Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1E1E1E;  /* ink */
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1E1E1E;
+}
+h3 {
+    font-family: Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+    font-size: 1.25rem;
+    color: #A51C30;
+}
+.top-bar {
+  background: #F3F3F1 !important;
+  border-top: 1px solid #C8179;
+  border-bottom: 0.0625rem solid #A51C30;
+}
+
+#header > .row {
+    border-bottom: 0.25rem solid #A51C30;  /*crimson*/
+}
+
+a {
+  color: #1E1E1E;
+}
+
+a:hover, a:focus {
+  color: #1E1E1E;
+}
+
+.h1 a {
+  color: #A51C30;
+}
+
+.navbar-default .navbar-text {
+  color: #1E1E1E;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #1E1E1E;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #52854C;
+  text-decoration: underline;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #A51C30;
+    border-color:  #A51C30;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #A51C30;
+    border-color:  #A51C30;
+}
+
+.btn-primary:hover {
+  color: #F3F3F1;
+  background-color: #A51C30;
+  border-color: #1E1E1E;
+}
+
+.btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #A51C30;
+    border-color:  #A51C30;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    color: #52854C;
+
+}
+
+pagination > li > a:hover, .pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+    background-color: #52854C;
+     border-color: #52854C;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+     color: #fff;
+    background-color: #52854C;
+    border-color: #52854C;
+}
