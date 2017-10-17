@@ -332,7 +332,7 @@ en:
 
   archive:
     _singular: The Archive
-    _plural: The Archives
+    _plural: ''
 
   repository:
     _singular: Repository
