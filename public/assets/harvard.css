@@ -175,6 +175,11 @@ a.expander:hover {
   color: #BAC5C6;
 }
 
+.more-facets .btn {
+    color: #8996A0;
+    font-weight: bold;
+}
+
 /* pagination color choices */
 .pagination > li > a,
 .pagination > li > span {
