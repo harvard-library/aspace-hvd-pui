@@ -15,17 +15,66 @@
   lemon: FFDB6D
 
 */
-
+/*
 body { 
   font-family: Arial, Helvetica, sans-serif;
 }
-h1, .h1 {
+*/
+/*.h1 {
   font-family: Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
   font-size: 1.75rem;
   font-weight: bold;
-  color: #1E1E1E;  /* ink */
+  color: #000000;  
+}
+*/
+
+/* moving the logo around */
+#header > .row {
+    height: 4.5rem;
+}
+#header > .row .h1 {
+    left: 50%; 
+    margin-top: 10px;
+}
+#header .logo {
+  float: left;
+}
+#header > .row > .col-sm-3 {
+    right: 80%;
 }
 
+
+a:hover, a:focus {
+   color: #8996A0;
+}
+
+/* some padding, margination issues */
+dd {
+    padding-bottom: .2em;
+}
+
+.form-inline .form-group {
+    margin-bottom: .2em;
+} 
+
+input, button, select {
+  margin-bottom: .2em;
+}
+#res_accordion { 
+    padding-top: .2em; }
+
+/* de-italicize */
+span.title {
+  font-style: normal;
+}
+
+
+/* sizing */
+.recordrow h3 {
+    font-size: 1rem;
+}
+
+/*
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: #1E1E1E;
@@ -42,7 +91,8 @@ h3 {
 }
 
 #header > .row {
-    border-bottom: 0.25rem solid #A51C30;  /*crimson*/
+    border-bottom: 0.25rem solid #A51C30; */  /*crimson*/
+/*
 }
 
 a {
@@ -56,7 +106,9 @@ a:hover, a:focus {
 .h1 a {
   color: #A51C30;
 }
+*/
 
+/* top horizontal menu */
 .navbar-default .navbar-text {
   color: #1E1E1E;
 }
@@ -66,49 +118,102 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #52854C;
+  color: #A51C30;
   text-decoration: underline;
+}
+
+/* don't highlight the search term */
+.searchterm {
+  background-color: transparent;
+}
+
+/* general color choices */
+.fa-search {
+   color: #A51C30;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #A51C30;
-    border-color:  #A51C30;
+    background-color: #8c8179;
+    border-color:  #8c8179;
 }
 
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #A51C30;
-    border-color:  #A51C30;
+    background-color: #8c8179;
+    border-color:  #000000;
 }
 
 .btn-primary:hover {
   color: #F3F3F1;
-  background-color: #A51C30;
+  background-color: #8996a0;
   border-color: #1E1E1E;
 }
 
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #A51C30;
-    border-color:  #A51C30;
+    background-color: #000000;
+    border-color:  #1e1e1e;
 }
 
+.btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
+  background-color: #1e1e1e;
+   border-color: #000000;
+}
+
+.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
+    color: #fff;
+    background-color: #1e1e1e;
+}
+
+.expander {
+    color: #8996A0;
+    font-weight: bold;
+  
+}
+a.expander:hover {
+  color: #BAC5C6;
+}
+
+/* pagination color choices */
 .pagination > li > a,
 .pagination > li > span {
-    color: #52854C;
+    color: #1e1e1e;
 
 }
 
-pagination > li > a:hover, .pagination > li > a:focus,
+.pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-    background-color: #52854C;
-     border-color: #52854C;
+    background-color: #bac5c6;
+     border-color: #8c8179;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
      color: #fff;
-    background-color: #52854C;
-    border-color: #52854C;
+     background-color: #1e1e1e;
+    border-color:  #000000;
+}
+
+
+/*  the small icons in results */
+
+.record-type-badge.repository {
+    color: #293352;    
+}
+
+.record-type-badge.resource {
+    color: #A51C30;
+}
+
+.record-type-badge.archival_object, .record-type-badge.digital_object {
+    color: #52854C;
+}
+
+.record-type-badge.subject {
+    color: #D16103;
+}
+
+.record-type-badge.agent {
+    color: #4E84C4;
 }
