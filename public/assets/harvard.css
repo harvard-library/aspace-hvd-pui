@@ -222,3 +222,7 @@ a.expander:hover {
 .record-type-badge.agent {
     color: #4E84C4;
 }
+
+.repository-logo {
+    display: none;
+}
