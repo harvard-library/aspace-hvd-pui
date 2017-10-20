@@ -16,3 +16,7 @@ en:
     bak:
       lead_graph: <p><strong>Baker Library Special Collections</strong> collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
 
+  resource:
+    _public:
+      finding_aid:
+        head: Administrative Information
