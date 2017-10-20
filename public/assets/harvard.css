@@ -122,6 +122,19 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+/* "pill" navigation on collection page */
+.tabbing.nav-pills > li > a {
+  background-color: #8996A0;
+}
+
+.tabbing.nav-pills > li > a:hover {
+    text-decoration: underline;
+}
+
+.tabbing.nav-pills > li > a.active {
+    text-decoration: none;
+    cursor: none;
+}
 /* don't highlight the search term */
 .searchterm {
   background-color: transparent;
