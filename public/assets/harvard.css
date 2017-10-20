@@ -15,18 +15,6 @@
   lemon: FFDB6D
 
 */
-/*
-body { 
-  font-family: Arial, Helvetica, sans-serif;
-}
-*/
-/*.h1 {
-  font-family: Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #000000;  
-}
-*/
 
 /* moving the logo around */
 #header > .row {
@@ -50,11 +38,11 @@ a:hover, a:focus {
 
 /* some padding, margination issues */
 dd {
-    padding-bottom: .2em;
+    margin-top: .3em;
 }
 
 .form-inline .form-group {
-    margin-bottom: .2em;
+    margin-bottom: .5em;
 } 
 
 input, button, select {
@@ -74,39 +62,6 @@ span.title {
     font-size: 1rem;
 }
 
-/*
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #1E1E1E;
-}
-h3 {
-    font-family: Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
-    font-size: 1.25rem;
-    color: #A51C30;
-}
-.top-bar {
-  background: #F3F3F1 !important;
-  border-top: 1px solid #C8179;
-  border-bottom: 0.0625rem solid #A51C30;
-}
-
-#header > .row {
-    border-bottom: 0.25rem solid #A51C30; */  /*crimson*/
-/*
-}
-
-a {
-  color: #1E1E1E;
-}
-
-a:hover, a:focus {
-  color: #1E1E1E;
-}
-
-.h1 a {
-  color: #A51C30;
-}
-*/
 
 /* top horizontal menu */
 .navbar-default .navbar-text {
