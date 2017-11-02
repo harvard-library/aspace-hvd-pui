@@ -143,6 +143,11 @@ a.expander:hover {
   color: #BAC5C6;
 }
 
+a.thumbnail.digital_object{
+    color: #52854C;
+}
+
+
 .more-facets .btn {
     color: #8996A0;
     font-weight: bold;

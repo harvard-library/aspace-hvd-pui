@@ -20,3 +20,11 @@ en:
     _public:
       finding_aid:
         head: Administrative Information
+
+  digital_object:
+    _public:
+       link: External link to a digital object
+  
+  views:
+    _shared:
+       digital_object_link: "View %{name}"
