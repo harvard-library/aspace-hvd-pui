@@ -12,6 +12,8 @@ The customizations needed for Harvard's ArchivesSpace PUI
 - Functionality
   - add a **Creators** facet to display of Collections within a Repository
 
+- TEMPORARY: used a later version of public/app/views/shared/_results.html.erb to solve a formatting issue.
+
 ## Configuration issues
 
 For the most part, configuration values that need to be set are in [public/plugin_init.rb](https://github.com/harvard-library/aspace-hvd-pui/blob/master/public/plugin_init.rb) .
