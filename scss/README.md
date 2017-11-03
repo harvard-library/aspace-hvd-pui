@@ -17,12 +17,12 @@ this directory is intended to house those modified files, so that any further en
 
 - make the changes to those files
 
-- comment out the line in layout_head.html.erb: <link rel="stylesheet" media="all" href="/assets/harvard_application.css" />
+- comment out the line in layout_head.html.erb: ```<link rel="stylesheet" media="all" href="/assets/harvard_application.css" />```
 
 - Start the server.
 
 If you like the changes:
 - download the generated css file, 
 - save it as {archivesspace_path}/plugin/aspace-hvd-pui/public/assets/harvard_application.css
-- copy the changed {archivesspace_path}/public/app/assets/stylesheets/archivespace/*.scss files to {archivesspace_path}/plugin/aspace-hvd-pui/scss/public/*.scss
+- copy the changed `{archivesspace_path}/public/app/assets/stylesheets/archivespace/*.scss files` to `{archivesspace_path}/plugin/aspace-hvd-pui/scss/public/*.scss`
 
