@@ -23,8 +23,14 @@ en:
 
   digital_object:
     _public:
-       link: External link to a digital object
+       link: External link to digital material
+       
   
   views:
     _shared:
        digital_object_link: "View %{name}"
+
+  enumerations:
+    instance_instance_type:
+      digital_object: digital material
+

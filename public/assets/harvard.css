@@ -199,3 +199,18 @@ a.thumbnail.digital_object{
 .repository-logo {
     display: none;
 }
+
+/* override objectimage button */
+.objectimage button[type="submit"] {
+    width: auto;
+    white-space: normal;
+}
+
+/* added classes to support Harvard view changes */
+
+/* for missing digital object thumbnails with no caption */
+
+.objectimage.nocaption {
+   float: left;
+   width: auto;
+}
