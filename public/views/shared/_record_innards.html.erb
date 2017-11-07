@@ -10,7 +10,7 @@
        over = @result.note('scopecontent')
        scope_folder = over.blank?
     end %>
-    <% unless over.blank? %>
+    <% unless over.blank? || over['is_inherited'] %>
       <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :notitle => true} %>
     <% end %>
 
@@ -53,13 +53,16 @@
 
     <div class="acc_holder clear" >
       <div class="panel-group" id="res_accordion">
-	<% if scope_folder && !@result.note('scopecontent').blank? 
-	   x = render partial: 'shared/single_note',  locals: {:type => 'scopecontent', 
-	      :note_struct => @result.note('scopecontent'), :notitle => true} %>
+	<% if scope_folder 
+	   scope = @result.note('scopecontent')
+	   if !scope.blank? && scope['is_inherited'].blank?
+	     x = render partial: 'shared/single_note',  locals: {:type => 'scopecontent', 
+	      :note_struct => scope, :notitle => true} %>
 	
-	   <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('enumerations._note_types.scopecontent'), :p_body => x,
-	   :p_id => 'scopecontent'} %>
+	    <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('enumerations._note_types.scopecontent'), :p_body => x,
+	      :p_id => 'scopecontent'} %>
 	   <% end %>
+        <% end %>
 	<% x = render partial: 'shared/multi_notes', locals: {:types => folder} %>
 	<% unless x.blank? %>
 	<%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('resource._public.additional'),
