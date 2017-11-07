@@ -11,7 +11,8 @@ The customizations needed for Harvard's ArchivesSpace PUI
 
 - Functionality
   - add a **Creators** facet to display of Collections within a Repository
-  - over-write *public/app/views/shared/_record_innards.html.erb* to favor the abstract over the Scope and Contents, and create a "Scope & Contents" Accordion fold
+  - over-ride *public/app/views/shared/_record_innards.html.erb* to favor the abstract over the Scope and Contents, and create a "Scope & Contents" Accordion fold
+  - over-ride *public/app/views/shared/_childern_tree.html.erb* so that, if the link of a branch is clicked, the children under it will become visible
 
 - **TEMPORARY**: used a later version of public/app/views/shared/_results.html.erb to solve a formatting issue.
 
