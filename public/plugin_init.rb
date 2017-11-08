@@ -18,6 +18,13 @@ AppConfig[:pui_request_email_fallback_from_address] = 'bobbi_fox@harvard.edu'
 #  arguments: '-i'
 # }
 
+# read in routes
+my_routes = File.join(File.dirname(__FILE__), "routes.rb")
+Pry::ColorPrinter.pp my_routes
+Plugins.extend_aspace_routes(my_routes)
+
+
+
 ## override the resources#index facetting
 Rails.application.config.after_initialize do
 

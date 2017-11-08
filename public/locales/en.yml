@@ -24,11 +24,15 @@ en:
   digital_object:
     _public:
        link: External link to digital material
-       
-  
+       in_collection: "This collection contains digital material %{details} "       
+       details:
+         _singular: (1 item)
+         _plural: "(%{ct} items)"
   views:
     _shared:
        digital_object_link: "View %{name}"
+    tree:
+       expand: Expand
 
   enumerations:
     instance_instance_type:
