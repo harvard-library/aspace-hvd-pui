@@ -143,6 +143,17 @@ a.expander:hover {
   color: #BAC5C6;
 }
 
+/* side-column tree buttons */
+
+button.expandme:hover {
+    background-color: #FFFFFF;
+}
+
+button.expandme:active {
+    color: #A51C30;
+}
+
+
 a.thumbnail.digital_object{
     color: #52854C;
 }
