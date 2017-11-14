@@ -37,4 +37,5 @@ en:
   enumerations:
     instance_instance_type:
       digital_object: digital material
-
+    archival_record_level:
+      unspecified: Item
