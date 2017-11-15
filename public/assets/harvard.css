@@ -199,6 +199,23 @@ a.thumbnail.digital_object{
 .breadcrumb * a {color: #2B5282; text-decoration: underline;}
 ul.breadcrumb {background-color: #F0F6F9; }
 
+/* collection organization side bar: current */
+
+.largetree-node.current .indentor {
+    background-color: #FFFFFF;
+}
+.largetree-node.current a.record-title {
+    font-weight: bold;
+}
+
+.largetree-container tr.current {
+    outline: 2px solid #a51c50;
+    background-color: white;
+}
+.largetree-container tr.current td {
+    background-color: #FFFFFF;
+}
+
 /*  the small icons in results */
 
 .record-type-badge.repository {
