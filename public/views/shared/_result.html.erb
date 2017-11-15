@@ -1,5 +1,5 @@
  <%# HARVARD: THIS IS ALREADY IN ASPACE MASTER THAT I HAVENT UPDATED TO YET %>
- <%#FIXME: when refresh from master, can remove this from the plugin %>
+ <%# HARVARD: THIS IS NOW DEVIATING from THE ASPACE MASTER; use with care when upgrading!! %>
  <%# any result that is going to be presented in a list %>
  <%# Pry::ColorPrinter.pp(result['json'])%>
  <% if !props.fetch(:full,false) %>
@@ -50,9 +50,21 @@
  
         <% if result.respond_to?(:ancestors) && result.ancestors %>
           <% result.ancestors.each do |ancestor| %>
-            /
+            &raquo;
             <span class="ancestor">
-            <%= link_to process_mixed_content(ancestor.fetch('title', "[#{ ancestor.fetch('level', 'untitled')}]" )).html_safe, app_prefix(ancestor.fetch('uri')) %>
+	      <% an_title = ancestor.fetch('title')
+		 an_level = ancestor.fetch('level', 'unspecified')
+	        Pry::ColorPrinter.pp([ancestor, an_level])
+
+		 if an_level == 'otherlevel'
+		    an_level = ancestor.fetch('other_level', 'other level').capitalize
+		 else
+		   an_level = t("enumerations.archival_record_level.#{an_level}") 
+		 end
+		 %>
+	      <%= an_level %>:
+	      <% an_title = "[" +  t("enumerations.archival_record_level.untitled") + "]" if !an_title %>
+            <%= link_to process_mixed_content(an_title).html_safe, app_prefix(ancestor.fetch('uri')) %>
             </span>
           <% end %>
         <% else %>
