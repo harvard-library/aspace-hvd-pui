@@ -233,6 +233,12 @@ ul.breadcrumb {background-color: #F0F6F9; }
 
 /* added classes to support Harvard view changes */
 
+/* welcome text padding */
+
+#welcome_text {
+    padding-top: 3em;
+}
+
 /* for missing digital object thumbnails with no caption */
 
 .objectimage.nocaption {
