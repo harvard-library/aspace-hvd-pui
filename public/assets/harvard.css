@@ -202,6 +202,11 @@ a.thumbnail.digital_object{
     text-decoration: underline;
 }
 
+/* result title */
+.search-results * h3 a.record-title {
+    text-decoration: underline;
+}
+
 /* breadcrumbing */
 .breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
 .breadcrumb * a {color: #2B5282; text-decoration: underline;}
