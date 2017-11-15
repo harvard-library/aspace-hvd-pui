@@ -184,6 +184,16 @@ a.thumbnail.digital_object{
     border-color:  #000000;
 }
 
+/*  no borders in results; zebra striping; */
+.recordrow {
+    border: 0px none #FFFFFF;
+}
+
+.recordrow:nth-of-type(2n) {
+    background-color: #f3f3f1;
+}
+
+
 /* breadcrumbing */
 .breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
 .breadcrumb * a {color: #2B5282; text-decoration: underline;}
