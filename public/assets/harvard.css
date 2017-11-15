@@ -184,6 +184,10 @@ a.thumbnail.digital_object{
     border-color:  #000000;
 }
 
+/* breadcrumbing */
+.breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
+.breadcrumb * a {color: #2B5282; text-decoration: underline;}
+ul.breadcrumb {background-color: #F0F6F9; }
 
 /*  the small icons in results */
 
