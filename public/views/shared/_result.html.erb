@@ -5,6 +5,8 @@
  <% if !props.fetch(:full,false) %>
    <div class="recordrow" style="clear:both" data-uri="<%= result.uri %>">
      <% end %>
+     <%= render partial: 'shared/context', locals: {:result => result, :props => props } %>
+
      <%= render partial: 'shared/idbadge', locals: {:result => result, :props => props } %>
      <div class="recordsummary" style="clear:both">
        <% if !result['parent_institution_name'].blank? %>
@@ -40,44 +42,7 @@
 	  end
        %>
     <% end %>
-
-    <% if result.resolved_repository %>
-      <div class="result_context">
-        <strong><%= t('context') %>: </strong>
-        <span  class="repo_name">
-          <%= link_to result.resolved_repository.fetch('name'), app_prefix(result.resolved_repository.fetch('uri')) %>
-        </span>
  
-        <% if result.respond_to?(:ancestors) && result.ancestors %>
-          <% result.ancestors.each do |ancestor| %>
-            &raquo;
-            <span class="ancestor">
-	      <% an_title = ancestor.fetch('title')
-		 an_level = ancestor.fetch('level', 'unspecified')
-	        Pry::ColorPrinter.pp([ancestor, an_level])
-
-		 if an_level == 'otherlevel'
-		    an_level = ancestor.fetch('other_level', 'other level').capitalize
-		 else
-		   an_level = t("enumerations.archival_record_level.#{an_level}") 
-		 end
-		 %>
-	      <%= an_level %>:
-	      <% an_title = "[" +  t("enumerations.archival_record_level.untitled") + "]" if !an_title %>
-            <%= link_to process_mixed_content(an_title).html_safe, app_prefix(ancestor.fetch('uri')) %>
-            </span>
-          <% end %>
-        <% else %>
-          <% unless props.fetch(:no_res, false) || result.resolved_resource.blank? %>
-            / 
-            <span class="resource_name">
-              <%= link_to process_mixed_content(result.resolved_resource.fetch('title')).html_safe, app_prefix(result.resolved_resource.fetch('uri')) %>
-            </span>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-
 
        <% if !props.fetch(:full,false)  && result['primary_type'] == 'repository' %>
        <div><strong><%= t('number_of', { :type => t('resource._plural') }) %></strong> <%= @counts[result.uri]['resource'] %></div>

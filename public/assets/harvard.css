@@ -193,6 +193,14 @@ a.thumbnail.digital_object{
     background-color: #f3f3f1;
 }
 
+/* results context */
+.result_context {
+    background-color: #F0F6F9;
+}
+.ancestor a {
+    color: #2B5282;
+    text-decoration: underline;
+}
 
 /* breadcrumbing */
 .breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
