@@ -5,8 +5,12 @@ en:
     home: Home
     welcome_head: Welcome to Harvard Library's Special Collections and Archives
     welcome_message: |
-                     <p>You can use this resource to explore collection descriptions, finding aids, inventories and digitized content from the archives and special collections repositories in the Harvard Library system. The collections contain a wide variety of primary source materials, including letters, diaries, photographs, drawings, film and video, printed material, and objects. Links to online digital resources are included when available.  Please <a href="http://library.harvard.edu/find-library" title="opens in a new window" target="repository">contact the repository</a> you plan to visit for more detailed information and specific policies regarding access and the use of collections.</p><p> Note that the Special Collections and Archives platform is not comprehensive. To expand your search to all of Harvard Library’s holdings, including books, articles, images, collection guides, and, databases, use <a href="http://hollis.harvard.edu" title="opens in a new window" target="hollis">HOLLIS+</a>.  If you are still not finding what you're looking for, use the <span title="we'll add that link later">Ask-a-Librarian link</span>.</p>
+                     <p>Use this search tool to explore collection descriptions, finding aids, inventories and digitized content from Harvard Library’s archives and special collections.</p><p>The collections contain a wide variety of primary source materials, including letters, photographs, film and video, printed material, and objects. Links to online digital resources are included when available.</p>
     welcome_page_title: Special Collections and Archives
+    welcome_repo: <strong><a href="http://library.harvard.edu/find-library" target="repos" title="see a list of repositories">Contact individual repositories</a></strong><p>for more detailed information and specific policies.</p>
+
+    welcome_hollis: <strong><a href="http://hollis.harvard.edu" target="hollis">Expand your search with HOLLIS</a></strong> <p>Search all of Harvard Library’s holdings, including books, articles, images, and databases.</p>
+    welcome_ask: <strong>Can't find what you're looking for?</strong><p><a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">Ask a librarian</a></p>
 
   archive:
     _singular: The Archive

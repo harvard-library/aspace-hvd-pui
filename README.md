@@ -9,6 +9,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
   - Use sans-serif throughout
   - hide logos in the listing of repositories
   - breadcrumbs and "Found in" restyling
+  - over-ride the *public/app/views/welcome/show.html.erb* page, moving the text below the search bar and adding special links, with concommitant entries in the en.yml file
 
 - Functionality
   - add a **Creators** facet to display of Collections within a Repository

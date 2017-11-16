@@ -273,7 +273,18 @@ ul.breadcrumb {background-color: #F0F6F9; }
 #welcome_text {
     padding-top: 3em;
 }
-
+#welcome_links {
+    margin-top: 1em;
+}
+.welcome_links{ 
+    background-color: #f3f3f1;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 1em;
+}
+.welcome_links * a {
+    text-decoration: underline;
+}
 /* for missing digital object thumbnails with no caption */
 
 .objectimage.nocaption {
