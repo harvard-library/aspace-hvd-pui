@@ -194,9 +194,14 @@ a.thumbnail.digital_object{
 }
 
 /* results context */
+
 .result_context {
     background-color: #F0F6F9;
+    margin-left: .5em;
+    margin-right: 1em;
+    margin-bottom: .5em;
 }
+
 .ancestor a {
     color: #2B5282;
     text-decoration: underline;

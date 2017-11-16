@@ -5,9 +5,10 @@
  <% if !props.fetch(:full,false) %>
    <div class="recordrow" style="clear:both" data-uri="<%= result.uri %>">
      <% end %>
-     <%= render partial: 'shared/context', locals: {:result => result, :props => props } %>
 
      <%= render partial: 'shared/idbadge', locals: {:result => result, :props => props } %>
+     <%= render partial: 'shared/context', locals: {:result => result, :props => props } %>
+
      <div class="recordsummary" style="clear:both">
        <% if !result['parent_institution_name'].blank? %>
        <div><strong><%= t('parent_inst') %>:</strong>

@@ -1,7 +1,7 @@
 <%# HARVARD; this separates out the context ("found in") so it can be moved around more efficiently %>
 <%# it expects result, props as  local variables %>
     <% if result.resolved_repository %>
-      <div class="result_context">
+      <div class="result_context" style="clear:both">
         <strong><%= t('context') %>: </strong>
         <span  class="repo_name">
           <%= link_to result.resolved_repository.fetch('name'), app_prefix(result.resolved_repository.fetch('uri')) %>
