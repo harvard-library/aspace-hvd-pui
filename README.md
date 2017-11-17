@@ -21,6 +21,10 @@ The customizations needed for Harvard's ArchivesSpace PUI
 
  - Added the level information (e.g.: "Series") in the "Found in" breadcrumbs
 
+## Changes that I want to add as pull requests to the ArchivesSpace repo:
+
+  - used process_mixed_content against titles in *public/views/digital_objects/_linked_instances.html.erb*
+
 ## Configuration issues
 
 For the most part, configuration values that need to be set are in [public/plugin_init.rb](https://github.com/harvard-library/aspace-hvd-pui/blob/master/public/plugin_init.rb) .
