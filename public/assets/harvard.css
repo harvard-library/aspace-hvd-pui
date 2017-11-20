@@ -196,14 +196,14 @@ a.thumbnail.digital_object{
 /* results context */
 
 .result_context {
-    background-color: #F0F6F9;
+    background-color: #C9E1EE; 
     margin-left: .5em;
     margin-right: 1em;
     margin-bottom: .5em;
 }
 
 .ancestor a {
-    color: #2B5282;
+    color: #24446B;
     text-decoration: underline;
 }
 
@@ -214,8 +214,8 @@ a.thumbnail.digital_object{
 
 /* breadcrumbing */
 .breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
-.breadcrumb * a {color: #2B5282; text-decoration: underline;}
-ul.breadcrumb {background-color: #F0F6F9; }
+.breadcrumb * a {color: #24446B; text-decoration: underline;}
+ul.breadcrumb {background-color: #C9E1EE; }
 
 /* collection organization side bar: current */
 
