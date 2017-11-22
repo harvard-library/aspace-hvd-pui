@@ -15,7 +15,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
   - add a **Creators** facet to display of Collections within a Repository
   - over-ride *public/app/views/shared/_record_innards.html.erb* to favor the abstract over the Scope and Contents, and create a "Scope & Contents" Accordion fold
   - over-ride *public/app/views/shared/_childern_tree.html.erb* so that, if the link of a branch is clicked, the children under it will become visible
-
+  - over-ride the *public/app/views/shared/_navigation.html.erb* to remove the repository stickiness of the magnifying glass (submitted, and rejected,  as a Pull Request to the main body of code)
   -  used a later version of public/app/views/shared/_results.html.erb to solve a formatting issue. Subsequently have modified it to:
   -  isolated the context piece ("Found in") from the _results.html.erb to a separate partial view (*_context.html.erb*) so it could be more easily moved around
 
