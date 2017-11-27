@@ -1,6 +1,6 @@
 <div id="digital_count">
   <% unless count == 0 %>
   <% details = (count == 1) ? t('digital_object._public.details._singular') : t('digital_object._public.details._plural', :ct => count) %>
-   <%= t('digital_object._public.in_collection', :details => details) %>
+  <%= t('digital_object._public.in_collection', :details => details) %>
   <% end %>
 </div>

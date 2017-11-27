@@ -7,9 +7,8 @@ class ResourcesAddonsController < ApplicationController
 #    search_opts['fq'] = ["resource:\"#{res_id}\""]
     search_opts= {'type[]' => 'pui_archival_object', 'page_size' => 1}
     q = "resource:\"#{res_id}\" AND digital_object_uris:[\"\" TO *]"
- Pry::ColorPrinter.pp q
    results = archivesspace.search(q,1,search_opts)
-    Pry::ColorPrinter.pp results['total_hits']
+#    Pry::ColorPrinter.pp results['total_hits']
     render(partial: 'resources/digital_count', locals: {:count => results['total_hits']})
   end
 

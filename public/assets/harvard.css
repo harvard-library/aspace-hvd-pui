@@ -291,3 +291,8 @@ ul.breadcrumb {background-color: #C9E1EE; }
    float: left;
    width: auto;
 }
+
+/* for digital_count div that shows up on the show resource page */
+#digital_count {
+    padding-top: .25rem;
+}

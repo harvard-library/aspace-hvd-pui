@@ -17,10 +17,9 @@ The customizations needed for Harvard's ArchivesSpace PUI
   - over-ride *public/app/views/shared/_childern_tree.html.erb* so that, if the link of a branch is clicked, the children under it will become visible
   - over-ride the *public/app/views/shared/_navigation.html.erb* to remove the repository stickiness of the magnifying glass (submitted, and rejected,  as a Pull Request to the main body of code)
   -  used a later version of public/app/views/shared/_results.html.erb to solve a formatting issue. Subsequently have modified it to:
-  -  isolated the context piece ("Found in") from the _results.html.erb to a separate partial view (*_context.html.erb*) so it could be more easily moved around
-
+     -  isolated the context piece ("Found in") from the _results.html.erb to a separate partial view (*_context.html.erb*) so it could be more easily moved around
  - Added the level information (e.g.: "Series") in the "Found in" breadcrumbs
-
+ - added a count of digital objects within a resource for display on the "show" page
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 
   - used process_mixed_content against titles in *public/views/digital_objects/_linked_instances.html.erb*

@@ -28,7 +28,7 @@ en:
   digital_object:
     _public:
        link: External link to digital material
-       in_collection: "This collection contains digital material %{details} "       
+       in_collection: "Contains digital material %{details} "       
        details:
          _singular: (1 item)
          _plural: "(%{ct} items)"

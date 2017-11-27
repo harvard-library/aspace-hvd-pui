@@ -9,6 +9,17 @@ $(function() {
        if ($lbl.text() == "To")
        {$lbl.text("--")}
    });
+/* if showing a resource, get the number of digital objects */
+   if (hrvd_controller === 'resources' && hrvd_action === 'show') {
+       $.ajax({
+	   url: window.location.href + '/digct',
+	   type: 'GET',
+	   dataType: 'html',
+       })
+       .done(function (html) {
+	   $(".information div.badge-and-identifier div.identifier").after(html);
+       });
+   }
 
 });
 
