@@ -296,3 +296,8 @@ ul.breadcrumb {background-color: #C9E1EE; }
 #digital_count {
     padding-top: .25rem;
 }
+
+/* for ordered lists with no enumeration field */
+.note_orderedlist .enumeration- ol {
+  list-style: disc;
+}
