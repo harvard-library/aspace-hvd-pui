@@ -164,11 +164,12 @@ a.thumbnail.digital_object{
     font-weight: bold;
 }
 
-/* pagination color choices */
+/* pagination color choices and padding*/
 .pagination > li > a,
 .pagination > li > span {
     color: #1e1e1e;
-
+    padding: 3px 7px;
+    font-weight: bold;
 }
 
 .pagination > li > a:hover, .pagination > li > a:focus,
@@ -301,3 +302,8 @@ ul.breadcrumb {background-color: #C9E1EE; }
 .note_orderedlist .enumeration- ol {
   list-style: disc;
 }
+/* don't print the URLs in @media print mode */
+  a[href]:after {
+    content: "";
+  }
+
