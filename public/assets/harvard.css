@@ -297,6 +297,11 @@ ul.breadcrumb {background-color: #C9E1EE; }
 #digital_count {
     padding-top: .25rem;
 }
+/* for flagging digital objects relation in the search results */
+span.dig_flag {
+    font-size: .7em;
+    color: #C4961A;
+}
 
 /* for ordered lists with no enumeration field */
 .note_orderedlist .enumeration- ol {

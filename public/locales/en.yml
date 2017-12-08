@@ -39,6 +39,8 @@ en:
   views:
     _shared:
        digital_object_link: "View %{name}"
+       digital_flag: Digital
+       digital_flag_title: Has associated digital material
     tree:
        expand: Expand
 
