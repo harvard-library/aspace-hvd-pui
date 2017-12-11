@@ -86,21 +86,46 @@ Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
     end
 
     def get_digital_objects(uri, params)
+      page = params.fetch(:page, 1)
+      page_size = params.fetch(:page_size, AppConfig[:pui_search_results_page_size] )
+      uri_prefix = "/repositories/#{params[:rid]}/archival_objects/"
+      r = Regexp.new("#{uri_prefix}(\\d+)")
       @digital_objs = []
-      if params.fetch(:ids, false)
+      @ids = params.fetch(:ids,'').split(',')
+      unless @ids.blank?
 Pry::ColorPrinter.pp "have ids"
       else
-Pry::ColorPrinter.pp "dont have ids"
         ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
-Pry::ColorPrinter.pp ordered_records[0]
         refs = ordered_records.map { |u| u.fetch('ref') }
-Pry::ColorPrinter.pp "REFS: #{refs}"
         dig_results = get_digital_archival_results(uri, refs.length)
         dig_results = dig_results['docs'].map { |doc| doc['uri']}
-Pry::ColorPrinter.pp dig_results
         dig_results = dig_results.sort_by {|uri| refs.index(uri)}
-Pry::ColorPrinter.pp "DIG : #{dig_results}"
+        @ids = dig_results.grep(r) { |u| r.match(u)[1]}
       end
+      
+      Pry::ColorPrinter.pp "slice: #{@ids[(page - 1) * page_size,page_size]}"
+      slice = @ids[(page - 1) * page_size,page_size]
+      search_uris = slice.map{|id| "id:\"#{uri_prefix}#{id}#pui\"" }.join(" ")
+ Pry::ColorPrinter.pp "QUERY: #{search_uris}"
+      begin
+        set_up_search(['archival_object'], [], { 'resolve[]' => ['repository:id', 'resource:id@compact_resource', 'ancestors:id@compact_resource', 'top_container_uri_u_sstr:id']}, {}, search_uris)
+        @results = archivesspace.search(@query, 1, @criteria)
+      rescue Exception => error
+        Pry::ColorPrinter.pp error
+        flash[:error] = I18n.t('errors.unexpected_error')
+        redirect_back(fallback_location: '/' ) and return
+      end
+      process_results(@results['results'],false)
+      @digital_objs = @results.records.sort_by{ |res| slice.index(r.match(res.uri)[1])}
+      @digital_objs.each do |result|
+        result['json']['atdig'] = process_digital_instance(result['json']['instances'])
+Pry::ColorPrinter.pp result['json']['atdig']
+      end
+
+
+ Pry::ColorPrinter.pp "******************************************"
+#      Pry::ColorPrinter.pp  @digital_objs[0]
+ Pry::ColorPrinter.pp "******************************************"
 
     end
   end
