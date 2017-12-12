@@ -20,10 +20,11 @@
 <div class="row" id="digital">
 
   <div class=" col-sm-9">
-The magic happens here!
+     <%= render partial: 'shared/paging_dig_only', locals: {:pager => @pager, :ids => @ids} %>
      <% @digital_objs.each do |result| %>
-     <%= render partial: 'shared/dig_result', locals: {:result => result, :props => {:full => false, :no_repo => true}} %>
+      <%= render partial: 'shared/dig_result', locals: {:result => result, :props => {:full => false, :no_repo => true, :no_coll => true}} %>
      <% end %>
+    <%= render partial: 'shared/paging_dig_only', locals: {:pager => @pager, :ids => @ids} %>
   </div>
 
  <div id="sidebar" class="col-sm-3 sidebar sidebar-container resizable-sidebar" <% unless @has_children %>style="display: none"<% end %>>

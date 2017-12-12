@@ -23,6 +23,11 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - added a count of digital objects within a resource for display on the "show" page
  - over-ride default Bootstrap printing of URLs when a page is printed from the browser
  - Make the pagination look "more like Amazon" rather than "like Google" by having page one always be available (over-ride *public/app/views/shared/_pagination.html.erb*)
+ - In results, indicate that an archival object has an associated digital object
+ - In collection display, add a "Digital Only" tab to the "pill tabs". 
+   - If the collection contains archival objects with associated digital objects, their count will be display in parentheses
+   - if the collection does not contain such archival objects, the tab will not be actionable
+ - Display a paging, ordered list of archival objects that have associated digital objects (including the thumbnail) if "Digital Only" is selected. Selecting on an item in that list will resolve to display the full archival object.
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 

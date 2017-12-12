@@ -1,6 +1,5 @@
  <%# presenting in the list for archival objects that have digital objects associated with them %>
- <%# Pry::ColorPrinter.pp result %>
- <%# Pry::ColorPrinter.pp(result['json'])%>
+  <%# Pry::ColorPrinter.pp(result['json'])%>
    <div class="recordrow" style="clear:both" data-uri="<%= result.uri %>">
 
      <%= render partial: 'shared/idbadge', locals: {:result => result, :props => props } %>

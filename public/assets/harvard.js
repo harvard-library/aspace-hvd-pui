@@ -20,6 +20,21 @@ $(function() {
 	   $(".information div.badge-and-identifier div.identifier").after(html);
        });
    }
+/* handle the digital only paging */
+
+   if (hrvd_controller === 'resources' && hrvd_action === 'digital_only') {
+       var $page_links = $("ul.pagination li:not(.active)")
+       if ($page_links.length > 0) {
+	   $page_links.not('dots').click(function( event ) {
+	       var  $form = $(this).parents("form.digital_page");
+	       var page = $(this).children("a").html();
+	       var $p = $form.children("input[name='page']");
+	       $p.val(page);
+	       $form.submit();
+	   });
+       }
+   }
 
 });
+
 

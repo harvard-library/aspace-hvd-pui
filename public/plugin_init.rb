@@ -86,8 +86,10 @@ Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
     end
 
     def get_digital_objects(uri, params)
-      page = params.fetch(:page, 1)
-      page_size = params.fetch(:page_size, AppConfig[:pui_search_results_page_size] )
+      page = params.fetch(:page, "1")
+      page = Integer(page)
+Pry::ColorPrinter.pp page.class
+      page_size = Integer(params.fetch(:page_size, AppConfig[:pui_search_results_page_size] ))
       uri_prefix = "/repositories/#{params[:rid]}/archival_objects/"
       r = Regexp.new("#{uri_prefix}(\\d+)")
       @digital_objs = []
@@ -102,11 +104,8 @@ Pry::ColorPrinter.pp "have ids"
         dig_results = dig_results.sort_by {|uri| refs.index(uri)}
         @ids = dig_results.grep(r) { |u| r.match(u)[1]}
       end
-      
-      Pry::ColorPrinter.pp "slice: #{@ids[(page - 1) * page_size,page_size]}"
       slice = @ids[(page - 1) * page_size,page_size]
       search_uris = slice.map{|id| "id:\"#{uri_prefix}#{id}#pui\"" }.join(" ")
- Pry::ColorPrinter.pp "QUERY: #{search_uris}"
       begin
         set_up_search(['archival_object'], [], { 'resolve[]' => ['repository:id', 'resource:id@compact_resource', 'ancestors:id@compact_resource', 'top_container_uri_u_sstr:id']}, {}, search_uris)
         @results = archivesspace.search(@query, 1, @criteria)
@@ -119,11 +118,12 @@ Pry::ColorPrinter.pp "have ids"
       @digital_objs = @results.records.sort_by{ |res| slice.index(r.match(res.uri)[1])}
       @digital_objs.each do |result|
         result['json']['atdig'] = process_digital_instance(result['json']['instances'])
-Pry::ColorPrinter.pp result['json']['atdig']
       end
-
+      @pager = Pager.new("/repositories/#{params[:rid]}/resources/#{params[:id]}/digital_only", page, (@ids.length/page_size) + 1)
 
  Pry::ColorPrinter.pp "******************************************"
+Pry::ColorPrinter.pp @pager
+
 #      Pry::ColorPrinter.pp  @digital_objs[0]
  Pry::ColorPrinter.pp "******************************************"
 
