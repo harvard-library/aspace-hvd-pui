@@ -1,3 +1,11 @@
+function setupRequest(modalId, text) {
+    $("#request_modal * .action-btn").hide();
+    $('#request_sub').submit(function(e) {
+        $("#request_modal").modal('show');
+        return false;
+	});
+}
+
 $(function() {
 /* this really should be taken care of by a pull request to tack '-label' on to form labels, but... */
 

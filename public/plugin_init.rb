@@ -130,7 +130,7 @@ Pry::ColorPrinter.pp @pager
     end
   end
 
-# add check for digital objects
+# add check for digital objects, modified repo name for request
 
   ResultInfo.module_eval do
     def fill_request_info
@@ -142,9 +142,18 @@ Pry::ColorPrinter.pp @pager
         STDERR.puts "Error getting digital object count for #{@request.request_uri}: #{boom}"
         @has_digital = false
       end
-      Pry::ColorPrinter.pp  @has_digital 
+      @short_repo_name = get_short_repo(@request['repo_name'])
+      Pry::ColorPrinter.pp "Shortened repo name: #{@short_repo_name}"
       @request
     end
+
+   def get_short_repo(name)
+     nms = name.split(',')
+     nms.each{|nm| nm.strip!}
+     nms.delete_if{|nm| nm == "Harvard University" || nm == "Harvard Library"}
+     nms.join(", ")
+   end
+
 # this is going to be moved, but I'm putting it here for now
      def get_digital_archival_results(res_id, size = 1)
        solr_params = {'q' => 'digital_object_uris:[\"\" TO *] AND types:pui_archival_object AND publish:true',

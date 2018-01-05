@@ -1,0 +1,7 @@
+<%# interim request popup until aeon etc. is resolved %>
+<% Pry::ColorPrinter.pp "POPUP" %>
+<div id="request_popup">
+  <% key = "request.#{@request.repo_code.downcase}" %>
+<%= t(key, default: t('request.default'), :repo => @short_repo_name, :email => @request.repo_email.strip).html_safe %>
+   
+</div>

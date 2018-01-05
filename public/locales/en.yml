@@ -19,6 +19,11 @@ en:
     _singular: The Archive
     _plural: ''
 
+  request:
+    default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
+    law:  <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please fill out <a href='https://harvard.az1.qualtrics.com/jfe/form/SV_0wgVmghqAAU4T77' target='_blank'>our appointment request form</a>.</p><p>Appointments are available Tuesday-Friday from 10:00-5:00.</p>
+    hua: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Harvard University Archives at <a href="mailto:archives_reference@harvard.edu">archives_reference@harvard.edu</a>.</p>
+
   repos:
     bak:
       lead_graph: <p><strong>Baker Library Special Collections</strong> collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
