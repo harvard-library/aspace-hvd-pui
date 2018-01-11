@@ -9,7 +9,7 @@
          dig_title = dig_title + " (#{@digital_count})" unless @digital_count == 0
       %>
      <%= render partial: 'resources/resource_tab', locals: {:action => :digital_only, :text => dig_title,
-                                                            :enabled => ( @digital_count > 0), :hidden => false} %>
+                                                            :enabled => ( !@digital_count.blank? &&@digital_count > 0), :hidden => false} %>
       <%= render partial: 'resources/resource_tab', locals: {:action => :inventory, :text => t('actions.numeric'),
                                                              :enabled => @has_containers, :hidden => AppConfig[:pui_hide][:container_inventory] } %>
     </ul>
