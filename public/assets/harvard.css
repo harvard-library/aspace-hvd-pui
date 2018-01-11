@@ -312,3 +312,6 @@ span.dig_flag {
     content: "";
   }
 
+  #request_popup * a, #request_popup * a:hover, #request_popup * a:focus {
+      text-decoration: underline;
+  }
