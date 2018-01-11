@@ -13,7 +13,10 @@ en:
     welcome_ask: <strong>Can't find what you're looking for?</strong><p><a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">Ask a librarian</a></p>
 
   actions:
-    digital_only: Digital Only
+    digital_only: Digital Material
+    search_in: "Search within %{type}"
+    hierarch: Collection Inventory
+    numeric: Container List
 
   archive:
     _singular: The Archive
