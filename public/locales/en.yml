@@ -22,6 +22,27 @@ en:
     _singular: The Archive
     _plural: ''
 
+  csv:
+    ead_id: EAD ID
+    resource_title: Collection Title
+    resource_creator:  Collection Creator
+    resource_dates: Collection Dates
+    resource_ref_id: Collection Identifier
+    ref_id: Database Number
+    title: Component Title
+    date: Component Date
+    s_year: Start Year
+    e_year: End Year
+    id: Component identifier
+    type: Component type
+    creator: Component creator
+    container: "Container %{i}"
+    phys: "Physical description %{i}"
+    loc: Location Note
+    restrict: Access Note
+    urn: Digital content link
+    parent: "Level %{i}"
+
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
     law:  <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please fill out <a href='https://harvard.az1.qualtrics.com/jfe/form/SV_0wgVmghqAAU4T77' target='_blank'>our appointment request form</a>.</p><p>Appointments are available Tuesday-Friday from 10:00-5:00.</p>
