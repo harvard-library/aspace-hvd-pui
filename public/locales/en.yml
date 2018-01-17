@@ -57,6 +57,7 @@ en:
     _public:
       finding_aid:
         head: Administrative Information
+        ead_id: EAD ID
 
   digital_object:
     _public:
