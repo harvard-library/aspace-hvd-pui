@@ -30,6 +30,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Display a paging, ordered list of archival objects that have associated digital objects (including the thumbnail) if "Digital Only" is selected. Selecting on an item in that list will resolve to display the full archival object.
  - Over-ride the Request popup
  - Over-ride *public/app/views/resources/_finding_aid.html.erb* to display the EAD ID
+ - Make the Aleph ID a clickable link to Hollis
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 

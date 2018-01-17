@@ -315,3 +315,7 @@ span.dig_flag {
   #request_popup * a, #request_popup * a:hover, #request_popup * a:focus {
       text-decoration: underline;
   }
+  .note-content a,  .note-content a:hover,  .note-content a:focus {
+      text-decoration: underline;
+  }
+
