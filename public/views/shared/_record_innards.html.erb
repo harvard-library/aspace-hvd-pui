@@ -1,7 +1,7 @@
 <!-- Look for '_inherited' and '*_inherited' properties -->
 <!-- Harvard requires Abstract up top, and Scope & Contents in a separate accordion fold -->
 <% non_folder = %w(summary langmaterial physdesc accessrestrict userestrict) %>
-<% folder = %w(bioghist arrangement phystech physloc otherfindaid custodhist acqinfo appraisal accruals originalsloc altformavail extent relatedmaterial separatedmaterial note_bibliography materialspec physdesc inscription physfacet dimensions edition fileplan legalstatus odd note processinfo note_index) %>
+<% folder = %w(bioghist arrangement phystech physloc otherfindaid custodhist acqinfo appraisal accruals originalsloc altformavail extent relatedmaterial separatedmaterial note_bibliography materialspec inscription physfacet dimensions edition fileplan legalstatus odd note processinfo note_index) %>
 <div class="upper-record-details">
     <% over = @result.note('abstract') 
        scope_folder = true
