@@ -8,7 +8,33 @@ class ResourcesAddonsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
 
+  ALEPH_REGEXP =  Regexp.new("^\\d{9}$")
 
+ # return an aleph link
+ def aleph
+   uri =  "/repositories/#{params.require(:rid)}/resources/#{params.require(:id)}"
+   @criteria = {}
+   @result =  archivesspace.get_record(uri, @criteria)
+#   Pry::ColorPrinter.pp @result.notes
+   unless @result.notes['processinfo'].blank?
+     notes = @result.notes['processinfo']
+     label = notes.dig('label') || ''
+     aleph_id = ''
+     if label == 'Aleph ID'
+       aleph_id = notes['note_text']
+     else notes['subnotes'].each do |sub|
+         label = sub['_inline_label'] || ''
+         if  label == 'Aleph ID'
+           aleph_id = sub['_text']
+         end
+       end
+     end
+     if ALEPH_REGEXP.match(aleph_id)
+       render(partial: 'resources/aleph', locals: {:aleph_id => aleph_id})
+     end
+   end
+
+ end
 
  # produce a CSV
  def csv_out
@@ -28,12 +54,14 @@ class ResourcesAddonsController < ApplicationController
        render plain: @data}
    end
  end
-
  def data_csv(params)
    lines = []
    uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
    begin
-      ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
+     ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
+#     ordered_list = ordered_records.map {|u| "#{u.fetch('ref')}#pui" }
+#     ordered_hash = ordered_list.each_with_index.to_h
+#     Pry::ColorPrinter.pp ordered_hash
      depths = ordered_records.map { |u| u.fetch('depth')}
      @levels = depths.uniq.sort.last.to_i
      Pry::ColorPrinter.pp "Levels: #{@levels}"
@@ -48,7 +76,7 @@ class ResourcesAddonsController < ApplicationController
      lines << []
      lines << []
      lines << get_csv_headers(@levels)
-     
+     lines.concat(get_csv_details(ordered_records))
    rescue RecordNotFound
      @type = I18n.t('resource._singular')
       @page_title = I18n.t('errors.error_404', :type => @type)
@@ -82,6 +110,15 @@ Pry::ColorPrinter.pp "Number REFs #{refs.length}"
  end
 
  private
+
+ def get_csv_details(ordered_recs)
+   lines = []
+   depth = 1
+   list = ordered_recs.map {|u| "#{u.fetch('ref')}#pui" }
+   res = archivesspace.search_records(list.slice(2,3), { 'page_size' => 2})
+   Pry::ColorPrinter.pp res
+   []
+ end
 
  def get_csv_headers(levels = 2)
    headers = []
@@ -126,6 +163,7 @@ Pry::ColorPrinter.pp "Number REFs #{refs.length}"
    dates.compact.join(", ")
  end
 
+ 
  def get_sorted_arch_digital_objects(records, refs)
    results = []
    results = @results.records.sort_by {|record| refs.index(record.json['uri'])}
