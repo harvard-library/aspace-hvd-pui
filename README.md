@@ -31,6 +31,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Over-ride the Request popup
  - Over-ride *public/app/views/resources/_finding_aid.html.erb* to display the EAD ID
  - Make the Aleph ID a clickable link to Hollis
+ - Add configurable "Ask a Librarian/Archivist" to resource and object pages
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 
