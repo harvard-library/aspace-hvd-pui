@@ -6,7 +6,7 @@ AppConfig[:pui_hide][:classification_badge] = true
 AppConfig[:pui_hide][:container_inventory]=true
 AppConfig[:pui_page_custom_actions] << {
    'record_type' => ['resource'], # the jsonmodel type to show for
-   'erb_partial' => 'shared/test'
+   'erb_partial' => 'shared/ask'
    }
 #AppConfig[:pui_email_enabled] = true
 

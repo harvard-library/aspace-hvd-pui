@@ -1,0 +1,3 @@
+ <% key_part = @request.repo_code.downcase %>
+<a class='btn btn-primary ask' target='_blank' href='<%= t("ask.link.#{key_part}", default: t("ask.link.default"))%>'>
+<%= t("ask.text.#{key_part}", default: t("ask.text.default")) %></a>

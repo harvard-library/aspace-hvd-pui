@@ -319,3 +319,14 @@ span.dig_flag {
       text-decoration: underline;
   }
 
+/* Ask a Librarian/archivist */
+  a.ask, a.ask:visited {
+      background-color: #337ab7; /*#4353bc; */
+      border-color: #122b40;
+      text-decoration: none;
+      color: #FFFFFF
+      outline: thin dotted;
+  }
+  a.ask:hover {
+      background-color:  #286090;
+  }
