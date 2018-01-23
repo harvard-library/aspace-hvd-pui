@@ -1,0 +1,10 @@
+<div class="container-fluid panel-footer">
+  <div class="row">
+     <div class="col-md-12">
+       <p class="footer-items"><a href="<%= AppConfig[:frontend_proxy_url] %>"><%= t('footer.staff')%></a>
+         | <%= t('footer.aspace', :link => "http://archivesspace.org", :text=> 'ArchivesSpace').html_safe %>
+         | <%= ASConstants.VERSION %>
+         | <% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:feedback_url]%>' target='_blank'><%= t('footer.feedback') %></a><% end %></p>
+     </div>
+  </div>
+</div>

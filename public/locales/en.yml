@@ -12,6 +12,11 @@ en:
     welcome_hollis: <strong><a href="http://hollis.harvard.edu" target="hollis">Expand your search with HOLLIS</a></strong> <p>Search all of Harvard Library’s holdings, including books, articles, images, and databases.</p>
     welcome_ask: <strong>Can't find what you're looking for?</strong><p><a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">Ask a librarian</a></p>
 
+  footer:
+    staff: Staff Interface
+    aspace: "Powered by <a href='%{link}' target='_blank'>%{text}</a>"
+    feedback: Send Feedback or Report a Problem
+
   actions:
     digital_only: Digital Material
     search_in: "Search within %{type}"
