@@ -14,12 +14,5 @@
       <% end %>
     </dl>
   <% end %>
-  <% unless @result.finding_aid['revision'].blank? %>
-    <h4><%= t('resource._public.finding_aid.revision') %> </h4>
-    <ul>
-    <% @result.finding_aid['revision'].each do |rev| %>
-      <li><em><%= rev['date']%>:</em> <%= rev['desc'] %></li>
-    <% end %>
-    </ul>
-  <% end %>
+
 <% end %>
