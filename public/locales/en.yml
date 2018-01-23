@@ -61,7 +61,7 @@ en:
       bak: https://asklib.sc.hbs.org/index.php?
       med: https://www.countway.harvard.edu/content/ask-us
       law: https://asklib.law.harvard.edu/index.php?
-
+      hou: https://ask.library.harvard.edu/friendly.php?slug=houghton
   repos:
     bak:
       lead_graph: <p><strong>Baker Library Special Collections</strong> collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
@@ -94,3 +94,4 @@ en:
     archival_record_level:
       unspecified: Item
       untitled: Untitled
+    aleph_link: "<a target='_blank' href='http://id.lib.harvard.edu/aleph/%{id}/catalog'>Link to catalog</a>"
