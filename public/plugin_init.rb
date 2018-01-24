@@ -37,7 +37,7 @@ Rails.application.config.after_initialize do
     def solr(params)
       url = URI.join(AppConfig[:pui_solr_host], AppConfig[:pui_solr_select])
       url.query = URI.encode_www_form(params)
-Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
+#Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
       do_search(url)
     end
   end
@@ -89,7 +89,6 @@ Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
     def get_digital_objects(uri, params)
       page = params.fetch(:page, "1")
       page = Integer(page)
-Pry::ColorPrinter.pp page.class
       page_size = Integer(params.fetch(:page_size, AppConfig[:pui_search_results_page_size] ))
       uri_prefix = "/repositories/#{params[:rid]}/archival_objects/"
       r = Regexp.new("#{uri_prefix}(\\d+)")
@@ -122,11 +121,11 @@ Pry::ColorPrinter.pp "have ids"
       end
       @pager = Pager.new("/repositories/#{params[:rid]}/resources/#{params[:id]}/digital_only", page, (@ids.length/page_size) + 1)
 
- Pry::ColorPrinter.pp "******************************************"
-Pry::ColorPrinter.pp @pager
+# Pry::ColorPrinter.pp "******************************************"
+#Pry::ColorPrinter.pp @pager
 
 #      Pry::ColorPrinter.pp  @digital_objs[0]
- Pry::ColorPrinter.pp "******************************************"
+# Pry::ColorPrinter.pp "******************************************"
 
     end
   end
@@ -134,6 +133,7 @@ Pry::ColorPrinter.pp @pager
 # add check for digital objects, modified repo name for request
 
   ResultInfo.module_eval do
+    ALEPH_REGEXP =  Regexp.new("^\\d{9}$")
     def fill_request_info
       @request = @result.request_item
 # looking for digital objects goes here
@@ -145,9 +145,42 @@ Pry::ColorPrinter.pp @pager
       end
       @short_repo_name = get_short_repo(@request['repo_name'])
       Pry::ColorPrinter.pp "Shortened repo name: #{@short_repo_name}"
+      # extract the aleph_id
+      @aleph_id = ''
+      resource = ''
+      if @result.primary_type == 'resource'
+        resource = @result
+      else
+        resource_uri = @result.breadcrumb.map { |c| c[:uri] if c[:type] == 'resource'}.compact
+        unless resource_uri.blank?
+          resource =  archivesspace.get_record(resource_uri, {})
+        end
+      end
+      @aleph_id = extract_aleph_id(resource) unless resource.blank?
+#      Pry::ColorPrinter.pp "aleph id: #{@aleph_id}"
       @request
     end
-
+    
+    def extract_aleph_id(result)
+      aleph_id = ''
+      unless result.notes['processinfo'].blank?
+        notes = result.notes['processinfo']
+        label = notes.dig('label') || ''
+        if label == 'Aleph ID'
+          aleph_id = notes['note_text']
+        else notes['subnotes'].each do |sub|
+            label = sub['_inline_label'] || ''
+            if  label == 'Aleph ID'
+              aleph_id = sub['_text']
+            end
+          end
+        end
+        if ALEPH_REGEXP.match(aleph_id)
+          return aleph_id
+        end
+      end
+      return ''
+    end
    def get_short_repo(name)
      nms = name.split(',')
      nms.each{|nm| nm.strip!}

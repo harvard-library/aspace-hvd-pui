@@ -1,6 +1,6 @@
 <%  if !note_struct['note_text'].blank? %>
     <div class="<%= type %> single_note" >
-     <% unless defined?(notitle) &&  notitle %> 
+     <% unless (defined?(notitle) &&  notitle) ||  note_struct['label'] ==  "Aleph ID"%> 
      <h4><%= note_struct['label'] %></h4>
      <% end %>
      <% if note_struct.has_key?('subnotes') %>
@@ -11,21 +11,24 @@
            <% elsif subnote['_title'] %>
              <h5><%= subnote['_title'] %></h5>
            <% elsif subnote['_inline_label'] %>
-             <span class='inline-label'><%= subnote['_inline_label'] %></span>
+	      <% if  subnote['_inline_label'] == "Aleph ID" %>
+	          <span class="note-content"><%= t('enumerations.aleph_link',:id=>subnote['_text']).html_safe %></span>
+	      <% else %>
+                <span class='inline-label'><%= subnote['_inline_label'] %></span>
+              <% end %>
            <% end %>
+	   <% if  subnote['_inline_label'] !=  "Aleph ID" %>
            <span class="note-content">
-	     <% if type == 'processinfo' && (subnote['_inline_label'] == "Aleph ID" ||  note_struct['label'] ==  "Aleph ID") %>
-	       <a target='blank' href='http://id.lib.harvard.edu/aleph/<%= subnote['_text'] %>/catalog'><%= subnote['_text'] %></a>
-	     <% else %>
                <%= subnote['_text'].html_safe %>
-	     <% end %>
            </span>
+	   <% end %>
          </div>
        <% end %>
      <% else %>
        <div class="note-content">
-	 <% if type == 'processinfo' && note_struct['label'] ==  "Aleph ID" %>
-            <a target='blank' href='http://id.lib.harvard.edu/aleph/<%= subnote['_text'] %>/catalog'><%= subnote['_text'] %></a>
+<!--  <% Pry::ColorPrinter.pp "In 'else' of single note" %> -->
+	 <% if type == 'processinfo' && note_struct['label'] ==  'Aleph ID' %>
+	    <%= t('enumerations.aleph_link',:id=> note_struct['note_text']).html_safe %>
          <% else %>
            <%= note_struct['note_text'].html_safe %>
 	 <% end %>

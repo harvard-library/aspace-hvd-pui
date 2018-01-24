@@ -8,34 +8,6 @@ class ResourcesAddonsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
 
-  ALEPH_REGEXP =  Regexp.new("^\\d{9}$")
-
- # return an aleph link
- def aleph
-   uri =  "/repositories/#{params.require(:rid)}/resources/#{params.require(:id)}"
-   @criteria = {}
-   @result =  archivesspace.get_record(uri, @criteria)
-#   Pry::ColorPrinter.pp @result.notes
-   unless @result.notes['processinfo'].blank?
-     notes = @result.notes['processinfo']
-     label = notes.dig('label') || ''
-     aleph_id = ''
-     if label == 'Aleph ID'
-       aleph_id = notes['note_text']
-     else notes['subnotes'].each do |sub|
-         label = sub['_inline_label'] || ''
-         if  label == 'Aleph ID'
-           aleph_id = sub['_text']
-         end
-       end
-     end
-     if ALEPH_REGEXP.match(aleph_id)
-       render(partial: 'resources/aleph', locals: {:aleph_id => aleph_id})
-     end
-   end
-
- end
-
  # produce a CSV
  def csv_out
   # we'll get the stuff later, but for now, hard-setting file name
