@@ -1,8 +1,12 @@
 # sets up the AppConfig to conform to Harvard's needs
+AppConfig[:pui_hide][:subjects] = true
+AppConfig[:pui_hide][:agents] = true
 AppConfig[:pui_hide][:accessions] = true
 AppConfig[:pui_hide][:classifications] = true
 AppConfig[:pui_branding_img] = '/assets/hl_logo_alt.png'
 AppConfig[:pui_hide][:classification_badge] = true
+AppConfig[:pui_hide][:subject_badge] = true
+AppConfig[:pui_hide][:agent_badge] = true
 AppConfig[:pui_hide][:container_inventory]=true
 AppConfig[:pui_page_custom_actions] << {
    'record_type' => ['resource', 'archival_object', 'digital_object'], # the jsonmodel type to show for
