@@ -53,47 +53,7 @@ Pry::ColorPrinter.pp "Number REFs #{refs.length}"
 
  private
 
- def get_csv_details(ordered_recs)
-   lines = []
-   depth = 1
-   list = ordered_recs.map {|u| "#{u.fetch('ref')}#pui" }
-   res = archivesspace.search_records(list.slice(2,3), { 'page_size' => 2})
-   Pry::ColorPrinter.pp res
-   []
- end
 
- def get_csv_headers(levels = 2)
-   headers = []
-   %w{ref_id title date s_year e_year id type creator}.each do |k|
-     headers << I18n.t("csv.#{k}")
-   end
-   (1..3).each do |i|
-     headers << I18n.t('csv.container', :i => i)
-   end
-   (1..3).each do |i|
-     headers << I18n.t('csv.phys', :i => i)
-   end
-   %w{loc restrict urn}.each do |k|
-     headers << I18n.t("csv.#{k}")
-   end
-   (1..levels).each do |i|
-     headers << I18n.t('csv.parent', :i => i)
-   end
-   headers
- end
-
-
- def get_creator_string(agents)
-   creators = []
-   unless agents['creator'].blank?
-     agents['creator'].each do |agent|
-       unless agent['_resolved'].blank?
-         creators << agent['_resolved']['title'] || nil
-       end
-     end
-     creators.compact.join(", ")
-   end
- end
 
  def get_dates_string(in_dates)
    dates = []

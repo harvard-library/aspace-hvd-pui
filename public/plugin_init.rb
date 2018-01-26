@@ -9,9 +9,14 @@ AppConfig[:pui_hide][:subject_badge] = true
 AppConfig[:pui_hide][:agent_badge] = true
 AppConfig[:pui_hide][:container_inventory]=true
 AppConfig[:pui_page_custom_actions] << {
+   'record_type' => ['resource'],
+   'erb_partial' => 'shared/csv'
+   }
+AppConfig[:pui_page_custom_actions] << {
    'record_type' => ['resource', 'archival_object', 'digital_object'], # the jsonmodel type to show for
    'erb_partial' => 'shared/ask'
    }
+
 #AppConfig[:pui_email_enabled] = true
 
 AppConfig[:pui_request_email_fallback_to_address] = 'bobbi_fox@harvard.edu'

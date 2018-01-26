@@ -42,11 +42,12 @@ en:
     type: Component type
     creator: Component creator
     container: "Container %{i}"
-    phys: "Physical description %{i}"
+    phys: Physical description
     loc: Location Note
     restrict: Access Note
     urn: Digital content link
     parent: "Level %{i}"
+    download: Download CSV
 
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
