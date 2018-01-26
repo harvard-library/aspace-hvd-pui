@@ -7,7 +7,7 @@ module CsvSupport
    uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
    begin
      ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
-Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
+#Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
      depths = ordered_records.map { |u| u.fetch('depth')}
      levels = depths.uniq.sort.last.to_i
 #     Pry::ColorPrinter.pp "Levels: #{levels}"
@@ -61,14 +61,15 @@ Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
 #     Pry::ColorPrinter.pp res.records.length
      res.records.each_index do |i|
        result = res.records[i]
+# Pry::ColorPrinter.pp result if i == 1
        level = ordered_recs[start + i]['depth']
        @levels[level] =  result.json['title']
        @levels.fill('', (level+1)..(@levels.length - 1))
        line = []
        line << result.json['ref_id']
-       line << result.json['title']
+       line << strip_mixed_content(result.json['title']) || ''
        line.concat(get_date_subset(result.json))
-       line << result.json['component_id'] || ''
+       line << result.identifier || ''
        line << result.json['level'] ||''
        line << get_creator_string(result.agents)
        line << get_digital_urn(result.json)
@@ -95,7 +96,7 @@ Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
      note = notes['accessrestrict'] || {}
      access = note['note_text'] || '' if note['is_inherited'] == nil
    end
-   access  
+   strip_mixed_content(access)
  end
 
  def get_creator_string(agents)
@@ -106,7 +107,7 @@ Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
          creators << agent['_resolved']['title'] || nil
        end
      end
-     creators.compact.join(", ")
+     strip_mixed_content(creators.compact.join(", "))
    end
  end
 
