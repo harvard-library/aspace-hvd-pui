@@ -112,6 +112,17 @@ module CsvSupport
  end
 
 
+ def get_dates_string(in_dates)
+   dates = []
+   unless in_dates.blank?
+     in_dates.each do |date|
+         dates << date['final_expression'] if date['_inherited'].blank?
+     end
+   end
+   dates.compact.join(", ")
+ end
+
+
  def get_date_subset(json)
    exp = []
    beg = []

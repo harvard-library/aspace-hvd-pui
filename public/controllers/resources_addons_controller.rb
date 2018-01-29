@@ -53,18 +53,6 @@ Pry::ColorPrinter.pp "Number REFs #{refs.length}"
 
  private
 
-
-
- def get_dates_string(in_dates)
-   dates = []
-   unless in_dates.blank?
-     in_dates.each do |date|
-         dates << date['final_expression'] if date['_inherited'].blank?
-     end
-   end
-   dates.compact.join(", ")
- end
-
  
  def get_sorted_arch_digital_objects(records, refs)
    results = []
