@@ -47,7 +47,8 @@ en:
     restrict: Access Note
     urn: Digital content link
     parent: "Level %{i}"
-    download: Download CSV
+    download_title: Download CSV
+    download: CSV
 
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
