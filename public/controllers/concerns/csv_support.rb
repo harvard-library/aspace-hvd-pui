@@ -63,7 +63,7 @@ module CsvSupport
        result = res.records[i]
 # Pry::ColorPrinter.pp result if i == 1
        level = ordered_recs[start + i]['depth']
-       @levels[level] =  result.json['title']
+       @levels[level] =  strip_mixed_content(result.json['title'])
        @levels.fill('', (level+1)..(@levels.length - 1))
        line = []
        line << result.json['ref_id']
