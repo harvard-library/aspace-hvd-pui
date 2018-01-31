@@ -1,0 +1,34 @@
+<div class="toc-page">
+<a id="toc"></a>
+    <h2><%= I18n.t('pdf_reports.table_of_contents') %></h2>
+
+    <ul class="toc">
+        <li class="level-1"><a href="#summary-information"><%= I18n.t('pdf_reports.summary_information') %></a></li>
+
+        <% resource.notes.each do |note_type, note| %>
+            <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial).include?(note_type) %>
+            <li class="level-1">
+                <a href="#note-<%= note_type %>">
+                    <% if note['label'] %>
+                        <%= note['label'].titlecase %>
+                    <% else %>
+                        <%= I18n.t("enumerations._note_types.#{note_type}") %>
+                    <% end %>
+                </a>
+            </li>
+        <% end %>
+
+        <li class="level-1"><a href="#administrative-information"><%= I18n.t('pdf_reports.administrative_information') %></a></li>
+
+        <% if has_children %>
+            <li class="level-1"><a href="#collection-inventory"><%= I18n.t('pdf_reports.collection_inventory') %></a></li>
+        <% end %>
+<% Pry::ColorPrinter.pp "size of ordered aos: #{ordered_aos.length}" %>
+        <% ordered_aos.each do |entry| %>
+            <li class="level-<%= entry.depth + 1 %>"><a href="#<%= entry.uri %>"><%== process_mixed_content(entry.display_string) %></a></li>
+        <% end %>
+	<% unless resource.subjects.blank? %>
+	  <li class="level-1"><a href="#subjects"><%= I18n.t('pdf_reports.controlled_access_headings') %></a></li>
+	<% end %>
+    </ul>
+</div>
