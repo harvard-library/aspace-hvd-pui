@@ -32,17 +32,17 @@ module CsvSupport
     lines = []
     lines << [I18n.t('csv.resource_title'),strip_mixed_content(result.display_string)]
     lines << [I18n.t('csv.resource_dates'), get_dates_string(result.dates)]
-    lines << [I18n.t('csv.resource_creator'), get_creator_string(result.agents)]
+    lines << [I18n.t('csv.resource_creator'), get_creator_string(result.agents)] unless get_creator_string(result.agents).blank?
     lines << [I18n.t('csv.resource_ref_id'), result.identifier]
     lines << [I18n.t('csv.ead_id'), result.ead_id]
-    lines << [I18n.t('csv.restrict'), get_access_note(result.notes)]
+    lines << [I18n.t('csv.restrict'), get_access_note(result.notes)] unless get_access_note(result.notes).blank?
     lines << []
     lines
   end
 
  def get_objects_header(levels = 2)
    head = []
-   %w{ref_id title date s_year e_year id type creator urn restrict phys}.each do |k|
+   %w{ref_id title date s_year e_year id container type creator urn restrict phys}.each do |k|
      head << I18n.t("csv.#{k}")
    end
    (1..(levels - 1)).each do |i|
@@ -70,6 +70,7 @@ module CsvSupport
        line << strip_mixed_content(result.json['title']) || ''
        line.concat(get_date_subset(result.json))
        line << result.identifier || ''
+       line << result.container_summary_for_badge || ''
        line << result.json['level'] ||''
        line << get_creator_string(result.agents)
        line << get_digital_urn(result.json)

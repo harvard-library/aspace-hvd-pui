@@ -41,7 +41,7 @@ en:
     id: Component identifier
     type: Component type
     creator: Component creator
-    container: "Container %{i}"
+    container: Container info
     phys: Physical description
     loc: Location Note
     restrict: Access Note
