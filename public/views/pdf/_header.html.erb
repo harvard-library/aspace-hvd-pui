@@ -3,6 +3,11 @@
         <meta charset="utf-8" />
 
         <style>
+ html {
+   font-family: sans-serif;
+   font-size: 12px;
+}
+
  .title-page {
      page-break-after: always;
      position: relative;
@@ -15,6 +20,11 @@
 
  .logo {
      display: inline-block;
+     width: 75px;
+     height: 85px;
+     background-image: url('http://nrs.harvard.edu/urn-3:hul.ois:hu_archive_shield');
+    background-color: #FFFFFF;
+    color: #FFFFFF;
  }
 
  ul.toc {
@@ -27,6 +37,7 @@
      color: #14A6DC;
  }
 
+ .toc li {padding-bottom: 0.5em; }
  .toc .level-1 { padding-left: 1em; }
  .toc .level-2 { padding-left: 2em; }
  .toc .level-3 { padding-left: 3em; }
@@ -50,14 +61,16 @@
 
  h3 {
      margin-top: 1em;
-     font-size: 1.2em;
+     font-size: 1em;
  }
 
  .print-record-border h3 {
     margin-top: .75em;
-    font-weight: normal;
+    font-weight: bold;
  }
-
+ 
+ .indented { margin-left: 1em; }
+ .indented h4 {font-weight: bold; font-size: 0.8em; }
  dl {
      overflow: hidden;
  }
@@ -66,6 +79,8 @@
  dt { clear: both; font-weight: bold; width: 20%; text-align: right; margin-right: 1em; }
  dd { width: 70%; }
  dt:after { content: ':'; white-space: pre; }
+
+ .arch .dt {text-align: left;}
 
  .title-block {
      border-bottom: solid 2px black;
@@ -101,7 +116,7 @@
      padding-bottom: 0.25em;
      border-top: solid 2px #333;
      border-bottom: dotted 1px #333;
-     font-size: 1.5em;
+     font-size: 1.2em;
  }
 
  ul.toc a::after {
@@ -124,15 +139,18 @@
      page-break-inside: avoid;
  }
 
+ .pbrb {
+   page-break-before: always;
+}
  .print-record {
      margin-bottom: 1em;
-/*     border-top: solid 1px #dedede; */
+    border-top: solid 1px #dedede;
  }
 
  .print-record-border.print-record.level-1 { padding-top: 0; margin-top: 1em; }
 
  .print-record-border.level-1 { margin-left: 1em; }
- .print-record-border.level-2 { margin-left: 1em }
+/* .print-record-border.level-2 { margin-left: 1em }
  .print-record-border.level-3 { margin-left: 1em; }
  .print-record-border.level-4 { margin-left: 1em; }
  .print-record-border.level-5 { margin-left: 1em; }
@@ -140,7 +158,7 @@
  .print-record-border.level-7 { margin-left: 1em; }
  .print-record-border.level-8 { margin-left: 1em; }
  .print-record-border.level-9 { margin-left: 1em; }
- .print-record-border.level-10 { margin-left: 1em; }
+ .print-record-border.level-10 { margin-left: 1em; } */
 
  .print-record h3 {
      margin: 0;

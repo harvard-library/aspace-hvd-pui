@@ -75,10 +75,13 @@ class HvdPDF
       uri_set = entry_set.map(&:uri).map {|s| s + "#pui"}
       record_set = archivesspace.search_records(uri_set, {}, true).records
 
+      previous_level = 1
       record_set.zip(entry_set).each do |record, entry|
         next unless record.is_a?(ArchivalObject)
+        dls = {}
 
-        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth})
+        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level})
+        previous_level = entry.depth
       end
     end
 
@@ -93,7 +96,8 @@ class HvdPDF
     out_html = source_file
 
     XMLCleaner.new.clean(out_html.path)
-
+Pry::ColorPrinter.pp out_html.path
+Pry::ColorPrinter.pp x
     pdf_file = Tempfile.new
     pdf_file.close
 

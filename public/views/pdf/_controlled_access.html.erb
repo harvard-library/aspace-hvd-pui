@@ -1,4 +1,6 @@
+
 <% unless record.subjects.blank? %>
+<div class='pbrb'>
 <a id="subjects"></a>
 <h2><%= I18n.t('pdf_reports.controlled_access_headings') %></h2>
 
@@ -7,4 +9,6 @@
     <li><%= subject['title'] %></li>
 <% end %>
 </ul>
+</div>
+<%= render(:partial => 'return_toc') %>
 <% end %>

@@ -12,7 +12,11 @@
              <h5><%= subnote['_title'] %></h5>
            <% elsif subnote['_inline_label'] %>
 	      <% if  subnote['_inline_label'] == "Aleph ID" %>
-	          <span class="note-content"><%= t('enumerations.aleph_link',:id=>subnote['_text']).html_safe %></span>
+	          <% if defined?(pdf) && pdf %>
+		    <span class="note-content"><%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %></span>
+		  <% else %>
+	            <span class="note-content"><%= t('enumerations.aleph_link',:id=>subnote['_text']).html_safe %></span>
+		  <% end %>
 	      <% else %>
                 <span class='inline-label'><%= subnote['_inline_label'] %></span>
               <% end %>
@@ -28,7 +32,11 @@
        <div class="note-content">
 <!--  <% Pry::ColorPrinter.pp "In 'else' of single note" %> -->
 	 <% if type == 'processinfo' && note_struct['label'] ==  'Aleph ID' %>
+	   <% if defined?(pdf) && pdf %>
+	     <%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %>
+	   <% else %>
 	    <%= t('enumerations.aleph_link',:id=> note_struct['note_text']).html_safe %>
+           <% end %>
          <% else %>
            <%= note_struct['note_text'].html_safe %>
 	 <% end %>

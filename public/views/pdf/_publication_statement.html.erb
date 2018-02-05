@@ -15,6 +15,12 @@
     <% if repository_information['email'] %>
         <div class="repository-email"><a href="mailto:<%= repository_information['email'] %>"><%= repository_information['email'] %></a></div>
     <% end %>
+    <% if repository_information['top']['url'] %>
+        <div class="repository-url">
+            <a href="<%= repository_information['top']['url'] %>"><%= repository_information['top']['url'] %></a>
+        </div>
+    <% end %>
+
     <% unless repository_information['telephones'].blank? %>
     <div class="repository-telephone">
       <% repository_information['telephones'].each do |phone| %>
