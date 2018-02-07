@@ -7,15 +7,7 @@
 
         <% resource.notes.each do |note_type, note| %>
             <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial prefercite).include?(note_type) %>
-            <li class="level-1">
-                <a href="#note-<%= note_type %>">
-                    <% if note['label'] %>
-                        <%= note['label'].titlecase %>
-                    <% else %>
-                        <%= I18n.t("enumerations._note_types.#{note_type}") %>
-                    <% end %>
-                </a>
-            </li>
+            <li class="level-1"> <a href="#note-<%= note_type %>"><% if note['label'] %><%= note['label'].titlecase %><% else %><%= I18n.t("enumerations._note_types.#{note_type}") %> <% end %></a></li>
         <% end %>
 
 

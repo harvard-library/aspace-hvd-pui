@@ -164,10 +164,12 @@
      margin: 0;
  }
 
+<% unless ordered_aos.blank? %>
  .print-record-border.level-1 > h3 {
     background-color: #707070;
     font-size: 1.2em;
 }
+<% end %>
 <% if bottom.to_i > 2 %>
    .print-record-border.level-2 > h3 {
    background-color: #999999;

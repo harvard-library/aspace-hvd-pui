@@ -46,11 +46,6 @@ class HvdPDF
     # .length == 1 would be just the resource itself.
     has_children = @ordered_records.entries.length > 1
 
-    out_html = Tempfile.new
-    out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level})
-
-    out_html.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
-
     # Drop the resource and filter the AOs
     toc_aos = @ordered_records.entries.drop(1).select {|entry|
       if entry.depth == 1
@@ -61,6 +56,11 @@ class HvdPDF
         false
       end
     }
+    out_html = Tempfile.new
+    out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
+
+    out_html.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
+
 
     out_html.write(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos})
 
@@ -130,7 +130,7 @@ class HvdPDF
     out_html = source_file
     XMLCleaner.new.clean(out_html.path)
 
-Pry::ColorPrinter.pp x
+#Pry::ColorPrinter.pp x
     
     pdf_file = Tempfile.new
     pdf_file.close
