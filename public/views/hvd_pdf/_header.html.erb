@@ -11,7 +11,7 @@
  .title-page {
      page-break-after: always;
      position: relative;
-     height: 58em;
+     height: 60em;
  }
 
  .toc-page {
@@ -22,7 +22,7 @@
      display: inline-block;
      width: 75px;
      height: 85px;
-     background-image: url('http://nrs.harvard.edu/urn-3:hul.ois:hu_archive_shield');
+     background-image: url(http://nrs.harvard.edu/urn-3:hul.ois:hu_archive_shield);
     background-color: #FFFFFF;
     color: #FFFFFF;
  }
@@ -70,7 +70,7 @@
  }
  
  .indented { margin-left: 1em; }
- .indented h4 {font-weight: bold; font-size: 0.8em; }
+ .indented h4 {font-weight: bold; font-size: 0.9em; }
  dl {
      overflow: hidden;
  }
@@ -95,7 +95,7 @@
      bottom: 0;
      border: solid 2px gray;
       width: 95%;
-     padding: 1em;
+     padding: 1em 1em 0 1em;
 
  }
 
@@ -151,10 +151,10 @@
 
  .print-record-border.level-1 { margin-left: 1em; }
 /* .print-record-border.level-2 { margin-left: 1em }
- .print-record-border.level-3 { margin-left: 1em; }
- .print-record-border.level-4 { margin-left: 1em; }
- .print-record-border.level-5 { margin-left: 1em; }
- .print-record-border.level-6 { margin-left: 1em; }
+ .print-record-border.level-3 { margin-left: 1em; }  
+ .print-record-border.level-4 { margin-left: .25em; }
+ .print-record-border.level-5 { margin-left: .25em; }
+ .print-record-border.level-6 { margin-left: .25em; }
  .print-record-border.level-7 { margin-left: 1em; }
  .print-record-border.level-8 { margin-left: 1em; }
  .print-record-border.level-9 { margin-left: 1em; }
@@ -163,6 +163,29 @@
  .print-record h3 {
      margin: 0;
  }
+
+ .print-record-border.level-1 > h3 {
+    background-color: #707070;
+    font-size: 1.2em;
+}
+<% if bottom.to_i > 2 %>
+   .print-record-border.level-2 > h3 {
+   background-color: #999999;
+}
+<% end %>
+
+<% if bottom.to_i > 3 %>
+   .print-record-border.level-3 > h3 {
+   background-color: #cccccc;
+}
+<% end %>
+<% if bottom.to_i > 4 %>
+   .print-record-border.level-4 > h3 {
+   background-color: #ededed;
+}
+<% end %>
+
+
 
  .print-record h4 {
      margin: 0.25em 0 0.25em 0;
@@ -193,6 +216,10 @@
 .enumeration- ol {
   list-style: disc;
 }
+
+.ret_toc { padding-top: 1em; padding-bottom: 1em;}
+
+.ret_toc a{ color: black; text-decoration: underline; }
 
  <%# Don't show headers/footers on the titlepage %>
  @page :first {

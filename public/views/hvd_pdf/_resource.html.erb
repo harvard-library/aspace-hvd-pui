@@ -51,7 +51,7 @@
 
 <% record.notes.each do |note_type, note| %>
     <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial physdesc  prefercite).include?(note_type) %>
-<% Pry::ColorPrinter.pp "type: #{note_type}" %>
+<% Pry::ColorPrinter.pp note if note_type == 'arrangement' %>
     <a id="note-<%= note_type %>"></a>
     <h2>
         <% if note['label'] %>

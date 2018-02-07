@@ -6,7 +6,7 @@
         <li class="level-1"><a href="#summary-information"><%= I18n.t('pdf_reports.summary_information') %></a></li>
 
         <% resource.notes.each do |note_type, note| %>
-            <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial).include?(note_type) %>
+            <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial prefercite).include?(note_type) %>
             <li class="level-1">
                 <a href="#note-<%= note_type %>">
                     <% if note['label'] %>
@@ -22,7 +22,6 @@
         <% if has_children %>
             <li class="level-1"><a href="#collection-inventory"><%= I18n.t('pdf_reports.collection_inventory') %></a></li>
         <% end %>
-<% Pry::ColorPrinter.pp "size of ordered aos: #{ordered_aos.length}" %>
         <% ordered_aos.each do |entry| %>
             <li class="level-<%= entry.depth + 1 %>"><a href="#<%= entry.uri %>"><%== process_mixed_content(entry.display_string) %></a></li>
         <% end %>

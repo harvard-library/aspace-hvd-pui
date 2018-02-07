@@ -37,7 +37,8 @@ class HvdPDF
   def source_file
     # We'll use the original controller so we can find and render the PDF
     # partials, but just for its ERB rendering.
-    renderer = PdfController.new
+#    renderer = PdfController.new
+     renderer = HvdPdfController.new
     start_time = Time.now
 
     @repo_code = @resource.repository_information.fetch('top').fetch('repo_code')
@@ -46,7 +47,7 @@ class HvdPDF
     has_children = @ordered_records.entries.length > 1
 
     out_html = Tempfile.new
-    out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource})
+    out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level})
 
     out_html.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
 
@@ -67,6 +68,8 @@ class HvdPDF
 
     page_size = 50
 
+    previous_level = 1
+    
     @ordered_records.entries.drop(1).each_slice(page_size) do |entry_set|
       if AppConfig[:pui_pdf_timeout] && AppConfig[:pui_pdf_timeout] > 0 && (Time.now.to_i - start_time.to_i) >= AppConfig[:pui_pdf_timeout]
         raise TimeoutError.new("PDF generation timed out.  Sorry!")
@@ -75,12 +78,43 @@ class HvdPDF
       uri_set = entry_set.map(&:uri).map {|s| s + "#pui"}
       record_set = archivesspace.search_records(uri_set, {}, true).records
 
-      previous_level = 1
       record_set.zip(entry_set).each do |record, entry|
         next unless record.is_a?(ArchivalObject)
         dls = {}
+        format_container = lambda do |type, indicator|
+          if type
+            type = type.capitalize
+          end
+          [type, indicator].compact.join(' ')
+        end
+        container_string = ''
+        urn = ''
+        Array(record.instances).each do |instance|
+          if instance['sub_container']
+             container_string = [
+                                 format_container.call(instance['sub_container']['top_container']['_resolved']['type'],
+                                                       instance['sub_container']['top_container']['_resolved']['indicator']),
+                                 format_container.call(instance['sub_container']['type_2'],
+                                                       instance['sub_container']['indicator_2']),
+                                 format_container.call(instance['sub_container']['type_3'],
+                                                       instance['sub_container']['indicator_3'])
+                                ].reject(&:empty?).join('; ')
+            unless container_string.empty?
+              if instance['instance_type']
+                instance_type = I18n.t("enumerations.instance_instance_type.#{instance['instance_type']}",:default => instance['instance_type'])
+                container_string << " (#{instance_type})" if !instance_type.blank?
+              end
+            end
+          else
+            file_vers = instance.dig('digital_object', '_resolved', 'file_versions') || []
+            file_vers.each do |ver |
+              urn = ver['file_uri'] if ver['xlink_actuate_attribute'] == 'onRequest'
+              break if !urn.blank?
+            end
+          end
+        end
 
-        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level})
+        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         previous_level = entry.depth
       end
     end
@@ -94,10 +128,10 @@ class HvdPDF
 
   def generate
     out_html = source_file
-
     XMLCleaner.new.clean(out_html.path)
-Pry::ColorPrinter.pp out_html.path
+
 Pry::ColorPrinter.pp x
+    
     pdf_file = Tempfile.new
     pdf_file.close
 

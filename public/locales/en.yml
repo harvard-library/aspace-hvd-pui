@@ -108,3 +108,5 @@ en:
       unspecified: Item
       untitled: Untitled
     aleph_link: "<a target='_blank' href='http://id.lib.harvard.edu/aleph/%{id}/catalog'>Link to catalog</a>"
+    _note_types:
+      odd: General note
