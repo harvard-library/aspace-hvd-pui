@@ -53,18 +53,17 @@
     <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial physdesc  prefercite).include?(note_type) %>
 <% Pry::ColorPrinter.pp note if note_type == 'arrangement' %>
     <a id="note-<%= note_type %>"></a>
-    <h2>
-        <% if note['label'] %>
+    <h2><% if note['label'] %>
             <%= note['label'].titlecase %>
         <% else %>
             <%= I18n.t("enumerations._note_types.#{note_type}") %>
-        <% end %>
-    </h2>
+        <% end %> </h2>
     <%= render partial: 'shared/single_note', locals: {:type => note_type, :note_struct => note, :notitle => true}   %>
 
+<%= render(:partial => 'return_toc') %>
 <% end %>
 
-<%= render(:partial => 'return_toc') %>
+
 
 <div class="collection-inventory pbrb">
 <% if has_children %>
