@@ -54,6 +54,7 @@ en:
   pdf_reports:
     return: Return to Table of Contents
     aleph: Library Catalog ID
+    table_of_contents: Table of Contents
 
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
