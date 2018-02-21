@@ -119,7 +119,7 @@ class HvdPDF
       end
     end
 
-    out_html.write(renderer.render_to_string partial: 'controlled_access', layout: false,  :locals => {:record => @resource})
+    out_html.write(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource})
     out_html.write(renderer.render_to_string partial: 'footer', layout: false)
     out_html.close
 
@@ -130,7 +130,7 @@ class HvdPDF
     out_html = source_file
     XMLCleaner.new.clean(out_html.path)
 
-#Pry::ColorPrinter.pp x
+#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
     
     pdf_file = Tempfile.new
     pdf_file.close
@@ -147,7 +147,7 @@ class HvdPDF
     renderer.create_pdf(pdf_output_stream)
     pdf_output_stream.close
 
-    out_html.unlink
+   out_html.unlink
 
     pdf_file
   end
