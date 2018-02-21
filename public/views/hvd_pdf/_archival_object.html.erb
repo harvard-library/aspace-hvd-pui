@@ -32,7 +32,7 @@
           <% end %>
 	</dl>
 	<% unless urn.blank? %>
-	    <div><a href='<%= urn %>'><%= urn %></a></div>
+	    <div><a href='<%= urn %>' target='frmpdf'><%= urn %></a></div>
 	<% end %>
 
         <% record.notes.each do |note_type, note| %>
