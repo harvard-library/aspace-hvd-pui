@@ -48,10 +48,9 @@
         :instances => record.instances
     }) %>
 </dl>
-
+<%= render(:partial => 'return_toc') %>
 <% record.notes.each do |note_type, note| %>
     <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial physdesc  prefercite).include?(note_type) %>
-<% Pry::ColorPrinter.pp note if note_type == 'arrangement' %>
     <a id="note-<%= note_type %>"></a>
     <h2><% if note['label'] %>
             <%= note['label'].titlecase %>
@@ -60,7 +59,7 @@
         <% end %> </h2>
     <%= render partial: 'shared/single_note', locals: {:type => note_type, :note_struct => note, :notitle => true}   %>
 
-<%= render(:partial => 'return_toc') %>
+    <%= render(:partial => 'return_toc') %>
 <% end %>
 
 
