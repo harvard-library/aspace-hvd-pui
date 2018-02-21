@@ -26,7 +26,7 @@
        <% ctr = ctr + 1 %>
      <% end %>
 <% else %>
-     <% if type == 'processinfo' && note['label'] ==  'Aleph ID' %>
+     <% if note_type == 'processinfo' && note['label'] ==  'Aleph ID' %>
             <%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %>
      <% else %>
             <%= note['note_text'].html_safe %>
