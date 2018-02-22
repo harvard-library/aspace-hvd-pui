@@ -99,12 +99,12 @@ class HvdPDF
                                  format_container.call(instance['sub_container']['type_3'],
                                                        instance['sub_container']['indicator_3'])
                                 ].reject(&:empty?).join('; ')
-            unless container_string.empty?
-              if instance['instance_type']
-                instance_type = I18n.t("enumerations.instance_instance_type.#{instance['instance_type']}",:default => instance['instance_type'])
-                container_string << " (#{instance_type})" if !instance_type.blank?
-              end
-            end
+#            unless container_string.empty?
+#              if instance['instance_type']
+#                instance_type = I18n.t("enumerations.instance_instance_type.#{instance['instance_type']}",:default => instance['instance_type'])
+#                container_string << " (#{instance_type})" if !instance_type.blank?
+#             end
+#            end
           else
             file_vers = instance.dig('digital_object', '_resolved', 'file_versions') || []
             file_vers.each do |ver |
