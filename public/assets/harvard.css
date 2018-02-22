@@ -55,6 +55,14 @@ input, button, select {
 span.title {
   font-style: normal;
 }
+h1 > span.title {
+  font-style: italic;
+  font-variant: normal;
+}
+.record-title > span.title  {
+  font-style: italic;
+  font-variant: normal;
+}
 
 
 /* sizing */
