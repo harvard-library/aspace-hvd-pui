@@ -8,11 +8,8 @@
     <div class="print-record-border print-record level-<%= level %> <%= record.level %>">
         <h3><a class="record-title" id="<%= record.uri %>"><%= record.display_string.html_safe %></a></h3>
 	<% id = (record.direct_component_id.blank?)? '' : record.direct_component_id
-	   if id.blank? && container_string.blank?
-	      id = record.identifier
-	   else
-	      id << " #{container_string}"
-          end %>
+	   id << " #{container_string}"
+         %>
         <div class="indented">
 	<% unless id.blank? %>
 	  <div><span class='label'><%= t('resource._public.finding_aid.identifier') %></span> <%= id %></div>
