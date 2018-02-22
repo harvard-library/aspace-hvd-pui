@@ -5,7 +5,7 @@
 <% end %>
 
   <div class="avoid-break">
-    <div class="print-record-border print-record level-<%= level %>">
+    <div class="print-record-border print-record level-<%= level %> <%= record.level %>">
         <h3><a class="record-title" id="<%= record.uri %>"><%= record.display_string.html_safe %></a></h3>
 	<% id = (record.direct_component_id.blank?)? '' : record.direct_component_id
 	   if id.blank? && container_string.blank?
