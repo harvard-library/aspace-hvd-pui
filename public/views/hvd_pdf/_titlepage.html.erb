@@ -1,18 +1,15 @@
 <div class="title-page">
-<% Pry::ColorPrinter.pp record.resolved_repository['image_url'] %>
 
     <div class="logo">[logo]  </div>
     <div class="title-block">
         <h1 class="title"><%= record.identifier %></h1>
-        <h1 class="title"><%= record.display_string %></h1>
-	<% dates = []
-	   record.dates.each do |date|
-	     dates << date['final_expression']
-           end %>
-        <h2 class="subtitle"><%= dates.join("; ") %></h2>
+	<%
+	   short_title = record.finding_aid.fetch('title',  record.display_string)
+	   short_title = short_title.gsub(/\n.*/, ' ').strip
+        %>
+        <h1 class="title"><%= short_title %></h1>
     </div>
 
-    <p><%= I18n.t('pdf_reports.finding_aid_date_prefix') %> <%= Date.today %></p>
 
 
     <%= render(:partial => 'publication_statement', :locals => {
