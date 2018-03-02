@@ -1727,14 +1727,14 @@ th {
 /* line 22, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_scaffolding.scss */
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* line 27, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_scaffolding.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #333333;
   background-color: #fff;
 }
@@ -1790,7 +1790,7 @@ img {
 /* line 93, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_scaffolding.scss */
 .img-thumbnail {
   padding: 4px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -2181,7 +2181,7 @@ dl {
 /* line 189, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_type.scss */
 dt,
 dd {
-  line-height: 1.42857143;
+  line-height: 1.428571429;
 }
 
 /* line 193, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_type.scss */
@@ -2251,7 +2251,7 @@ blockquote small,
 blockquote .small {
   display: block;
   font-size: 80%;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #777777;
 }
 /* line 265, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_type.scss */
@@ -2293,7 +2293,7 @@ blockquote.pull-right .small:after {
 address {
   margin-bottom: 20px;
   font-style: normal;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
 }
 
 /* line 7, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_code.scss */
@@ -2336,7 +2336,7 @@ pre {
   padding: 9.5px;
   margin: 0 0 10px;
   font-size: 13px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   word-break: break-all;
   word-wrap: break-word;
   color: #333333;
@@ -2442,12 +2442,12 @@ pre code {
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-1 {
-  width: 8.33333333%;
+  width: 8.3333333333%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-2 {
-  width: 16.66666667%;
+  width: 16.6666666667%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2457,12 +2457,12 @@ pre code {
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-4 {
-  width: 33.33333333%;
+  width: 33.3333333333%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-5 {
-  width: 41.66666667%;
+  width: 41.6666666667%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2472,12 +2472,12 @@ pre code {
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-7 {
-  width: 58.33333333%;
+  width: 58.3333333333%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-8 {
-  width: 66.66666667%;
+  width: 66.6666666667%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2487,12 +2487,12 @@ pre code {
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-10 {
-  width: 83.33333333%;
+  width: 83.3333333333%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-11 {
-  width: 91.66666667%;
+  width: 91.6666666667%;
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2507,12 +2507,12 @@ pre code {
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-1 {
-  right: 8.33333333%;
+  right: 8.3333333333%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-2 {
-  right: 16.66666667%;
+  right: 16.6666666667%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2522,12 +2522,12 @@ pre code {
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-4 {
-  right: 33.33333333%;
+  right: 33.3333333333%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-5 {
-  right: 41.66666667%;
+  right: 41.6666666667%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2537,12 +2537,12 @@ pre code {
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-7 {
-  right: 58.33333333%;
+  right: 58.3333333333%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-8 {
-  right: 66.66666667%;
+  right: 66.6666666667%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2552,12 +2552,12 @@ pre code {
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-10 {
-  right: 83.33333333%;
+  right: 83.3333333333%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-pull-11 {
-  right: 91.66666667%;
+  right: 91.6666666667%;
 }
 
 /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2572,12 +2572,12 @@ pre code {
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-1 {
-  left: 8.33333333%;
+  left: 8.3333333333%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-2 {
-  left: 16.66666667%;
+  left: 16.6666666667%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2587,12 +2587,12 @@ pre code {
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-4 {
-  left: 33.33333333%;
+  left: 33.3333333333%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-5 {
-  left: 41.66666667%;
+  left: 41.6666666667%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2602,12 +2602,12 @@ pre code {
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-7 {
-  left: 58.33333333%;
+  left: 58.3333333333%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-8 {
-  left: 66.66666667%;
+  left: 66.6666666667%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2617,12 +2617,12 @@ pre code {
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-10 {
-  left: 83.33333333%;
+  left: 83.3333333333%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-push-11 {
-  left: 91.66666667%;
+  left: 91.6666666667%;
 }
 
 /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2637,12 +2637,12 @@ pre code {
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-1 {
-  margin-left: 8.33333333%;
+  margin-left: 8.3333333333%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-2 {
-  margin-left: 16.66666667%;
+  margin-left: 16.6666666667%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2652,12 +2652,12 @@ pre code {
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-4 {
-  margin-left: 33.33333333%;
+  margin-left: 33.3333333333%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-5 {
-  margin-left: 41.66666667%;
+  margin-left: 41.6666666667%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2667,12 +2667,12 @@ pre code {
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-7 {
-  margin-left: 58.33333333%;
+  margin-left: 58.3333333333%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-8 {
-  margin-left: 66.66666667%;
+  margin-left: 66.6666666667%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2682,12 +2682,12 @@ pre code {
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-10 {
-  margin-left: 83.33333333%;
+  margin-left: 83.3333333333%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
 .col-xs-offset-11 {
-  margin-left: 91.66666667%;
+  margin-left: 91.6666666667%;
 }
 
 /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2703,12 +2703,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-1 {
-    width: 8.33333333%;
+    width: 8.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-2 {
-    width: 16.66666667%;
+    width: 16.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2718,12 +2718,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-4 {
-    width: 33.33333333%;
+    width: 33.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-5 {
-    width: 41.66666667%;
+    width: 41.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2733,12 +2733,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-7 {
-    width: 58.33333333%;
+    width: 58.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-8 {
-    width: 66.66666667%;
+    width: 66.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2748,12 +2748,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-10 {
-    width: 83.33333333%;
+    width: 83.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-11 {
-    width: 91.66666667%;
+    width: 91.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2768,12 +2768,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-1 {
-    right: 8.33333333%;
+    right: 8.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-2 {
-    right: 16.66666667%;
+    right: 16.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2783,12 +2783,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-4 {
-    right: 33.33333333%;
+    right: 33.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-5 {
-    right: 41.66666667%;
+    right: 41.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2798,12 +2798,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-7 {
-    right: 58.33333333%;
+    right: 58.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-8 {
-    right: 66.66666667%;
+    right: 66.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2813,12 +2813,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-10 {
-    right: 83.33333333%;
+    right: 83.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-pull-11 {
-    right: 91.66666667%;
+    right: 91.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2833,12 +2833,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-1 {
-    left: 8.33333333%;
+    left: 8.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-2 {
-    left: 16.66666667%;
+    left: 16.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2848,12 +2848,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-4 {
-    left: 33.33333333%;
+    left: 33.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-5 {
-    left: 41.66666667%;
+    left: 41.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2863,12 +2863,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-7 {
-    left: 58.33333333%;
+    left: 58.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-8 {
-    left: 66.66666667%;
+    left: 66.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2878,12 +2878,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-10 {
-    left: 83.33333333%;
+    left: 83.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-push-11 {
-    left: 91.66666667%;
+    left: 91.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2898,12 +2898,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2913,12 +2913,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-4 {
-    margin-left: 33.33333333%;
+    margin-left: 33.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2928,12 +2928,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2943,12 +2943,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2964,12 +2964,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-1 {
-    width: 8.33333333%;
+    width: 8.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-2 {
-    width: 16.66666667%;
+    width: 16.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2979,12 +2979,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-4 {
-    width: 33.33333333%;
+    width: 33.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-5 {
-    width: 41.66666667%;
+    width: 41.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2994,12 +2994,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-7 {
-    width: 58.33333333%;
+    width: 58.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-8 {
-    width: 66.66666667%;
+    width: 66.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3009,12 +3009,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-10 {
-    width: 83.33333333%;
+    width: 83.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-11 {
-    width: 91.66666667%;
+    width: 91.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3029,12 +3029,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-1 {
-    right: 8.33333333%;
+    right: 8.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-2 {
-    right: 16.66666667%;
+    right: 16.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3044,12 +3044,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-4 {
-    right: 33.33333333%;
+    right: 33.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-5 {
-    right: 41.66666667%;
+    right: 41.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3059,12 +3059,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-7 {
-    right: 58.33333333%;
+    right: 58.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-8 {
-    right: 66.66666667%;
+    right: 66.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3074,12 +3074,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-10 {
-    right: 83.33333333%;
+    right: 83.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-pull-11 {
-    right: 91.66666667%;
+    right: 91.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3094,12 +3094,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-1 {
-    left: 8.33333333%;
+    left: 8.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-2 {
-    left: 16.66666667%;
+    left: 16.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3109,12 +3109,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-4 {
-    left: 33.33333333%;
+    left: 33.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-5 {
-    left: 41.66666667%;
+    left: 41.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3124,12 +3124,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-7 {
-    left: 58.33333333%;
+    left: 58.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-8 {
-    left: 66.66666667%;
+    left: 66.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3139,12 +3139,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-10 {
-    left: 83.33333333%;
+    left: 83.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-push-11 {
-    left: 91.66666667%;
+    left: 91.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3159,12 +3159,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3174,12 +3174,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-4 {
-    margin-left: 33.33333333%;
+    margin-left: 33.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3189,12 +3189,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3204,12 +3204,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3225,12 +3225,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-1 {
-    width: 8.33333333%;
+    width: 8.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-2 {
-    width: 16.66666667%;
+    width: 16.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3240,12 +3240,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-4 {
-    width: 33.33333333%;
+    width: 33.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-5 {
-    width: 41.66666667%;
+    width: 41.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3255,12 +3255,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-7 {
-    width: 58.33333333%;
+    width: 58.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-8 {
-    width: 66.66666667%;
+    width: 66.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3270,12 +3270,12 @@ pre code {
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-10 {
-    width: 83.33333333%;
+    width: 83.3333333333%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-11 {
-    width: 91.66666667%;
+    width: 91.6666666667%;
   }
 
   /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3290,12 +3290,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-1 {
-    right: 8.33333333%;
+    right: 8.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-2 {
-    right: 16.66666667%;
+    right: 16.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3305,12 +3305,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-4 {
-    right: 33.33333333%;
+    right: 33.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-5 {
-    right: 41.66666667%;
+    right: 41.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3320,12 +3320,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-7 {
-    right: 58.33333333%;
+    right: 58.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-8 {
-    right: 66.66666667%;
+    right: 66.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3335,12 +3335,12 @@ pre code {
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-10 {
-    right: 83.33333333%;
+    right: 83.3333333333%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-pull-11 {
-    right: 91.66666667%;
+    right: 91.6666666667%;
   }
 
   /* line 50, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3355,12 +3355,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-1 {
-    left: 8.33333333%;
+    left: 8.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-2 {
-    left: 16.66666667%;
+    left: 16.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3370,12 +3370,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-4 {
-    left: 33.33333333%;
+    left: 33.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-5 {
-    left: 41.66666667%;
+    left: 41.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3385,12 +3385,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-7 {
-    left: 58.33333333%;
+    left: 58.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-8 {
-    left: 66.66666667%;
+    left: 66.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3400,12 +3400,12 @@ pre code {
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-10 {
-    left: 83.33333333%;
+    left: 83.3333333333%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-push-11 {
-    left: 91.66666667%;
+    left: 91.6666666667%;
   }
 
   /* line 40, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3420,12 +3420,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-1 {
-    margin-left: 8.33333333%;
+    margin-left: 8.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 16.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3435,12 +3435,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-4 {
-    margin-left: 33.33333333%;
+    margin-left: 33.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-5 {
-    margin-left: 41.66666667%;
+    margin-left: 41.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3450,12 +3450,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-7 {
-    margin-left: 58.33333333%;
+    margin-left: 58.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-8 {
-    margin-left: 66.66666667%;
+    margin-left: 66.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3465,12 +3465,12 @@ pre code {
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-10 {
-    margin-left: 83.33333333%;
+    margin-left: 83.3333333333%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-offset-11 {
-    margin-left: 91.66666667%;
+    margin-left: 91.6666666667%;
   }
 
   /* line 60, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -3510,7 +3510,7 @@ th {
 .table > tfoot > tr > th,
 .table > tfoot > tr > td {
   padding: 8px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
@@ -3823,7 +3823,7 @@ output {
   display: block;
   padding-top: 7px;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #555555;
 }
 
@@ -3834,7 +3834,7 @@ output {
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #555555;
   background-color: #fff;
   background-image: none;
@@ -3906,39 +3906,30 @@ input[type="search"] {
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
-  .input-group-sm > .input-group-btn > input[type="time"].btn, .input-group-sm
-  input[type="time"],
+  .input-group-sm > .input-group-btn > input[type="time"].btn,
+  .input-group-sm input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"].btn, .input-group-sm
-  input[type="datetime-local"],
+  .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
+  .input-group-sm input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
-  .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm
-  input[type="month"] {
+  .input-group-sm > .input-group-btn > input[type="month"].btn,
+  .input-group-sm input[type="month"] {
     line-height: 30px;
   }
   /* line 202, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_forms.scss */
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg input[type="date"],
-  input[type="time"].input-lg,
-  .input-group-lg > input[type="time"].form-control,
+  .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg input[type="date"], input[type="time"].input-lg, .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="time"].btn, .input-group-lg
-  input[type="time"],
-  input[type="datetime-local"].input-lg,
-  .input-group-lg > input[type="datetime-local"].form-control,
+  .input-group-lg > .input-group-btn > input[type="time"].btn, .input-group-lg input[type="time"], input[type="datetime-local"].input-lg, .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"].btn, .input-group-lg
-  input[type="datetime-local"],
-  input[type="month"].input-lg,
-  .input-group-lg > input[type="month"].form-control,
+  .input-group-lg > .input-group-btn > input[type="datetime-local"].btn, .input-group-lg input[type="datetime-local"], input[type="month"].input-lg, .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
-  .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg
-  input[type="month"] {
+  .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg input[type="month"] {
     line-height: 46px;
   }
 }
@@ -4003,22 +3994,22 @@ input[type="search"] {
 /* line 276, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_forms.scss */
 input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] input[type="radio"],
 input[type="checkbox"][disabled],
-input[type="checkbox"].disabled, fieldset[disabled]
-input[type="checkbox"] {
+input[type="checkbox"].disabled,
+fieldset[disabled] input[type="checkbox"] {
   cursor: not-allowed;
 }
 
 /* line 285, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_forms.scss */
 .radio-inline.disabled, fieldset[disabled] .radio-inline,
-.checkbox-inline.disabled, fieldset[disabled]
-.checkbox-inline {
+.checkbox-inline.disabled,
+fieldset[disabled] .checkbox-inline {
   cursor: not-allowed;
 }
 
 /* line 295, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_forms.scss */
 .radio.disabled label, fieldset[disabled] .radio label,
-.checkbox.disabled label, fieldset[disabled]
-.checkbox label {
+.checkbox.disabled label,
+fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 
@@ -4442,7 +4433,7 @@ select[multiple].input-lg,
   white-space: nowrap;
   padding: 6px 12px;
   font-size: 14px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4928,7 +4919,7 @@ tbody.collapse.in {
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #333333;
   white-space: nowrap;
 }
@@ -4987,7 +4978,7 @@ tbody.collapse.in {
   display: block;
   padding: 3px 20px;
   font-size: 12px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   color: #777777;
   white-space: nowrap;
 }
@@ -5498,7 +5489,7 @@ tbody.collapse.in {
 /* line 84, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
 .nav-tabs > li > a {
   margin-right: 2px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
@@ -6300,7 +6291,7 @@ tbody.collapse.in {
   position: relative;
   float: left;
   padding: 6px 12px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   text-decoration: none;
   color: #337ab7;
   background-color: #fff;
@@ -6642,7 +6633,7 @@ a.badge:hover, a.badge:focus {
   display: block;
   padding: 4px;
   margin-bottom: 20px;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -7816,7 +7807,7 @@ button.close {
 /* line 90, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_modals.scss */
 .modal-title {
   margin: 0;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
 }
 
 /* line 97, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_modals.scss */
@@ -7897,7 +7888,7 @@ button.close {
   font-weight: normal;
   letter-spacing: normal;
   line-break: auto;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -8035,7 +8026,7 @@ button.close {
   font-weight: normal;
   letter-spacing: normal;
   line-break: auto;
-  line-height: 1.42857143;
+  line-height: 1.428571429;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -8288,7 +8279,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 /* line 109, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_carousel.scss */
 .carousel-control.left {
@@ -8379,7 +8370,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 /* line 207, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_carousel.scss */
 .carousel-indicators .active {
@@ -8852,8 +8843,62 @@ button.close {
 /* for contrast against lightshade */
 /* this is where you can change colors for your institution */
 /* this is for the top horizontal nav bar */
-/* Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif; */
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("/assets/Source_Sans_Pro/SourceSansPro-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("/assets/Source_Sans_Pro/SourceSansPro-It.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("/assets/Source_Sans_Pro/SourceSansPro-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("/assets/Source_Sans_Pro/SourceSansPro-BoldIt.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url("/assets/Lora/Lora-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url("/assets/Lora/Lora-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url("/assets/Lora/Lora-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url("/assets/Lora/Lora-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+/* we only serif on special occasions */
+/* we only use this for special cases */
 /* Bootstrap icons only */
+/* line 75, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/variables.scss */
+body {
+  font-family: "SourceSansPro", sans-serif;
+}
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -8880,7 +8925,7 @@ button.close {
 /* makes the font 33% larger relative to the icon container */
 /* line 5, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_larger.scss */
 .fa-lg {
-  font-size: 1.33333333em;
+  font-size: 1.3333333333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
@@ -8907,14 +8952,14 @@ button.close {
 
 /* line 3, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_fixed-width.scss */
 .fa-fw {
-  width: 1.28571429em;
+  width: 1.2857142857em;
   text-align: center;
 }
 
 /* line 4, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_list.scss */
 .fa-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
+  margin-left: 2.1428571429em;
   list-style-type: none;
 }
 /* line 8, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_list.scss */
@@ -8925,14 +8970,14 @@ button.close {
 /* line 10, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_list.scss */
 .fa-li {
   position: absolute;
-  left: -2.14285714em;
-  width: 2.14285714em;
-  top: 0.14285714em;
+  left: -2.1428571429em;
+  width: 2.1428571429em;
+  top: 0.1428571429em;
   text-align: center;
 }
 /* line 16, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_list.scss */
 .fa-li.fa-lg {
-  left: -1.85714286em;
+  left: -1.8571428571em;
 }
 
 /* line 4, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_bordered-pulled.scss */
@@ -12607,13 +12652,13 @@ button.close {
 
 /* line 1, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 100%;
 }
 
 /* line 6, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 a {
-  color: #000000;
+  color: #414141;
   text-decoration: none;
   line-height: inherit;
   cursor: pointer;
@@ -12634,9 +12679,9 @@ a img {
   height: 5.625rem;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 3.75rem;
+  padding-left: 1.875rem;
   padding-right: 2.5rem;
-  border-bottom: 0.25rem solid #000000;
+  border-bottom: 0.25rem solid #414141;
   width: 100%;
   padding-bottom: 0.0625rem;
 }
@@ -12648,12 +12693,26 @@ a img {
 }
 
 /* line 37, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+#content {
+  margin: 0 1.875rem;
+}
+
+/* line 42, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+.panel-footer > .row {
+  margin: 0 1.875rem;
+}
+/* line 45, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+.panel-footer .footer-items {
+  text-align: right;
+}
+
+/* line 50, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .no-pad {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 42, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 55, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .top-bar {
   background: #F3F3F1 !important;
   border-top: 1px solid #1e1e1e;
@@ -12661,86 +12720,86 @@ a img {
   float: none !important;
 }
 
-/* line 49, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 62, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .italic {
   font-style: italic;
 }
 
-/* line 53, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 66, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .inherit {
   font-style: italic;
 }
 
 /* handling of more/less */
-/* line 59, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 72, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .readmore .more {
   visibility: hidden;
   display: none;
 }
 
-/* line 62, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 75, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .readmore.expanded .more {
   visibility: visible;
   display: inline;
 }
 
-/* line 65, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 78, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .readmore.expanded .elipses {
   visibility: hidden;
   width: 0;
 }
 
-/* line 68, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 81, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .readmore .expander .fa {
   font-size: 0.8em;
 }
 
 /* for the "tabbing" effect */
-/* line 72, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 85, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.navbar-default {
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
-/* line 78, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 91, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .more-facets .btn {
   padding-left: 20px;
-  color: #000000;
+  color: #414141;
 }
-/* line 82, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 95, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .more-facets .below-the-fold {
   display: none;
 }
 
-/* line 88, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 101, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.nav-pills > li > a {
   margin-bottom: 0;
   margin-left: -10px;
   margin-right: 0;
-  background-color: #000000;
+  background-color: #414141;
   color: #ffffff;
   border-radius: 0;
 }
 
-/* line 96, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 109, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.nav-pills > li:first-child a {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
 }
 
-/* line 100, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 113, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.nav-pills > li:last-child a {
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
 
-/* line 105, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 118, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.nav-pills > li > a.active {
-  background-color: #000000;
+  background-color: #414141;
   color: #ffffff;
 }
 
-/* line 109, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 122, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing-item li:first-child a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -12748,7 +12807,7 @@ a img {
   border-top-left-radius: 30px;
 }
 
-/* line 115, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 128, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing-item li:last-child a {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -12756,7 +12815,7 @@ a img {
   border-top-left-radius: 0;
 }
 
-/* line 122, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 135, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tabbing.nav-pills > li > a.disabled-nav-pill:hover {
   color: #333;
   background-color: transparent;
@@ -12766,446 +12825,451 @@ a img {
 /* this enables customization of the nav bar. h/t to zessx (http://stackoverflow.com/users/1238019/zessx)
   for the answer at http://stackoverflow.com/questions/18529274/change-navbar-color-in-twitter-bootstrap-3
 */
-/* line 133, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 146, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default {
   background-color: #F3F3F1;
   border-color: #F3F3F1;
 }
-/* line 136, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 149, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-brand {
-  color: #000000;
+  color: #414141;
 }
-/* line 138, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 151, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #1e1e1e;
 }
-/* line 140, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 153, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-text {
-  color: #000000;
+  color: #414141;
 }
-/* line 144, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 157, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-nav > li > a {
-  color: #000000;
+  color: #414141;
   font-size: 1.0rem !important;
 }
-/* line 147, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 160, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #1e1e1e;
   text-decoration: underline;
 }
-/* line 151, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 164, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #1e1e1e;
   background-color: #F3F3F1;
   text-decoration: underline;
 }
-/* line 156, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 169, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #1e1e1e;
   background-color: #F3F3F1;
   text-decoration: underline;
 }
-/* line 160, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 173, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-toggle {
   border-color: #F3F3F1;
 }
-/* line 162, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 175, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background-color: #F3F3F1;
 }
-/* line 164, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 177, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #000000;
+  background-color: #414141;
 }
-/* line 166, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 179, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #000000;
+  border-color: #414141;
 }
-/* line 169, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 182, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-link {
-  color: #000000;
+  color: #414141;
   font-size: 1.0rem !important;
 }
-/* line 172, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 185, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .navbar-default .navbar-link:hover {
   color: #1e1e1e;
   text-decoration: underline;
 }
 
 @media (max-width: 767px) {
-  /* line 177, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 190, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #000000;
+    color: #414141;
   }
-  /* line 179, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 192, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #1e1e1e;
     text-decoration: underline;
   }
-  /* line 183, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 196, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #1e1e1e;
     background-color: #F3F3F1;
     text-decoration: underline;
   }
 }
-/* line 191, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 204, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #welcome {
   padding-left: 3.75rem;
   padding-right: 8.125rem;
   padding-top: 1.875rem;
 }
-/* line 196, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 209, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #welcome .row {
   width: 100%;
 }
-/* line 199, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 212, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #welcome .row .small-12 {
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
 }
 
-/* line 206, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 219, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #container {
   padding-left: 3.75rem;
   padding-right: 3.75rem;
 }
-/* line 210, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 223, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #container .row {
   width: 100%;
 }
 
-/* line 217, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 230, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #main-content.small-8 {
   padding-right: 1.25rem;
 }
 
-/* line 222, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 235, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+#main-content.accessions, #main-content.objects {
+  padding: 0 1em;
+}
+
+/* line 239, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #sidebar {
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
   padding: 0.625rem;
 }
 
-/* line 227, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 244, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #whats-in-container {
   margin-top: 1.25rem;
   padding-bottom: 1.25rem;
   padding-left: 1.25rem;
   margin-bottom: 0.625rem;
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
 }
-/* line 233, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 250, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #whats-in-container > h3 {
   margin-top: 0px;
   margin-left: -1.25rem;
   background-color: #f3f3f1;
-  color: #000000;
+  color: #414141;
   border-bottom: 1px solid #1e1e1e;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
 }
 
-/* line 246, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 263, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .badge-and-identifier .identifier {
   margin-left: 0.625rem;
   padding: 0.25rem;
 }
 
-/* line 252, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 269, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #lead_graph {
   padding: 1.25rem;
   font-size: 1.0rem;
 }
 
-/* line 257, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 274, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-container {
   margin-top: 1.25rem;
 }
-/* line 262, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 279, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-container.concepts-layout > .row {
   margin-left: 0;
 }
 
-/* line 269, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 286, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-container.with-border {
   padding: 1.25rem;
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
 }
 
-/* line 275, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 292, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-header {
   word-wrap: break-word;
 }
 
-/* line 280, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 297, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-toolbar ul {
   display: table;
   width: 100%;
 }
-/* line 285, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 302, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-toolbar li {
   display: table-cell;
   width: 25%;
   text-align: center;
 }
-/* line 290, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 307, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-toolbar li a {
   padding: 0 !important;
 }
-/* line 295, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 312, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-toolbar i {
   font-size: 2.0rem;
 }
 
-/* line 302, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 319, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .identifier {
   float: left;
 }
-/* line 305, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 322, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .identifier .id-label {
   float: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-weight: bold;
 }
 
-/* line 312, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 329, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .dates-is-single-date {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 317, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 334, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-image {
   float: right;
   padding: 1.25rem;
-  background-color: #BAC5C6;
+  background-color: #6c6c6c;
   text-align: center;
 }
-/* line 323, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 340, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-image p {
   margin-top: 1rem;
   margin-bottom: 0;
 }
-/* line 328, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 345, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-image .image-container {
   width: 18.75rem;
   height: 17.5rem;
   overflow: hidden;
 }
-/* line 332, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 349, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record-image .image-container img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 340, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 357, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .row.context-row {
   margin-top: 0.625rem;
   background-color: #f3f3f1;
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
   padding-left: 0.625rem;
 }
 
-/* line 347, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 364, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow {
   padding: 0.625rem;
-  border: 1px solid #BAC5C6;
+  border: 1px solid #6c6c6c;
   margin-bottom: 0.625rem;
 }
-/* line 352, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 369, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow.featured {
   background-color: #f3f3f1;
 }
-/* line 357, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 374, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow h3 {
   color: #00171f;
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 363, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 380, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow .recordsummary {
   clear: both;
 }
 
-/* line 369, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 386, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #embedded-search-container .recordrow:first-child {
   margin-top: 0.625rem;
 }
 
-/* line 375, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 392, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 a {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 379, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 396, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 384, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 401, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h1, .h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 1.875rem;
   font-weight: bold;
-  color: #000000;
+  color: #414141;
 }
 
-/* line 391, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 408, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h1 {
   font-size: 1.5rem;
 }
 
 /* we want to shrink the font size of h1 in smaller sizes */
 @media (max-width: 767px) {
-  /* line 398, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 415, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   h1 {
     font-size: 1.375rem;
   }
 }
-/* line 404, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 421, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h2 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000000;
+  color: #414141;
 }
 
-/* line 411, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 428, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h3 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
-  color: #000000;
+  color: #414141;
 }
 
-/* line 419, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 436, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h4 {
   font-size: 1.125rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
 }
 
-/* line 424, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 441, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 h5 {
   font-weight: bold;
 }
 
-/* line 428, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 445, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .valign-middle {
   display: table;
 }
-/* line 431, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 448, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .valign-middle > .columns {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 436, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 453, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .valign-middle > .columns, .valign-middle > [class*="column"] + [class*="column"]:last-child {
   float: none;
 }
 
-/* line 442, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 459, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .spacer {
   padding-top: 3em;
 }
 
-/* line 445, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 462, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .first-row {
   margin-top: 1em;
 }
 
-/* line 449, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 466, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .search_row * .form-control {
   margin-right: .3rem;
 }
 
-/* line 452, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 469, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .search_row .fill-column {
   width: 100%;
 }
 
-/* line 455, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 472, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .searchterm, .keywordscontext li em {
   font-weight: bold;
   padding: 0 0.2em;
   background-color: #d5f7e9;
 }
 
-/* line 460, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 477, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .searchterm {
-  background-color: #f7d309;
+  background-color: #f8c21c;
 }
 
-/* line 463, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 480, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #submit_search {
   width: 100%;
 }
 
-/* line 466, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 483, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .searchstatement {
   background-color: #f3f3f1;
 }
 
-/* line 470, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 487, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facets h2 {
   font-size: 2em;
 }
 
-/* line 473, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 490, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facets h3 {
   font-size: 1.2em;
   border-bottom: 1px solid;
 }
 
-/* line 477, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 494, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facets h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-/* line 482, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 499, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facets p {
   font-size: 0.9em;
 }
 
-/* line 485, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 502, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facets li {
   width: 100%;
   border-bottom: 1px solid;
 }
 
-/* line 489, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 506, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 ul.no-bullets {
   list-style-type: none;
 }
 
-/* line 493, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 510, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facet-group {
   list-style-type: none !important;
   margin-left: 0;
 }
-/* line 497, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 514, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facet-group li {
-  border-top: 1px solid #BAC5C6;
+  border-top: 1px solid #6c6c6c;
 }
-/* line 501, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 518, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facet-group li:last-child {
-  border-bottom: 1px solid #BAC5C6;
+  border-bottom: 1px solid #6c6c6c;
 }
-/* line 506, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 523, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facet-group li > a {
   margin-left: 0.625rem;
 }
-/* line 510, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 527, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .facet-group li > .recordnumber {
   float: right;
-  color: #000000;
+  color: #414141;
   /* position: absolute; */
   /* right: 20px; */
 }
 
-/* line 519, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 536, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordnumber {
   /* background-color: #ccc; */
   padding: 0 5px;
@@ -13214,61 +13278,70 @@ ul.no-bullets {
   /* right: 20px; */
 }
 
-/* line 526, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 543, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .definition {
   font-size: 0.7em;
   float: right;
 }
 
-/* line 531, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 548, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .center {
   margin-right: auto;
   margin-left: auto;
 }
 
 /* search results */
-/* line 542, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 554, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+.result_context {
+  padding-top: 1em;
+}
+/* line 556, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+.result_context strong {
+  padding-right: 0.5em;
+}
+
+/* line 565, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordtype {
   margin-top: -0.75em;
 }
 
-/* line 545, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 568, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .object {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 548, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 571, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .collection, .resource {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 551, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 574, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 button.subject {
   /* class subject also turns up in finding aid transforms */
-  color: #000000;
+  color: #414141;
 }
 
-/* line 554, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 577, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .agent {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 558, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 581, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .person {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 561, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 584, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .record {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 564, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 587, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .classification {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 568, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 591, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .page_action {
   color: #00171f;
   text-decoration: none;
@@ -13277,107 +13350,107 @@ button.subject {
   border: 1px solid #F3F3F1;
 }
 
-/* line 575, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 598, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .page_action:hover, .page_action:focus {
-  color: #000000;
+  color: #414141;
   background-color: #F3F3F1;
 }
 
-/* line 580, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 603, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .top_container {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 583, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 606, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .folder {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 586, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 609, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordtype.repository {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 589, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 612, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordtype.classification {
-  color: #000000;
+  color: #414141;
 }
 
-/* line 592, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 615, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .digitized {
   float: right;
   text-align: center;
   color: #999;
 }
 
-/* line 597, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 620, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .grid-item {
   text-align: center;
 }
 
-/* line 600, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 623, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .smallnote {
   color: #999;
   font-style: italic;
 }
 
-/* line 604, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 627, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .subnote {
   margin-top: 10px;
   padding-left: 5px;
 }
 
-/* line 609, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 632, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_outline ul {
   list-style: disc;
 }
 
-/* line 614, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 637, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-arabic ol {
   list-style: decimal;
 }
-/* line 617, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 640, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-loweralpha ol {
   list-style: lower-alpha;
 }
-/* line 620, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 643, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-lowerroman ol {
   list-style: lower-roman;
 }
-/* line 623, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 646, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-null ol {
   list-style: disc;
 }
-/* line 626, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 649, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-upperalpha ol {
   list-style: upper-alpha;
 }
-/* line 629, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 652, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .note_orderedlist .enumeration-upperroman ol {
   list-style: upper-roman;
 }
 
-/* line 635, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 658, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow .classification-subgroups {
   margin-top: 5px;
 }
-/* line 638, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 661, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow .classification-subgroups .classification-subgroups-tree.largetree-container {
   max-height: 200px;
   overflow: auto;
 }
 
-/* line 645, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 668, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .repository-logo {
   float: right;
 }
-/* line 647, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 670, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .repository-logo img {
   max-width: 400px;
   max-height: 120px;
 }
 
-/* line 654, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 677, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordrow .repository-logo img {
   max-width: 200px;
   max-height: 60px;
@@ -13385,7 +13458,7 @@ button.subject {
 
 /* / search results */
 /* hierarchy tree */
-/* line 666, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 689, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .tree li {
   margin-left: -2rem;
   padding-bottom: .5rem;
@@ -13393,25 +13466,25 @@ button.subject {
 }
 
 /*  THIS CAME FROM BRIAN */
-/* line 673, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 696, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .contentsarrangement ul {
   margin-left: 2em;
 }
 
-/* line 676, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 699, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordchildren li i.fi-plus,
 .recordchildren li i.fi-minus {
   margin-left: -2em;
 }
 
-/* line 680, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 703, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .recordchildren li .treeitemdesc {
   color: #999;
   font-style: italic;
   margin-left: 0.5em;
 }
 
-/* line 685, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 708, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .contentsarrangement li.panel {
   margin-left: -1.25em;
   margin-bottom: 0;
@@ -13420,152 +13493,152 @@ button.subject {
 }
 
 /* END OF CAME FROM BRIAN */
-/* line 693, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 716, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .panel-footer {
   margin-top: 2em;
 }
 
 /* /hierarchy tree */
 /* icon sizes */
-/* line 700, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 723, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 i.small {
   font-size: 1.2em;
 }
 
-/* line 703, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 726, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 i.medium {
   font-size: 3em;
   line-height: 0em;
 }
 
-/* line 707, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 730, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 i.large {
   font-size: 5em;
 }
 
-/* line 710, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 733, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 i.giant {
   font-size: 8em;
   line-height: 0em;
 }
 
-/* line 714, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 737, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .attention {
   color: green;
 }
 
 /* record details */
-/* line 719, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 742, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .objectimage {
   width: 50%;
   float: right;
   margin: 0 0 1em 1em;
 }
 
-/* line 725, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 748, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .objectimage img {
   margin: 0 auto;
   display: block;
   max-width: 100%;
 }
 
-/* line 731, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 754, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .objectimage button[type="submit"] {
   width: 100%;
   white-space: normal;
 }
 
-/* line 736, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 759, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 span.component {
   font-weight: bold;
 }
 
-/* line 740, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 763, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 span.title {
   font-style: italic;
   font-variant: small-caps;
 }
 
-/* line 745, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 768, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 span.required {
   font-variant: small-caps;
   color: #8a6d3b;
 }
 
-/* line 750, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 773, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .keywordscontext .content {
   padding-left: 1.25rem;
   display: none;
 }
 
-/* line 756, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 779, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .inline-label {
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
 }
 
-/* line 761, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 784, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .clear {
   clear: both;
 }
 
-/* line 765, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 788, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 span.head {
   display: block;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
 }
 
-/* line 772, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 795, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .breadcrumb > li + li:before {
   color: #00171f;
   content: "\007C\00a0";
 }
 
-/* line 773, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 796, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .breadcrumb * a {
   color: #1e1e1e;
 }
 
-/* line 774, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 797, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .breadcrumb li br {
   display: none;
 }
 
-/* line 775, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 798, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .panel .breadcrumb {
   background: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 781, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 804, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .acc_holder {
   margin-top: 1.25rem;
 }
 
-/* line 785, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 808, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #sidebar .acc_button {
   display: none;
 }
 
-/* line 789, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 812, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #sidebar .present_list {
   padding-left: 10px;
 }
 
-/* line 793, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 816, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .sorter {
   margin-top: 20px;
 }
 
 @media (min-width: 992px) {
-  /* line 799, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 822, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   #sidebar.resizable-sidebar {
     position: relative;
     padding-left: 12px;
   }
-  /* line 803, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 826, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   #sidebar.resizable-sidebar .resizable-sidebar-handle {
     background-color: #EEE;
     position: absolute;
@@ -13581,12 +13654,12 @@ span.head {
   }
 }
 @media (max-width: 991px) {
-  /* line 820, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+  /* line 843, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   .row.has-resizable-content > .col-sm-9, .row.has-resizable-content > .resizable-sidebar {
     width: inherit !important;
   }
 }
-/* line 826, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
+/* line 849, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .skipnav a:focus {
   position: absolute;
 }
@@ -13594,7 +13667,7 @@ span.head {
 /* line 6, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge {
   padding: 0.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-weight: bold;
 }
 /* line 10, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
@@ -13609,50 +13682,50 @@ span.head {
 
 /* line 21, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.resource {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 25, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.archival_object {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 29, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.agent {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 33, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.accession {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 37, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.classification {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 41, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.digital_object {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 45, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.repository {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 49, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/record-type-badge.scss */
 .record-type-badge.subject {
-  color: #000000;
-  border-color: #000000;
+  color: #414141;
+  border-color: #414141;
 }
 
 /* line 1, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/infinite-scroll.scss */
