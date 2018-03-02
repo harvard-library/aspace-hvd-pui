@@ -1,16 +1,17 @@
 en:
   brand:
-    title: Special Collections and Archives
-    title_link_text: Return to the Special Collections and Archives homepage
+    title: HOLLIS Archival Collection Guides
+    title_link_text: Return to the HOLLIS Archival Collection Guides main page
+    logo_link: http://library.harvard.edu/
+    logo_link_title: Harvard Library
+    logo_alt: Harvard Library Logo
     home: Home
-    welcome_head: Welcome to Harvard Library's Special Collections and Archives
-    welcome_message: |
-                     <p>Use this search tool to explore collection descriptions, finding aids, inventories and digitized content from Harvard Library’s archives and special collections.</p><p>The collections contain a wide variety of primary source materials, including letters, photographs, film and video, printed material, and objects. Links to online digital resources are included when available.</p>
-    welcome_page_title: Special Collections and Archives
-    welcome_repo: <strong><a href="http://library.harvard.edu/find-library" target="repos" title="see a list of repositories">Contact individual repositories</a></strong><p>for more detailed information and specific policies.</p>
-
-    welcome_hollis: <strong><a href="http://hollis.harvard.edu" target="hollis">Expand your search with HOLLIS</a></strong> <p>Search all of Harvard Library’s holdings, including books, articles, images, and databases.</p>
-    welcome_ask: <strong>Can't find what you're looking for?</strong><p><a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">Ask a librarian</a></p>
+    welcome_head: '' 
+    welcome_message:  <p><span class="large_it">Explore collection guides, finding aids, and inventories to locate unique materials in Harvard's special collections and archives.</span></p><p class='serif'>Special collections and archives contain primary sources including letters, photographs, film and video, print items, digital materials, and objects.</p>
+    welcome_page_title: Hollis Archival Collection Guides
+    welcome_repo: <a href="http://library.harvard.edu/find-library" target="repos" title="see a list of repositories">CONTACT A REPOSITORY</a> <p class='serif'>Learn about hours, more detailed information, and specific policies for each location.</p>
+    welcome_hollis: <a href="http://hollis.harvard.edu" target="hollis">EXPLORE MORE IN HOLLIS</a><p class='serif'>Use the Harvard Library catalog to search for additional materials including rare books, images, maps, and more special collections and archival materials.</p>
+    welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Can’t find what you’re looking for? Have questions? Contact an archivist or librarian for help!</p>
 
   footer:
     staff: Staff Interface
@@ -23,6 +24,7 @@ en:
     hierarch: Collection Inventory
     numeric: Container List
     print: View PDF
+    browse: "Browse:"
 
   archive:
     _singular: The Archive
