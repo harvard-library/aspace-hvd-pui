@@ -27,6 +27,35 @@
 }
 
 
+/* for special sans */
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('/assets/Trueno/TruenoRg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Trueno';
+    src: url('/assets/Trueno/TruenoRgIt.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('/assets/Trueno/TruenoBd.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url('/assets/Trueno/TruenoBdIt.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 @font-face {
     font-family: 'Lora';
     src: url('/assets/Lora/Lora-Regular.ttf') format('truetype');
@@ -51,6 +80,8 @@
     font-weight: bold;
     font-style: italic;
 }
+
+
 
 $sans-font:  "SourceSansPro", sans-serif;
 $serif-font: $sans-font;  /* we only serif on special occasions */

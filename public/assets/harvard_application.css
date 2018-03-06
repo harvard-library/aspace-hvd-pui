@@ -8867,6 +8867,31 @@ button.close {
   font-weight: bold;
   font-style: italic;
 }
+/* for special sans */
+@font-face {
+  font-family: 'Trueno';
+  src: url("/assets/Trueno/TruenoRg.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Trueno';
+  src: url("/assets/Trueno/TruenoRgIt.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Trueno';
+  src: url("/assets/Trueno/TruenoBd.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Trueno';
+  src: url("/assets/Trueno/TruenoBdIt.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
 @font-face {
   font-family: 'Lora';
   src: url("/assets/Lora/Lora-Regular.ttf") format("truetype");
@@ -8894,7 +8919,7 @@ button.close {
 /* we only serif on special occasions */
 /* we only use this for special cases */
 /* Bootstrap icons only */
-/* line 75, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/variables.scss */
+/* line 106, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/variables.scss */
 body {
   font-family: "SourceSansPro", sans-serif;
 }

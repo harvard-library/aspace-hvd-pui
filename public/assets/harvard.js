@@ -6,6 +6,19 @@ function setupRequest(modalId, text) {
 	});
 }
 
+function new_row_from_template() {
+    var num = $as.find(".search_row").size();
+    var $row = $template.clone();
+    replace_id_ref($row, 'label', 'for', num);
+    replace_id_ref($row, 'input', 'id', num);
+    replace_id_ref($row, 'select', 'id', num);
+    $row.attr("id", "search_row_" + num);
+    $row.find("input[type=submit]").remove();
+   new_button($row, true);
+    return $row;
+}
+
+
 $(function() {
 /* this really should be taken care of by a pull request to tack '-label' on to form labels, but... */
 
@@ -14,8 +27,8 @@ $(function() {
    var $inlines = $(".search form .inline-label");
    $inlines.each(function(){
        var $lbl = $(this); 
-       if ($lbl.text() == "To")
-       {$lbl.text("--")}
+       if ($lbl.text() == "TO")
+       {$lbl.text(" ")}
    });
 /* if showing a resource, get the number of digital objects */
    if (hrvd_controller === 'resources' && hrvd_action === 'show') {

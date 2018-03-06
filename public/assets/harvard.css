@@ -9,16 +9,19 @@
 
 */
 
+h1, .h1 {
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+}
 
 span.large_it {
-    font-family: "Lora", serif;
+    font-family: "Lora",Georgia, serif;
     font-size: 1.4em;
     font-style: italic;
     font-weight: bold;
 }
 
 .serif {
-font-family: "Lora", serif;
+font-family: "Lora", Georgia, serif;
 }
 
 /* logo and header rows */
@@ -29,9 +32,15 @@ font-family: "Lora", serif;
 .panel-footer {
     background-color: #1e1e1e;
     color: #FFFFFF;
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+
 }
 .panel-footer a {
+    background-color: #1e1e1e;
     color: #FFFFFF;
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
     text-decoration: underline;
 }
 
@@ -43,7 +52,7 @@ font-family: "Lora", serif;
 }
 
 #pui_brand div.h1 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
 }
 
 a:hover, a:focus {
@@ -115,6 +124,8 @@ h1 > span.title {
   color: #0579b8;
   padding-top: 0;
   padding-bottom: 0;
+  padding-right: 10px;
+  padding-left: 10px;
   border-right: 1px solid #0579b8;
   font-size: inherit !important;
   margin:0;
@@ -129,7 +140,11 @@ h1 > span.title {
   text-decoration: underline;
 }
 ul.navbar-nav {
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.1px;
     padding: 0;
+    text-transform: uppercase;
 }
 
 /* "pill" navigation on collection page */
@@ -358,7 +373,7 @@ ul.breadcrumb {background-color: #C9E1EE; }
  /*   padding-top: 3em; */
 }
 #welcome_links {
-    margin-top: 1em;
+    margin-top: 30px;
 }
 .welcome_links{ 
     margin-right: 1em;
@@ -368,11 +383,14 @@ ul.breadcrumb {background-color: #C9E1EE; }
     font-style: normal;
 }
 .welcome_links > a {
+    border-bottom: 2px solid #c6e4f5;
     color: #0579b8;
-    text-decoration: none;
-    border-bottom: 3px solid #a8d6ef;
+    font-weight: 500;
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 1.1px;
     padding-bottom: 3px;
-    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;  
 }
 
 .welcome_links > a:after {
@@ -388,7 +406,13 @@ ul.breadcrumb {background-color: #C9E1EE; }
     position: absolute;
     width: 0;
 }
-.welcome_links  p { margin-top:1em; background-color: transparent}
+.welcome_links  p {
+    background-color: transparent;
+    line-height: 1.7;
+    margin-top: 1em;
+}
+
+
 
 
 /* for missing digital object thumbnails with no caption */
@@ -435,6 +459,34 @@ span.dig_flag {
   a.ask:hover {
       background-color:  #286090;
   }
+
+/* search box styling */
+
+#q0.input {
+    padding-right: 0;
+    margin-right: 0;
+    border-radious:0;
+}
+
+/* search button styling */
+
+#submit_search {
+    color: #1e1e1e;
+    background-color: #FFFFFF;
+    background-image: url(/assets/leftarrow.png);
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border-color: #FFFFFF;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left:0;
+    margin-top: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
 
 /* media query adjustments */
 @media screen and (max-width: 767px) {
