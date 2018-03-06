@@ -116,7 +116,7 @@ Pry::ColorPrinter.pp "have ids"
         @ids = dig_results.grep(r) { |u| r.match(u)[1]}
       end
       slice = @ids[(page - 1) * page_size,page_size]
-      search_uris = slice.map{|id| "id:\"#{uri_prefix}#{id}#pui\"" }.join(" ")
+      search_uris = slice.map{|id| "id:\"#{uri_prefix}#{id}#pui\"" }.join(" OR ")
       begin
         set_up_search(['archival_object'], [], { 'resolve[]' => ['repository:id', 'resource:id@compact_resource', 'ancestors:id@compact_resource', 'top_container_uri_u_sstr:id']}, {}, search_uris)
         @results = archivesspace.search(@query, 1, @criteria)
