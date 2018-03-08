@@ -5,7 +5,7 @@
    link_blue: #0579b8;
    crimson: #a51c30;
    gray_back: #f2f2f2;
-
+   yellow: #f8c21c;
 
 */
 
@@ -288,14 +288,16 @@ a.thumbnail.digital_object{
     border: 0px none #FFFFFF;
 }
 
+/* remove zebra striping? */
+/*
 .recordrow:nth-of-type(2n) {
     background-color: #f3f3f1;
 }
-
+*/
 /* results context */
 
 .result_context {
-    background-color: #C9E1EE; 
+    background-color: transparent;
     margin-left: .5em;
     margin-right: 1em;
     margin-bottom: .5em;
@@ -312,10 +314,53 @@ a.thumbnail.digital_object{
 }
 
 /* breadcrumbing */
-.breadcrumb>li+li:before {color: #1E1E1E; content: "\00bb\00a0";}
-.breadcrumb * a {color: #24446B; text-decoration: underline;}
-ul.breadcrumb {background-color: #C9E1EE; }
 
+/*context stuff */
+
+.result_context a {
+    text-decoration: underline;
+}
+
+.breadcrumb {
+    color: #6C6C6C;
+}
+
+.breadcrumb>li+li:before {color: #6C6C6C; content: "/";}
+.breadcrumb * a {color: #0579B8; text-decoration: underline;}
+ul.breadcrumb {background-color: #FFFFFF; }
+.breadcrumb > li:nth-child(2):before {content: "";}
+
+/* collection organization side bar */
+#sidebar {
+    border: 0;
+    border-right: 1px solid #6c6c6c;
+}
+.largetree-container {
+    background-color: #FFFFFF;
+}
+
+.largetree-container .indentor{
+    background-color: transparent
+}
+
+/* get rid of striping */
+.largetree-container table.root tbody tr:nth-of-type(2n+1) {
+    background-color: transparent;
+}
+
+/* yellow on the title */
+.largetree-container table.root tbody tr:first-child td.title {
+    padding-left: 6px;
+    background-color: #f8c21c;
+}
+
+.largetree-container td {
+    color: #0579b8;
+}
+
+.largetree-container a.record-title {
+    color:  #0579b8;
+}
 /* collection organization side bar: current */
 
 .largetree-node.current .indentor {
