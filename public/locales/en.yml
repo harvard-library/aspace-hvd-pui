@@ -53,6 +53,9 @@ en:
     download_title: Download CSV
     download: CSV
 
+  search_results:
+    results_head: "%{type}: <span>%{start}</span> - <span>%{end}</span> of <span>%{total}</span>"
+
   pdf_reports:
     return: Return to Table of Contents
     aleph: Library Catalog ID

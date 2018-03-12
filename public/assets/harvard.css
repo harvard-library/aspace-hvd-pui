@@ -195,6 +195,12 @@ div.search {
     color: #414141;
 }
 
+#sort {
+    padding: 5.em;
+    color: #6c6c6c;
+    border-radius: 4px;
+    border: 1px  solid #414141;
+}
 
 /* don't highlight the search term */
 .searchterm {
@@ -330,6 +336,16 @@ i { vertical-align: top; }
 .ancestor a {
     color: #24446B;
     text-decoration: underline;
+}
+
+/* result header */
+
+.results_head {
+    color: #6c6c6c;
+    
+}
+.results_head span {
+    color: #414141;
 }
 
 /* result title */

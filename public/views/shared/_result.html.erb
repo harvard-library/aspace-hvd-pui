@@ -40,7 +40,8 @@ end
       <% if got_dig %><span class='dig_flag' title="<%= t('views._shared.digital_flag_title') %>"><%= t('views._shared.digital_flag') %></span><% end %>
       <%= (props.fetch(:full,false)? '</h1>' : '</h3>').html_safe %>
       <%= render partial: 'shared/context', locals: {:result => result, :props => props } %>
-      <strong><%= badge_label %> <% if result.container_summary_for_badge %> &mdash; <%= result.container_summary_for_badge %><% end %></strong>
+      <% comp_id = result.identifier %>
+      <strong><%= badge_label %> <% if result.container_summary_for_badge %> &mdash; <%= result.container_summary_for_badge %><% end %><% unless comp_id.blank?%><%= t('resource._public.identifier') %>: <%= comp_id %><% end %> </strong>
      <div class="recordsummary" style="clear:both">
        <% if !result['parent_institution_name'].blank? %>
        <div><strong><%= t('parent_inst') %>:</strong>
