@@ -25,7 +25,7 @@
        <li><a href="<%= app_prefix(pager.link) %>&page=<%= pager.last_page %>"><%=  pager.last_page %></a></li>
     <% end %>
     <% if pager.need_next %>
-      <li class="next"><a href="<%= app_prefix(pager.link) %>&page=<%= pager.next %>"><span aria-hidden="true">&rarr;</span>Next</a></li>
+      <li class="next"><a href="<%= app_prefix(pager.link) %>&page=<%= pager.next %>">Next <span aria-hidden="true">&rarr;</span></a></li>
     <% end %>
 </ul>
 </div>

@@ -2,7 +2,7 @@
 <%# it expects result, props as  local variables %>
     <% if result.resolved_repository %>
       <div class="result_context" style="clear:both">
-        <strong><%= t('context') %>: </strong>
+        <%= t('context').upcase %>: 
 	<% unless props.fetch(:no_repo, false) %>
         <span  class="repo_name">
           <%= link_to result.resolved_repository.fetch('name'), app_prefix(result.resolved_repository.fetch('uri')) %>
@@ -29,7 +29,6 @@
           <% end %>
         <% else %>
           <% unless props.fetch(:no_res, false) || result.resolved_resource.blank? || result.uri == result.resolved_resource.fetch('uri','') %>
-            <%= t('context_delimiter') %>
             <span class="resource_name">
               <%= link_to process_mixed_content(result.resolved_resource.fetch('title')).html_safe, app_prefix(result.resolved_resource.fetch('uri')) %>
             </span>
