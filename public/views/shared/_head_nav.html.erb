@@ -17,10 +17,10 @@
           <% end %>
           <% unless AppConfig[:pui_hide][:search_tab] %>
             <li>
-              <%= link_to({:controller => :search, :action => :search, :reset => 'true'}, {:title => I18n.t('search_tab', :target => t('archive._plural'))}) do %>
-	        <%= t('actions.search').upcase %>
+<% Pry::ColorPrinter.pp "WE'RE IN THE SEARCH tab" %>
+              <a href="/search?reset=true" title="<%= I18n.t('search_tab', :target => t('archive._plural')) %>">
+	        <%= t('actions.search').upcase %></a>
                 <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
-              <% end %>
             </li>
           <% end %>
         </ul>
