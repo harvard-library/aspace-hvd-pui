@@ -247,6 +247,17 @@ div.search {
     background-color: #1e1e1e;
 }
 
+.btn.page_action {
+    color: #414141;
+    background-color: #ffffff;
+    border: 1px solid #414141;
+    text-transform: uppercase;
+}
+.btn.page_action:hover, .btn.page_action:focus .btn.page_action:active {
+    color: #ffffff;
+    background-color: #6c6c6c;
+}
+
 .expander {
     color: #8996A0;
     font-weight: bold;
@@ -545,18 +556,6 @@ span.dig_flag {
   }
   .note-content a,  .note-content a:hover,  .note-content a:focus {
       text-decoration: underline;
-  }
-
-/* Ask a Librarian/archivist */
-  a.ask, a.ask:visited {
-      background-color: #337ab7; /*#4353bc; */
-      border-color: #122b40;
-      text-decoration: none;
-      color: #FFFFFF
-      outline: thin dotted;
-  }
-  a.ask:hover {
-      background-color:  #286090;
   }
 
 /* search box styling */
