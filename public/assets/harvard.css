@@ -112,7 +112,6 @@ a.collapsed:after {
 }
 
 .panel-default > .panel-heading {
-    color: #ffffff;
     border-bottom: 1px solid #414141;
     border-top: 1px solid #414141;
     background-color: white;
