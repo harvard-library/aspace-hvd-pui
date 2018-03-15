@@ -11,7 +11,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
   - breadcrumbs and "Found in" restyling
   - over-ride the *public/app/views/welcome/show.html.erb* page, moving the text below the search bar and adding special links, with concommitant entries in the en.yml file
   - For "ordered lists" that have no enumeration field (the case where the default EAD list is unordered), a "disk" will appear, instead of numbers.
-  - ** Restyle to match the new Harvard Library Portal styling **
+  - **Restyle to match the new Harvard Library Portal styling**
     - color changes
     - "pill box" style changes, and is being moved to someplace else in the layout
   - move the sidebar to the left.
@@ -38,7 +38,8 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Over-ride *public/app/views/resources/_finding_aid.html.erb* to display the EAD ID
  - Make the Aleph ID a clickable link to Hollis
  - Add configurable "Ask a Librarian/Archivist" to resource and object pages
- - Completely substitute the model, controller, and views for PDF generation
+ - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view
+ - Add CSV download functionality, with a button on the Page actions menu
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 
