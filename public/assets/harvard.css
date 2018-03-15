@@ -129,6 +129,13 @@ a.collapsed:after {
     border-bottom: 0;
 }
 
+/* end of accordion styling */
+
+/* filter styling */
+.filters > ul {
+    padding-left: 0;
+}
+
 /* de-italicize */
 span.title {
   font-style: normal;
