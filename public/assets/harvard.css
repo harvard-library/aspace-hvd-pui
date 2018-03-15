@@ -112,10 +112,18 @@ a.collapsed:after {
 }
 
 .panel-default > .panel-heading {
-    border-bottom: 1px solid #414141;
-    border-top: 1px solid #414141;
+    border: 0;
     background-color: white;
 }
+.panel-heading, .panel-body, .panel-heading + .panel-collapse > .list-group {
+   border: 0;
+}
+
+.panel-body {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 
 .collapse.in {
     border-bottom: 0;
@@ -287,7 +295,7 @@ div.search {
 }
 
 /* page action and accordion buttons */
-.btn.page_action, a.acc_button {
+.btn.page_action, a.acc_button, a.acc_button:visited {
     color: #414141;
     background-color: #ffffff;
     border: 1px solid #414141;
