@@ -218,8 +218,24 @@ ul.navbar-nav {
 }
 
 /* "pill" navigation on collection page */
+
+/* get rid of rounding */
+.tabbing.nav-pills > li:first-child a {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.tabbing.nav-pills > li:last-child a {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .tabbing.nav-pills > li > a {
-  background-color: #8996A0;
+  background-color: #0579b8;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 
 .tabbing.nav-pills > li > a:hover {
@@ -229,6 +245,8 @@ ul.navbar-nav {
 .tabbing.nav-pills > li > a.active {
     text-decoration: none;
     cursor: none;
+    background-color: #f8c21c;
+    color: #414141;
 }
 
 /* restructuring of search */
