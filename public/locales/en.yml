@@ -109,7 +109,7 @@ en:
          _plural: "(%{ct} items)"
   views:
     _shared:
-       digital_object_link: "View %{name}"
+       digital_object_link: "%{name}"
        digital_flag: Digital
        digital_flag_title: Has associated digital material
     tree:
