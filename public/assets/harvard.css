@@ -109,24 +109,32 @@ a.collapsed:after {
 
 .panel-default {
     border:0;
+    border-color: #ffffff;
 }
 
 .panel-default > .panel-heading {
     border: 0;
-    background-color: white;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 .panel-heading, .panel-body, .panel-heading + .panel-collapse > .list-group {
    border: 0;
+   border-color: #ffffff;
 }
 
 .panel-body {
     padding-top: 5px;
     padding-bottom: 5px;
+
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
+    border-color: #ffffff;
 }
 
-
 .collapse.in {
-    border-bottom: 0;
+    border: 0;
+    border-color: #ffffff;
 }
 
 /* end of accordion styling */
