@@ -49,8 +49,31 @@
     }) %>
 </dl>
 <%= render(:partial => 'return_toc') %>
+<% admin = false
+   order = %w( sponsor note edition_statement series_statement)
+   order.each do |item|
+     admin = true if !record.finding_aid[item].blank?
+   end
+%>
+<% if admin %>
+  <a id="administrative-information"></a>
+  <h2><%= I18n.t('pdf_reports.administrative_information') %></h2>
+
+  <% unless record.finding_aid.blank? %>
+    <dl>
+    <% order.each do |item| %>
+      <% unless record.finding_aid[item].blank? %>
+        <dt><%= t("resource._public.finding_aid.#{item}") %></dt>
+        <dd><%= record.finding_aid[item].html_safe %></dd>
+      <% end %>
+     <% end %>
+    </dl>
+  <% end %>
+  <%= render(:partial => 'return_toc') %>
+<% end %>
+
 <% record.notes.each do |note_type, note| %>
-    <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial physdesc  prefercite).include?(note_type) %>
+    <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial separatedmaterial physdesc prefercite).include?(note_type) %>
     <a id="note-<%= note_type %>"></a>
     <h2><% if note['label'] %>
             <%= note['label'].titlecase %>
