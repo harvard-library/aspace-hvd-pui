@@ -6,11 +6,17 @@ The customizations needed for Harvard's ArchivesSpace PUI
 - Styling
   - Use Harvard Logo
   - Replace default colors with Harvard-specified colors (see [discussion of overriding scss](scss/README.md) )
-  - Use sans-serif throughout
+  - ~~Use sans-serif throughout~~
   - hide logos in the listing of repositories
   - breadcrumbs and "Found in" restyling
   - over-ride the *public/app/views/welcome/show.html.erb* page, moving the text below the search bar and adding special links, with concommitant entries in the en.yml file
   - For "ordered lists" that have no enumeration field (the case where the default EAD list is unordered), a "disk" will appear, instead of numbers.
+  - ** Restyle to match the new Harvard Library Portal styling **
+    - color changes
+    - "pill box" style changes, and is being moved to someplace else in the layout
+  - move the sidebar to the left.
+  - change the Page Action tabs to be buttons will small icons.
+  
 
 - Functionality
   - add a **Creators** facet to display of Collections within a Repository
