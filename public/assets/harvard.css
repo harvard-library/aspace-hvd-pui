@@ -219,34 +219,51 @@ ul.navbar-nav {
 
 /* "pill" navigation on collection page */
 
-/* get rid of rounding */
-.tabbing.nav-pills > li:first-child a {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+ div.nav-pills {
+     margin-bottom : 2em;
+}
+ div.nav-pill {
+     border-left: 1px solid #ffffff;
+     border-right: 1px solid #ffffff;
+     background-color: #0579b8;
+     color: #ffffff;
+     text-align: center;
+     
 }
 
-.tabbing.nav-pills > li:last-child a {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+ div.nav-pill.active {
+    background-color: #f8c21c;
+  color: #414141;
 }
 
-.tabbing.nav-pills > li > a {
+ div.nav-pill > a {
   background-color: #0579b8;
   color: #ffffff;
   text-transform: uppercase;
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+  font-size: 1.125em;
 }
 
-.tabbing.nav-pills > li > a:hover {
+div.nav-pill > a:hover {
     text-decoration: underline;
 }
 
-.tabbing.nav-pills > li > a.active {
+
+
+div.nav-pill > a.active {
     text-decoration: none;
     cursor: none;
     background-color: #f8c21c;
     color: #414141;
+}
+div.nav-pill.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+
+div.nav-pill.disabled > a {
+    text-decoration: none;
+    cursor: not-allowed;
 }
 
 /* restructuring of search */
@@ -472,6 +489,13 @@ ul.breadcrumb {background-color: #FFFFFF; }
     text-transform: uppercase;
 }
 
+/* collection inventory (infinite) */
+
+.infinite-record-wrapper{
+    padding-left: 10px;
+    border-top: 1px dotted #dddddd;
+}
+
 #facets .dt {
     text-transform: uppercase;
 }
@@ -494,6 +518,12 @@ ul.breadcrumb {background-color: #FFFFFF; }
     padding-left: 6px;
     background-color: #f8c21c;
 }
+
+/* and the link should be "black" */
+.largetree-container table.root tbody tr:first-child td.title > a.record-title {
+    color: #414141;
+}
+
 
 .largetree-container td {
     color: #0579b8;
@@ -548,6 +578,12 @@ ul.breadcrumb {background-color: #FFFFFF; }
 
 .repository-logo {
     display: none;
+}
+
+/* flot the images div right */
+.images {
+    float: right;
+    width: 40%;
 }
 
 /* override objectimage button */

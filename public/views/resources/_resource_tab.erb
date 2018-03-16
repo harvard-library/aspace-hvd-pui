@@ -1,0 +1,12 @@
+<% active = (action.to_s == controller.action_name) %>
+<% unless hidden && !active %>
+  <div class='col-sm-4 nav-pill <% if active %>active <% elsif !enabled %> disabled<% end %>'>
+    <%=
+      link_to_unless active || !enabled, text, { :action => action } do
+        link_to_if active, text, '#', :class => "active" do
+          link_to text, "#"
+        end
+      end
+    %>
+  </div>	
+<% end %>
