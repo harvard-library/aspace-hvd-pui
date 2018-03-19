@@ -27,9 +27,52 @@ h1.full-chars {
     font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
 }
 
+
+/* repository styling */
 .repo_head {
     color:#6c6c6c;
+    text-transform: uppercase;
+}
+
+.contact_info > .repo_head {
+    padding-bottom: 1em;
+}
+
+.repo_info {
     font-size: 1.2em;
+}
+a.repo_info  {
+    text-decoration: underline;
+}
+
+.website {
+    padding-bottom: 2em;
+}
+
+.contact_info {
+    border-left: 1px solid #414141;
+}
+
+#lead_graph {
+    font-family: "Lora",Georgia, serif;
+}
+
+.sm_icon {
+    width: 20px;
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 1em;
+    padding-top: .25em;
+}
+
+.contact {
+    display: inline-block;
+    padding-left: 1em;
+    width: 90%
+}
+
+.repo_search {
+    padding-top: 1.5em;
 }
 
 span.large_it {
@@ -40,7 +83,7 @@ span.large_it {
 }
 
 .serif {
-font-family: "Lora", Georgia, serif;
+    font-family: "Lora", Georgia, serif;
 }
 
 /* logo and header rows */

@@ -1,0 +1,86 @@
+<%# THIS IS A COMPLETE RE-WRITE %>
+<div id="main-content" class="repositories">
+  <div class="row">
+    <div class="col-sm-7 details">
+      <div class="repo_head"><%= t('repository._singular') %></div>
+      <h1 class="repo_info"><%= @result['name']%></h1>
+      <div class="website"><a href="<%= @result['url'] %>" class="repo_info"><%= @result['url']  %></a></div>
+      <% unless @result['repo_info'].blank?  %>
+       <% lead =  t("repos.#{@result['repo_info']['top']['repo_code'].downcase}.lead_graph", default: '') %>
+        <% unless lead.blank? %>
+         <div id="lead_graph" class="clear"><%= lead.html_safe %></div>
+	<% end %>
+      <% end %>
+      <% unless @counts['resource'].blank? %>
+        <div class="repo_head"><%= t('repository.what') %></div>
+        <a class="repo_info" href="<%= app_prefix(@sublist_action) %>resources"><%= @counts['resource'] %> <%= @counts['resource'] == 0 ? 'disabled="disabled"' : '' %> <%= t("resource#{(@counts['resource']== 1 ? '._singular' : '._plural')}") %></a>
+	<% end %>
+
+    </div>
+    <div class="col-sm-5 contact_info">
+      <div class="repo_head"><%= t('contact') %></div>
+      <% location = false
+	 %w{address city region post_code country}.each do |type|
+	   if  @result['repo_info'][type].present?
+	     location = true
+	     break
+	     end
+	 end %>
+      <% if location %>
+	 <div class="row repo">
+	   <div class="sm_icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+           <div class="contact">
+	   <%  if @result['repo_info']["address"].present? %>
+	     <span class="street">
+	       <%= @result['repo_info']["address"].join(" <br/>").html_safe %>
+	       <br />
+	     </span>
+	   <% end %>
+	   <% %w{city region post_code country}.each do |type|
+	      if @result['repo_info'][type].present? %>
+              <span class="<%= type %>"><%= @result['repo_info'][type] %></span>
+              <% end %>
+	   <% end %>
+	   </div>
+	 </div>
+      <% end %><%# end if location %>
+      <% if @result['repo_info']["telephones"].present? %>
+        <% @result['repo_info']["telephones"].each do |phone| %>
+	  <% if !phone['number'].blank? %>
+	    <div class="row">
+	      <% if !phone['number_type'].blank? && phone['number_type'].strip.upcase == 'FAX' %>
+	       <div class="sm_icon"><i class="fa fa-fax"  aria-hidden="true"></i></div>
+	       <div class="contact"> <%= phone['number'] %> (<%= t('fax') %>)</div>
+	      <% else %>
+               <div class="sm_icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+	       <div class="contact"> <%= phone['number'] %></div>
+	      <% end %>
+	    </div>
+	  <% end %>
+        <% end %>
+      <% end %>
+      <% if @result['repo_info']["email"].present? %>
+        <div class="row">
+         <div class="sm_icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+	 <div class="contact"><a href="mailto:<%= @result['repo_info']['email'] %>" title="<%= t('email') %>"><%= @result['repo_info']['email'] %></a></div>
+        </div>
+     <% end %>
+    </div>
+  </div>
+
+
+ <div class="repo_search" >
+  <%= render partial: 'shared/search', locals: {:search_url => "#{@result['uri']}/search",
+   :title => t('repository._singular'),
+   :limit_options =>  [["#{t('actions.search')} #{t('search-limits.all')}",''],
+            [t('search-limit', :limit => t('search-limits.resources')),'resource'],
+            [t('search-limit', :limit => t('search-limits.digital')),'digital_object']],
+
+   :field_options => [["#{t('search_results.filter.fullrecord')}",''],
+            ["#{t('search_results.filter.title')}",'title'],
+            ["#{t('search_results.filter.creators')}",'creators_text'],
+            ["#{t('search_results.filter.notes')}", 'notes'],
+            ["#{t('search_results.filter.identifier')}", 'identifier'] ] } %>
+  </div>
+ </div>
+</div>
