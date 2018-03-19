@@ -53,7 +53,19 @@ a.repo_info  {
     border-left: 1px solid #414141;
 }
 
-#lead_graph {
+.repo_list {
+    margin: 1em;
+}
+
+.repo_list > .row {
+    padding-top: 1em;
+}
+
+.res_count {
+    color: #6c6c6c;
+}
+
+#lead_graph, .repo_text {
     font-family: "Lora",Georgia, serif;
 }
 
