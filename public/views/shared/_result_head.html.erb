@@ -8,7 +8,7 @@
 %>
 
 
-<%= (props.fetch(:full,false)? '<h1>' : '<h3>').html_safe %>
+<%= (props.fetch(:full,false)? '<h1 class="full-chars">' : '<h3>').html_safe %>
   <% if !props.fetch(:full,false) %>
     <a class="record-title" href="<%= app_prefix(result.uri) %>">  <%== result.display_string %></a>
   <% else %>

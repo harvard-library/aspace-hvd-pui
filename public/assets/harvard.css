@@ -23,6 +23,15 @@ h1 a, .h1 a {
     color: #414141;
 }
 
+h1.full-chars {
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+}
+
+.repo_head {
+    color:#6c6c6c;
+    font-size: 1.2em;
+}
+
 span.large_it {
     font-family: "Lora",Georgia, serif;
     font-size: 1.4em;
@@ -345,6 +354,12 @@ div.search {
 }
 
 /* page action and accordion buttons */
+.btn.page_action {
+    font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+    font-size: .7rem;
+    padding: 5px 10px;
+}
+
 .btn.page_action, a.acc_button, a.acc_button:visited {
     color: #414141;
     background-color: #ffffff;
