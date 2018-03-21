@@ -1,5 +1,5 @@
  <% key_part = @request.repo_code.downcase %>
-<form id="ask_sub" method="GET" target="_blank">
-  <button type="submit" class="btn page_action ask  btn-default" title="<%=  t("ask.text.#{key_part}", default: t("ask.text.default")) %>">
+<form id="ask_sub" method="GET" target="_blank"  action="<%= t("ask.link.#{key_part}", default: t("ask.link.default"))%>">
+  <button type="submit" class="btn page_action ask btn-default" title="<%=  t("ask.text.#{key_part}", default: t("ask.text.default")) %>">
     <i class="fa fa-question"></i>&nbsp;<%= t("ask.text.#{key_part}", default: t("ask.text.default")) %></button>
 </form>
