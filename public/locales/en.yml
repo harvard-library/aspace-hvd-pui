@@ -70,8 +70,7 @@ en:
     law:  <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please fill out <a href='https://harvard.az1.qualtrics.com/jfe/form/SV_0wgVmghqAAU4T77' target='_blank'>our appointment request form</a>.</p><p>Appointments are available Tuesday-Friday from 10:00-5:00.</p>
     hua: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Harvard University Archives at <a href="mailto:archives_reference@harvard.edu">archives_reference@harvard.edu</a>.</p>
     med: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Center for the History of Medicine at the Countway Library at <a href="http://asklib.hms.harvard.edu" target="_blank">asklib.hms.harvard.edu</a> for assistance and additional information</p>
-    hou:  <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the Houghton Library reading room, you can make a request for those materials from HOLLIS+. Go to the <a  target='_blank' href='http://id.lib.harvard.edu/aleph/%{id}/catalog'>HOLLIS+ catalog record</a>, click on the <strong>Locations &amp; Availability</strong> tab, then click on the <strong>Request item</strong> link.</p> <p>Please make note of the Identifier information listed here, as it includes the call number, as well as the item or container number (in parentheses) that you will need in order to place your request in HOLLIS+.</p>
-
+    hou: To request materials for use in the Houghton Library reading room go to the <a  target='_blank' href='http://id.lib.harvard.edu/aleph/%{id}/catalog'>HOLLIS</a> catalog record and click on the <strong>Request Item</strong> button . Please be sure to include the full Item Identifier in your request.
 
   ask:
     text:
@@ -91,6 +90,8 @@ en:
       lead_graph: <p><strong>Baker Library Special Collections</strong> collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
     hua:
       lead_graph: <p>Holding nearly four centuries of materials, the Harvard University Archives is the principal repository for the institutional records of Harvard University and the personal archives of Harvard faculty, as well as collections related to students, alumni, Harvard-affiliates and other associated topics. The collections document the intellectual, cultural, administrative and social life of Harvard and the influence of the University as it emerged across the globe.</p>
+    hou:
+      lead_graph: <p>Houghton Library is Harvard College's principal repository for rare books and manuscripts, literary and performing arts archives, and more. The library's holdings of primary source material are managed by an expert staff and shared with scholars, students and the public in the reading room.</p>
     law:
       lead_graph: <p>Harvard Law School Library's Historical &amp; Special Collections (HSC) collects, preserves, and makes available research materials for the study of the law and legal history. HSC holds over 8,000 linear feet of manuscripts, over 300,000 rare books, and more than 70,000 visual images.</p>
     sch:
