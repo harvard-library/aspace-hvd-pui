@@ -1,8 +1,7 @@
 <div class="container-fluid panel-footer">
   <div class="row">
     <div class="col-md-4">
-       <% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %><a id='aspaceFeedbackLink' \
-href='<%= AppConfig[:feedback_url]%>' target='_blank'><%= t('footer.feedback') %></a><% end %>
+       <% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:feedback_url]%>' target='_blank'><%= t('footer.feedback') %></a><% end %>
     </div>
     <div class="col-md-4"><a href="<%= t('brand.logo_link') %>" 
      title="<%= t('brand.logo_link_title') %>"><img alt="<%= t('brand.logo_alt') %>" src="/assets/hl_logo.svg"/></a>
