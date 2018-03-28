@@ -628,6 +628,10 @@ ul.breadcrumb {background-color: #FFFFFF; }
     clear:both;
 }
 
+.infinite-item .record-type-badge {
+    width: 100%;
+}
+
 #facets .dt {
     text-transform: uppercase;
 }
