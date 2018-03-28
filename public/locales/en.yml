@@ -58,6 +58,8 @@ en:
 
   search_results:
     results_head: "%{type}: <span>%{start}</span> - <span>%{end}</span> of <span>%{total}</span>"
+    filter:
+      add: Refine my results
 
   pdf_reports:
     return: Return to Table of Contents
@@ -87,7 +89,7 @@ en:
       hou: https://ask.library.harvard.edu/friendly.php?slug=houghton
   repos:
     bak:
-      lead_graph: <p><strong>Baker Library Special Collections</strong> collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
+      lead_graph: <p>Baker Library Special Collections collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
     hua:
       lead_graph: <p>Holding nearly four centuries of materials, the Harvard University Archives is the principal repository for the institutional records of Harvard University and the personal archives of Harvard faculty, as well as collections related to students, alumni, Harvard-affiliates and other associated topics. The collections document the intellectual, cultural, administrative and social life of Harvard and the influence of the University as it emerged across the globe.</p>
     hou:

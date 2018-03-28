@@ -22,8 +22,7 @@
   <% else %>
 
   <% unless defined?(@no_statement) %>
-    <div class="searchstatement">
-      <div id="refineSearchPanel" class="container refinesearch">
+      <div id="refineSearchPanel" class="refinesearch">
         <%= render partial: 'shared/search', locals: {:search_url => @base_search,
                                                       :title => t('archive._plural'),
                                                       :limit_options => [["#{t('actions.search')} #{t('search-limits.all')}",''],
@@ -36,7 +35,7 @@
                                                                          ["#{t('search_results.filter.identifier')}", 'identifier'] ],
                                                       :show_header => false } %>
       </div>
-    </div>
+
   <% end %>
 
   <% if defined?(@results) %>
@@ -69,9 +68,9 @@
     <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
     </div></div>
   </div>
-  <div class="col-sm-3" id="sidebar">
+  <div class="col-sm-3 filter_facets" id="sidebar">
     <a name="filter" title="<%= t('internal_links.filter') %>"></a>
-    <%= render partial: 'shared/facets' %>
+    <%= render partial: 'shared/facets', locals: {:no_form => true} %>
   </div>
 
 </div>
