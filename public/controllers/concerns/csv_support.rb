@@ -7,10 +7,8 @@ module CsvSupport
    uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
    begin
      ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
-#Pry::ColorPrinter.pp "Number of ordered records: #{ordered_records.length}"
      depths = ordered_records.map { |u| u.fetch('depth')}
      levels = depths.uniq.sort.last.to_i
-#     Pry::ColorPrinter.pp "Levels: #{levels}"
      @criteria = {}
      @criteria['resolve[]']  = ['repository:id', 'resource:id@compact_resource', 'top_container_uri_u_sstr:id' ]
      result =  archivesspace.get_record(uri, @criteria)
@@ -28,7 +26,6 @@ module CsvSupport
 
   end
   def collection_header(result)
-#    Pry::ColorPrinter.pp result.notes
     lines = []
     lines << [I18n.t('csv.resource_title'),strip_mixed_content(result.display_string)]
     lines << [I18n.t('csv.resource_dates'), get_dates_string(result.dates)]
@@ -58,10 +55,8 @@ module CsvSupport
    (1..list.length).step(20) do |start|
      stop = start + 19
      res = archivesspace.search_records(list.slice(start,stop).compact, { 'page_size' => (stop - start + 1)})
-#     Pry::ColorPrinter.pp res.records.length
      res.records.each_index do |i|
        result = res.records[i]
-# Pry::ColorPrinter.pp result if i == 1
        level = ordered_recs[start + i]['depth']
        @levels[level] =  strip_mixed_content(result.json['title'])
        @levels.fill('', (level+1)..(@levels.length - 1))

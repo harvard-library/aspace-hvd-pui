@@ -30,7 +30,6 @@
        <% end %>
      <% else %>
        <div class="note-content">
-<!--  <% Pry::ColorPrinter.pp "In 'else' of single note" %> -->
 	 <% if type == 'processinfo' && note_struct['label'] ==  'Aleph ID' %>
 	   <% if defined?(pdf) && pdf %>
 	     <%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %>
