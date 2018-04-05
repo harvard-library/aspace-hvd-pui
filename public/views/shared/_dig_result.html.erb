@@ -1,5 +1,4 @@
  <%# presenting in the list for archival objects that have digital objects associated with them %>
-  <%# Pry::ColorPrinter.pp(result['json'])%>
    <div class="recordrow" style="clear:both" data-uri="<%= result.uri %>">
      <%= render partial: 'shared/result_head', locals: {:result => result, :props => {:full => false} } %>
      <%= render partial: 'shared/context', locals: {:result => result, :props => {:no_repo => false, :no_coll => false }} %>

@@ -30,12 +30,10 @@ AppConfig[:pui_request_email_fallback_from_address] = 'bobbi_fox@harvard.edu'
 #  location: '/usr/sbin/sendmail',
 #  arguments: '-i'
 # }
-AppConfig[:pui_solr_host] = 'http://172.31.28.91:8090'
-AppConfig[:pui_solr_select] = '/collection1/select'
 
 # read in routes
 my_routes = File.join(File.dirname(__FILE__), "routes.rb")
-Pry::ColorPrinter.pp my_routes
+
 Plugins.extend_aspace_routes(my_routes)
 
 
@@ -48,7 +46,6 @@ Rails.application.config.after_initialize do
     def solr(params)
       url = URI.join(AppConfig[:pui_solr_host], AppConfig[:pui_solr_select])
       url.query = URI.encode_www_form(params)
-#Pry::ColorPrinter.pp "SOLR SEARCH URL: #{url}"
       do_search(url)
     end
   end
@@ -59,7 +56,6 @@ Rails.application.config.after_initialize do
     def set_up_and_run_search(default_types = [],default_facets=[],default_search_opts={}, params={})
       if default_types.length == 1 && default_types[0] == 'resource'
         default_facets =  %w{primary_type creators subjects published_agents }
-        Pry::ColorPrinter.pp ["FACETS:", default_facets]
       end
       set_up_advanced_search(default_types, default_facets, default_search_opts, params)
       page = Integer(params.fetch(:page, "1"))
@@ -106,7 +102,6 @@ Rails.application.config.after_initialize do
       @digital_objs = []
       @ids = params.fetch(:ids,'').split(',')
       unless @ids.blank?
-Pry::ColorPrinter.pp "have ids"
       else
         ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
         refs = ordered_records.map { |u| u.fetch('ref') }
@@ -121,7 +116,6 @@ Pry::ColorPrinter.pp "have ids"
         set_up_search(['archival_object'], [], { 'resolve[]' => ['repository:id', 'resource:id@compact_resource', 'ancestors:id@compact_resource', 'top_container_uri_u_sstr:id']}, {}, search_uris)
         @results = archivesspace.search(@query, 1, @criteria)
       rescue Exception => error
-        Pry::ColorPrinter.pp error
         flash[:error] = I18n.t('errors.unexpected_error')
         redirect_back(fallback_location: '/' ) and return
       end
@@ -131,13 +125,6 @@ Pry::ColorPrinter.pp "have ids"
         result['json']['atdig'] = process_digital_instance(result['json']['instances'])
       end
       @pager = Pager.new("/repositories/#{params[:rid]}/resources/#{params[:id]}/digital_only", page, (@ids.length/page_size) + 1)
-
-# Pry::ColorPrinter.pp "******************************************"
-#Pry::ColorPrinter.pp @pager
-
-#      Pry::ColorPrinter.pp  @digital_objs[0]
-# Pry::ColorPrinter.pp "******************************************"
-
     end
   end
 
@@ -155,7 +142,6 @@ Pry::ColorPrinter.pp "have ids"
         @has_digital = false
       end
       @short_repo_name = get_short_repo(@request['repo_name'])
-      Pry::ColorPrinter.pp "Shortened repo name: #{@short_repo_name}"
       # extract the aleph_id
       @aleph_id = ''
       resource = ''
@@ -168,7 +154,6 @@ Pry::ColorPrinter.pp "have ids"
         end
       end
       @aleph_id = extract_aleph_id(resource) unless resource.blank?
-#      Pry::ColorPrinter.pp "aleph id: #{@aleph_id}"
       @request
     end
     

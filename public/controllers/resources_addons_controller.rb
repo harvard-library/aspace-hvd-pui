@@ -34,7 +34,6 @@ class ResourcesAddonsController < ApplicationController
    repo_id = params.require(:rid)
     res_id = "/repositories/#{repo_id}/resources/#{params.require(:id)}"
     results = get_digital_archival_results(res_id, 2)
-# Pry::ColorPrinter.pp "*********************************"
     render(partial: 'resources/digital_count', locals: {:count => results['numFound']})
   end
  
@@ -44,7 +43,6 @@ class ResourcesAddonsController < ApplicationController
    res_id = "/repositories/#{repo_id}/resources/#{params.require(:id)}"
    ordered_records = archivesspace.get_record("#{res_id}/ordered_records").json.fetch('uris')
    refs = ordered_records.map { |u| u.fetch('ref') }
-Pry::ColorPrinter.pp "Number REFs #{refs.length}"
    @results = get_digital_archival_results(res_id, refs.length)
    if Integer(@results['total_hits']) > 0
      results = get_sorted_arch_digital_objects(@results.records, refs)

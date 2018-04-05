@@ -17,7 +17,6 @@
           <% end %>
           <% unless AppConfig[:pui_hide][:search_tab] %>
             <li>
-<% Pry::ColorPrinter.pp "WE'RE IN THE SEARCH tab" %>
               <a href="/search?reset=true" title="<%= I18n.t('search_tab', :target => t('archive._plural')) %>">
 	        <%= t('actions.search').upcase %></a>
                 <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
