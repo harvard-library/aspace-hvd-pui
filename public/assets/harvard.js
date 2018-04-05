@@ -1,3 +1,50 @@
+function HarvardSidebar($sidebar) {
+    this.$sidebar = $sidebar;
+    this.$row = $sidebar.closest('.row');
+    this.$content_pane = this.$row.find('> .col-sm-9');
+    this.$handle = $sidebar.find('.resizable-sidebar-handle');
+    this.bind_events();
+}
+HarvardSidebar.prototype.bind_events = function() {
+    var self = this;
+
+    self.$handle.on('mousedown', function (e) {
+        self.isResizing = true;
+        self.lastDownX = e.clientX;
+    });
+/* re-jigger the mousemove event when there's a resizing handle */
+/* narrow limits:
+     sidebar: 200
+     contents_pane: 300
+*/
+    $(document).on('mousemove', function (e) {
+        if (!self.isResizing) {
+            return;
+        }
+        var cursor_x = e.clientX;
+	var so = self.$sidebar.offset();
+	if ((self.$row.width() - cursor_x) < 300) {
+	    cursor_x = self.$row.width() - 300;
+	}
+	var s_w = Math.max(cursor_x - so.left, 200);
+	if (s_w === 200) {
+	    cursor_x = so.left + 200;
+	}
+        var new_content_width = self.$row.width() - cursor_x;
+	var co = self.$content_pane.offset();
+	co.left = cursor_x + 10;
+/*console.log('clientX:' + e.clientX + ' so.left: ' + so.left + ' s_w: ' + s_w + ' contentwidth: ' + new_content_width);*/
+        self.$sidebar.css('width', 0);
+        self.$content_pane.css('width', new_content_width);
+	self.$content_pane.offset(co);
+	self.$sidebar.offset(so);
+        self.$sidebar.css('width', s_w);
+      }).on('mouseup', function (e) {
+/* console.log('mouseup!'); */
+        self.isResizing = false;
+      });
+};    
+
 function setupRequest(modalId, text) {
     $("#request_modal * .action-btn").hide();
     $('#request_sub').submit(function(e) {
@@ -20,8 +67,8 @@ function new_row_from_template() {
 
 
 $(function() {
-/* this really should be taken care of by a pull request to tack '-label' on to form labels, but... */
 
+/* this really should be taken care of by a pull request to tack '-label' on to form labels, but... */
 /* replace the "To" label with "-- " */
 
    var $inlines = $(".search form .inline-label");
@@ -41,6 +88,7 @@ $(function() {
 	   $(".information div.badge-and-identifier div.identifier").after(html);
        });
    }
+
 /* handle the digital only paging */
 
    if (hrvd_controller === 'resources' && hrvd_action === 'digital_only') {
@@ -56,6 +104,14 @@ $(function() {
        }
    }
 
+
+  if ($('.resizable-sidebar-handle').length > 0) {
+      $(document).off('mousemove');
+      $(document).off('mouseup');
+      $('.resizable-sidebar').each(function() {
+	  new HarvardSidebar($(this));
+      });
+  }
 });
 
 

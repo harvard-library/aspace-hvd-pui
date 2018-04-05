@@ -865,6 +865,14 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     margin-left: 5px;
 }
 
+/* move the sidebar handle to the right */
+  #sidebar.resizable-sidebar .resizable-sidebar-handle {
+      left: auto;
+      right: 0;
+      background-color: #f2f2f2;
+}
+
+
 /* media query adjustments */
 @media screen and (max-width: 767px) {
     .navbar-nav {
