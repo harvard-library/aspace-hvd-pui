@@ -1,6 +1,6 @@
 <%# interim request popup until aeon etc. is resolved %>
 <div id="request_popup">
   <% key = "request.#{@request.repo_code.downcase}" %>
-<%= t(key, default: t('request.default'), :repo => @short_repo_name, :email => @request.repo_email.strip, :id => @aleph_id).html_safe %>
+<%= t(key, default: t('request.default'), :repo => @short_repo_name, :email => (@request.repo_email||'').strip, :id => @aleph_id).html_safe %>
    
 </div>
