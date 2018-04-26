@@ -1,4 +1,4 @@
-
+<% require 'cgi' %>
 <div class="search" role="search">
   <a name="search" id="search"></a>
   <% @search = Search.new unless defined?(@search) %>
@@ -14,7 +14,7 @@
      </div>
      <div class="col-sm-8 form-group form-inline">
       <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
-      <%= text_field_tag('q[]', @search[:q][i], :placeholder =>  t('navbar.search_placeholder'), :id => "q#{i}", 
+      <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), :placeholder =>  t('navbar.search_placeholder'), :id => "q#{i}", 
             :class=> 'form-control repeats fill-column') %>
      </div>
       <% if i == 0 %>
