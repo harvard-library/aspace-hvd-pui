@@ -29,6 +29,7 @@ h1.full-chars {
 }
 
 
+
 /* repository styling */
 .repo_head {
     color:#6c6c6c;
@@ -108,6 +109,9 @@ span.large_it {
 }
 
 /* logo and header rows */
+
+
+
 #logo {
     background-color: #1e1e1e;
     color: #FFFFFF;
@@ -132,6 +136,9 @@ span.large_it {
   border: 0;
   padding-top: 1em;
   padding-bottom: 1em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
 }
 
 #pui_brand div.h1 {
