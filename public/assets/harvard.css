@@ -619,6 +619,17 @@ ul.breadcrumb {background-color: #FFFFFF; }
     text-transform: uppercase;
 }
 
+#sidebar form {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 99%;
+}
+
+#sidebar.resizable-sidebar {
+  padding-left: 1px;
+}
+
+
 /* collection inventory (infinite) */
 
 .infinite-record-wrapper{
