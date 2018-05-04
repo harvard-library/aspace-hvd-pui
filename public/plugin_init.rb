@@ -141,7 +141,8 @@ Rails.application.config.after_initialize do
         STDERR.puts "Error getting digital object count for #{@request.request_uri}: #{boom}"
         @has_digital = false
       end
-      @short_repo_name = get_short_repo(@request['repo_name'])
+#Rails.logger.debug("Repo code #{@request['repo_code'] || 'nope!'}")
+      @short_repo_name = get_short_repo(@request)
       # extract the aleph_id
       @aleph_id = ''
       resource = ''
@@ -177,11 +178,22 @@ Rails.application.config.after_initialize do
       end
       return ''
     end
-   def get_short_repo(name)
-     nms = name.split(',')
-     nms.each{|nm| nm.strip!}
-     nms.delete_if{|nm| nm == "Harvard University" || nm == "Harvard Library"}
-     nms.join(", ")
+   # we're going to invert this to get_long_repo, but not yet
+   def get_short_repo(request)
+     code = request['repo_code']
+     short_nm = ""
+     if !code.blank?
+       code.downcase!
+       short_nm = I18n.t("repos.#{code}.short", :default => '' )
+#Rails.logger.debug("*** code #{code} yields: #{short_nm} ***")
+     end
+     if short_nm.blank?
+       nms = request['repo_name'].split(',')
+       nms.each{|nm| nm.strip!}
+       nms.delete_if{|nm| nm == "Harvard University" || nm == "Harvard Library"}
+       short_nm = nms.join(", ")
+     end
+     short_nm
    end
 
 # this is going to be moved, but I'm putting it here for now
