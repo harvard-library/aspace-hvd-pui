@@ -55,7 +55,7 @@ Rails.application.config.after_initialize do
   Searchable.module_eval do
     def set_up_and_run_search(default_types = [],default_facets=[],default_search_opts={}, params={})
       if default_types.length == 1 && default_types[0] == 'resource'
-        default_facets =  %w{primary_type creators subjects published_agents }
+        default_facets =  %w{repository creators subjects published_agents }
       end
       set_up_advanced_search(default_types, default_facets, default_search_opts, params)
       page = Integer(params.fetch(:page, "1"))
