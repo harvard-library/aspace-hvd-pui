@@ -89,13 +89,18 @@ en:
       hou: https://ask.library.harvard.edu/friendly.php?slug=houghton
   repos:
     bak:
-      lead_graph: <p>Baker Library Special Collections collects, preserves, and provides access to unique resources that focus on the evolution of business and industry and support research and teaching in a diverse range of disciplines.</p>
+      lead_graph: <p>Baker Library Special Collections holds unique resources that focus on the evolution of business and industry, as well as the records of the Harvard Business School, documenting the institution's development over the last century. These rich and varied collections support research in a diverse range of fields such as business, economic, social and cultural history as well as the history of science and technology.</p>
+      short: Baker Library Special Collections
+    div:
+      lead_graph: <p>Special Collections at Andover-Harvard Theological Library preserves and makes accessible primary source materials documenting the history of religion and theology, with particular historical emphasis on American liberal religious traditions. Though the historical strengths of the collections have been in the field of Christianity, other religious traditions are increasingly reflected, in step with Harvard Divinity School's evolving focus on global religious studies.</p>
     hua:
       lead_graph: <p>Holding nearly four centuries of materials, the Harvard University Archives is the principal repository for the institutional records of Harvard University and the personal archives of Harvard faculty, as well as collections related to students, alumni, Harvard-affiliates and other associated topics. The collections document the intellectual, cultural, administrative and social life of Harvard and the influence of the University as it emerged across the globe.</p>
     hou:
       lead_graph: <p>Houghton Library is Harvard College's principal repository for rare books and manuscripts, literary and performing arts archives, and more. The library's holdings of primary source material are managed by an expert staff and shared with scholars, students and the public in the reading room.</p>
     law:
       lead_graph: <p>Harvard Law School Library's Historical &amp; Special Collections (HSC) collects, preserves, and makes available research materials for the study of the law and legal history. HSC holds over 8,000 linear feet of manuscripts, over 300,000 rare books, and more than 70,000 visual images.</p>
+    med:
+      short: Countway Library of Medicine
     sch:
       lead_graph: <p>The preeminent research library on the history of women in the United States, the Schlesinger Library documents  women's lives from the past and present for the future.</p>
 
