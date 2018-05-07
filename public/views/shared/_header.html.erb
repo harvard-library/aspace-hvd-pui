@@ -7,9 +7,9 @@
   <div class="col-md-4"></div>
 </div>
 <div class="row" id="pui_brand">
-  <div class="col-sm-5 h1"><% unless request.original_fullpath == '/' %>
+  <div class="col-sm-4 h1"><% unless request.original_fullpath == '/' %>
         <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"><% end %> <%= t('brand.title') %><% unless request.original_fullpath == '/' %></a><% end %>
   </div>
-  <div class="col-sm-7 nav-row"><%= render partial: 'shared/head_nav' %></div>
+  <div class="col-sm-8 nav-row"><%= render partial: 'shared/head_nav' %></div>
 </div>
 </section>
