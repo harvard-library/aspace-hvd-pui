@@ -714,6 +714,7 @@ ul.breadcrumb {background-color: #FFFFFF; }
     display: inline-block;
 }
 
+
 .record-type-badge.repository {
     color: #6C6C6C;    
 }
@@ -728,10 +729,12 @@ ul.breadcrumb {background-color: #FFFFFF; }
 
 .record-type-badge.subject {
     color: #6C6C6C;    
+    width: 200px;
 }
 
 .record-type-badge.agent {
-    color: #6C6C6C;    
+    color: #6C6C6C;
+    width: 200px;
 }
 .btn.digital_object {
     color: #0579b8;
