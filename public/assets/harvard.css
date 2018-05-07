@@ -361,6 +361,7 @@ div.search {
     color: #FFFFFF;
     padding-bottom: 25px;
     padding-top: 25px;
+    text-align: center;
     background: #0579b8; /* For browsers that do not support gradients */
     background: linear-gradient( to right, #245280, #0579b8); /* Standard syntax (must be last) */
 }
