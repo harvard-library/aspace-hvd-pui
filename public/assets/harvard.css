@@ -431,6 +431,11 @@ i.fa-plus, i.fa-minus {
     text-transform: uppercase;
 }
 
+/* override for the Cite button, per user request */
+#cite_btn {
+     text-transform: none;
+}
+
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
     background-color: #8c8179;
