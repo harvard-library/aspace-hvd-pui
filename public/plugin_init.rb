@@ -142,7 +142,7 @@ Rails.application.config.after_initialize do
         @has_digital = false
       end
 #Rails.logger.debug("Repo code #{@request['repo_code'] || 'nope!'}")
-      @short_repo_name = get_short_repo(@request)
+      @long_repo_name = get_long_repo(@request)
       # extract the aleph_id
       @aleph_id = ''
       resource = ''
@@ -179,21 +179,16 @@ Rails.application.config.after_initialize do
       return ''
     end
    # we're going to invert this to get_long_repo, but not yet
-   def get_short_repo(request)
+   def get_long_repo(request)
      code = request['repo_code']
-     short_nm = ""
+     long_nm = ""
      if !code.blank?
        code.downcase!
-       short_nm = I18n.t("repos.#{code}.short", :default => '' )
-#Rails.logger.debug("*** code #{code} yields: #{short_nm} ***")
+       long_nm = I18n.t("repos.#{code}.long", :default => '' )
+#Rails.logger.debug("*** code #{code} yields: #{long_nm} ***")
      end
-     if short_nm.blank?
-       nms = request['repo_name'].split(',')
-       nms.each{|nm| nm.strip!}
-       nms.delete_if{|nm| nm == "Harvard University" || nm == "Harvard Library"}
-       short_nm = nms.join(", ")
-     end
-     short_nm
+     long_nm = request['repo_name'] if long_nm.blank?
+     long_nm
    end
 
 # this is going to be moved, but I'm putting it here for now

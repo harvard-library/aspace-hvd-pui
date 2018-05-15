@@ -1,9 +1,15 @@
 <%# THIS IS A COMPLETE RE-WRITE %>
+<%
+   long = @result['name']
+   unless @result['repo_code'].blank?
+     long = I18n.t("repos.#{@result['repo_code'].downcase}.long", :default => long)
+   end
+%>
 <div id="main-content" class="repositories">
   <div class="row">
     <div class="col-sm-7 details">
       <div class="repo_head"><%= t('repository._singular') %></div>
-      <h1 class="repo_info"><%= @result['name']%></h1>
+      <h1 class="repo_info"><%= long%></h1>
       <div class="website"><a href="<%= @result['url'] %>" class="repo_info"><%= @result['url']  %></a></div>
       <% unless @result['repo_info'].blank?  %>
        <% lead =  t("repos.#{@result['repo_info']['top']['repo_code'].downcase}.lead_graph", default: '') %>
