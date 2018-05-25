@@ -48,6 +48,16 @@ Rails.application.config.after_initialize do
       url.query = URI.encode_www_form(params)
       do_search(url)
     end
+    # do an internal redirect? from https://coderwall.com/p/gghtkq/rails-internal-requests
+    # commenting that out for now; just doing a redirect
+    def internal_request(path, params={})
+#      request_env = Rack::MockRequest.env_for(path, params: params.to_query) #.merge({
+#                                      'rack.session' => session  # remove if session is unavailable/undesired in request
+#                                                                                   })
+      # Returns: [ status, headers, body ]
+#      Rails.application.routes.call(request_env)
+      ActionController::Redirecting.redirect_to(path)
+    end
   end
     
 # override the resources#index facetting

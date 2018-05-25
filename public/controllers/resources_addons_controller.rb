@@ -2,7 +2,7 @@ class ResourcesAddonsController < ApplicationController
   include ResultInfo
   include CsvSupport
   require 'csv'
-
+  require 'pp'  # temporary, she hopes!
   helper_method :process_repo_info
   helper_method :process_subjects
   helper_method :process_agents
@@ -48,6 +48,24 @@ class ResourcesAddonsController < ApplicationController
      results = get_sorted_arch_digital_objects(@results.records, refs)
    end
  end
+
+ # display a resource given an eadid
+ def eadid
+#   Rails.logger.debug(env.pretty_inspect)
+   results = archivesspace.search("ead_id:#{params[:eadid]}")
+   uri = nil
+   unless results['total_hits'] == 0
+     results = results['results']
+     uri = results[0]['uri'] if  results[0]['publish']
+   end
+   if uri
+     redirect_to(uri)
+#     archivesspace.internal_request(uri)
+   else
+     render 'shared/not_found', :status => 404
+   end
+   
+  end
 
  private
 
