@@ -10,10 +10,15 @@
         <h1 class="title"><%= short_title %></h1>
     </div>
 
-
+    <% long = record.resolved_repository['name']
+       unless record.resolved_repository['repo_code'].blank?
+         long = I18n.t("repos.#{record.resolved_repository['repo_code'].downcase}.long", :default => long)
+       end
+    Rails.logger.debug("long name: #{long}")
+    %>
 
     <%= render(:partial => 'publication_statement', :locals => {
-        :repository_name => record.resolved_repository['name'],
+        :repository_name => long,
         :repository_information => record.repository_information
     })
     %>
