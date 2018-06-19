@@ -40,6 +40,8 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Add configurable "Ask a Librarian/Archivist" to resource and object pages
  - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view
  - Add CSV download functionality, with a button on the Page actions menu
+ - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an object
+
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 

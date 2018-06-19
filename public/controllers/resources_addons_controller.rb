@@ -51,8 +51,25 @@ class ResourcesAddonsController < ApplicationController
 
  # display a resource given an eadid
  def eadid
-#   Rails.logger.debug(env.pretty_inspect)
-   results = archivesspace.search("ead_id:#{params[:eadid]}")
+   redirect_from_reference('ead_id', params[:eadid])
+ end
+
+ # display an object given a refid
+ def refid
+   redirect_from_reference('ref_id', params[:refid])
+ end
+
+
+ private
+ 
+ def get_sorted_arch_digital_objects(records, refs)
+   results = []
+   results = @results.records.sort_by {|record| refs.index(record.json['uri'])}
+ end
+
+ # display a resource or object based on its id
+ def redirect_from_reference(idtype, id)
+   results  = archivesspace.search("#{idtype}:#{id}")
    uri = nil
    unless results['total_hits'] == 0
      results = results['results']
@@ -60,19 +77,9 @@ class ResourcesAddonsController < ApplicationController
    end
    if uri
      redirect_to(uri)
-#     archivesspace.internal_request(uri)
+     #     archivesspace.internal_request(uri)
    else
      render 'shared/not_found', :status => 404
    end
-   
-  end
-
- private
-
- 
- def get_sorted_arch_digital_objects(records, refs)
-   results = []
-   results = @results.records.sort_by {|record| refs.index(record.json['uri'])}
  end
-
 end
