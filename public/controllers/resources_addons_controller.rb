@@ -59,6 +59,11 @@ class ResourcesAddonsController < ApplicationController
    redirect_from_reference('ref_id', params[:refid])
  end
 
+ # display a digital object given a digital object id
+ def digid
+   redirect_from_reference('digital_object_id', params[:digid])
+ end
+
 
  private
  

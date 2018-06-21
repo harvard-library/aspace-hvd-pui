@@ -8,4 +8,6 @@ ArchivesSpacePublic::Application.routes.draw do
   match 'repositories/:rid/resources/:id/exp' => 'resources_addons#experiment', :via => [:get, :post]
   match 'id/resource/:eadid' => 'resources_addons#eadid', :via => [:get, :post]
   match 'id/object/*refid' => 'resources_addons#refid',  :via => [:get, :post]
+  match 'id/digital/*digid'  => 'resources_addons#digid',  :via => [:get, :post]
+
 end
