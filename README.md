@@ -55,5 +55,6 @@ For the most part, configuration values that need to be set are in [public/plugi
 
  - **config.rb** also requires the addition of two keys to enable support of some of enhanced "digital materials" functionality:
    - AppConfig[:pui_solr_host] = {the host name, plus any port}
-   - AppConfig[AppConfig[:pui_solr_host] = {the path down to the **/select**; e.g.: __"/collection1/select"__ }
-
+   - AppConfig[:pui_solr_select] = {the path down to the **/select**; e.g.: __"/collection1/select"__ }
+ - **config.rb** requires the addition of a key to enable support of our "permalink" system:
+   - AppConfig[:pui_perma] = {domain and port(if any)} of the perma link system
