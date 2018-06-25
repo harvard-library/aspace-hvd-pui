@@ -22,6 +22,17 @@
             <% next if extent['_inherited'] %>
               <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%= extent['display'] %></div>
         <% end %>
+	<% if record.agents && Array(record.agents['creator']).length > 0 %>
+	   <% a_direct_creator = record.agents['creator'].reject{|r| r['_inherited']}.take(1) %>
+	   <% unless a_direct_creator.empty? %>
+	     <% a_direct_creator.each do |one| %>
+	       <div><span class='label'><%= I18n.t("enumerations.linked_agent_role.creator") %></span>
+	       <% agent = one.fetch('_resolved') %>
+	       <%= agent['title'] %> <% relator =  t("enumerations.linked_agent_archival_record_relators.#{one['relator']}", :default => nil) %> <%= "( #{relator} )" unless relator.blank? %> 
+	       </div>
+	     <% end %>
+	   <% end %>
+	<% end %>
 	<% note = record.notes.dig('physdesc') %>
 	<% unless note.blank? || note['is_inherited'] %>
               <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%== note['note_text'] %></div>
