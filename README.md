@@ -36,12 +36,12 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Display a paging, ordered list of archival objects that have associated digital objects (including the thumbnail) if "Digital Only" is selected. Selecting on an item in that list will resolve to display the full archival object.
  - Over-ride the Request popup
  - Over-ride *public/app/views/resources/_finding_aid.html.erb* to display the EAD ID
- - Make the Aleph ID a clickable link to Hollis
+ - Make the Aleph ID a clickable link to Hollis TODO: make it a clickable link to the new Alma
  - Add configurable "Ask a Librarian/Archivist" to resource and object pages
  - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view
  - Add CSV download functionality, with a button on the Page actions menu
- - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an object
-
+ - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an archival object, *id/digital{ref_id}* for a digital object
+ - Change citation to 1) link to our permalinks (id.lib.harvard.edu) and 2) use the Repository "long name"
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 

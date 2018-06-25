@@ -59,7 +59,94 @@ Rails.application.config.after_initialize do
       ActionController::Redirecting.redirect_to(path)
     end
   end
+# override the citation construction
+  class Resource
+    def reset_cite
+      @cite = redo_cite
+    end
+    def cite_url_and_timestamp
+      "#{AppConfig[:pui_perma]}/ead/#{@json['ead_id']}/catalog  #{I18n.t('accessed')}  #{Time.now.strftime("%B %d, %Y")}"
+    end
+    def redo_cite
+      cite = note('prefercite')
+      unless cite.blank?
+        cite = strip_mixed_content(cite['note_text'])
+      else
+        cite =  strip_mixed_content(display_string) +  '.'
+        unless repository_information['top']['code'].blank?
+          cite  += " #{get_long_repo(repository_information['top'])}."
+        end
+      end
+      cite += " #{cite_url_and_timestamp}"
+      cite 
+    end
+  end
+
     
+  class ArchivalObject
+    include ResultInfo
+    attr_reader :cite
+
+    def reset_cite
+      @cite = redo_cite
+    end
+    def cite_url_and_timestamp
+      "#{AppConfig[:pui_perma]}/ead/c/#{@json['ref_id']}/catalog  #{I18n.t('accessed')}  #{Time.now.strftime("%B %d, %Y")}"
+    end
+
+    def redo_cite
+      cite = note('prefercite')
+      unless cite.blank?
+        cite = strip_mixed_content(cite['note_text'])
+      else
+        cite = strip_mixed_content(display_string) +   "."
+        if resolved_resource
+          ttl = resolved_resource.dig('title')
+          cite  += " #{strip_mixed_content(ttl)}" unless !ttl
+          cite  += "," unless cite.end_with?(',')
+          cite  += " #{identifier}"
+          cite  += "."
+        end
+        cite  +=  " #{get_long_repo(repository_information['top'])}. " unless !repository_information['top']
+      end
+      cite += " #{ cite_url_and_timestamp}"
+      cite
+    end
+  end
+
+
+  class DigitalObject
+    include ResultInfo
+#    require 'pp'
+    def reset_cite
+      @cite = redo_cite
+ 
+
+    end
+    def cite_url_and_timestamp
+      "#{AppConfig[:pui_perma]}/ead/d/#{@identifier}/catalog  #{I18n.t('accessed')}  #{Time.now.strftime("%B %d, %Y")}"
+    end
+
+    def redo_cite
+#   Rails.logger.debug(repository_information['top'].pretty_inspect) unless repository_information.blank?
+     cite = note('prefercite')
+      unless cite.blank?
+        cite = strip_mixed_content(cite['note_text'])
+      else
+        cite = strip_mixed_content(display_string) +   "."
+        if resolved_resource
+          ttl = resolved_resource.dig('title')
+          cite  += " #{strip_mixed_content(ttl)}" unless !ttl
+          cite  += "." unless cite.end_with?('.')
+        end
+        cite  +=  " #{get_long_repo(repository_information['top'])}. " unless repository_information['top'].blank?
+      end
+      cite += " #{ cite_url_and_timestamp}"
+      cite
+    end
+  end
+
+
 # override the resources#index facetting
 
   Searchable.module_eval do
@@ -77,7 +164,7 @@ Rails.application.config.after_initialize do
       end
     end
   end
-
+  
 # add a digital only action to the resources controller
   class ResourcesController 
     def digital_only
@@ -151,14 +238,14 @@ Rails.application.config.after_initialize do
         STDERR.puts "Error getting digital object count for #{@request.request_uri}: #{boom}"
         @has_digital = false
       end
-#Rails.logger.debug("Repo code #{@request['repo_code'] || 'nope!'}")
       @long_repo_name = get_long_repo(@request)
       # extract the aleph_id
       @aleph_id = ''
       resource = ''
-      if @result.primary_type == 'resource'
+      @result.reset_cite if @result.respond_to? :reset_cite
+      if @result.primary_type == 'resource' 
         resource = @result
-      else
+      else @result.primary_type == 'resource'
         resource_uri = @result.breadcrumb.map { |c| c[:uri] if c[:type] == 'resource'}.compact
         unless resource_uri.blank?
           resource =  archivesspace.get_record(resource_uri, {})
@@ -189,29 +276,28 @@ Rails.application.config.after_initialize do
       return ''
     end
    # we're going to invert this to get_long_repo, but not yet
-   def get_long_repo(request)
-     code = request['repo_code']
-     long_nm = ""
-     if !code.blank?
-       code.downcase!
-       long_nm = I18n.t("repos.#{code}.long", :default => '' )
+    def get_long_repo(request)
+      code = request['repo_code']
+      long_nm = ""
+      if !code.blank?
+        code.downcase!
+        long_nm = I18n.t("repos.#{code}.long", :default => '' )
 #Rails.logger.debug("*** code #{code} yields: #{long_nm} ***")
-     end
-     long_nm = request['repo_name'] if long_nm.blank?
-     long_nm
-   end
+      end
+      long_nm = request['repo_name'] || request['name'] if long_nm.blank?
+      long_nm
+    end
 
 # this is going to be moved, but I'm putting it here for now
-     def get_digital_archival_results(res_id, size = 1)
-       solr_params = {'q' => 'digital_object_uris:[\"\" TO *] AND types:pui_archival_object AND publish:true',
-         'fq' => "resource:\"#{res_id}\"",
-         'rows' => size,
-         'fl' => 'id,uri',
-         'wt' => 'json' }
-       solr_results = archivesspace.solr(solr_params)
-       results = solr_results['response']
-     end
-
+    def get_digital_archival_results(res_id, size = 1)
+      solr_params = {'q' => 'digital_object_uris:[\"\" TO *] AND types:pui_archival_object AND publish:true',
+        'fq' => "resource:\"#{res_id}\"",
+        'rows' => size,
+        'fl' => 'id,uri',
+        'wt' => 'json' }
+      solr_results = archivesspace.solr(solr_params)
+      results = solr_results['response']
+    end
   end
 
 end 
