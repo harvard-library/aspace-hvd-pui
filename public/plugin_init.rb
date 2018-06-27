@@ -165,6 +165,15 @@ Rails.application.config.after_initialize do
     end
   end
   
+# fix multiple facets problem?
+  class FacetFilter
+    def get_facet_types
+      self.facet_types.uniq!
+       Rails.logger.debug("hvd returning facets #{self.facet_types}")
+      self.facet_types
+    end
+  end
+
 # add a digital only action to the resources controller
   class ResourcesController 
     def digital_only

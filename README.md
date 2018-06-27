@@ -1,6 +1,9 @@
 # aspace-hvd-pui
 The customizations needed for Harvard's ArchivesSpace PUI
 
+*NOTE*: Version 1.0.7+ has a temporary patch in public/plugin_init.rb to handle a bug that is fixed in a subsequent 
+release of ArchivesSpace.  It will be removed when we upgrade to that version.
+
 ## List of Customizations
 
 - Styling
@@ -41,6 +44,7 @@ The customizations needed for Harvard's ArchivesSpace PUI
  - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view
  - Add CSV download functionality, with a button on the Page actions menu
  - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an archival object, *id/digital{ref_id}* for a digital object
+ - Support a Repository "long name" that will be used for Repository display page, pdf, and citations only
  - Change citation to 1) link to our permalinks (id.lib.harvard.edu) and 2) use the Repository "long name"
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
