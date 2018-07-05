@@ -106,10 +106,12 @@ class HvdPDF
 #             end
 #            end
           else
-            file_vers = instance.dig('digital_object', '_resolved', 'file_versions') || []
-            file_vers.each do |ver |
-              urn = ver['file_uri'] if ver['xlink_actuate_attribute'] == 'onRequest'
-              break if !urn.blank?
+            if instance.dig('digital_object', '_resolved', 'publish')
+              file_vers = instance.dig('digital_object', '_resolved', 'file_versions') || []
+              file_vers.each do |ver |
+                urn = ver['file_uri'] if ver['xlink_actuate_attribute'] == 'onRequest'
+                break if !urn.blank?
+              end
             end
           end
         end
