@@ -1,4 +1,6 @@
 en:
+  errors:
+    error_pdf: "The PDF you've tried to download does not exist or may have been removed."
   brand:
     title: HOLLIS for Archival Discovery
     title_link_text: Return to the HOLLIS for Archival Discovery main page
