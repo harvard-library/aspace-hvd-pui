@@ -1,5 +1,6 @@
 require 'tempfile'
-
+require 'fileutils'
+require 'pp'
 class HvdPDF
 
   DEPTH_1_LEVELS = ['collection', 'recordgrp', 'series']
@@ -115,7 +116,7 @@ class HvdPDF
             end
           end
         end
-
+        
         out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         previous_level = entry.depth
       end
@@ -130,27 +131,47 @@ class HvdPDF
 
   def generate
     out_html = source_file
-    XMLCleaner.new.clean(out_html.path)
+    begin
+      XMLCleaner.new.clean(out_html.path)
+    rescue Exception => bang
+      Rails.logger.error("Error during processing of /repositories/#{@repo_id}/resources/#{@resource_id}: #{$!}")
+      Rails.logger.error(bang.backtrace.pretty_inspect)
+      copy_file(out_html.path)
+      raise
+    end
 
 #Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
     
     pdf_file = Tempfile.new
     pdf_file.close
+    begin
 
-    renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
-    renderer.set_document(java.io.File.new(out_html.path))
+      renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
+      renderer.set_document(java.io.File.new(out_html.path))
 
     # FIXME: We'll need to test this with a reverse proxy in front of it.
-    renderer.shared_context.base_url = base_url
+      renderer.shared_context.base_url = base_url
 
-    renderer.layout
+      renderer.layout
 
-    pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
-    renderer.create_pdf(pdf_output_stream)
-    pdf_output_stream.close
+      pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
+      renderer.create_pdf(pdf_output_stream)
+      pdf_output_stream.close
+    rescue Exception => bang
+      Rails.logger.error("Error during processing of /repositories/#{@repo_id}/resources/#{@resource_id}: #{$!}")
+      Rails.logger.error(bang.backtrace.join("\n\t").pretty_inspect)
+      copy_file(out_html.path)
+      raise
+    end
 
-   out_html.unlink
+    out_html.unlink
 
     pdf_file
   end
+
+  private
+  def copy_file(path)
+    FileUtils.cp(path, "/home/aspace/#{@repo_id}_#{@resource_id}.html")
+  end
+
 end
