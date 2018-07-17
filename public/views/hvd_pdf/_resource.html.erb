@@ -29,7 +29,7 @@
     <% note = record.notes.dig('physdesc') || '' %>
     <% unless note.blank? %>
        <a id="note-physdesc"></a>
-       <dt><%= I18n.t("enumerations._note_types.physdesc") %></dt><dd><%== note['note_text'].gsub(/&(?!(\w+;))/, "&amp;").html_safe %></dd>
+       <dt><%= I18n.t("enumerations._note_types.physdesc") %></dt><dd><%== note['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></dd>
     <% end %>
 
     <% if record.container_display && !record.container_display.empty? %>
@@ -64,7 +64,7 @@
     <% order.each do |item| %>
       <% unless record.finding_aid[item].blank? %>
         <dt><%= t("resource._public.finding_aid.#{item}") %></dt>
-        <dd><%= record.finding_aid[item].gsub(/&(?!(\w+;))/, "&amp;").html_safe %></dd>
+        <dd><%= record.finding_aid[item].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></dd>
       <% end %>
      <% end %>
     </dl>

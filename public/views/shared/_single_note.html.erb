@@ -30,7 +30,7 @@
            <% end %>
 	   <% unless subnote['_inline_label'] ==  "Aleph ID" ||  (subnote['_inline_label'] || '').downcase == "alma id" %>
            <span class="note-content">
-               <%= subnote['_text'].gsub(/&(?!(\w+;))/, "&amp;").html_safe %>
+               <%= subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
            </span>
 	   <% end %>
          </div>
@@ -45,7 +45,7 @@
 	    <%= t("enumerations.#{which}_link",:id=> note_struct['note_text']).html_safe %>
            <% end %>
          <% else %>
-           <%= note_struct['note_text'].gsub(/&(?!(\w+;))/, "&amp;").html_safe %>
+           <%= note_struct['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
 	 <% end %>
        </div>
      <% end %>
