@@ -35,7 +35,7 @@
 	<% end %>
 	<% note = record.notes.dig('physdesc') %>
 	<% unless note.blank? || note['is_inherited'] %>
-              <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%== note['note_text'] %></div>
+              <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%== note['note_text'].gsub(/&([\w]+=)/, '&amp;\1') %></div>
         <% end %>
 	<% unless urn.blank? %>
 	    <div><a href='<%= urn %>' target='frmpdf'><%= urn %></a></div>
