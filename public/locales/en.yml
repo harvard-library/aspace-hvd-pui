@@ -64,6 +64,7 @@ en:
   pdf_reports:
     return: Return to Table of Contents
     aleph: Library Catalog ID
+    alma: Library Catalog ID
     table_of_contents: Table of Contents
 
   context_delimiter: /
@@ -158,5 +159,6 @@ Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm.
       unspecified: Item
       untitled: Untitled
     aleph_link: "<a target='_blank' href='http://id.lib.harvard.edu/aleph/%{id}/catalog'>Link to catalog</a>"
+    alma_link: "<a target='_blank' href='http://id.lib.harvard.edu/alma/%{id}/catalog'>Link to catalog</a>"
     _note_types:
       odd: General note

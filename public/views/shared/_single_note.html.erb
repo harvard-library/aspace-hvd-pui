@@ -1,6 +1,6 @@
 <%  if !note_struct['note_text'].blank? %>
     <div class="<%= type %> single_note" >
-     <% unless (defined?(notitle) &&  notitle) ||  note_struct['label'] ==  "Aleph ID"%> 
+     <% unless (defined?(notitle) &&  notitle) ||  note_struct['label'] ==  "Aleph ID" ||  (note_struct['label'] || '').downcase == 'alma id'%> 
      <h4><%= note_struct['label'] %></h4>
      <% end %>
      <% if note_struct.has_key?('subnotes') %>
@@ -17,27 +17,35 @@
 		  <% else %>
 	            <span class="note-content"><%= t('enumerations.aleph_link',:id=>subnote['_text']).html_safe %></span>
 		  <% end %>
+	      <% elsif (subnote['_inline_label'] || '').downcase == "alma id" %>
+                <% if defined?(pdf) && pdf %>
+                    <span class="note-content"><%= t('pdf_reports.alma') %>: <%= subnote['_text'] %></span>
+                  <% else %>
+                    <span class="note-content"><%= t('enumerations.alma_link',:id=>subnote['_text']).html_safe %></span>
+                  <% end %>
+   
 	      <% else %>
                 <span class='inline-label'><%= subnote['_inline_label'] %></span>
               <% end %>
            <% end %>
-	   <% if  subnote['_inline_label'] !=  "Aleph ID" %>
+	   <% unless subnote['_inline_label'] ==  "Aleph ID" ||  (subnote['_inline_label'] || '').downcase == "alma id" %>
            <span class="note-content">
-               <%= subnote['_text'].html_safe %>
+               <%= subnote['_text'].gsub(/&(?!(\w+;))/, "&amp;").html_safe %>
            </span>
 	   <% end %>
          </div>
        <% end %>
      <% else %>
        <div class="note-content">
-	 <% if type == 'processinfo' && note_struct['label'] ==  'Aleph ID' %>
+	 <% if type == 'processinfo' && (note_struct['label'] ==  'Aleph ID' || (note_struct['label'] || '').downcase == 'alma id') %>
+	   <% which = (note_struct['label'] ==  'Aleph ID')? 'aleph': 'alma'  %>
 	   <% if defined?(pdf) && pdf %>
-	     <%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %>
+	     <%= t("pdf_reports.#{which}") %>: <%= subnote['_text'] %>
 	   <% else %>
-	    <%= t('enumerations.aleph_link',:id=> note_struct['note_text']).html_safe %>
+	    <%= t("enumerations.#{which}_link",:id=> note_struct['note_text']).html_safe %>
            <% end %>
          <% else %>
-           <%= note_struct['note_text'].html_safe %>
+           <%= note_struct['note_text'].gsub(/&(?!(\w+;))/, "&amp;").html_safe %>
 	 <% end %>
        </div>
      <% end %>
