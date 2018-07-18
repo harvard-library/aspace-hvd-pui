@@ -238,6 +238,7 @@ Rails.application.config.after_initialize do
 
   ResultInfo.module_eval do
     ALEPH_REGEXP =  Regexp.new("^\\d{9}$")
+    ALMA_REGEXP = Regexp.new("^\\d{18}$")
     def fill_request_info
       @request = @result.request_item
 # looking for digital objects goes here
@@ -248,8 +249,9 @@ Rails.application.config.after_initialize do
         @has_digital = false
       end
       @long_repo_name = get_long_repo(@request)
-      # extract the aleph_id
+      # extract the aleph_id and alma ids
       @aleph_id = ''
+      @alma_id = ''
       resource = ''
       @result.reset_cite if @result.respond_to? :reset_cite
       if @result.primary_type == 'resource' 
@@ -260,29 +262,37 @@ Rails.application.config.after_initialize do
           resource =  archivesspace.get_record(resource_uri, {})
         end
       end
-      @aleph_id = extract_aleph_id(resource) unless resource.blank?
+      extract_hollis_ids(resource) unless resource.blank?
       @request
     end
     
-    def extract_aleph_id(result)
+    # yes, this is very clumsy
+    def extract_hollis_ids(result)
       aleph_id = ''
+      alma_id = ''
       unless result.notes['processinfo'].blank?
         notes = result.notes['processinfo']
         label = notes.dig('label') || ''
         if label == 'Aleph ID'
           aleph_id = notes['note_text']
+        elsif label.downcase == 'alma id'
+          alma_id =  notes['note_text']
         else notes['subnotes'].each do |sub|
             label = sub['_inline_label'] || ''
             if  label == 'Aleph ID'
               aleph_id = sub['_text']
+            elsif label.downcase == 'alma id'
+              alma_id = sub['_text']
             end
           end
         end
         if ALEPH_REGEXP.match(aleph_id)
-          return aleph_id
+          @aleph_id = aleph_id
+        end
+        if ALMA_REGEXP.match(alma_id)
+          @alma_id = alma_id
         end
       end
-      return ''
     end
    # we're going to invert this to get_long_repo, but not yet
     def get_long_repo(request)

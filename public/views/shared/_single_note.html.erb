@@ -1,3 +1,12 @@
+<% which_id = ''
+   hollis_id = ''
+   if hollis_id.blank? && (note_struct['label'] || '').downcase ==  "aleph id" 
+     which_id = 'aleph'
+     hollis_id = note_struct['note_text']
+   elsif (note_struct['label'] || '').downcase ==  "alma id"
+     which_id = 'alma'
+     hollis_id = note_struct['note_text']
+   end %>
 <%  if !note_struct['note_text'].blank? %>
     <div class="<%= type %> single_note" >
      <% unless (defined?(notitle) &&  notitle) ||  note_struct['label'] ==  "Aleph ID" ||  (note_struct['label'] || '').downcase == 'alma id'%> 
@@ -5,30 +14,24 @@
      <% end %>
      <% if note_struct.has_key?('subnotes') %>
        <% note_struct['subnotes'].each do |subnote| %>
+         <% inline = subnote['_inline_label'] || '' %>
          <div class="subnote <%= 'well' if subnote['jsonmodel_type'] == 'note_citation' %>">
            <% if subnote['jsonmodel_type'] == 'note_citation' %>
              <h5><%= t('actions.cite') %></h5>
            <% elsif subnote['_title'] %>
              <h5><%= subnote['_title'] %></h5>
-           <% elsif subnote['_inline_label'] %>
-	      <% if  subnote['_inline_label'] == "Aleph ID" %>
-	          <% if defined?(pdf) && pdf %>
-		    <span class="note-content"><%= t('pdf_reports.aleph') %>: <%= subnote['_text'] %></span>
-		  <% else %>
-	            <span class="note-content"><%= t('enumerations.aleph_link',:id=>subnote['_text']).html_safe %></span>
-		  <% end %>
-	      <% elsif (subnote['_inline_label'] || '').downcase == "alma id" %>
-                <% if defined?(pdf) && pdf %>
-                    <span class="note-content"><%= t('pdf_reports.alma') %>: <%= subnote['_text'] %></span>
-                  <% else %>
-                    <span class="note-content"><%= t('enumerations.alma_link',:id=>subnote['_text']).html_safe %></span>
-                  <% end %>
-   
-	      <% else %>
-                <span class='inline-label'><%= subnote['_inline_label'] %></span>
+           <% elsif !inline.blank? %>
+	      <% if inline.downcase == "aleph id" && hollis_id.blank?
+		  which_id = 'aleph'
+		  hollis_id = subnote['_text'] %>
+	      <% elsif inline.downcase == "alma id" 
+	          which_id = 'alma'
+                  hollis_id = subnote['_text'] %>
+   	      <% else %>
+                <span class='inline-label'><%= inline %></span>
               <% end %>
            <% end %>
-	   <% unless subnote['_inline_label'] ==  "Aleph ID" ||  (subnote['_inline_label'] || '').downcase == "alma id" %>
+	   <% unless inline.downcase ==  "aleph id" || inline.downcase == "alma id" %>
            <span class="note-content">
                <%= subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
            </span>
@@ -37,17 +40,18 @@
        <% end %>
      <% else %>
        <div class="note-content">
-	 <% if type == 'processinfo' && (note_struct['label'] ==  'Aleph ID' || (note_struct['label'] || '').downcase == 'alma id') %>
-	   <% which = (note_struct['label'] ==  'Aleph ID')? 'aleph': 'alma'  %>
-	   <% if defined?(pdf) && pdf %>
-	     <%= t("pdf_reports.#{which}") %>: <%= subnote['_text'] %>
-	   <% else %>
-	    <%= t("enumerations.#{which}_link",:id=> note_struct['note_text']).html_safe %>
-           <% end %>
-         <% else %>
+	 <% if  !(type == 'processinfo' && ((note_struct['label'] || '').downcase ==  'aleph id' || (note_struct['label'] || '').downcase == 'alma id')) %>
            <%= note_struct['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
 	 <% end %>
        </div>
      <% end %>
+     <% if type == 'processinfo' && !which_id.blank? %>
+      <% if defined?(pdf) && pdf %>
+          <%= t("pdf_reports.#{which_id}") %> : <%= hollis_id %>
+        <% else %>
+          <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
+        <% end %>
+     <% end %>
+	  
      </div>
 <% end %>
