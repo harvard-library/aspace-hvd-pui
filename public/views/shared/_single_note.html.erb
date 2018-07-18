@@ -6,10 +6,11 @@
    elsif (note_struct['label'] || '').downcase ==  "alma id"
      which_id = 'alma'
      hollis_id = note_struct['note_text']
-   end %>
+   end 
+   label_id = !which_id.blank? %>
 <%  if !note_struct['note_text'].blank? %>
     <div class="<%= type %> single_note" >
-     <% unless (defined?(notitle) &&  notitle) ||  note_struct['label'] ==  "Aleph ID" ||  (note_struct['label'] || '').downcase == 'alma id'%> 
+     <% unless (defined?(notitle) &&  notitle) ||  label_id %>
      <h4><%= note_struct['label'] %></h4>
      <% end %>
      <% if note_struct.has_key?('subnotes') %>
@@ -32,22 +33,23 @@
               <% end %>
            <% end %>
 	   <% unless inline.downcase ==  "aleph id" || inline.downcase == "alma id" %>
+
            <span class="note-content">
-               <%= subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
+               <%= subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe unless label_id %>
            </span>
 	   <% end %>
          </div>
        <% end %>
      <% else %>
        <div class="note-content">
-	 <% if  !(type == 'processinfo' && ((note_struct['label'] || '').downcase ==  'aleph id' || (note_struct['label'] || '').downcase == 'alma id')) %>
+	 <% if which_id.blank? %>
            <%= note_struct['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
 	 <% end %>
        </div>
      <% end %>
      <% if type == 'processinfo' && !which_id.blank? %>
       <% if defined?(pdf) && pdf %>
-          <%= t("pdf_reports.#{which_id}") %> : <%= hollis_id %>
+          <%= hollis_id %>
         <% else %>
           <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
         <% end %>

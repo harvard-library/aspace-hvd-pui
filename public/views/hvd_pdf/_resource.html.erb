@@ -39,7 +39,17 @@
     <% %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial  prefercite).each do |type| %>
        <% note = record.notes.dig(type) %>
        <% unless note.blank? %>
-         <dt><%= note['label'].titlecase || t("enumerations._note_types.#{type}") %></dt>
+         <% label = note['label'] || ''
+	    if label.downcase == 'aleph id'
+	       label = t("pdf_reports.aleph")
+	    elsif label.downcase == 'alma id'
+	       label = t("pdf_reports.alma")
+	    elsif label.blank?
+	       label =  t("enumerations._note_types.#{type}")
+	    else 
+	       label = label.titlecase
+	    end %>
+         <dt><%= label %></dt>
          <dd><%= render partial:  'shared/single_note', locals: {:type => type, :note_struct => note, :notitle => true, :pdf => true} %></dd>
        <% end %>  
     <% end %>
