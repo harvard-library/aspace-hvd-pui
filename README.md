@@ -62,3 +62,6 @@ For the most part, configuration values that need to be set are in [public/plugi
    - AppConfig[:pui_solr_select] = {the path down to the **/select**; e.g.: __"/collection1/select"__ }
  - **config.rb** requires the addition of a key to enable support of our "permalink" system:
    - AppConfig[:pui_perma] = {domain and port(if any)} of the perma link system
+ - **config.rb** requires the addition of keys to support linking to PUI feedback and help:
+   - AppConfig[:pui_feedback_url]
+   - AppConfig[:pui_help_url] 
