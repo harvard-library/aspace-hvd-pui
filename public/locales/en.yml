@@ -67,6 +67,8 @@ en:
     aleph: Library Catalog ID
     alma: Library Catalog ID
     table_of_contents: Table of Contents
+    perma: Library Catalog Link
+    perma_link: "<a href='http://id.lib.harvard.edu/%{idpiece}/catalog'>http://id.lib.harvard.edu/%{idpiece}/catalog</a>"
 
   context_delimiter: /
   request:

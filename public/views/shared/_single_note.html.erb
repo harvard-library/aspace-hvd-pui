@@ -49,7 +49,12 @@
      <% end %>
      <% if type == 'processinfo' && !which_id.blank? %>
       <% if defined?(pdf) && pdf %>
+          <%= t("pdf_reports.#{which_id}") unless label_id %>
           <%= hollis_id %>
+	 <div class="sub-note">
+	 <span class="note-content"> <%= t('pdf_reports.perma') %></span> 
+	   <%= t("pdf_reports.perma_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
+	 </div>
         <% else %>
           <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
         <% end %>
