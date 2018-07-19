@@ -1,8 +1,45 @@
 require 'java'
+require 'pp'
+require 'open-uri'
 
 class HvdPdfController <  ApplicationController
 
   PDF_MUTEX = java.util.concurrent.Semaphore.new(AppConfig[:pui_max_concurrent_pdfs])
+
+  def fetch
+    repo_id = params.fetch(:rid, nil)
+    resource_id = params.fetch(:id, nil)
+    uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
+    begin
+      result = archivesspace.get_record(uri, {'resolve[]' => ['resource:id@compact_resource']})
+#Rails.logger.debug(result.ead_id)
+      ead_id = result.ead_id || nil
+      pdf_name = ''
+      if ead_id.nil?
+        pdf_name = "_repositories_#{params[:rid]}_resources_#{params[:id]}.pdf"
+      else
+        pdf_name = "#{ead_id}.pdf"
+      end
+      pdf_url = "#{AppConfig[:pui_stored_pdfs_url]}/#{pdf_name}"
+#    Rails.logger.debug("PDF url: #{pdf_url}")
+    # h/t https://stackoverflow.com/questions/12279056/rails-allow-download-of-files-stored-on-s3-without-showing-the-actual-s3-url-to#answer-12281634
+      data = open(pdf_url)
+      send_data data.read.force_encoding('BINARY'), :filename => pdf_name, :type => "application/pdf", :disposition => "attachment"
+    rescue RecordNotFound
+      @type = I18n.t('resource._singular')
+      @page_title = I18n.t('errors.error_404', :type => @type)
+      @uri = uri
+      @back_url = request.referer || ''
+      render  'shared/not_found', :status => 404
+    rescue OpenURI::HTTPError => ouerr
+       flash[:error] = I18n.t('errors.error_pdf')
+       redirect_back(fallback_location: uri) and return
+    rescue Exception => bang
+      flash[:error] = I18n.t('errors.unexpected_error')
+      Rails.logger.debug("ERROR RETRIEVING PDF: " + bang.pretty_inspect)
+      redirect_back(fallback_location: uri) and return
+    end
+  end
 
   def resource
     PDF_MUTEX.acquire
