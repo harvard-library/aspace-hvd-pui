@@ -14,7 +14,7 @@ module CsvSupport
      result =  archivesspace.get_record(uri, @criteria)
      lines.concat(collection_header(result))
      lines.concat(get_objects_header(levels))
-     lines.concat(get_objects(ordered_records,levels))
+     lines.concat(get_objects(ordered_records,levels)) if levels > 0
      lines
    rescue RecordNotFound
      @type = I18n.t('resource._singular')
@@ -49,30 +49,32 @@ module CsvSupport
  end
  def get_objects(ordered_recs, levels = 2)
    lines = []
-   list = ordered_recs.map {|u| "#{u.fetch('ref')}#pui" }
-   @levels = Array.new(levels - 1,'')
-   # get recs 20 at at time
-   (1..list.length).step(20) do |start|
-     stop = start + 19
-     res = archivesspace.search_records(list.slice(start,stop).compact, { 'page_size' => (stop - start + 1)})
-     res.records.each_index do |i|
-       result = res.records[i]
-       level = ordered_recs[start + i]['depth']
-       @levels[level] =  strip_mixed_content(result.json['title'])
-       @levels.fill('', (level+1)..(@levels.length - 1))
-       line = []
-       line << result.json['ref_id']
-       line << strip_mixed_content(result.json['title']) || ''
-       line.concat(get_date_subset(result.json))
-       line << result.identifier || ''
-       line << result.container_summary_for_badge || ''
-       line << result.json['level'] ||''
-       line << get_creator_string(result.agents)
-       line << get_digital_urn(result.json)
-       line << get_access_note(result.notes)
-       line << get_phys_desc(result.json)
-       line.concat(compute_levels(level))
-       lines << line
+   if levels > 0
+     list = ordered_recs.map {|u| "#{u.fetch('ref')}#pui" }
+     @levels = Array.new(levels - 1,'')
+     # get recs 20 at at time
+     (1..list.length).step(20) do |start|
+       stop = start + 19
+       res = archivesspace.search_records(list.slice(start,20).compact, { 'page_size' => (stop - start + 1)})
+       res.records.each_index do |i|
+         result = res.records[i]
+         level = ordered_recs[start + i]['depth']
+         @levels[level] =  strip_mixed_content(result.json['title'])
+         @levels.fill('', (level+1)..(@levels.length - 1))
+         line = []
+         line << result.json['ref_id']
+         line << strip_mixed_content(result.json['title']) || ''
+         line.concat(get_date_subset(result.json))
+         line << result.identifier || ''
+         line << result.container_summary_for_badge || ''
+         line << result.json['level'] ||''
+         line << get_creator_string(result.agents)
+         line << get_digital_urn(result.json)
+         line << get_access_note(result.notes)
+         line << get_phys_desc(result.json)
+         line.concat(compute_levels(level))
+         lines << line
+       end
      end
    end
    lines
