@@ -9,10 +9,11 @@ class HvdPdfController <  ApplicationController
   def fetch
     repo_id = params.fetch(:rid, nil)
     resource_id = params.fetch(:id, nil)
+    token = params.fetch(:token, nil)
+
     uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
     begin
       result = archivesspace.get_record(uri, {'resolve[]' => ['resource:id@compact_resource']})
-#Rails.logger.debug(result.ead_id)
       ead_id = result.ead_id || nil
       pdf_name = ''
       if ead_id.nil?
@@ -22,18 +23,17 @@ class HvdPdfController <  ApplicationController
       end
       pdf_url = "#{AppConfig[:pui_stored_pdfs_url]}/#{pdf_name}"
 #    Rails.logger.debug("PDF url: #{pdf_url}")
+       if token
+        token.gsub!(/[^a-f0-9]/, '')
+        cookies["pdf_generated_#{token}"] = { value: token, expires: 5.minutes.from_now }
+      end
     # h/t https://stackoverflow.com/questions/12279056/rails-allow-download-of-files-stored-on-s3-without-showing-the-actual-s3-url-to#answer-12281634
       data = open(pdf_url)
-      send_data data.read.force_encoding('BINARY'), :filename => pdf_name, :type => "application/pdf", :disposition => "attachment"
+      send_data data.read.force_encoding('BINARY'), :filename => pdf_name, :type => "application/pdf", :disposition => "attachment", :stream => 'true'
     rescue RecordNotFound
-      @type = I18n.t('resource._singular')
-      @page_title = I18n.t('errors.error_404', :type => @type)
-      @uri = uri
-      @back_url = request.referer || ''
       render  'shared/not_found', :status => 404
     rescue OpenURI::HTTPError => ouerr
-       flash[:error] = I18n.t('errors.error_pdf')
-       redirect_back(fallback_location: uri) and return
+      redirect_to("#{uri}/hvd_pdf") and return
     rescue Exception => bang
       flash[:error] = I18n.t('errors.unexpected_error')
       Rails.logger.debug("ERROR RETRIEVING PDF: " + bang.pretty_inspect)
