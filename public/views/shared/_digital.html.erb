@@ -1,17 +1,16 @@
 <%# expects 'dig_objs' as an array of hashes %>
 <!-- harvard plugin version!! -->
+<% Rails.logger.debug("Dig objs: #{dig_objs.pretty_inspect}") %>
 <% unless dig_objs.blank? %>
 <div class="images">
   <% dig_objs.each do |d_file| %>
    <% if !d_file['out'].blank? %>
     <% if d_file['thumb'].blank? %>
  <div class="objectimage <%= (d_file['caption'].blank? ? 'nocaption' : '') %>">
-      <form id="larger" action="<%= d_file['out'] %>" method="get" target="new">
-       <button type="submit"  class="btn btn-default record-type-badge digital_object" title="<%= t('digital_object._public.link') %>" >
+   <a class="objectimagelnk" target="new" href="<%= d_file['out'] %>" title="<%= t('digital_object._public.link') %>">
           <i class="fa fa-external-link"></i><br/>
             <%= t('views._shared.digital_object_link', :name=> ( d_file['caption'].blank? ? "#{t('enumerations.instance_instance_type.digital_object')} #{d_file['material']}" : d_file['caption'])).html_safe %>
-        </button>
-      </form>
+        </a>
 </div>
 
     <% else %>
