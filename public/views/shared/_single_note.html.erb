@@ -1,3 +1,15 @@
+<% if type == 'processinfo'
+   unless note_struct['subnotes'].blank? or note_struct['subnotes'].length == 1
+     if (note_struct['label']||'') != 'Processing Information'
+        note_struct['subnotes'][0]['_inline_label'] =  note_struct['label']
+        note_struct['label'] = 'Processing Information'
+     end
+   end
+
+end %>
+
+
+
 <% which_id = ''
    hollis_id = ''
    if hollis_id.blank? && (note_struct['label'] || '').downcase ==  "aleph id" 
