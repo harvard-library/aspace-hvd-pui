@@ -38,6 +38,14 @@
 
     <% %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial  prefercite).each do |type| %>
        <% note = record.notes.dig(type) %>
+       <% if  type == 'processinfo'
+	    unless note.blank? && (note['subnotes'].blank? || note['subnotes'].length == 1)
+	      if (note['label']||'') != 'Processing Information'
+                note['subnotes'][0]['_inline_label'] =  note['label']
+                note['label'] = 'Processing Information'
+	      end
+	    end
+          end %>
        <% unless note.blank? %>
          <% label = note['label'] || ''
 	    if label.downcase == 'aleph id'
