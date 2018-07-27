@@ -33,6 +33,7 @@
           <div class="below-the-fold">
       <% end %>
       <% facet_count += 1 %>
+      <% unless type=='primary_type' && !['archival_object', 'resource', 'digital_object'].find_index(v) %>
       <dd>
         <a href="<%= app_prefix("#{@page_search}&filter_fields[]=#{type}&filter_values[]=#{CGI.escape(v)}") %>"
            title="<%= t('search_results.filter_by')%> '<%= get_pretty_facet_value(type,v) %>'">
@@ -40,6 +41,7 @@
         </a>
         <span class="recordnumber"><%= ct %></span>
       </dd>
+     <% end %>
     <% end %>
     <% if facet_count > 5 %>
         <span class="less btn">&and; <%= t('search_results.fewer_facets') %></span>
