@@ -14,7 +14,6 @@
        unless record.resolved_repository['repo_code'].blank?
          long = I18n.t("repos.#{record.resolved_repository['repo_code'].downcase}.long", :default => long)
        end
-    Rails.logger.debug("long name: #{long}")
     %>
 
     <%= render(:partial => 'publication_statement', :locals => {

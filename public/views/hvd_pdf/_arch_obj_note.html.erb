@@ -23,7 +23,6 @@
            <%= t('pdf_reports.alma') %>: <%= subnote['_text'] %>
        <% else %>
 	   <span class='inline-label'><%= subnote['_inline_label'] %></span>
-<% Rails.logger.debug(subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;")) %>
 	   <%= subnote['_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %>
        <% end %>
        <% ctr = ctr + 1 %>
