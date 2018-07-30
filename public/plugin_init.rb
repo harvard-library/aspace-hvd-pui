@@ -147,22 +147,30 @@ Rails.application.config.after_initialize do
   end
 
 
-# override the resources#index facetting
-
+# Override some assumed defaults in the core code
   Searchable.module_eval do
+    alias_method :core_set_up_and_run_search, :set_up_and_run_search
+    alias_method :core_set_up_advanced_search, :set_up_advanced_search
+    # override the resources#index facetting
     def set_up_and_run_search(default_types = [],default_facets=[],default_search_opts={}, params={})
       if default_types.length == 1 && default_types[0] == 'resource'
         default_facets =  %w{repository creators subjects published_agents }
+
       end
-      set_up_advanced_search(default_types, default_facets, default_search_opts, params)
-      page = Integer(params.fetch(:page, "1"))
-      @results =  archivesspace.advanced_search('/search', page, @criteria)
-      if @results['total_hits'].blank? ||  @results['total_hits'] == 0
-        raise NoResultsError.new
-      else
-        process_search_results(@base_search)
+      unless default_types.blank?
+        default_types.delete('agent')
+        default_types.delete('subject')
       end
+      core_set_up_and_run_search(default_types, default_facets, default_search_opts, params)
     end
+  # we don't want to see agents or subjects in the search results, only in facets
+   def set_up_advanced_search(default_types = [],default_facets=[],default_search_opts={}, params={})
+     unless default_types.blank?
+       default_types.delete('agent')
+       default_types.delete('subject')
+     end
+     core_set_up_advanced_search(default_types, default_facets, default_search_opts, params)
+   end
   end
   
 # fix multiple facets problem?
