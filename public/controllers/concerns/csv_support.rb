@@ -70,7 +70,7 @@ module CsvSupport
          line << result.json['level'] ||''
          line << get_creator_string(result.agents)
          line << get_digital_urn(result.json)
-         line << get_access_note(result.notes)
+         line << get_access_note(result.json)
          line << get_phys_desc(result.json)
          line.concat(compute_levels(level))
          lines << line
@@ -88,11 +88,22 @@ module CsvSupport
    compute
  end
 
- def get_access_note(notes)
+ def get_access_note(json)
    access = ''
-   unless notes.blank?
-     note = notes['accessrestrict'] || {}
-     access = note['note_text'] || '' if note['is_inherited'] == nil
+   unless json['notes'].blank?
+     json['notes'].each do |note|
+       if note['type'] == 'accessrestrict' && note['_inherited'].blank?
+         if note.has_key?('subnotes')
+           note['subnotes'].each do |subnote|
+             if subnote['publish'] && subnote['jsonmodel_type'] == 'note_text'
+               access << subnote['content'] + '  '
+             end
+           end
+         else
+           access << note['note_text'] if note['publish']
+         end
+       end
+     end
    end
    strip_mixed_content(access)
  end
