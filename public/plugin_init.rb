@@ -151,8 +151,35 @@ Rails.application.config.after_initialize do
   Searchable.module_eval do
     alias_method :core_set_up_and_run_search, :set_up_and_run_search
     alias_method :core_set_up_advanced_search, :set_up_advanced_search
-    # override the resources#index facetting
+    alias_method :core_process_search_results, :process_search_results
+
+    # if a digital object is returned, replace with archival object
+    def process_search_results(base="/search")
+      Rails.logger.debug("*** In plugin process search results")
+      record_crit  = {"resolve[]"=>   ["repository:id", "resource:id@compact_resource",
+                                        "ancestors:id@compact_resource",
+                                        "top_container_uri_u_sstr:id"]}
+      unless @results.records.blank?
+        @results.records.each_with_index do |result, inx|
+          if result['primary_type'] == 'digital_object'
+            unless result['linked_instance_uris'].blank?
+              link = "#{result['linked_instance_uris'][0]}#pui"
+              begin
+                arch_obj = archivesspace.get_record(link, record_crit)
+                @results.records[inx] = arch_obj
+              rescue  Exception => error
+                Rails.debug.logger("**** Unable to find archival object #{link} with message #{error.message}")
+              end
+            end
+          end
+        end
+      end
+      core_process_search_results(base)
+    end
+   
+    # override the resources#index faceting
     def set_up_and_run_search(default_types = [],default_facets=[],default_search_opts={}, params={})
+      
       if default_types.length == 1 && default_types[0] == 'resource'
         default_facets =  %w{repository creators subjects published_agents }
 

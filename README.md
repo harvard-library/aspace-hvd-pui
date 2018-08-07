@@ -22,6 +22,7 @@ release of ArchivesSpace.  It will be removed when we upgrade to that version.
   
 
 - Functionality
+  - in any search results list: if a result has a primary type of **digital_object**, get the archival_object it links to instead
   - add a **Creators** facet to display of Collections within a Repository
   - over-ride *public/app/views/shared/_record_innards.html.erb* to favor the abstract over the Scope and Contents, and create a "Scope & Contents" Accordion fold; also remove duplicate Physical Description from accordion
   - over-ride *public/app/views/shared/_childern_tree.html.erb* so that, if the link of a branch is clicked, the children under it will become visible
