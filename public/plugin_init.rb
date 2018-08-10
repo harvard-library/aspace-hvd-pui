@@ -242,8 +242,7 @@ Rails.application.config.after_initialize do
       r = Regexp.new("#{uri_prefix}(\\d+)")
       @digital_objs = []
       @ids = params.fetch(:ids,'').split(',')
-      unless @ids.blank?
-      else
+      if @ids.blank?
         ordered_records = archivesspace.get_record("#{uri}/ordered_records").json.fetch('uris')
         refs = ordered_records.map { |u| u.fetch('ref') }
         dig_results = get_digital_archival_results(uri, refs.length)
