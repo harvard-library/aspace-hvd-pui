@@ -155,7 +155,7 @@ Rails.application.config.after_initialize do
 
     # if a digital object is returned, replace with archival object
     def process_search_results(base="/search")
-      Rails.logger.debug("*** In plugin process search results")
+#      Rails.logger.debug("*** In plugin process search results")
       record_crit  = {"resolve[]"=>   ["repository:id", "resource:id@compact_resource",
                                         "ancestors:id@compact_resource",
                                         "top_container_uri_u_sstr:id"]}
