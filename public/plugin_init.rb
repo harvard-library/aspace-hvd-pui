@@ -264,7 +264,7 @@ Rails.application.config.after_initialize do
       @digital_objs.each do |result|
         result['json']['atdig'] = process_digital_instance(result['json']['instances'])
       end
-       @pager = Pager.new("/repositories/#{params[:rid]}/resources/#{params[:id]}/digital_only", page, ((@ids.length % page == 0) ? @ids.length/page_size : (@ids.length/page_size) + 1))
+      @pager = Pager.new("/repositories/#{params[:rid]}/resources/#{params[:id]}/digital_only", page, ((@ids.length % page_size == 0) ? @ids.length/page_size : (@ids.length/page_size) + 1))
     end
   end
 
