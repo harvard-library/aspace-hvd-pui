@@ -6,13 +6,14 @@
 
   <div class="avoid-break">
     <div class="print-record-border print-record level-<%= level %> <%= record.level %>">
+<% Rails.logger.debug("#{record.json['ref_id']}") %>
         <h3><a class="record-title" id="<%= record.uri %>"><%= record.display_string.gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></a></h3>
 	<% id = (record.direct_component_id.blank?)? '' : record.direct_component_id
 	   id << " #{container_string}"
          %>
         <div class="indented">
 	<% unless id.blank? %>
-	  <div><span class='label'><%= t('resource._public.finding_aid.identifier') %></span> <%= id %></div>
+	  <div><a id="<%= record.ref_id %>"><span class='label'><%= t('resource._public.finding_aid.identifier') %></span></a> <%= id %></div>
 	<% end %>
         <% record.dates.each do |date| %>
            <% next if date['_inherited'] %>

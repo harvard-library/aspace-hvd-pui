@@ -77,6 +77,15 @@ $(function() {
        if ($lbl.text() == "TO")
        {$lbl.text(" ")}
    });
+ /* do pointer href conversions, if necessary */
+    $("a.ptr").each(function() {
+	var $a = $(this);
+	var href = $a.attr("href");
+	if (href.startsWith("#")) {
+	    href = href.substr(1);
+	}
+	$a.attr("href", pathname + "/resolve/" + href); 
+    })
 /* if showing a resource, get the number of digital objects */
    if (hrvd_controller === 'resources' && hrvd_action === 'show') {
        $.ajax({

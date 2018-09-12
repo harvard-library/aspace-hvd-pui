@@ -1,0 +1,18 @@
+
+<% Array(note['content']).each do |content| %>
+  <%== process_mixed_content(content).html_safe %>
+  <br/>
+<% end %>
+
+<dl>
+  <% Array(note['items']).each do |index_item| %>
+    <dt><%= process_mixed_content( index_item['value'] ).html_safe %></dt>
+    <% if !index_item['reference'].blank? && !index_item['reference_text'].blank? %>
+       <dd><a class="ptr" href="#<%= index_item['reference']%>"><%= index_item['reference_text'] %></a></dd>
+    <% elsif !index_item['reference_text'].blank? %>
+       <dd><%=  process_mixed_content(index_item['reference_text']).html_safe %></dd>
+    <% elsif !index_item['reference'].blank? %>
+    <dd><%= process_mixed_content(index_item['reference']).html_safe %></dd>
+    <% end %>
+  <% end %>
+</dl>

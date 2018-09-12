@@ -146,8 +146,54 @@ Rails.application.config.after_initialize do
     end
   end
 
+# expand on node processing for the <ptr> element
+  ManipulateNode.module_eval do
+    alias_method :core_process_anchor, :process_anchor
+    alias_method :core_process_pointer, :process_pointer
 
-# Override some assumed defaults in the core code
+ # current proccess_anchor misses the possibility of the title being xlink:title
+ # this version also assigns a class name to the anchor node based on the node name
+ def process_anchor(node)
+    href = node['href']  
+    href.strip! if href
+    href = node['xlink:href'] if href.blank?
+    target = node['target']
+    target.strip! if target
+    return node if href.blank? && target.blank? 
+    ttl = node['title']
+    ttl = node['xlink:title'] if ttl.blank?
+    anchornode = node.document.create_element('a')
+    anchornode['href'] = href || "\##{target}"
+    if ttl
+      anchornode['title'] = ttl.strip
+    elsif node.name == 'extref'
+      ttl == node.content
+    end 
+    if node.name == 'extref'
+      anchornode['target'] = 'extref'
+      ttl = node.content
+    end
+    anchornode['class'] = node.name if !node.name.blank?
+    if !node.name.match(/ptr$/) && node.name != 'extref'
+      node.remove_attribute('href') if node['href']
+      anchornode.add_child(node.to_xml)
+    else
+      ttl = ttl || 'link'
+      anchornode.add_child(ttl)
+    end
+    anchornode
+end
+
+#    def process_pointer(node)
+#Rails.logger.debug("POINTER NODE: #{node.to_xml}")
+#      core_process_pointer(node)
+#    end
+    
+
+  end
+
+
+# Override some assumed search defaults in the core code
   Searchable.module_eval do
     alias_method :core_set_up_and_run_search, :set_up_and_run_search
     alias_method :core_set_up_advanced_search, :set_up_advanced_search

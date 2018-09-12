@@ -4,6 +4,10 @@
 
 <script type="text/javascript">var hrvd_controller = '<%= params[:controller] %>';
                                var hrvd_action = '<%= params[:action] %>';
+                               var pathname = window.location.pathname ;
+              <% if !@context.blank? && @context.length > 2 %>
+	         pathname = "<%= @context[1][:uri] %>";
+	      <% end %>
 </script>
 
 <%= javascript_include_tag "#{@base_url}/assets/harvard.js" %>

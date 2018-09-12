@@ -47,6 +47,8 @@ release of ArchivesSpace.  It will be removed when we upgrade to that version.
  - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an archival object, *id/digital{ref_id}* for a digital object
  - Support a Repository "long name" that will be used for Repository display page, pdf, and citations only
  - Change citation to 1) link to our permalinks (id.lib.harvard.edu) and 2) use the Repository "long name"
+ - Override process_anchor in the ManipulateNode concern to: 1) look for xlink:title if title doesn't exist; 2) give the anchor element class={node.name}
+ - To accommodate Harvard's run-around of Aspace not handling pointer groups: override [public/views/shared/_note_index.html.erb](https://github.com/harvard-library/aspace-hvd-pui/blob/public/views/shared/_note_index.html.erb) to process any nodes present.
 
 ## Changes that I want to add as pull requests to the ArchivesSpace repo:
 

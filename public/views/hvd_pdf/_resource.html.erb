@@ -58,7 +58,7 @@
 	       label = label.titlecase
 	    end %>
          <dt><%= label %></dt>
-         <dd><%= render partial:  'shared/single_note', locals: {:type => type, :note_struct => note, :notitle => true, :pdf => true} %></dd>
+         <dd><%= render partial:  'hvd_pdf/single_note', locals: {:type => type, :note_struct => note, :notitle => true, :pdf => true} %></dd>
        <% end %>  
     <% end %>
     
@@ -92,6 +92,9 @@
 
 <% record.notes.each do |note_type, note| %>
     <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial separatedmaterial physdesc prefercite).include?(note_type) %>
+<% if note_type == "odd"
+Rails.logger.debug("ODD NOTE: #{note}")
+ end %>
     <a id="note-<%= note_type %>"></a>
     <h2><% if note['label'] %>
             <%= note['label'].titlecase %>
