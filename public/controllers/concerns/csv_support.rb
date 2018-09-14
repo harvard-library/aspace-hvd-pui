@@ -58,22 +58,25 @@ module CsvSupport
        res = archivesspace.search_records(list.slice(start,20).compact, { 'page_size' => (stop - start + 1)})
        res.records.each_index do |i|
          result = res.records[i]
-         level = ordered_recs[start + i]['depth']
-         @levels[level] =  strip_mixed_content(result.json['title'])
-         @levels.fill('', (level+1)..(@levels.length - 1))
-         line = []
-         line << result.json['ref_id']
-         line << strip_mixed_content(result.json['title']) || ''
-         line.concat(get_date_subset(result.json))
-         line << result.identifier || ''
-         line << result.container_summary_for_badge || ''
-         line << result.json['level'] ||''
-         line << get_creator_string(result.agents)
-         line << get_digital_urn(result.json)
-         line << get_access_note(result.json)
-         line << get_phys_desc(result.json)
-         line.concat(compute_levels(level))
-         lines << line
+#Rails.logger.debug(result.json.pretty_inspect) if i < 3 && start == 1
+         if result.json['publish']
+           level = ordered_recs[start + i]['depth']
+           @levels[level] =  strip_mixed_content(result.json['title'])
+           @levels.fill('', (level+1)..(@levels.length - 1))
+           line = []
+           line << result.json['ref_id']
+           line << strip_mixed_content(result.json['title']) || ''
+           line.concat(get_date_subset(result.json))
+           line << result.identifier || ''
+           line << result.container_summary_for_badge || ''
+           line << result.json['level'] ||''
+           line << get_creator_string(result.agents)
+           line << get_digital_urn(result.json)
+           line << get_access_note(result.json)
+           line << get_phys_desc(result.json)
+           line.concat(compute_levels(level))
+           lines << line
+         end
        end
      end
    end
@@ -150,10 +153,14 @@ module CsvSupport
    urn = ''
    unless json['instances'].blank?
      json['instances'].each do |inst|
-       file_vers = inst.dig('digital_object', '_resolved', 'file_versions') || []
-       file_vers.each do |ver |
-         urn = ver['file_uri'] if ver['xlink_actuate_attribute'] == 'onRequest'
-         break if !urn.blank?
+       if inst.dig('digital_object', '_resolved', 'publish')
+         file_vers = inst.dig('digital_object', '_resolved', 'file_versions') || []
+         file_vers.each do |ver |
+           if ver['publish']
+             urn = ver['file_uri'] if ver['xlink_actuate_attribute'] == 'onRequest'
+             break if !urn.blank?
+           end
+         end
        end
      end
    end
