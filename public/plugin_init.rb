@@ -168,7 +168,7 @@ Rails.application.config.after_initialize do
                 arch_obj = archivesspace.get_record(link, record_crit)
                 @results.records[inx] = arch_obj
               rescue  Exception => error
-                Rails.debug.logger("**** Unable to find archival object #{link} with message #{error.message}")
+                Rails.logger.debug("**** Unable to find archival object #{link} for #{result['uri']} [with message #{error.message}")
               end
             end
           end

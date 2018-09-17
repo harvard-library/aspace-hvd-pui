@@ -65,6 +65,12 @@ function new_row_from_template() {
     return $row;
 }
 
+/* supports going through the digital-only pages */
+function new_dig_page($form, page) {
+    var $p = $form.children("input[name='page']");
+    $p.val(page);
+    $form.submit();
+}
 
 $(function() {
 
@@ -96,10 +102,15 @@ $(function() {
        if ($page_links.length > 0) {
 	   $page_links.not('dots').click(function( event ) {
 	       var  $form = $(this).parents("form.digital_page");
-	       var page = $(this).children("a").html();
-	       var $p = $form.children("input[name='page']");
-	       $p.val(page);
-	       $form.submit();
+	       if ($(this).hasClass("previous") || $(this).hasClass("next"))  {
+		   $non = $("ul.pagination li.active") // get where you're coming from
+		   var current = parseInt($non.children("a").html());
+		   var newpage = $(this).hasClass("previous") ? current -1: current + 1;
+		   new_dig_page($form, newpage);
+	       }
+	       else {
+		    new_dig_page($form, $(this).children("a").html());
+	       }
 	   });
        }
    }
