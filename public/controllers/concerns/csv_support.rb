@@ -53,7 +53,7 @@ module CsvSupport
      list = ordered_recs.map {|u| "#{u.fetch('ref')}#pui" }
      @levels = Array.new(levels - 1,'')
      # get recs 20 at at time
-     (1..list.length).step(20) do |start|
+     (1..(list.length-1)).step(20) do |start|
        stop = start + 19
        res = archivesspace.search_records(list.slice(start,20).compact, { 'page_size' => (stop - start + 1)})
        res.records.each_index do |i|
