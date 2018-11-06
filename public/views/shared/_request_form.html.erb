@@ -6,8 +6,6 @@
      else
        key = 'request.room'
      end
-Rails.logger.debug("room key: request_room.#{@request.repo_code.downcase}, room: #{room}, key: #{key}")
-
   %>
   <% idpiece = ''
      if !@alma_id.blank?
