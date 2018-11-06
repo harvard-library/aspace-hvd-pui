@@ -73,14 +73,22 @@ en:
     perma_link: "<a href='http://id.lib.harvard.edu/%{idpiece}/catalog'>http://id.lib.harvard.edu/%{idpiece}/catalog</a>"
 
   context_delimiter: /
+  request_room:
+    arn: Botany Libraries reading room
+    ecb: Botany Libraries reading room
+    far: Botany Libraries reading room
+    gra: Botany Libraries reading room
+    orc: Botany Libraries reading room
+    hou:  Houghton Library reading room
+    law:  Historical &amp; Special Collections reading room, the Root Room
+    
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
     ddo: "Ready to get to work? Once you have compiled a list of material you would like to consult in the reading room, please fill out our <a href='http://www.doaks.org/research/library-archives/access-and-hours/schedule-an-appointment' target='_new'>appointment request form</a>.
 Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm."
-    law: To request materials for use in the Historical &amp; Special Collections reading room, the Root Room, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS</a> catalog record and click on the <strong>Request Item</strong> button . Please be sure to include the full Item Identifier in your request.
     hua: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Harvard University Archives at <a href="mailto:archives_reference@harvard.edu">archives_reference@harvard.edu</a>.</p>
     med: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Center for the History of Medicine at the Countway Library at <a href="http://asklib.hms.harvard.edu" target="_blank">asklib.hms.harvard.edu</a> for assistance and additional information</p>
-    hou: To request materials for use in the Houghton Library reading room go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS</a> catalog record and click on the <strong>Request Item</strong> button . Please be sure to include the full Item Identifier in your request.
+    room: To request materials for use in the %{room}, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS</a> catalog record and click on the <strong>Request Item</strong> button . Please be sure to include the full Item Identifier in your request.
   ask:
     text:
       default: Ask a Librarian

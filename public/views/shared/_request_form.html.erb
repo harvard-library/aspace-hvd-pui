@@ -1,7 +1,14 @@
 <%# interim request popup until aeon etc. is resolved %>
 <div id="request_popup">
-  <% key = "request.#{@request.repo_code.downcase}" %>
-  
+  <% room = t("request_room.#{@request.repo_code.downcase}", default:'') 
+     if room == ""
+       key = "request.#{@request.repo_code.downcase}"
+     else
+       key = 'request.room'
+     end
+Rails.logger.debug("room key: request_room.#{@request.repo_code.downcase}, room: #{room}, key: #{key}")
+
+  %>
   <% idpiece = ''
      if !@alma_id.blank?
        idpiece = "alma/#{@alma_id.strip}"
@@ -9,6 +16,7 @@
        idpiece = "aleph/#{@aleph_id.strip}"
      end %>
 
-<%= t(key, default: t('request.default'), :repo => @request.repo_name, :email => (@request.repo_email||'').strip, :idpiece => idpiece).html_safe %>
+<%= t(key, default: t('request.default'), :repo => @request.repo_name, :email => (@request.repo_email||'').strip, 
+    :idpiece => idpiece, :room => room).html_safe %>
    
 </div>
