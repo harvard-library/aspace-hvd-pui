@@ -28,7 +28,7 @@
 	     <% a_direct_creator.each do |one| %>
 	       <div><span class='label'><%= I18n.t("enumerations.linked_agent_role.creator") %></span>
 	       <% agent = one.fetch('_resolved') %>
-	       <%= agent['title'] %> <% relator =  t("enumerations.linked_agent_archival_record_relators.#{one['relator']}", :default => nil) %> <%= "( #{relator} )" unless relator.blank? %> 
+	       <%= agent['title'] %> <% relator = (one['relator'].blank?) ? nil : t("enumerations.linked_agent_archival_record_relators.#{one['relator']}", :default => nil) %> <%= "( #{relator} )" unless relator.blank? %> 
 	       </div>
 	     <% end %>
 	   <% end %>
