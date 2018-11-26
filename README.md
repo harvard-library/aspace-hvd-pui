@@ -18,7 +18,7 @@ release of ArchivesSpace.  It will be removed when we upgrade to that version.
     - color changes
     - "pill box" style changes, and is being moved to someplace else in the layout
   - move the sidebar to the left.
-  - change the Page Action tabs to be buttons will small icons.
+  - change the Page Action tabs to be buttons with small icons.
   
 
 - Functionality
@@ -42,7 +42,7 @@ release of ArchivesSpace.  It will be removed when we upgrade to that version.
  - Over-ride *public/app/views/resources/_finding_aid.html.erb* to display the EAD ID
  - Make the Aleph ID a clickable link to Hollis TODO: make it a clickable link to the new Alma
  - Add configurable "Ask a Librarian/Archivist" to resource and object pages
- - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view
+ - Completely substitute the model, controller, and views for PDF generation with a Harvard-custom view; this includes the "View PDF" 'button' being a GET rather than a POST.
  - Add CSV download functionality, with a button on the Page actions menu
  - Added "permalink" routes: *id/resource/{ead_id}* for a resource, *id/object/{ref_id}* for an archival object, *id/digital{ref_id}* for a digital object
  - Support a Repository "long name" that will be used for Repository display page, pdf, and citations only
