@@ -84,6 +84,7 @@ en:
     
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
+    bak: "To request materials for use in the Baker Library Special Collections reading room, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS catalog record</a> and click on the <strong>View in Library</strong> button. Please be sure to include specific Volume/Box/Folder/Item information in your request."
     ddo: "Ready to get to work? Once you have compiled a list of material you would like to consult in the reading room, please fill out our <a href='http://www.doaks.org/research/library-archives/access-and-hours/schedule-an-appointment' target='_new'>appointment request form</a>.
 Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm."
     hua: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Harvard University Archives at <a href="mailto:archives_reference@harvard.edu">archives_reference@harvard.edu</a>.</p>
