@@ -16,7 +16,7 @@
         return height;
     }
 
-    function InfiniteScroll(base_url, elt, recordCount, loaded_callback) {
+    function InfiniteScrollReplacement(base_url, elt, recordCount, loaded_callback) {
         this.base_url = base_url;
         this.wrapper = elt;
         this.elt = elt.find('.infinite-record-container');
@@ -38,7 +38,7 @@
 
     var scrollTimer = undefined;
 
-    InfiniteScroll.prototype.scrollBy = function (px) {
+    InfiniteScrollReplacement.prototype.scrollBy = function (px) {
         var self = this;
 
         var containerTop = self.wrapper.offset().top;
@@ -71,7 +71,7 @@
         }, SCROLL_DELAY_MS);
     };
 
-    InfiniteScroll.prototype.initEventHandlers = function () {
+    InfiniteScrollReplacement.prototype.initEventHandlers = function () {
         var self = this;
 
         var PGUP = 33;
@@ -120,7 +120,7 @@
         });
     };
 
-    InfiniteScroll.prototype.initScrollbar = function () {
+    InfiniteScrollReplacement.prototype.initScrollbar = function () {
         var self = this;
 
         self.scrollbarElt = $('<div class="infinite-record-scrollbar" />');
@@ -158,11 +158,11 @@
 
     };
 
-    InfiniteScroll.prototype.registerScrollCallback = function(callback) {
+    InfiniteScrollReplacement.prototype.registerScrollCallback = function(callback) {
         this.scrollCallbacks.push(callback);
     };
 
-    InfiniteScroll.prototype.updateScrollPosition = function () {
+    InfiniteScrollReplacement.prototype.updateScrollPosition = function () {
         var self = this;
 
         var allRecords = self.elt.find('.infinite-record-record');
@@ -175,7 +175,7 @@
         self.scrollbarElt.scrollTop(pxOffset);
     };
 
-    InfiniteScroll.prototype.scrollToRecord = function (recordNumber) {
+    InfiniteScrollReplacement.prototype.scrollToRecord = function (recordNumber) {
         var self = this;
 
         var containerTop = self.wrapper.offset().top;
@@ -205,7 +205,7 @@
     };
 
 
-    InfiniteScroll.prototype.findClosestElement = function (elements) {
+    InfiniteScrollReplacement.prototype.findClosestElement = function (elements) {
         var self = this;
 
         if (elements.length <= 1) {
@@ -249,7 +249,7 @@
 
     var populateRunning = false;
 
-    InfiniteScroll.prototype.considerPopulatingWaypoints = function (preserveScroll, reentrant, done_callback) {
+    InfiniteScrollReplacement.prototype.considerPopulatingWaypoints = function (preserveScroll, reentrant, done_callback) {
         var self = this;
 
         if (!done_callback) {
@@ -279,7 +279,7 @@
         }
     };
 
-    InfiniteScroll.prototype.populateWaypoints = function (waypointElts, preserveScroll, done_callback) {
+    InfiniteScrollReplacement.prototype.populateWaypoints = function (waypointElts, preserveScroll, done_callback) {
         var self = this;
 
         if (!done_callback) {
@@ -340,19 +340,19 @@
         });
     };
 
-    InfiniteScroll.prototype.url_for = function (action) {
+    InfiniteScrollReplacement.prototype.url_for = function (action) {
         var self = this;
 
         return self.base_url + '/' + action;
     };
 
 
-    InfiniteScroll.prototype.getClosestElement = function() {
+    InfiniteScrollReplacement.prototype.getClosestElement = function() {
         var allRecords = this.elt.find('.infinite-record-record');
         var index = this.findClosestElement(allRecords);
         return $(allRecords.get(index));
     };
 
-    exports.InfiniteScroll = InfiniteScroll;
+    exports.InfiniteScrollReplacement = InfiniteScrollReplacement;
 
 }(window));

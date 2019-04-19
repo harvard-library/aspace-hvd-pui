@@ -48,7 +48,7 @@
  var syncer = new TreeSync('<%= params[:rid]%>');
  window.syncer = syncer;
 
- var scroll = new InfiniteScroll('<%= url_for(:action => :show) %>/infinite',
+ var scroll = new InfiniteScrollReplacement('<%= url_for(:action => :show) %>/infinite',
                                  $('.infinite-record-wrapper'),
                                  <%= @ordered_records.length %>,
                                  function() {
