@@ -2,13 +2,14 @@ en:
   errors:
     error_pdf: "The PDF you've tried to download does not exist or may have been removed."
   brand:
-    title: HOLLIS for Archival Discovery
+    title: HOLLIS for
+    title_subtext: Archival Discovery
     title_link_text: Return to the HOLLIS for Archival Discovery main page
     logo_link: http://library.harvard.edu/
     logo_link_title: Harvard Library
     logo_alt: Harvard Library Logo
     home: Home
-    welcome_head: '' 
+    welcome_head: ''
     welcome_message:  <p><span class="large_it">Explore collection guides, finding aids, and inventories to locate unique materials in Harvard's special collections and archives.</span></p><p class='serif'>Special collections and archives contain primary sources including letters, photographs, film and video, print items, digital materials, and objects.</p>
     welcome_page_title: Hollis Archival Collection Guides
     welcome_repo: <a href="/repositories" target="repos" title="see a list of repositories">CONTACT A REPOSITORY</a> <p class='serif'>Learn about hours, more detailed information, and specific policies for each location.</p>
@@ -17,7 +18,7 @@ en:
 
   repository_count: "Repositories (%{count})"
   repository_text: Special collections and archival materials are held at various repositories at Harvard University.
-  
+
   footer:
     staff: Staff Interface
     aspace: "Powered by <a href='%{link}' target='_blank'>%{text}</a>"
@@ -81,7 +82,7 @@ en:
     orc: Botany Libraries reading room
     hou:  Houghton Library reading room
     law:  Historical &amp; Special Collections reading room, the Root Room
-    
+
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
     bak: "To request materials for use in the Baker Library Special Collections reading room, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS catalog record</a> and click on the <strong>View in Library</strong> button. Please be sure to include specific Volume/Box/Folder/Item information in your request."
@@ -155,7 +156,7 @@ Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm.
   digital_object:
     _public:
        link: External link to digital material
-       in_collection: "Contains digital material %{details} "       
+       in_collection: "Contains digital material %{details} "
        details:
          _singular: (1 item)
          _plural: "(%{ct} items)"

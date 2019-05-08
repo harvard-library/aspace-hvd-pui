@@ -1,15 +1,22 @@
 <section  id="header">
-<div class="row" id="logo">
-  <div class="col-md-4"></div>
-  <div class="col-sm-4"><a href="<%= t('brand.logo_link') %>" 
-     title="<%= t('brand.logo_link_title') %>"><img alt="<%= t('brand.logo_alt') %>" src="/assets/hl_logo.svg"/></a>
+  <div class="container logo-container" style="width:100%;">
+    <div class="row" id="logo">
+      <div class="col-sm-8 hollis-row" style="height:40px;">
+        <div class="hollis-link">
+          <% unless request.original_fullpath == '/' %>
+            <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"><% end %>
+              <%= t('brand.title') + ' ' %><span class="title-subtext"><%= t('brand.title_subtext')%></span><% unless request.original_fullpath == '/' %>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    <div class="row logo-row" id="logo">
+      <div class="col-sm-4 harvard-logo"><a href="<%= t('brand.logo_link') %>"
+         title="<%= t('brand.logo_link_title') %>"><img alt="<%= t('brand.logo_alt') %>" src="/assets/hl_logo.svg"/></a>
+      </div>
+    </div>
   </div>
-  <div class="col-md-4"></div>
-</div>
-<div class="row" id="pui_brand">
-  <div class="col-sm-4 h1"><% unless request.original_fullpath == '/' %>
-        <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"><% end %> <%= t('brand.title') %><% unless request.original_fullpath == '/' %></a><% end %>
+  <div class="row" id="pui_brand">
+    <div class="col-sm-8 nav-row"><%= render partial: 'shared/head_nav' %></div>
   </div>
-  <div class="col-sm-8 nav-row"><%= render partial: 'shared/head_nav' %></div>
-</div>
 </section>

@@ -1,4 +1,4 @@
-/* colors for harvard 
+/* colors for harvard
    harvard_dark: #1e1e1e;   <-- background for top of header, used in some text
    default_color: #414141;  <-- apparent default for text
    greyer: #6c6c6c;  <-- used in contrast to darker color (for example: showing 10 of xxx, where the 10 & xxx are dark
@@ -116,12 +116,11 @@ span.large_it {
 
 /* logo and header rows */
 
-
-
-#logo {
+/* #logo {
     background-color: #1e1e1e;
     color: #FFFFFF;
-}
+} */
+
 .panel-footer {
     background-color: #1e1e1e;
     color: #FFFFFF;
@@ -138,13 +137,12 @@ span.large_it {
 }
 
 #header > .row {
-  height: auto;    
+  height: auto;
   border: 0;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1rem;
   padding-right: 1rem;
-
 }
 
 #pui_brand div.h1 {
@@ -157,12 +155,12 @@ span.large_it {
 
 .form-inline .form-group {
     margin-bottom: .5em;
-} 
+}
 
 input, button, select {
   margin-bottom: .2em;
 }
-#res_accordion { 
+#res_accordion {
     padding-top: .2em; }
 
 /* accordion stuff */
@@ -398,7 +396,7 @@ div.search {
 /* plusminus styling of icon */
 .plusminus > .btn {
     margin-bottom: 3px;
-} 
+}
 
 i.fa {
  vertical-align: baseline;
@@ -486,7 +484,7 @@ i.fa-plus, i.fa-minus {
 .expander {
     color: #8996A0;
     font-weight: bold;
-  
+
 }
 a.expander:hover {
   color: #BAC5C6;
@@ -588,7 +586,7 @@ i { vertical-align: top; }
 
 .results_head {
     color: #6c6c6c;
-    
+
 }
 .results_head span {
     color: #414141;
@@ -727,19 +725,19 @@ ul.breadcrumb {background-color: #FFFFFF; }
 
 
 .record-type-badge.repository {
-    color: #6C6C6C;    
+    color: #6C6C6C;
 }
 
 .record-type-badge.resource {
-    color: #6C6C6C;    
+    color: #6C6C6C;
 }
 
 .record-type-badge.archival_object, .record-type-badge.digital_object {
-    color: #6C6C6C;    
+    color: #6C6C6C;
 }
 
 .record-type-badge.subject {
-    color: #6C6C6C;    
+    color: #6C6C6C;
     width: 200px;
 }
 
@@ -797,7 +795,7 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
 #welcome_links {
     margin-top: 30px;
 }
-.welcome_links{ 
+.welcome_links{
     margin-right: 1em;
     margin-left: 1em;
     padding: 1em;
@@ -812,7 +810,7 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
     letter-spacing: 1.1px;
     padding-bottom: 3px;
     text-decoration: none;
-    text-transform: uppercase;  
+    text-transform: uppercase;
 }
 
 .welcome_links > a:after {

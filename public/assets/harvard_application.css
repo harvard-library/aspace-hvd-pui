@@ -2139,6 +2139,58 @@ a.bg-danger:focus {
   border-bottom: 1px solid #eeeeee;
 }
 
+.title-subtext {
+  font-family: Lora;
+  font-style: italic;
+  font-size: 17px;
+}
+
+#logo {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.logo-container {
+  width: 100%;
+}
+
+.hollis-row {
+  background: linear-gradient(to right, #245280, #0579b8);
+  height: 60px;
+}
+
+.hollis-link {
+  padding-left: 2em;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
+
+.harvard-logo {
+  text-align: left;
+  padding-right: 2em;
+  padding-top: 7px;
+  vertical-align: middle;
+}
+
+.hollis-link > a {
+  color: white;
+}
+
+@media(max-width: 767px) {
+  .hollis-link {
+    text-align: center;
+  }
+  .harvard-logo {
+    text-align: center;
+  }
+}
+
+.logo-row {
+  height: 40px;
+  color: white;
+}
+
 /* line 149, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_type.scss */
 ul,
 ol {
