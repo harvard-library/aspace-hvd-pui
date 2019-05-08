@@ -1,7 +1,7 @@
 <section  id="header">
-  <div class="container logo-container" style="width:100%;">
+  <div class="container logo-container">
     <div class="row" id="logo">
-      <div class="col-sm-8 hollis-row" style="height:40px;">
+      <div class="col-sm-8 hollis-row">
         <div class="hollis-link">
           <% unless request.original_fullpath == '/' %>
             <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"><% end %>

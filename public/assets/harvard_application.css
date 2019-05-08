@@ -2150,13 +2150,14 @@ a.bg-danger:focus {
   color: white;
 }
 
-.logo-container {
+.container.logo-container {
   width: 100%;
 }
 
 .hollis-row {
   background: linear-gradient(to right, #245280, #0579b8);
-  height: 60px;
+  height: 40px;
+  width: 100%;
 }
 
 .hollis-link {
@@ -2169,7 +2170,7 @@ a.bg-danger:focus {
 .harvard-logo {
   text-align: left;
   padding-right: 2em;
-  padding-top: 7px;
+  padding-top: 8px;
   vertical-align: middle;
 }
 
