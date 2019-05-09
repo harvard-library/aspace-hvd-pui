@@ -2139,10 +2139,18 @@ a.bg-danger:focus {
   border-bottom: 1px solid #eeeeee;
 }
 
+.header-title {
+  font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
 .title-subtext {
-  font-family: Lora;
+  font-family: "Lora", Georgia, serif;
+  font-size: 22px;
   font-style: italic;
-  font-size: 17px;
+  font-weight: normal;
 }
 
 #logo {
@@ -2178,11 +2186,21 @@ a.bg-danger:focus {
   color: white;
 }
 
-@media(max-width: 767px) {
-  .hollis-link {
+/* Make the Harvard logo centered on medium devices and lower */
+
+@media(max-width: 992px){
+  .harvard-logo {
     text-align: center;
   }
-  .harvard-logo {
+  .harvard-logo img {
+    max-width: 80%;
+  }
+}
+
+/* Make the Hollis link centered on small devices and lower */
+
+@media(max-width: 767px) {
+  .hollis-link {
     text-align: center;
   }
 }

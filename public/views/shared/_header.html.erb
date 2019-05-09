@@ -5,7 +5,9 @@
         <div class="hollis-link">
           <% unless request.original_fullpath == '/' %>
             <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"><% end %>
-              <%= t('brand.title') + ' ' %><span class="title-subtext"><%= t('brand.title_subtext')%></span><% unless request.original_fullpath == '/' %>
+              <span class="header-title"><%= t('brand.title') + ' ' %></span>
+              <span class="title-subtext"><%= t('brand.title_subtext')%></span>
+              <% unless request.original_fullpath == '/' %>
             </a>
           <% end %>
         </div>
