@@ -2153,6 +2153,17 @@ a.bg-danger:focus {
   font-weight: normal;
 }
 
+.fa-icon {
+  height: 100%;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.navbar-nav div {
+  padding-right: 10px;
+  display: inline;
+}
+
 #logo {
   background-color: #1e1e1e;
   color: white;
@@ -2194,6 +2205,14 @@ a.bg-danger:focus {
   }
   .harvard-logo img {
     max-width: 80%;
+  }
+}
+/* Make the navbar centered on small devices only */
+@media(max-width: 768px){
+  .nav-row {
+    float: none;
+    width: 79%;
+    margin: auto;
   }
 }
 
@@ -5901,10 +5920,6 @@ tbody.collapse.in {
   }
 }
 
-/* line 232, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-nav {
-  margin: 7.5px -15px;
-}
 /* line 235, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -5918,6 +5933,7 @@ tbody.collapse.in {
     float: none;
     width: auto;
     margin-top: 0;
+    margin-right: 2em;
     background-color: transparent;
     border: 0;
     box-shadow: none;
@@ -5934,22 +5950,6 @@ tbody.collapse.in {
   /* line 257, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
-  }
-}
-@media (min-width: 768px) {
-  /* line 232, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-nav {
-    float: left;
-    margin: 0;
-  }
-  /* line 270, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-nav > li {
-    float: left;
-  }
-  /* line 272, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
   }
 }
 
@@ -12813,7 +12813,7 @@ a img {
   background: #F3F3F1 !important;
   border-top: 1px solid #1e1e1e;
   border-bottom: 0.0625rem solid #1e1e1e;
-  float: none !important;
+  float: right !important;
 }
 
 /* line 62, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */

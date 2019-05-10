@@ -254,14 +254,11 @@ h1 > span.title {
 
 /* top horizontal menu */
 
-.nav-row {
-    float:right;
-}
-
 .top-bar {
     background-color: #FFFFFF !important;
     border: 0;
     margin-top: 2em;
+    margin-right: 2em;
     padding-right: 0;
 }
 
@@ -272,7 +269,6 @@ h1 > span.title {
 .navbar-default {
     background-color: #FFFFFF !important;
     border: 0;
-    float: right;
 }
 .navbar-default .navbar-text {
   color: #1E1E1E;
@@ -921,12 +917,4 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
       left: auto;
       right: 0;
       background-color: #f2f2f2;
-}
-
-
-/* media query adjustments */
-@media screen and (max-width: 767px) {
-    .navbar-nav {
-	margin: 0;
-    }
 }
