@@ -4,38 +4,40 @@
   <% @search = Search.new unless defined?(@search) %>
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
-
   <div class="row search_row" id="search_row_<%= i %>">
-    <div class="row">
-     <div class="col-sm-1 col-sm-offset-1 bool form-group form-inline">
+    <div class="row form-inline">
       <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
       <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
       <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
-     </div>
-     <div class="col-sm-8 form-group form-inline">
-      <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
-      <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), :placeholder =>  t('navbar.search_placeholder'), :id => "q#{i}", 
-            :class=> 'form-control repeats fill-column') %>
-     </div>
-      <% if i == 0 %>
-      <div class="col-sm-1 form-group form-inline ">
-	<input name="commit" value="Search  " class="btn btn-primary inline-search-btn" id="submit_search" data-disable-with="Search" type="submit">
+      <div class="input-group col-md-8">
+        <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
+        <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), :placeholder =>  t('navbar.search_placeholder'), :id => "q#{i}",
+          :class=> 'form-control repeats') %>
+        <span class="input-group-btn">
+          <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control repeats') %>
+          <% if i == 0 %>
+            <%= label_tag(:"field#{i}", t('search-field'),:class => 'sr-only repeats') %>
+            <input name="commit" value="Search  " class="btn btn-primary inline-search-btn" id="submit_search" data-disable-with="Search" type="submit">
+          <% end %>
+        </span>
       </div>
-      <% end %>
 
+      <div class="input-group">
+
+
+      </div>
     </div>
     <div class="row ">
      <% if i == 0 %>
       <div class="col-sm-3 col-sm-offset-2 form-group form-inline norepeat">
-	 <%= label_tag(:limit, t('search-limit',:limit => ""),:class => 'sr-only') %>
-	 <span class="inline-label repeats"><%= t('search-limit',:limit => "") %>:</span>
+        <%= label_tag(:limit, t('search-limit',:limit => ""),:class => 'sr-only') %>
+        <span class="inline-label repeats"><%= t('search-limit',:limit => "") %>:</span>
         <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control') %>
       </div>
      <% end %>
      <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> col-sm-5 form-group form-inline">
-      <%= label_tag(:"field#{i}", t('search-field'),:class => 'sr-only repeats') %>
-      <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control repeats') %>
- 
+
+
       <span class="inline-label repeats"><%= t('search_results.filter.years') %>:</span>
       <%= label_tag(:"from_year#{i}", "#{t('search_results.filter.from_year')}", :class => 'sr-only repeats') %>
       <%= text_field_tag('from_year[]', @search[:from_year][i], :size => 4,:maxlength => 4, :id=>"from_year#{i}",
@@ -43,9 +45,9 @@
 
 
       <%= label_tag(:"to_year#{i}", "#{t('search_results.filter.to_year')}", :class=> 'sr-only repeats') %>
-      <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}", 
+      <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}",
                :class=> 'form-control repeats', :placeholder => t('search_results.filter.to')) %>
-    <span class="plusminus"></span>
+    <span class="plusminus"><i aria-hidden="true" class="fa fa-plus"></i></span>
 
     </div>
    </div>
