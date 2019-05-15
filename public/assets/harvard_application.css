@@ -4984,8 +4984,8 @@ tbody.collapse.in {
   font-size: 14px;
   text-align: left;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #DDD;
+  border: 1px solid rgba(221, 221, 221,1);
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -5012,6 +5012,7 @@ tbody.collapse.in {
   line-height: 1.428571429;
   color: #333333;
   white-space: nowrap;
+  text-transform: none;
 }
 
 /* line 78, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_dropdowns.scss */
