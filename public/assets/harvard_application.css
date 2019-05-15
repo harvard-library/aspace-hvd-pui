@@ -2160,8 +2160,12 @@ a.bg-danger:focus {
 }
 
 .navbar-nav div {
-  padding-right: 10px;
+  margin-right: 15px;
   display: inline;
+}
+
+.navigation-item {
+  margin-left: 15px;
 }
 
 #logo {
@@ -2211,7 +2215,7 @@ a.bg-danger:focus {
 @media(max-width: 768px){
   .nav-row {
     float: none;
-    width: 79%;
+    width: 82%;
     margin: auto;
   }
 }
