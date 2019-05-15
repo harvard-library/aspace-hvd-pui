@@ -302,6 +302,15 @@ ul.navbar-nav {
     font-size: 16px;
 }
 
+
+.submenu:hover {
+  text-decoration: none !important;
+}
+
+.submenu:hover span {
+  text-decoration: underline;
+}
+
 /* "pill" navigation on collection page */
 
  div.nav-pills {

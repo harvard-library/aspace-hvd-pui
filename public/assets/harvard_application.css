@@ -2161,7 +2161,12 @@ a.bg-danger:focus {
 
 .navbar-nav div {
   margin-right: 15px;
-  display: inline;
+  display: inline-block;
+}
+
+i[class^="icon-"]:before {
+	display: inline-block;
+	text-decoration: none;
 }
 
 .navigation-item {
@@ -6190,6 +6195,7 @@ tbody.collapse.in {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
     background-color: #e7e7e7;
+    text-decoration: underline;
   }
   /* line 490, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
@@ -13007,7 +13013,6 @@ a img {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #1e1e1e;
     background-color: #F3F3F1;
-    text-decoration: underline;
   }
 }
 /* line 204, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
