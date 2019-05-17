@@ -13219,8 +13219,8 @@ h5 {
 }
 
 .search-field {
-  width: 15rem !important;
-  margin: 0;
+  margin: 0 !important;
+  width: 50% !important;
 }
 
 /* line 477, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
@@ -13228,9 +13228,8 @@ h5 {
   background-color: #f8c21c;
 }
 
-/* line 480, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
-#submit_search {
-  width: 100%;
+.input-group-btn {
+  width: auto;
 }
 
 /* line 483, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */

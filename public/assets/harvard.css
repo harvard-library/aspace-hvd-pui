@@ -304,6 +304,11 @@ h1 > span.title {
   color: #6c6c6c;
   text-decoration: underline;
 }
+
+.search-keyword {
+  width: 100px;
+}
+
 ul.navbar-nav {
     font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
     font-weight: 500;
@@ -393,6 +398,18 @@ div.search {
     padding-top: 0;
     vertical-align: middle;
     color: #414141;
+}
+
+@media (min-width: 768px) {
+  .inline-search-btn {
+    width: 5rem;
+  }
+  .search-keyword {
+    width: 100px !important;
+  }
+  #submit_search {
+    width: 5rem !important;
+  }
 }
 
 /* plusminus styling of icon */
