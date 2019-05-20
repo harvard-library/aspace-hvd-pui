@@ -28,8 +28,6 @@ h1.full-chars {
     margin-top: 5px;
 }
 
-
-
 /* repository styling */
 .repo_head {
     color:#6c6c6c;
@@ -144,8 +142,6 @@ span.large_it {
     font-size: 1.6rem;
 }
 
-
-
 /* some padding, margination issues */
 
 .form-inline .form-group {
@@ -245,12 +241,10 @@ h1 > span.title {
   font-variant: normal;
 }
 
-
 /* sizing */
 .recordrow h3 {
     font-size: 1rem;
 }
-
 
 /* top horizontal menu */
 
@@ -302,7 +296,6 @@ ul.navbar-nav {
     font-size: 16px;
 }
 
-
 .submenu:hover {
   text-decoration: none !important;
 }
@@ -341,8 +334,6 @@ ul.navbar-nav {
 div.nav-pill > a:hover {
     text-decoration: underline;
 }
-
-
 
 div.nav-pill > a.active {
     text-decoration: none;
@@ -501,11 +492,9 @@ button.expandme:active {
     color: #A51C30;
 }
 
-
 a.thumbnail.digital_object{
     color: #0579b8;
 }
-
 
 .more-facets .btn {
     color: #8996A0;
@@ -561,7 +550,6 @@ i { vertical-align: top; }
 .recordsummary {
     font-family: "Lora",Georgia, serif;
 }
-
 
 /* remove zebra striping? */
 /*
@@ -640,7 +628,6 @@ ul.breadcrumb {background-color: #FFFFFF; }
   padding-left: 1px;
 }
 
-
 /* collection inventory (infinite) */
 
 .infinite-record-wrapper{
@@ -689,7 +676,6 @@ ul.breadcrumb {background-color: #FFFFFF; }
     color: #414141;
 }
 
-
 .largetree-container td {
     color: #0579b8;
 }
@@ -723,7 +709,6 @@ ul.breadcrumb {background-color: #FFFFFF; }
     vertical-align: top;
     display: inline-block;
 }
-
 
 .record-type-badge.repository {
     color: #6C6C6C;
@@ -785,7 +770,6 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
     background-color: #E6E6E6;
 }
 
-
 /* added classes to support Harvard view changes */
 
 /* welcome text padding */
@@ -832,9 +816,6 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
     line-height: 1.7;
     margin-top: 1em;
 }
-
-
-
 
 /* for missing digital object thumbnails with no caption */
 
