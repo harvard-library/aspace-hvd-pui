@@ -306,6 +306,9 @@ h1 > span.title {
 }
 
 .search-keyword {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width: 100px;
 }
 
@@ -401,13 +404,10 @@ div.search {
 }
 
 @media (min-width: 768px) {
-  .inline-search-btn {
-    width: 5rem;
-  }
   .search-keyword {
     width: 100px !important;
   }
-  #submit_search {
+  .inline-search-btn {
     width: 5rem !important;
   }
 }
