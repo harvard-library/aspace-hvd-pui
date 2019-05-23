@@ -307,9 +307,14 @@ h1 > span.title {
 
 .search-keyword {
   border-radius: 0;
+  margin-right: 5px !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100px;
+}
+
+.search-down-caret {
+  color: black;
 }
 
 ul.navbar-nav {
