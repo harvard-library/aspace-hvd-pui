@@ -336,10 +336,10 @@ h1 > span.title {
   #form-container.input-group {
     padding: 0;
   }
-  #field0.search-keyword {
+  .search-keyword.repeats.form-control {
     border-radius: 0 4px 4px 0;
   }
-  #q0.search-field {
+  .search-field.repeats {
     width: 75%;
   }
 }
