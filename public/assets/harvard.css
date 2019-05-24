@@ -333,6 +333,15 @@ h1 > span.title {
     border-radius: 4px;
     width: 100%;
   }
+  #form-container.input-group {
+    padding: 0;
+  }
+  #field0.search-keyword {
+    border-radius: 0 4px 4px 0;
+  }
+  #q0.search-field {
+    width: 75%;
+  }
 }
 
 .search-down-caret {
