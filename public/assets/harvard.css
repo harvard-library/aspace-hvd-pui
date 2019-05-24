@@ -313,6 +313,28 @@ h1 > span.title {
   width: 100px;
 }
 
+.search-row {
+  display: inline-flex !important;
+  width:100%;
+}
+
+.search_row_container {
+  margin-left: 15%;
+}
+
+@media (max-width: 992px) {
+  .search_row_container {
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  #submit_search.inline-search-btn {
+    border-radius: 4px;
+    width: 100%;
+  }
+}
+
 .search-down-caret {
   color: black;
 }

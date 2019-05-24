@@ -1,16 +1,16 @@
 <% require 'cgi' %>
-<div class="search col-md-12 col-sm-6" role="search">
+<div class="search col-md-12" role="search">
   <a name="search" id="search"></a>
   <% @search = Search.new unless defined?(@search) %>
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
   <div class="row search_row col-md-10" id="search_row_<%= i %>">
-    <div class="row form-inline" style="margin-left:25%">
+    <div class="row search_row_container form-inline">
       <span id="down-caret" class="float-right search-down-caret"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
       <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
       <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
       <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
-      <div class="input-group row" style="display: inline-flex; width:100%;">
+      <div class="input-group search-row row container" id="form-container">
         <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
         <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), placeholder:  t('navbar.search_placeholder'), :id => "q#{i}",
           :class=> 'form-control search-field repeats col-xs-12') %>
@@ -44,7 +44,9 @@
       <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}",
                :class=> 'form-control repeats', :placeholder => t('search_results.filter.to')) %>
     <span class="plusminus"><i aria-hidden="true" class="fa fa-plus"></i></span>
+    <div id="foobar">
 
+    </div>
     </div>
    </div>
   </div>
@@ -53,4 +55,4 @@
 
   <% end %>
 </div>
-<script type="text/javascript" >initialize_search();</script>
+<script type="text/javascript" >initialize_search();responsive_search();</script>
