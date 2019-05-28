@@ -4,9 +4,9 @@
   <% @search = Search.new unless defined?(@search) %>
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
+  <span id="down-caret" class="float-right search-down-caret hidden"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
   <div class="row search_row col-md-10" id="search_row_<%= i %>">
     <div class="row search_row_container form-inline">
-      <span id="down-caret" class="float-right search-down-caret"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
       <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
       <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
       <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
@@ -42,10 +42,10 @@
         <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}",
           :class=> 'form-control repeats', :placeholder => t('search_results.filter.to')) %>
         <span class="plusminus"><i aria-hidden="true" class="fa fa-plus"></i></span>
-        <div id="mobile-submit">
-
-        </div>
       </div>
+    </div>
+    <div id="mobile-submit">
+
     </div>
   </div>
 

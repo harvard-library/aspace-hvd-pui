@@ -326,20 +326,42 @@ h1 > span.title {
   .search_row_container {
     margin: auto;
   }
+  .form-control.search-field.repeats {
+    width: 78%;
+  }
+  .input-group.search-row {
+    width: 92%;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-control.search-field.repeats {
+    width: 85%;
+  }
+  .btn-primary.inline-search-btn {
+    width: 47%;
+  }
+  .input-group.search-row {
+    padding: 0;
+    width: 100%;
+    margin: auto;
+  }
+  .search-keyword.repeats.form-control {
+    border-radius: 0 4px 4px 0;
+  }
+  #submit_search.inline-search-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 500px) {
-  #submit_search.inline-search-btn {
-    border-radius: 4px;
-    width: 100%;
-  }
   #form-container.input-group {
     padding: 0;
   }
   .search-keyword.repeats.form-control {
     border-radius: 0 4px 4px 0;
   }
-  .search-field.repeats {
+  .form-control.search-field.repeats {
     width: 75%;
   }
 }
