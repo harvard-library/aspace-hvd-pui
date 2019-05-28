@@ -43,7 +43,7 @@ HarvardSidebar.prototype.bind_events = function() {
 /* console.log('mouseup!'); */
         self.isResizing = false;
       });
-};    
+};
 
 function setupRequest(modalId, text) {
     $("#request_modal * .action-btn").hide();
@@ -79,7 +79,7 @@ $(function() {
 
    var $inlines = $(".search form .inline-label");
    $inlines.each(function(){
-       var $lbl = $(this); 
+       var $lbl = $(this);
        if ($lbl.text() == "TO")
        {$lbl.text(" ")}
    });
@@ -125,4 +125,24 @@ $(function() {
   }
 });
 
+function responsive_search(){
+  $keyword = $("#field0").children().first();
+  $down_caret = $("#down-caret");
+  $keyword.append($down_caret)
 
+  $search_container = $("#submit_search");
+  $search_button = $search_container[0];
+  // set the default search button behavior for small devices
+  if($(window).width() <= 500){
+    $("#mobile-submit").append($search_button);
+  }
+  // listen for browser size change and move button accordingly
+  $(window).resize(function(){
+    if($(window).width() <= 500){
+      $("#mobile-submit").append($search_button);
+    }
+    if($(window).width() > 500){
+      $(".input-group-btn").append($search_button);
+    }
+  });
+}
