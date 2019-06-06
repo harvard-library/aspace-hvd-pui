@@ -414,6 +414,12 @@ i.fa-plus, i.fa-minus {
     border: 1px  solid #cccccc;
 }
 
+.sort-button {
+  height: 23px;
+  padding: 0px 10px;
+  margin-bottom: 2px;
+}
+
 /* don't highlight the search term */
 .searchterm {
   background-color: transparent;

@@ -78,11 +78,11 @@ Rails.application.config.after_initialize do
         end
       end
       cite += " #{cite_url_and_timestamp}"
-      cite 
+      cite
     end
   end
 
-    
+
   class ArchivalObject
     include ResultInfo
     attr_reader :cite
@@ -120,7 +120,7 @@ Rails.application.config.after_initialize do
 #    require 'pp'
     def reset_cite
       @cite = redo_cite
- 
+
 
     end
     def cite_url_and_timestamp
@@ -176,10 +176,10 @@ Rails.application.config.after_initialize do
       end
       core_process_search_results(base)
     end
-   
+
     # override the resources#index faceting
     def set_up_and_run_search(default_types = [],default_facets=[],default_search_opts={}, params={})
-      
+
       if default_types.length == 1 && default_types[0] == 'resource'
         default_facets =  %w{repository creators subjects published_agents }
 
@@ -199,7 +199,7 @@ Rails.application.config.after_initialize do
      core_set_up_advanced_search(default_types, default_facets, default_search_opts, params)
    end
   end
-  
+
 # fix multiple facets problem?
   class FacetFilter
     def get_facet_types
@@ -209,8 +209,14 @@ Rails.application.config.after_initialize do
     end
   end
 
+# reassign page numbers for pagination
+  class Pager
+    Pager::PAGE_NUMBERS_TO_SHOW
+    Pager::PAGE_NUMBERS_TO_SHOW = 5
+  end
+
 # add a digital only action to the resources controller
-  class ResourcesController 
+  class ResourcesController
     def digital_only
       uri = "/repositories/#{params[:rid]}/resources/#{params[:id]}"
       begin
@@ -288,7 +294,7 @@ Rails.application.config.after_initialize do
       @alma_id = ''
       resource = ''
       @result.reset_cite if @result.respond_to? :reset_cite
-      if @result.primary_type == 'resource' 
+      if @result.primary_type == 'resource'
         resource = @result
       else @result.primary_type == 'resource'
         resource_uri = @result.breadcrumb.map { |c| c[:uri] if c[:type] == 'resource'}.compact
@@ -299,7 +305,7 @@ Rails.application.config.after_initialize do
       extract_hollis_ids(resource) unless resource.blank?
       @request
     end
-    
+
     # yes, this is very clumsy
     def extract_hollis_ids(result)
       aleph_id = ''
@@ -353,5 +359,4 @@ Rails.application.config.after_initialize do
     end
   end
 
-end 
-
+end
