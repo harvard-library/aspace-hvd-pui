@@ -46,7 +46,7 @@ HarvardSidebar.prototype.bind_events = function() {
 };
 function toggleModal(){
   $("#filter_button").click(function(){
-    $('#myModal').removeClass('hide');
+    $('#filterModal').removeClass('hide');
   });
 };
 
