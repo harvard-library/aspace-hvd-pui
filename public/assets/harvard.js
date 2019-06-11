@@ -43,7 +43,14 @@ HarvardSidebar.prototype.bind_events = function() {
 /* console.log('mouseup!'); */
         self.isResizing = false;
       });
-};    
+};
+function toggleModal(){
+  $("#filter_button").click(function(){
+    $('#myModal').removeClass('hide');
+  });
+};
+
+
 
 function setupRequest(modalId, text) {
     $("#request_modal * .action-btn").hide();
@@ -79,7 +86,7 @@ $(function() {
 
    var $inlines = $(".search form .inline-label");
    $inlines.each(function(){
-       var $lbl = $(this); 
+       var $lbl = $(this);
        if ($lbl.text() == "TO")
        {$lbl.text(" ")}
    });
@@ -124,5 +131,3 @@ $(function() {
       });
   }
 });
-
-
