@@ -239,6 +239,10 @@ a.accordion-toggle.collapsed:after {
     padding-left: 0;
 }
 
+.filter-modal {
+  display: none;
+}
+
 /* de-italicize */
 span.title {
   font-style: normal;
@@ -942,5 +946,16 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     }
     .filter_facets {
       display: none;
+    }
+    .filter-modal {
+      display: block;
+    }
+    .sorter {
+      margin-top: 0px;
+    }
+    div#paging {
+      width: 50%;
+      margin: 0;
+      display: inline-block;
     }
 }
