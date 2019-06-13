@@ -243,6 +243,11 @@ a.accordion-toggle.collapsed:after {
   display: none;
 }
 
+.filter-container {
+  display: -webkit-inline-box;
+  padding: 0px 10%;
+}
+
 /* de-italicize */
 span.title {
   font-style: normal;
@@ -416,10 +421,26 @@ i.fa-plus, i.fa-minus {
     border: 1px  solid #cccccc;
 }
 
+
 .sort-button {
-  height: 23px;
+  height: 28px;
   padding: 0px 10px;
   margin-bottom: 2px;
+}
+
+.sort-row {
+  display: -webkit-inline-box;
+}
+
+.modal-button {
+  display: none;
+  height: 28px;
+  padding: 3px 10px;
+  margin-bottom: 2px;
+}
+
+.relevance-dropdown {
+  height: 28px;
 }
 
 /* don't highlight the search term */
@@ -950,8 +971,11 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     .filter-modal {
       display: block;
     }
+    .modal-button {
+      display: -webkit-inline-box;
+    }
     .sorter {
-      margin-top: 0px;
+      margin-top: 10px;
     }
     div#paging {
       margin: 0;

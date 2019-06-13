@@ -2496,8 +2496,10 @@ pre code {
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-12 {
-  width: 100%;
+@media (min-width: 600px){
+  .pagination-col {
+    display: inline-block;
+  }
 }
 
 /* line 55, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
