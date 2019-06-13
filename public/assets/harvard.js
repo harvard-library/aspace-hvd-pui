@@ -58,7 +58,6 @@ function responsivePagination(){
       //move sorter from row to next row
       $(".filter-container").append( $(".sm-filter-row") );
     } else {
-      $(".filter-container").prepend( $(".filter-row.container") );
     }
   });
 };
