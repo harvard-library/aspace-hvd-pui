@@ -58,8 +58,6 @@
         <%= render partial: 'shared/sorter' %>
       </div>
     </div>
-    <div clas="filter-row-xs">
-    </div>
     <div class="row search-results"><div class="col-sm-12">
 
     <a name="searchresults" id="searchresults"></a>
@@ -68,14 +66,19 @@
       <%= render partial: 'shared/result', locals: {:result => result, :props => (@result_props || {}).merge({:full => false})} %>
     <% end %>
     </div></div>
-    <div class="row"><div class="col-sm-9">
-    <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
-    </div></div>
+  <div class="row">
+    <div class="col-sm-9">
+      <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+    </div>
+  </div>
   </div>
   <div class="col-sm-3 filter_facets" id="sidebar">
     <a name="filter" title="<%= t('internal_links.filter') %>"></a>
     <%= render partial: 'shared/facets', locals: {:no_form => true} %>
   </div>
-
+  <div class="row">
+    <div class="sm-filter-row"></div>
+  </div>
 </div>
 <% end %>
+<script type="text/javascript" >responsivePagination();</script>

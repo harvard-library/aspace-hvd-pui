@@ -44,9 +44,22 @@ HarvardSidebar.prototype.bind_events = function() {
         self.isResizing = false;
       });
 };
+
 function toggleModal(){
   $("#filter_button").click(function(){
-    $('#filterModal').removeClass('hide');
+    $("#filterModal").removeClass("hide");
+  });
+};
+
+function responsivePagination(){
+  $(window).on("resize", function(event){
+    var windowWidth = $(window).width();
+    if(windowWidth < 768){
+      //move sorter from row to next row
+      $(".filter-container").append( $(".sm-filter-row") );
+    } else {
+      $(".filter-container").prepend( $(".filter-row.container") );
+    }
   });
 };
 
