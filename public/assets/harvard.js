@@ -52,20 +52,11 @@ function toggleModal(){
 };
 
 function responsivePagination(){
-  var windowWidth = $(window).width();
-
-  $(document).ready(function(){
-    if(windowWidth < 768){
-      //move sorter from row to next row on xs screens
-      $(".xs-filter-row").append( $(".filter-form") );
-    }
-  });
-
-  $(window).on("resize", function(){
-    if(windowWidth < 768){
+  $(window).on("load resize",function(e){
+    if($(window).width() < 768){
       //move sorter from row to next row
       $(".xs-filter-row").append( $(".filter-form") );
-    } else if(windowWidth >= 768){
+    } else {
       $(".filter-row").append( $(".filter-form") );
     }
   });

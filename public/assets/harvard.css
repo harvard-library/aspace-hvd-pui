@@ -973,6 +973,12 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 
 
 /* media query adjustments */
+@media screen and (max-width: 1200px) {
+  .sorter-col {
+    margin-left: 25%;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .filter-container {
     margin-right: 30%;
@@ -993,17 +999,17 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
   .modal-button {
     display: inline-block;
+    margin-left: 75%;
   }
   .relevance-filter {
-    padding-right: 30%;
-    margin-right: 50%;
+    margin-right: 10%;
   }
 
 }
 
-@media screen and (max-width: 991px) {
-  .relevance-filter {
-    margin-right: 10%;
+@media screen and (max-width: 920px) {
+  .modal-button {
+    margin-left: 10%;
   }
 }
 
@@ -1023,5 +1029,13 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     }
     .pagination-col {
       margin-left: 5%;
+      width: 700px;
+    }
+    .relevance-filter {
+      margin-right: 5%;
+      padding-right: 0;
+    }
+    .modal-button {
+      margin-left: 0px;
     }
 }
