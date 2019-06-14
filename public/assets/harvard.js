@@ -52,12 +52,21 @@ function toggleModal(){
 };
 
 function responsivePagination(){
-  $(window).on("resize", function(event){
-    var windowWidth = $(window).width();
+  var windowWidth = $(window).width();
+
+  $(document).ready(function(){
+    if(windowWidth < 768){
+      //move sorter from row to next row on xs screens
+      $(".xs-filter-row").append( $(".filter-form") );
+    }
+  });
+
+  $(window).on("resize", function(){
     if(windowWidth < 768){
       //move sorter from row to next row
-      $(".filter-container").append( $(".sm-filter-row") );
-    } else {
+      $(".xs-filter-row").append( $(".filter-form") );
+    } else if(windowWidth >= 768){
+      $(".filter-row").append( $(".filter-form") );
     }
   });
 };

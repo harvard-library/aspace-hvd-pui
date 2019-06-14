@@ -58,6 +58,7 @@
         <%= render partial: 'shared/sorter' %>
       </div>
     </div>
+    <div class="xs-filter-row"></div>
     <div class="row search-results"><div class="col-sm-12">
 
     <a name="searchresults" id="searchresults"></a>
@@ -75,9 +76,6 @@
   <div class="col-sm-3 filter_facets" id="sidebar">
     <a name="filter" title="<%= t('internal_links.filter') %>"></a>
     <%= render partial: 'shared/facets', locals: {:no_form => true} %>
-  </div>
-  <div class="row">
-    <div class="sm-filter-row"></div>
   </div>
 </div>
 <% end %>
