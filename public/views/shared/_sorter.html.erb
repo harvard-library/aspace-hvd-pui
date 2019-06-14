@@ -2,31 +2,31 @@
 
 
 <div class="sorter filter-row">
-  <div class="container">
-    <%= form_tag(app_prefix("#{@base_search}"), method: 'get', :class=> "form-horizontal") do %>
-    <%= render partial: 'shared/hidden_params' %>
-      <div class="filter-container">
+  <%= form_tag(app_prefix("#{@base_search}"), method: 'get', :class=> "form-horizontal") do %>
+  <%= render partial: 'shared/hidden_params' %>
+    <div class="filter-container">
+      <div class="relevance-filter">
         <%= label_tag(:sort, "#{t('search_sorting.sort_by')}", :class=>'sr-only') %>
         <%= select_tag(:sort, options_for_select(@sort_opts,@sort), class: "relevance-dropdown") %>
         <%= submit_tag(t('search_sorting.sort'), :class=>'btn btn-primary btn-sm sort-button') %>
       </div>
       <%= link_to t('search_results.filter.add'), "#filterModal", id: 'filter_button', class: "btn btn-primary modal-button", "data-toggle" => "modal" %>
-      <div class="filter-modal">
-        <div class="modal hide fade container" id="filterModal" title="Filters">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-                <%= render partial: 'shared/only_facets' %>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+    </div>
+    <div class="filter-modal">
+      <div class="modal hide fade container" id="filterModal" title="Filters">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+              <%= render partial: 'shared/only_facets' %>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <% end %>
-   </div>
+    </div>
+    <% end %>
 </div>
 <% end %>

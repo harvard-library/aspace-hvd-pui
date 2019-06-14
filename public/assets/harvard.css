@@ -244,9 +244,9 @@ a.accordion-toggle.collapsed:after {
 }
 
 .filter-container {
-  float: right;
   margin-right: 45%;
   padding-right: 5px;
+  width: 190px;
 }
 
 /* de-italicize */
@@ -431,10 +431,12 @@ i.fa-plus, i.fa-minus {
 
 .sort-row {
   display: -webkit-inline-box;
+  width: 100%;
 }
 
 .sorter-col {
   margin-right: 20px;
+  margin-left: 45%;
 }
 
 
@@ -612,6 +614,10 @@ i { vertical-align: top; }
     margin-left: 0;
     margin-right: 1em;
     margin-bottom: .5em;
+}
+
+.relevance-filter {
+  width: 240px;
 }
 
 .ancestor a {
@@ -967,29 +973,46 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 
 
 /* media query adjustments */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 991px) {
   .filter-container {
-    margin-right: 65%;
+    margin-right: 30%;
+    display: -webkit-inline-box;
+    margin-left: 10%;
+  }
+  .sorter-col {
+    margin-left: 12%;
+  }
+  .filter_button{
+    margin-left: 20%;
+  }
+  .filter_facets {
+    display: none;
+  }
+  .filter-modal {
+    display: block;
+  }
+  .modal-button {
+    display: inline-block;
+  }
+  .relevance-filter {
+    padding-right: 30%;
+    margin-right: 50%;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .relevance-filter {
+    margin-right: 10%;
   }
 }
+
 @media screen and (max-width: 767px) {
     .navbar-nav {
 	     margin: 0;
     }
-    .filter_facets {
-      display: none;
-    }
-    .filter-modal {
-      display: block;
-    }
-    .modal-button {
-      display: -webkit-inline-box;
-    }
     .sort-container {
       margin-top: 10px;
-    }
-    .filter-container {
-      display: -webkit-inline-box;
     }
     div#paging {
       margin: 0;
