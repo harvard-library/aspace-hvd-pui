@@ -36,10 +36,11 @@
     <% unless @result.extents.blank? %>
       <h4><%= t('resource._public.extent') %></h4>
        <% @result.extents.each do |ext| %>
-        <i>From the Collection</i><p class="extent"><%= inheritance(ext['_inherited']).html_safe %>
-	  <%= ext['display']%>
-	</p>
-      <% end %>
+         <i>From the Collection:</i><span class="extent"><%= inheritance(ext['_inherited']).html_safe %>
+	          <%= ext['display']%>
+	       </span>
+         <br>
+       <% end %>
     <% end %>
     <% if @result.is_a?(Accession) && @result.inventory %>
       <h4><%= t('accession._public.section.inventory') %></h4>
