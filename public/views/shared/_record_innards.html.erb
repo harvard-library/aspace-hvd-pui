@@ -3,7 +3,7 @@
 <% non_folder = %w(summary langmaterial physdesc accessrestrict userestrict) %>
 <% folder = %w(bioghist arrangement phystech physloc otherfindaid custodhist acqinfo appraisal accruals originalsloc altformavail extent relatedmaterial separatedmaterial note_bibliography materialspec inscription physfacet dimensions edition fileplan legalstatus odd note processinfo note_index) %>
 <div class="upper-record-details">
-    <% over = @result.note('abstract') 
+    <% over = @result.note('abstract')
        scope_folder = true
        %>
     <% if over.blank?
@@ -36,7 +36,7 @@
     <% unless @result.extents.blank? %>
       <h4><%= t('resource._public.extent') %></h4>
        <% @result.extents.each do |ext| %>
-        <p class="extent"><%= inheritance(ext['_inherited']).html_safe %>
+        <i>From the Collection</i><p class="extent"><%= inheritance(ext['_inherited']).html_safe %>
 	  <%= ext['display']%>
 	</p>
       <% end %>
@@ -53,12 +53,12 @@
 
     <div class="acc_holder clear" >
       <div class="panel-group" id="res_accordion">
-	<% if scope_folder 
+	<% if scope_folder
 	   scope = @result.note('scopecontent')
 	   if !scope.blank? && scope['is_inherited'].blank?
-	     x = render partial: 'shared/single_note',  locals: {:type => 'scopecontent', 
+	     x = render partial: 'shared/single_note',  locals: {:type => 'scopecontent',
 	      :note_struct => scope, :notitle => true} %>
-	
+
 	    <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('enumerations._note_types.scopecontent'), :p_body => x,
 	      :p_id => 'scopecontent'} %>
 	   <% end %>
