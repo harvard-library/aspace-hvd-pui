@@ -2189,7 +2189,7 @@ i[class^="icon-"]:before {
 }
 
 .hollis-link {
-  padding-left: 2em;
+  padding-left: 1em;
   padding-top: 3px;
   padding-bottom: 10px;
   vertical-align: middle;
@@ -2220,7 +2220,7 @@ i[class^="icon-"]:before {
 @media(max-width: 768px){
   .nav-row {
     float: none;
-    width: 82%;
+    width: 85%;
     margin: auto;
   }
 }
