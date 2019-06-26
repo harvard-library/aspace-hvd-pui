@@ -5352,8 +5352,8 @@ tbody.collapse.in {
 .btn-group-justified > .btn,
 .btn-group-justified > .btn-group {
   float: none;
-  display: table-cell;
-  width: 1%;
+  display: inline-flex;
+  width: 66%;
 }
 /* line 212, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_button-groups.scss */
 .btn-group-justified > .btn-group .btn {
@@ -5409,13 +5409,12 @@ tbody.collapse.in {
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
+  border-radius: 4px 0 0 4px;
 }
 
 /* line 68, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_input-groups.scss */
 .input-group-addon,
 .input-group-btn {
-  width: 1%;
   white-space: nowrap;
   vertical-align: middle;
 }
@@ -5656,7 +5655,6 @@ tbody.collapse.in {
   /* line 177, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
   .nav-justified > li, .nav-tabs.nav-justified > li {
     display: table-cell;
-    width: 1%;
   }
   /* line 180, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_navs.scss */
   .nav-justified > li > a, .nav-tabs.nav-justified > li > a {
@@ -13301,14 +13299,17 @@ h5 {
   background-color: #d5f7e9;
 }
 
+.search-field {
+  margin: 0 !important;
+}
+
 /* line 477, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 .searchterm {
   background-color: #f8c21c;
 }
 
-/* line 480, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
-#submit_search {
-  width: 100%;
+.input-group-btn {
+  width: auto;
 }
 
 /* line 483, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
