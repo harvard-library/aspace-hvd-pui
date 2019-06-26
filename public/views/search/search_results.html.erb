@@ -50,12 +50,15 @@
 <div class="row">
   <div class="col-sm-9">
     <a name="main" title="<%= t('internal_links.main') %>"></a>
-    <div class="row"><div class="col-sm-8">
-    <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+    <div class="sort-row">
+      <div class="pagination-col">
+        <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+      </div>
+      <div class="sorter-col">
+        <%= render partial: 'shared/sorter' %>
+      </div>
     </div>
-    <%= render partial: 'shared/sorter' %>
-
-</div>
+    <div class="xs-filter-row"></div>
     <div class="row search-results"><div class="col-sm-12">
 
     <a name="searchresults" id="searchresults"></a>
@@ -64,14 +67,16 @@
       <%= render partial: 'shared/result', locals: {:result => result, :props => (@result_props || {}).merge({:full => false})} %>
     <% end %>
     </div></div>
-    <div class="row"><div class="col-sm-9">
-    <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
-    </div></div>
+  <div class="row">
+    <div class="col-sm-9">
+      <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+    </div>
+  </div>
   </div>
   <div class="col-sm-3 filter_facets" id="sidebar">
     <a name="filter" title="<%= t('internal_links.filter') %>"></a>
     <%= render partial: 'shared/facets', locals: {:no_form => true} %>
   </div>
-
 </div>
 <% end %>
+<script type="text/javascript" >responsivePagination();</script>

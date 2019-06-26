@@ -45,6 +45,24 @@ HarvardSidebar.prototype.bind_events = function() {
       });
 };
 
+function toggleModal(){
+  $("#filter_button").click(function(){
+    $("#filterModal").removeClass("hide");
+  });
+};
+
+function responsivePagination(){
+  $(window).on("load resize",function(e){
+    if($(window).width() < 768){
+      //move sorter from row to next row
+      $(".xs-filter-row").append( $(".filter-form") );
+    } else {
+      $(".filter-row").append( $(".filter-form") );
+    }
+  });
+};
+
+
 function setupRequest(modalId, text) {
     $("#request_modal * .action-btn").hide();
     $('#request_sub').submit(function(e) {
@@ -124,7 +142,6 @@ $(function() {
       });
   }
 });
-
 function responsive_search(){
   $keyword = $("#field0").children().first();
   $down_caret = $("#down-caret");

@@ -228,6 +228,16 @@ a.accordion-toggle.collapsed:after {
     padding-left: 0;
 }
 
+.filter-modal {
+  display: none;
+}
+
+.filter-container {
+  margin-right: 45%;
+  padding-right: 5px;
+  width: 190px;
+}
+
 /* de-italicize */
 span.title {
   font-style: normal;
@@ -480,6 +490,35 @@ i.fa-plus, i.fa-minus {
     border: 1px  solid #cccccc;
 }
 
+
+.sort-button {
+  height: 28px;
+  padding: 0px 10px;
+  margin-bottom: 2px;
+}
+
+.sort-row {
+  display: -webkit-inline-box;
+  width: 100%;
+}
+
+.sorter-col {
+  margin-right: 20px;
+  margin-left: 45%;
+}
+
+
+.modal-button {
+  display: none;
+  height: 28px;
+  padding: 3px 10px;
+  margin-bottom: 2px;
+}
+
+.relevance-dropdown {
+  height: 28px;
+}
+
 /* don't highlight the search term */
 .searchterm {
   background-color: transparent;
@@ -640,6 +679,10 @@ i { vertical-align: top; }
     margin-left: 0;
     margin-right: 1em;
     margin-bottom: .5em;
+}
+
+.relevance-filter {
+  width: 240px;
 }
 
 .ancestor a {
@@ -983,4 +1026,72 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
       left: auto;
       right: 0;
       background-color: #f2f2f2;
+}
+
+/* media query adjustments */
+@media screen and (max-width: 1200px) {
+  .sorter-col {
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .filter-container {
+    margin-right: 30%;
+    display: -webkit-inline-box;
+    margin-left: 10%;
+  }
+  .sorter-col {
+    margin-left: 12%;
+  }
+  .filter_button{
+    margin-left: 20%;
+  }
+  .filter_facets {
+    display: none;
+  }
+  .filter-modal {
+    display: block;
+  }
+  .modal-button {
+    display: inline-block;
+    margin-left: 75%;
+  }
+  .relevance-filter {
+    margin-right: 10%;
+  }
+
+}
+
+@media screen and (max-width: 920px) {
+  .modal-button {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-nav {
+	     margin: 0;
+    }
+    .sort-container {
+      margin-top: 10px;
+    }
+    div#paging {
+      margin: 0;
+      display: inline-block;
+    }
+    .filter-container {
+      margin: 0;
+    }
+    .pagination-col {
+      margin-left: 5%;
+      width: 700px;
+    }
+    .relevance-filter {
+      margin-right: 5%;
+      padding-right: 0;
+    }
+    .modal-button {
+      margin-left: 0px;
+    }
 }

@@ -2595,8 +2595,10 @@ pre code {
 }
 
 /* line 35, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-12 {
-  width: 100%;
+@media (min-width: 600px){
+  .pagination-col {
+    display: inline-block;
+  }
 }
 
 /* line 55, /home/aspaceadmbeta/archivesspace/build/gems/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -13732,11 +13734,6 @@ span.head {
 /* line 812, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
 #sidebar .present_list {
   padding-left: 10px;
-}
-
-/* line 816, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
-.sorter {
-  margin-top: 20px;
 }
 
 @media (min-width: 992px) {
