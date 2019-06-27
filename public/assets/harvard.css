@@ -828,6 +828,11 @@ ul.breadcrumb {background-color: #FFFFFF; }
     background-color: #f8c21c;
 }
 
+.inline-search-btn {
+  border-radius: 0 4px 4px 0;
+  width: 1rem;
+}
+
 /*  the small icons in results */
 .record-type-badge {
     width: 50px;
@@ -1001,7 +1006,6 @@ span.dig_flag {
     background-position-y: center;
     background-repeat: no-repeat;
     border-color: #FFFFFF;
-    border-radius: 0 4px 4px 0;
     margin-left: -5px;
     margin-top: 0;
     padding-left: 12px;
@@ -1011,7 +1015,6 @@ span.dig_flag {
     text-transform: uppercase;
 }
 form.form-inline #submit_search {
-    width: 1rem;
     margin-left: 4px;
     padding-top: 6px;
     padding-bottom: 8px;
