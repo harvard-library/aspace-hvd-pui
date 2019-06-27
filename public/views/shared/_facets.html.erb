@@ -42,18 +42,18 @@
     <% end %>
     <% if @search.search_dates_within? %>
       <div class="form-group">
-	<%= label_tag(:filter_from_year, "#{t('search_results.filter.from_year')}", :class => 'sr-only') %>
-	<%= text_field_tag(:filter_from_year, nil, :size => 4,:maxlength => 4, :placeholder => t('search_results.filter.from'),
-	:class=>"form-control", :id => nil) %>
-	<span class="inline-label">--</span>
-	<%= label_tag(:filter_to_year, "#{t('search_results.filter.to_year')}", :class=> 'sr-only') %>
-	<%= text_field_tag(:filter_to_year, nil, :size => 4, :maxlength => 4, :class=> "form-control",
-	  :placeholder => t('search_results.filter.to'), :id => nil) %>
-      </div>
-      <% else %>
+      	<%= label_tag(:filter_from_year, "#{t('search_results.filter.from_year')}", :class => 'sr-only') %>
+      	<%= text_field_tag(:filter_from_year, nil, :size => 4,:maxlength => 4, :placeholder => t('search_results.filter.from'),
+      	:class=>"form-control", :id => nil) %>
+      	<span class="inline-label">--</span>
+      	<%= label_tag(:filter_to_year, "#{t('search_results.filter.to_year')}", :class=> 'sr-only') %>
+      	<%= text_field_tag(:filter_to_year, nil, :size => 4, :maxlength => 4, :class=> "form-control",
+      	  :placeholder => t('search_results.filter.to'), :id => nil) %>
+    <% else %>
         <%= hidden_field_tag(:filter_from_year, @search[:filter_from_year], :id => nil) %>
         <%= hidden_field_tag(:filter_to_year, @search[:filter_to_year], :id => nil) %>
     <% end %>
+    </div>
 
    <%= submit_tag(t('search-button.label'), :class=>'btn btn-primary', :id => nil) %>
   <% end %>
