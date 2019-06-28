@@ -32,9 +32,6 @@
         </div>
       <% end %>
        <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> col-sm-5 form-group form-inline years-filter-col">
-        <%= label_tag(:"field#{i}", t('search-field'),:class => 'sr-only repeats') %>
-        <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control repeats') %>
-
         <span class="inline-label repeats"><%= t('search_results.filter.years') %>:</span>
         <%= label_tag(:"from_year#{i}", "#{t('search_results.filter.from_year')}", :class => 'sr-only repeats') %>
         <%= text_field_tag('from_year[]', @search[:from_year][i], :size => 4,:maxlength => 4, :id=>"from_year#{i}",
