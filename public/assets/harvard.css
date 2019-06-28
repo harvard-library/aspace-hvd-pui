@@ -870,6 +870,11 @@ ul.breadcrumb {background-color: #FFFFFF; }
     display: none;
 }
 
+.embedded-search {
+  width: 5rem;
+  margin-top: -2px;
+}
+
 /* flot the images div right */
 .images {
     float: right;
