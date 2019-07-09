@@ -11,7 +11,7 @@
        scope_folder = over.blank?
     end %>
     <% unless over.blank? || over['is_inherited'] %>
-      <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :notitle => true} %>
+      <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over} %>
     <% end %>
 
     <% unless @result.dates.blank? %>

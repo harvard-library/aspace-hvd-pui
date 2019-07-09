@@ -12,13 +12,13 @@ end %>
 
 <% which_id = ''
    hollis_id = ''
-   if hollis_id.blank? && (note_struct['label'] || '').downcase ==  "aleph id" 
+   if hollis_id.blank? && (note_struct['label'] || '').downcase ==  "aleph id"
      which_id = 'aleph'
      hollis_id = note_struct['note_text']
    elsif (note_struct['label'] || '').downcase ==  "alma id"
      which_id = 'alma'
      hollis_id = note_struct['note_text']
-   end 
+   end
    label_id = !which_id.blank? %>
 <%  if !note_struct['note_text'].blank? %>
     <div class="<%= type %> single_note" >
@@ -37,7 +37,7 @@ end %>
 	      <% if inline.downcase == "aleph id" && hollis_id.blank?
 		  which_id = 'aleph'
 		  hollis_id = subnote['_text'] %>
-	      <% elsif inline.downcase == "alma id" 
+	      <% elsif inline.downcase == "alma id"
 	          which_id = 'alma'
                   hollis_id = subnote['_text'] %>
    	      <% else %>
@@ -64,13 +64,13 @@ end %>
           <%= t("pdf_reports.#{which_id}") unless label_id %>
           <%= hollis_id %>
 	 <div class="sub-note">
-	 <span class="note-content"> <%= t('pdf_reports.perma') %></span> 
+	 <span class="note-content"> <%= t('pdf_reports.perma') %></span>
 	   <%= t("pdf_reports.perma_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
 	 </div>
         <% else %>
           <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{hollis_id}").html_safe %>
         <% end %>
      <% end %>
-	  
+
      </div>
 <% end %>
