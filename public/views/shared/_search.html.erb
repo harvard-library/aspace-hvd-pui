@@ -6,39 +6,39 @@
   <% (0...[1, @search.q.length].max).each do |i| %>
   <span id="down-caret" class="float-right search-down-caret hidden"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
   <div class="row search_row col-md-10" id="search_row_<%= i %>">
-    <div class="row search_row_container form-inline">
+    <div class="search_row_container form-inline">
       <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
       <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
       <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
-      <div class="input-group search-row row container" id="form-container">
+      <div class="input-group search-row container" id="form-container">
         <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
         <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), placeholder:  t('navbar.search_placeholder'), :id => "q#{i}",
-          :class=> 'form-control search-field repeats col-xs-12') %>
+          :class=> 'form-control search-field search_placeholder repeats col-xs-12') %>
         <span class="input-group-btn">
-          <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control search-keyword repeats') %>
+          <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control search-keyword search_placeholder repeats') %>
           <% if i == 0 %>
             <%= label_tag(:"field#{i}", t('search-field'),:class => 'sr-only repeats') %>
-            <input name="commit" value="Search  " class="btn btn-primary inline-search-btn" id="submit_search" data-disable-with="Search" type="submit">
+            <input name="commit" value="Search  " class="btn btn-primary search_placeholder inline-search-btn" id="submit_search" data-disable-with="Search" type="submit">
           <% end %>
         </span>
       </div>
     </div>
-    <div class="row search-filter-row">
+    <div class="search-filter-row form-inline">
       <% if i == 0 %>
-        <div class="col-sm-5 form-group form-inline limit-filter-col">
+        <div class="form-group limit-filter-col">
           <%= label_tag(:limit, t('search-limit',:limit => ""),:class => 'sr-only') %>
           <span class="inline-label repeats"><%= t('search-limit',:limit => "") %>:</span>
-          <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control') %>
+          <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder') %>
         </div>
       <% end %>
-       <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> col-sm-5 form-group form-inline years-filter-col">
+       <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> form-group years-filter-col search_placeholder">
         <span class="inline-label repeats"><%= t('search_results.filter.years') %>:</span>
         <%= label_tag(:"from_year#{i}", "#{t('search_results.filter.from_year')}", :class => 'sr-only repeats') %>
         <%= text_field_tag('from_year[]', @search[:from_year][i], :size => 4,:maxlength => 4, :id=>"from_year#{i}",
-             :placeholder => t('search_results.filter.from'),:class=>'form-control repeats') %>
+             :placeholder => t('search_results.filter.from'),:class=>'form-control repeats from-field ') %>
         <%= label_tag(:"to_year#{i}", "#{t('search_results.filter.to_year')}", :class=> 'sr-only repeats') %>
         <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}",
-          :class=> 'form-control repeats', :placeholder => t('search_results.filter.to')) %>
+          :class=> 'form-control repeats to-field', :placeholder => t('search_results.filter.to')) %>
         <span class="plusminus"><i aria-hidden="true" class="fa fa-plus"></i></span>
       </div>
     </div>

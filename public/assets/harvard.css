@@ -257,7 +257,9 @@ h1 > span.title {
 }
 
 /* top horizontal menu */
-
+.search-field {
+  border-right: none;
+}
 .top-bar {
     background-color: #FFFFFF !important;
     border: 0;
@@ -304,11 +306,17 @@ h1 > span.title {
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100px;
+  border-left: 1px dotted #000000;
+  border-right: 1px dotted #000000;
 }
 
 .search-row {
   display: inline-flex !important;
   width:100%;
+}
+
+.search_placeholder {
+  font-family: Trueno;
 }
 
 .search_row_container {
@@ -343,7 +351,6 @@ h1 > span.title {
     border-radius: 0 4px 4px 0;
   }
   #submit_search.inline-search-btn {
-    width: 100%;
     border-radius: 4px;
   }
 }
@@ -452,8 +459,18 @@ div.search {
     text-transform: uppercase;
 }
 
+.form-control.from-field {
+  margin-right: -5px;
+  border-radius: 4px 0 0 4px;
+}
+
+.form-control.to-field {
+  border-radius: 0 4px 4px 0;
+}
+
 .inline-search-btn {
-    border-left: 1px solid #1e1e1e;
+    border: 1px solid #CCC;
+    border-left: none;
     border-radius: 0;
     margin: 10px 0;
     padding-bottom: 0;
@@ -467,13 +484,11 @@ div.search {
     width: 100px !important;
   }
   .inline-search-btn {
-    width: 5rem !important;
-  }
-  .years-filter-col {
-    width: 345px;
+    width: 100px !important;
   }
   .limit-filter-col {
     padding-left: 8%;
+    width: 250px;
   }
 }
 
@@ -599,6 +614,11 @@ i.fa-plus, i.fa-minus {
     font-weight: bold;
 
 }
+
+.hollis-link a:hover{
+  text-decoration: none !important;
+}
+
 a.expander:hover {
   color: #BAC5C6;
 }
@@ -1007,8 +1027,7 @@ span.dig_flag {
     color: #1e1e1e;
     background-color: #FFFFFF;
     background-image: url(/assets/leftarrow.png);
-    background-position-x: right;
-    background-position-y: center;
+    background-position: 95% 50%;
     background-repeat: no-repeat;
     border-color: #FFFFFF;
     margin-left: -5px;
@@ -1050,7 +1069,8 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 }
 @media screen and (min-width: 1200px) {
   .search-filter-row {
-    padding-left: 25%;
+    padding-left: 15%;
+    float: left;
   }
 }
 
