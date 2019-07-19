@@ -191,6 +191,11 @@ a.accordion-toggle.collapsed:after {
     width: 0;
 }
 
+.form-control.and-field {
+  width: 5rem !important;
+  margin-right: 0;
+}
+
 .panel-default {
     border:0;
     border-color: #ffffff;

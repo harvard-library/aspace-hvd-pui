@@ -7,10 +7,11 @@
   <span id="down-caret" class="float-right search-down-caret hidden"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
   <div class="row search_row col-md-10" id="search_row_<%= i %>">
     <div class="search_row_container form-inline">
-      <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
-      <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
-      <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
+
       <div class="input-group search-row container" id="form-container">
+        <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
+        <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control and-field' + (i == 0 ? ' hidden' : '')) %>
+        <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
         <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
         <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), placeholder:  t('navbar.search_placeholder'), :id => "q#{i}",
           :class=> 'form-control search-field search_placeholder repeats col-xs-12') %>

@@ -143,9 +143,35 @@ $(function() {
   }
 });
 function responsive_search(){
-  $keyword = $("#field0").children().first();
+  $keyword = $("select.search-keyword").children().first();
   $down_caret = $("#down-caret");
-  $keyword.append($down_caret)
+  $down_caret.appendTo($keyword);
+
+  $(document).ready(function(){
+    var observer = new MutationObserver(function(mutations) {
+      // For the sake of...observation...let's output the mutation to console to see how this all works
+      mutations.forEach(function(mutation) {
+        $new_keyword = $(mutation.addedNodes[0]).find($('select[id^="field"]')).children().first();
+        $new_down_caret = $down_caret.clone();
+        $new_down_caret.appendTo($new_keyword);
+      });
+    });
+
+    // Notify me of everything!
+    var observerConfig = {
+      attributes: true,
+      childList: true,
+      characterData: true
+    };
+
+    // Node, config
+    // In this case we'll listen to all changes to body and child nodes
+    var targetNode = document.body;
+    observer.observe(targetNode, observerConfig);
+
+    observer.observe(targetNode, { childList: true, subtree: true });
+  });
+// $('select[id^="field"]')
 
   $search_container = $("#submit_search");
   $search_button = $search_container[0];
