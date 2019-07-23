@@ -152,6 +152,7 @@ function responsive_search(){
       // For the sake of...observation...let's output the mutation to console to see how this all works
       mutations.forEach(function(mutation) {
         $new_keyword = $(mutation.addedNodes[0]).find($('select[id^="field"]')).children().first();
+        // I don't know why I can't do this on one line but it breaks the plusminus fcnality when I do so.
         $new_down_caret = $down_caret.clone();
         $new_down_caret.appendTo($new_keyword);
       });
@@ -182,10 +183,21 @@ function responsive_search(){
   // listen for browser size change and move button accordingly
   $(window).resize(function(){
     if($(window).width() <= 767){
-      $("#mobile-submit").append($search_button);
+      if($('#mobile-submit').closest($search_button).length)
+      {
+        // do nothing
+      }
+      else {
+        $("#mobile-submit").append($search_button);
+      }
     }
     if($(window).width() > 767){
-      $(".input-group-btn").append($search_button);
+      if($('.input-group-btn').closest($search_button).length){
+        // do nothing
+      }
+      else {
+        $(".input-group-btn").append($search_button);
+      }
     }
   });
 }
