@@ -29,7 +29,7 @@
         <div class="form-group limit-filter-col">
           <%= label_tag(:limit, t('search-limit'),:class => 'sr-only') %>
           <span class="inline-label repeats"><%= t('search-limit') %>:</span>
-          <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder') %>
+          <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder limit-field') %>
         </div>
       <% end %>
        <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> form-group years-filter-col search_placeholder">

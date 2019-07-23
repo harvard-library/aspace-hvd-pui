@@ -273,6 +273,10 @@ h1 > span.title {
     padding-right: 0;
 }
 
+.limit-field {
+  width: 9rem !important;
+}
+
 .navbar-collapse {
     padding-left: 0;
     padding-right: 0;

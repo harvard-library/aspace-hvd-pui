@@ -183,7 +183,7 @@ function responsive_search(){
   // listen for browser size change and move button accordingly
   $(window).resize(function(){
     if($(window).width() <= 767){
-      if($('#mobile-submit').closest($search_button).length)
+      if($('#mobile-submit').find($search_button).length)
       {
         // do nothing
       }
@@ -192,7 +192,7 @@ function responsive_search(){
       }
     }
     if($(window).width() > 767){
-      if($('.input-group-btn').closest($search_button).length){
+      if($('#search_row_0').find('.input-group-btn').find($search_button).length){
         // do nothing
       }
       else {
