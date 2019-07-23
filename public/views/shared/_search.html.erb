@@ -27,8 +27,8 @@
     <div class="search-filter-row form-inline">
       <% if i == 0 %>
         <div class="form-group limit-filter-col">
-          <%= label_tag(:limit, t('search-limit',:limit => ""),:class => 'sr-only') %>
-          <span class="inline-label repeats"><%= t('search-limit',:limit => "") %>:</span>
+          <%= label_tag(:limit, t('search-limit'),:class => 'sr-only') %>
+          <span class="inline-label repeats"><%= t('search-limit') %>:</span>
           <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder') %>
         </div>
       <% end %>
