@@ -196,7 +196,7 @@ function responsive_search(){
         // do nothing
       }
       else {
-        $(".input-group-btn").append($search_button);
+        $('#search_row_0').find('.input-group-btn').append($search_button);
       }
     }
   });
