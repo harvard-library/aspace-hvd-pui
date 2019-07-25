@@ -274,7 +274,7 @@ h1 > span.title {
 }
 
 .limit-field {
-  width: 135px !important;
+  width: 145px !important;
 }
 
 .navbar-collapse {
@@ -322,6 +322,8 @@ h1 > span.title {
 .search-row {
   display: inline-flex !important;
   width:100%;
+  margin-bottom: 10px;
+  height: 34px;
 }
 
 .search_placeholder {
@@ -459,7 +461,6 @@ div.search {
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 3px;
-
 }
 
 .form-inline .inline-label {
