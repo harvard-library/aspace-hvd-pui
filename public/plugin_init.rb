@@ -277,8 +277,8 @@ Rails.application.config.after_initialize do
 # add check for digital objects, modified repo name for request
 
   ResultInfo.module_eval do
-    ALEPH_REGEXP =  Regexp.new("^\\d{9}$")
-    ALMA_REGEXP = Regexp.new("^\\d{18}$")
+    ALEPH_REGEXP =  /\A\d{9}\z/
+    ALMA_REGEXP = /\A99\d+3941\z/
     def fill_request_info
       @request = @result.request_item
 # looking for digital objects goes here
