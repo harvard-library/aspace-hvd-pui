@@ -10,7 +10,7 @@
 
       <div class="input-group search-row container" id="form-container">
         <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
-        <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control and-field' + (i == 0 ? ' hidden' : '')) %>
+        <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control search_placeholder and-field' + (i == 0 ? ' hidden' : '')) %>
         <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
         <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
         <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), placeholder:  t('navbar.search_placeholder'), :id => "q#{i}",
