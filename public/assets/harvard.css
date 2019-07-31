@@ -497,7 +497,6 @@ div.search {
     width: 100px !important;
   }
   .limit-filter-col {
-    padding-left: 8%;
     width: 250px;
   }
 }
@@ -1037,12 +1036,13 @@ span.dig_flag {
     color: #1e1e1e;
     background-color: #FFFFFF;
     background-image: url(/assets/leftarrow.png);
-    background-position: 95% 50%;
+    background-position: 90% 50%;
     background-repeat: no-repeat;
-    border-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
     margin-left: -5px;
     margin-top: 0;
     padding-left: 12px;
+    padding-right: 35px;
     padding-bottom: 6px;
     padding-top: 6px;
     font-weight: bold;
