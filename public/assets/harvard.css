@@ -1154,8 +1154,27 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 
 /* There is an unfortunate bootstrap assumption that form-fields at XS are 100% and display-block, some stuff oughtn't to be */
 @media screen and (max-width: 768px) {
-  .form-control.from-field, .form-control.to-field {
-    max-width: 8rem;
+  .form-control.limit-field {
+    max-width: 12.5rem;
     display: inline-block;
+  }
+  .form-control.from-field, .form-control.to-field {
+    max-width: 5rem;
+    display: inline-block;
+  }
+
+  #mobile-submit {
+    position: relative;
+    top: -75px;
+  }
+
+  #search_row_0 > .search-filter-row {
+    position: relative;
+    top: 60px;
+    padding-top:0;
+  }
+
+  .search_row > .form-inline.search-filter-row {
+    padding-top: 0.5rem;
   }
 }
