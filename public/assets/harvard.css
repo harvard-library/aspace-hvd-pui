@@ -192,7 +192,7 @@ a.accordion-toggle.collapsed:after {
 }
 
 .form-inline .input-group > .form-control.and-field {
-  width: 6rem;
+  width: 4.8rem;
   margin-right: 0;
 }
 
@@ -314,7 +314,7 @@ h1 > span.title {
   margin-right: 5px !important;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 100px;
+  width: 6.1rem;
   border-left: 1px dotted #000000;
   border-right: 1px dotted #000000;
 }
@@ -361,7 +361,9 @@ h1 > span.title {
 
 @media (max-width: 767px) {
   .form-control.search-field.repeats {
-    width: 85%;
+    max-width: 100%;
+    width: 100%;
+    min-width: 5rem;
   }
   .btn-primary.inline-search-btn {
     width: 47%;
@@ -373,7 +375,9 @@ h1 > span.title {
   }
   .search-keyword.repeats.form-control {
     border-radius: 0 4px 4px 0;
+    min-width: 6.1rem;
   }
+
   #submit_search.inline-search-btn {
     border-radius: 4px;
   }
@@ -504,7 +508,7 @@ div.search {
 
 @media (min-width: 768px) {
   .search-keyword {
-    min-width: 105px;
+    min-width: 6.1rem;
   }
   .inline-search-btn {
     width:100px !important;
@@ -1188,11 +1192,19 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   .search_row > .form-inline.search-filter-row {
     padding-top: 0.5rem;
     margin-left: 0;
+    text-align: left;
   }
 
   .search_row > .form-inline.search-filter-row > .limit-filter-col {
     padding-left: 0px;
   }
+
+  .form-inline .input-group > .form-control.and-field {
+    min-width: unset;
+    max-width: unset;
+    flex-shrink: 0;
+  }
+
 
 }
 
