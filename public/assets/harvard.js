@@ -177,12 +177,12 @@ function responsive_search(){
   $search_container = $("#submit_search");
   $search_button = $search_container[0];
   // set the default search button behavior for small devices
-  if($(window).width() <= 767){
+  if($(window).width() < 768){
     $("#mobile-submit").append($search_button);
   }
   // listen for browser size change and move button accordingly
   $(window).resize(function(){
-    if($(window).width() <= 767){
+    if($(window).width() < 768){
       if($('#mobile-submit').find($search_button).length)
       {
         // do nothing

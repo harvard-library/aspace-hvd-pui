@@ -2208,7 +2208,7 @@ i[class^="icon-"]:before {
 
 /* Make the Harvard logo centered on medium devices and lower */
 
-@media(max-width: 992px){
+@media(max-width: 991px){
   .harvard-logo {
     text-align: center;
   }
@@ -2217,7 +2217,7 @@ i[class^="icon-"]:before {
   }
 }
 /* Make the navbar centered on small devices only */
-@media(max-width: 768px){
+@media(max-width: 767px){
   .nav-row {
     float: none;
     width: 85%;
@@ -12636,7 +12636,7 @@ body {
   content: "";
 }
 
-/* line 767, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_icons.scss */
+/* line 768, /home/aspaceadmbeta/archivesspace/build/gems/gems/font-awesome-sass-4.7.0/assets/stylesheets/font-awesome/_icons.scss */
 .fa-shower:before {
   content: "";
 }

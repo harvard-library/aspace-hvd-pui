@@ -12,7 +12,7 @@
 a { color: #0579B8; } /* assume blue unless otherwise told no */
 
 a:hover, a:focus {
-   color: #8996A0;
+   color: #6C6C6C;
 }
 
 h1, .h1 {
@@ -191,8 +191,8 @@ a.accordion-toggle.collapsed:after {
     width: 0;
 }
 
-.form-control.and-field {
-  width: 5rem !important;
+.form-inline .input-group > .form-control.and-field {
+  width: 6rem;
   margin-right: 0;
 }
 
@@ -274,7 +274,7 @@ h1 > span.title {
 }
 
 .limit-field {
-  width: 145px !important;
+  min-width: 145px;
 }
 
 .navbar-collapse {
@@ -330,13 +330,26 @@ h1 > span.title {
   font-family: Trueno;
 }
 
-.search_row_container {
+.search_row_container, .search-filter-row {
   margin-left: 15%;
 }
 
-@media (max-width: 992px) {
-  .search_row_container {
+.search-filter-row {
+  text-align: left;
+}
+
+.limit-filter-col {
+  padding: 0 15px;
+}
+
+.search_row .plusminus {
+  margin-left: 2.3rem;
+}
+
+@media (max-width: 991px) {
+  .search_row_container, .search-filter-row {
     margin: auto;
+    text-align: center;
   }
   .form-control.search-field.repeats {
     width: 78%;
@@ -491,13 +504,13 @@ div.search {
 
 @media (min-width: 768px) {
   .search-keyword {
-    width: 100px !important;
+    min-width: 105px;
   }
   .inline-search-btn {
-    width: 100px !important;
+    width:100px !important;
   }
   .limit-filter-col {
-    width: 250px;
+    min-width: 250px;
   }
 }
 
@@ -1078,13 +1091,6 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     margin-left: 25%;
   }
 }
-@media screen and (min-width: 1200px) {
-  .search-filter-row {
-    padding-left: 15%;
-    float: left;
-  }
-}
-
 
 @media screen and (max-width: 991px) {
   .filter-container {
@@ -1153,7 +1159,7 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 }
 
 /* There is an unfortunate bootstrap assumption that form-fields at XS are 100% and display-block, some stuff oughtn't to be */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .form-control.limit-field {
     max-width: 12.5rem;
     display: inline-block;
@@ -1167,14 +1173,56 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     position: relative;
     top: -75px;
   }
+  #mobile-submit #submit_search {
+    margin-left: 0px;
+    background-position: 55% 50%;
+  }
 
   #search_row_0 > .search-filter-row {
     position: relative;
     top: 60px;
     padding-top:0;
+    text-align: left;
   }
 
   .search_row > .form-inline.search-filter-row {
     padding-top: 0.5rem;
+    margin-left: 0;
+  }
+
+  .search_row > .form-inline.search-filter-row > .limit-filter-col {
+    padding-left: 0px;
+  }
+
+}
+
+/* Horrible submit button hackery */
+@media screen and (max-width: 700px) and (min-width: 601px) {
+  #mobile-submit > #submit_search {
+    background-position: 56% 50%;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 551px) {
+  #mobile-submit > #submit_search {
+    background-position: 57% 50%;
+  }
+}
+
+@media screen and (max-width: 550px) and (min-width: 501px) {
+  #mobile-submit > #submit_search {
+    background-position: 58% 50%;
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 451px){
+  #mobile-submit > #submit_search {
+    background-position: 59% 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #mobile-submit > #submit_search {
+    background-position: 60% 50%;
   }
 }
