@@ -192,7 +192,7 @@ a.accordion-toggle.collapsed:after {
 }
 
 .form-inline .input-group > .form-control.and-field {
-  width: 4.8rem;
+  width: 5.8rem;
   margin-right: 0;
 }
 
@@ -340,6 +340,14 @@ h1 > span.title {
 
 .limit-filter-col {
   padding: 0 15px;
+}
+
+.search_row {
+  margin-top: 1rem;
+}
+
+#advanced_search > div.search_row:first-of-type {
+  margin-top: 0px;
 }
 
 .search_row .plusminus {
@@ -1200,6 +1208,7 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
 
   .form-inline .input-group > .form-control.and-field {
+    width: 4.8rem;
     min-width: unset;
     max-width: unset;
     flex-shrink: 0;
