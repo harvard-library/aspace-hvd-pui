@@ -3,18 +3,18 @@
       <ul class="nav navbar-nav">
         <%# TODO: add class="active" if we're on that page %>
         <div class="dropdown">
-          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
+          <a class="dropdown-toggle submenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
             <span><%= t('actions.browse').upcase %></span>
             <i class="fa fa-caret-down fa-icon"></i>
           </a>
           <ul class="dropdown-menu">
             <% $MAIN_MENU.each do |link| %>
-              <li><a class="dropdown-item" href="<%= app_prefix(link[0]) %>"><%= t(link[1]).upcase %></a></li>
+              <li><a href="<%= app_prefix(link[0]) %>"><%= t(link[1]).upcase %></a></li>
             <% end %>
           </ul>
         </div>
         <div class="dropdown">
-          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
+          <a class="dropdown-toggle submenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
             <span><%= t('actions.request').upcase %></span>
             <i class="fa fa-caret-down fa-icon"></i>
           </a>
@@ -32,5 +32,3 @@
       </ul>
     </div>
   </nav>
-
-  <%= javascript_include_tag "#{@base_url}/assets/tabbable_dropdowns.js" %>
