@@ -365,6 +365,13 @@ h1 > span.title {
   .input-group.search-row {
     width: 92%;
   }
+  .search-results {
+    width: 75%;
+  }
+  #filter_button {
+    position: absolute;
+    right: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1133,6 +1140,12 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
 }
 
+@media screen and (max-width: 847px) {
+  .search-results {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 576px) {
     .navbar-nav {
 	     margin: 0;
@@ -1183,6 +1196,7 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
 
   #filter_button {
+    position: static;
     float: right;
   }
 
