@@ -368,7 +368,6 @@ h1 > span.title {
 }
 
 @media (max-width: 767px) {
-  
   .form-control.search-field.repeats {
     max-width: 100%;
     width: 100%;
@@ -1126,10 +1125,6 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
     display: inline-block;
     /* margin-left: 75%; */
   }
-  .relevance-filter {
-    /* margin-right: 10%; */
-  }
-
 }
 
 @media screen and (max-width: 920px) {
@@ -1161,7 +1156,6 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
       width: 700px;
     }
     .relevance-filter {
-      margin-right: 5%;
       padding-right: 0;
     }
     .modal-button {
@@ -1189,7 +1183,6 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
 
   #filter_button {
-    background-color: #FF0000 !important;
     float: right;
   }
 
