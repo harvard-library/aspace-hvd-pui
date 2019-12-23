@@ -4,26 +4,35 @@
         <%# TODO: add class="active" if we're on that page %>
         <div class="dropdown">
           <a class="dropdown-toggle submenu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <span><%= t('actions.browse').upcase %></span>
+            <span><%= t('actions.browse') %></span>
           <i class="fa fa-caret-down fa-icon"></i>
           </a>
           <ul class="dropdown-menu">
+            <% request_tool_link = nil %>
             <% $MAIN_MENU.each do |link| %>
-              <li><a href="<%= app_prefix(link[0]) %>"><%= t(link[1]).upcase %></a></li>
+            <%# We want the requests to move to the next menu but the plugin places it here so we
+              # hve to move it ourselves since the plugin has all of the logistical code in it %>
+              <% if(link[0].upcase != "/PLUGIN/REQUEST_LIST")  %> 
+              	<li><a href="<%= app_prefix(link[0]) %>"><%= t(link[1]) %></a></li>
+              <% else %>
+              <% 	request_tool_link = link %>
+              <% end %>
             <% end %>
           </ul>
         </div>
         <div class="dropdown">
           <a class="dropdown-toggle submenu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <span><%= t('actions.request').upcase %></span>
+            <span><%= t('actions.request') %></span>
             <i class="fa fa-caret-down fa-icon"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="https://aspacepui-qa.lib.harvard.edu/plugin/request_list">My Request List</a></li>
+            <% if (request_tool_link != nil) %>
+            	<li><a href="https://aspacepui-qa.lib.harvard.edu/plugin/request_list"><%= t(request_tool_link[1]) %></a></li>
+	    <% end %>
             <li><a href="https://aeon.hul.harvard.edu/remoteauth/aeon.dll">HOLLIS Special Request <i class="fa fa-external-link-alt fa-icon"></i></a></li>
           </ul>
         </div>
-        <a href="/"><%= t('search-button.label').upcase %></a>
+        <a href="/"><%= t('search-button.label') %></a>
         <% unless AppConfig[:pui_hide][:search_tab] %>
           <li>
             <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
