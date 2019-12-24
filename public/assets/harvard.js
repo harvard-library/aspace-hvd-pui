@@ -222,3 +222,17 @@ function responsive_search(){
     }
   });
 }
+
+RequestList.prototype.showListCount = function(flash) {
+	var items = this.getList().length;
+	var a = $("#request_list_menu_item").first();
+	a.html(a.html().replace(/ \(\d+\)/, " (" + items + ")"));
+	if (flash) {
+	    a.parent().fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+	}
+	if (items >= this.item_limit) {
+	    a.parent().addClass('request-list-full');
+	} else {
+	    a.parent().removeClass('request-list-full');
+	}
+    };
