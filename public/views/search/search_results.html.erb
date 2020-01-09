@@ -48,7 +48,7 @@
 
 <% if defined?(@results) %>
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-12 col-md-9">
     <a name="main" title="<%= t('internal_links.main') %>"></a>
     <div class="sort-row">
       <div class="pagination-col">
@@ -73,7 +73,7 @@
     </div>
   </div>
   </div>
-  <div class="col-sm-3 filter_facets" id="sidebar">
+  <div class="col-md-3 filter_facets" id="sidebar">
     <a name="filter" title="<%= t('internal_links.filter') %>"></a>
     <%= render partial: 'shared/facets', locals: {:no_form => true} %>
   </div>
