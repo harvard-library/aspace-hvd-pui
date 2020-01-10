@@ -368,13 +368,19 @@ h1 > span.title {
 @media (max-width: 991px) {
   .search_row_container, .search-filter-row {
     margin: auto;
-    text-align: center;
   }
   .form-control.search-field.repeats {
     width: 78%;
   }
   .input-group.search-row {
     width: 92%;
+  }
+  .search-results {
+    width: 75%;
+  }
+  #filter_button {
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -488,7 +494,6 @@ div.search {
     color: #FFFFFF;
     padding-bottom: 25px;
     padding-top: 25px;
-    text-align: center;
     background: #0579b8; /* For browsers that do not support gradients */
     background: linear-gradient( to right, #245280, #0579b8); /* Standard syntax (must be last) */
 }
@@ -1117,9 +1122,8 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
 
 @media screen and (max-width: 991px) {
   .filter-container {
-    margin-right: 30%;
+    margin-right: 0px;
     display: -webkit-inline-box;
-    margin-left: 10%;
   }
   .sorter-col {
     margin-left: 12%;
@@ -1135,17 +1139,18 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
   .modal-button {
     display: inline-block;
-    margin-left: 75%;
   }
-  .relevance-filter {
-    margin-right: 10%;
-  }
-
 }
 
 @media screen and (max-width: 920px) {
   .modal-button {
     margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 847px) {
+  .search-results {
+    width: 100%;
   }
 }
 
@@ -1169,11 +1174,9 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
       margin: 0;
     }
     .pagination-col {
-      margin-left: 5%;
       width: 700px;
     }
     .relevance-filter {
-      margin-right: 5%;
       padding-right: 0;
     }
     .modal-button {
@@ -1190,6 +1193,19 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   .form-control.from-field, .form-control.to-field {
     max-width: 5rem;
     display: inline-block;
+  }
+
+  .relevance-filter {
+    display: inline;
+  }
+
+  .filter-container {
+    display: inline;
+  }
+
+  #filter_button {
+    position: static;
+    float: right;
   }
 
   #mobile-submit {

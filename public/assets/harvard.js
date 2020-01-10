@@ -222,3 +222,22 @@ function responsive_search(){
     }
   });
 }
+
+// Keyboard controls for bootstrap dropdown menus
+function toggleDropdown(event) {
+  let currentElement = $(event.currentTarget);
+  if (event.which === 13 && !currentElement.is(".dropdown > .dropdown-menu > li > a")) {
+    event.preventDefault();
+    currentElement.dropdown("toggle");
+    currentElement.next("ul").find("a")[0].focus();
+  } else if (event.which === 27) {
+    currentElement = currentElement.closest('.dropdown').find('.dropdown-toggle')
+    currentElement.dropdown("toggle").focus();
+  }
+}
+
+$(window).on('load', function() {
+  $("body").on('keydown', '.dropdown-toggle, .dropdown > .dropdown-menu > li > a', function(event) {
+    toggleDropdown(event)
+  });
+})

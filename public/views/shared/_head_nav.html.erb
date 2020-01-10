@@ -3,9 +3,9 @@
       <ul class="nav navbar-nav">
         <%# TODO: add class="active" if we're on that page %>
         <div class="dropdown">
-          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
             <span><%= t('actions.browse') %></span>
-          <i class="fa fa-caret-down fa-icon"></i>
+            <i class="fa fa-caret-down fa-icon"></i>
           </a>
           <ul class="dropdown-menu">
             <% request_tool_link = nil %>
@@ -21,7 +21,7 @@
           </ul>
         </div>
         <div class="dropdown">
-          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
             <span><%= t('actions.request') %></span>
             <i class="fa fa-caret-down fa-icon"></i>
           </a>
