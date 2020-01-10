@@ -181,21 +181,25 @@ function responsive_search(){
     $("#mobile-submit").append($search_button);
   }
   // listen for browser size change and move button accordingly
-  $(window).resize(function(){
-    if($(window).width() < 768){
+  $(window).resize(function(){  
+    // This is listening to a property in harvard.css that toggles at 767px using css media queries.
+    // JQuery's $(window).width() was out of alignment with it on some devices, so we're explicitly tying the two together
+    if($(".search-keyword.repeats.form-control").css("border-radius") === "0px 4px 4px 0px"){
       if($('#mobile-submit').find($search_button).length)
       {
         // do nothing
       }
       else {
+        console.log('okfoakfj')
         $("#mobile-submit").append($search_button);
       }
     }
-    if($(window).width() > 767){
+    if($(".search-keyword.repeats.form-control").css("border-radius") === "0px"){
       if($('#search_row_0').find('.input-group-btn').find($search_button).length){
         // do nothing
       }
       else {
+        console.log('okfoakfj')
         $('#search_row_0').find('.input-group-btn').append($search_button);
       }
     }
