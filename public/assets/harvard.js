@@ -219,4 +219,14 @@ $(window).on('load', function() {
   $("body").on('keydown', '.dropdown-toggle, .dropdown > .dropdown-menu > li > a', function(event) {
     toggleDropdown(event)
   });
+
+  $("body").on('keydown', '.more-facets > .more.btn.refine', function(event) {
+    $(this).siblings('.below-the-fold').show();
+    $(this).hide();
+  })
+
+  $("body").on('keydown', '.less.btn.refine', function(event) {
+    $(this).parent().hide();
+    $(this).parent().parent().find('.more').show();
+  })
 })
