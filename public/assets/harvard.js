@@ -191,7 +191,6 @@ function responsive_search(){
         // do nothing
       }
       else {
-        console.log('okfoakfj')
         $("#mobile-submit").append($search_button);
       }
     }
@@ -200,7 +199,6 @@ function responsive_search(){
         // do nothing
       }
       else {
-        console.log('okfoakfj')
         $('#search_row_0').find('.input-group-btn').append($search_button);
       }
     }
