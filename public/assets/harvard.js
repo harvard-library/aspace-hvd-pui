@@ -215,18 +215,29 @@ function toggleDropdown(event) {
   }
 }
 
+// Keyboard controls for more/less buttons in the facet component
+function toggleMoreFacets(event) {
+  if (event.which === 13 || event.which === 32) {
+    event.preventDefault();
+    const currentElement = $(event.currentTarget)
+    if (currentElement.hasClass("more")) {
+      currentElement.siblings('.below-the-fold').show();
+      currentElement.siblings('.below-the-fold').first().find("dd > a").first().focus()
+      currentElement.hide();
+    } else if (currentElement.hasClass("less")) {
+      currentElement.parent().hide();
+      currentElement.parent().parent().find('.more').show();
+      currentElement.parent().prev("span").focus()
+    }
+  }
+}
+
 $(window).on('load', function() {
   $("body").on('keydown', '.dropdown-toggle, .dropdown > .dropdown-menu > li > a', function(event) {
     toggleDropdown(event)
   });
 
-  $("body").on('keydown', '.more-facets > .more.btn.refine', function(event) {
-    $(this).siblings('.below-the-fold').show();
-    $(this).hide();
-  })
-
-  $("body").on('keydown', '.less.btn.refine', function(event) {
-    $(this).parent().hide();
-    $(this).parent().parent().find('.more').show();
+  $("body").on('keydown', '.more.btn.refine, .less.btn.refine', function(event) {
+    toggleMoreFacets(event)
   })
 })
