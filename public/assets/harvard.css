@@ -388,6 +388,8 @@ h1 > span.title {
     margin: auto;
   }
   .search-keyword.repeats.form-control {
+    /* JQuery is checking for this border-radius property in lieu of window width to keep media queries and jquery $(window).width() in alignment
+    If changed it must be updated in harvard.js's responsive search method */
     border-radius: 0 4px 4px 0;
     min-width: 6.1rem;
   }

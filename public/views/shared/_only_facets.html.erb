@@ -29,7 +29,7 @@
     <% h.each do |v, ct| %>
       <% if facet_count == 5 %>
         <div class="more-facets">
-          <span class="more btn">&or; <%= t('search_results.more_facets') %></span>
+          <span class="more btn refine" tabindex="0">&or; <%= t('search_results.more_facets') %></span>
           <div class="below-the-fold">
       <% end %>
       <% facet_count += 1 %>
@@ -44,7 +44,7 @@
      <% end %>
     <% end %>
     <% if facet_count > 5 %>
-        <span class="less btn">&and; <%= t('search_results.fewer_facets') %></span>
+        <span class="less btn refine" tabindex="0">&and; <%= t('search_results.fewer_facets') %></span>
       </div>
     <% end %>
     <span class="type-spacer">&nbsp;</span>
