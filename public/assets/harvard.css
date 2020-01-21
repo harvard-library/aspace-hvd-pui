@@ -342,6 +342,17 @@ h1 > span.title {
   padding: 0 15px;
 }
 
+#limit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+#limit::-ms-expand {
+  display: none;
+}
+
 .search_row {
   margin-top: 1rem;
 }
