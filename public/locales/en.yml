@@ -24,6 +24,7 @@ en:
     aspace: "Powered by <a href='%{link}' target='_blank'>%{text}</a>"
     feedback: Send Feedback
     help: Help
+    accessibility: "Digital Accessibility"
 
   actions:
     digital_only: Digital Material
