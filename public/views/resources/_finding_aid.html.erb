@@ -1,0 +1,18 @@
+<% order = %w(title subtitle status author date description_rules language sponsor edition_statement series statement) %>
+<% unless @result.finding_aid.blank? %>
+  <% if @result.finding_aid.size > 1 || @result.finding_aid['revisions'].blank? %>
+    <dl class="dl-horizontal">
+      <% order.each do |item| %>
+        <% unless @result.finding_aid[item].blank? %>
+          <dt><%= t("resource._public.finding_aid.#{item}") %></dt>
+	  <dd><%= @result.finding_aid[item] %></dd>
+        <% end %>
+      <% end %>
+      <% unless @result.ead_id.blank? %>
+         <dt><%= t("resource._public.finding_aid.ead_id") %></dt>
+          <dd><%= @result.ead_id %></dd>
+      <% end %>
+    </dl>
+  <% end %>
+
+<% end %>

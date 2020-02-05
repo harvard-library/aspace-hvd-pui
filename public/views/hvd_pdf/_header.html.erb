@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <style>
+ html {
+   font-family: sans-serif;
+   font-size: 12px;
+}
+
+ .title-page {
+     page-break-after: always;
+     position: relative;
+     height: 60em;
+ }
+
+ .toc-page {
+     page-break-after: always;
+ }
+
+ .logo {
+     display: inline-block;
+     width: 75px;
+     height: 85px;
+     background-image: url(http://nrs.harvard.edu/urn-3:hul.ois:hu_archive_shield);
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+ }
+
+ ul.toc {
+     list-style-type: none;
+     margin-left: 0;
+     padding-left: 0;
+ }
+
+ a {
+     color: #14A6DC;
+ }
+
+ .toc li {padding-bottom: 0.5em; }
+ .toc .level-1 { padding-left: 1em; }
+ .toc .level-2 { padding-left: 2em; }
+ .toc .level-3 { padding-left: 3em; }
+ .toc .level-4 { padding-left: 4em; }
+ .toc .level-5 { padding-left: 5em; }
+ .toc .level-6 { padding-left: 6em; }
+ .toc .level-7 { padding-left: 7em; }
+ .toc .level-8 { padding-left: 8em; }
+ .toc .level-9 { padding-left: 9em; }
+ .toc .level-10 { padding-left: 10em; }
+
+ .toc a {
+     color: black;
+     text-decoration: underline;
+ }
+
+ a.record-title {
+     color: black;
+     text-decoration: none;
+ }
+
+ h3 {
+     margin-top: 1em;
+     font-size: 1em;
+ }
+
+ .print-record-border h3 {
+    margin-top: .75em;
+    font-weight: bold;
+ }
+ 
+ .indented { margin-left: 1em; font-size: 0.9em; }
+ .indented h4 {font-weight: bold; font-size: 0.9em; }
+ dl {
+     overflow: hidden;
+ }
+
+ dt, dd { float: left; margin: 0; margin-top: 0.5em; }
+ dt { clear: both; font-weight: bold; width: 20%; text-align: right; margin-right: 1em; }
+ dd { width: 70%; }
+ dt:after { content: ':'; white-space: pre; }
+
+ span.label { font-weight: bold;}
+ span.label:after { content: ':'; white-space: pre; }
+
+ .arch .dt {text-align: left;}
+
+ .title-block {
+     border-bottom: solid 2px black;
+ }
+
+ .title-block h2 {
+     border: 0;
+ }
+
+ .title-page .repository-information {
+     position: absolute;
+     bottom: 0;
+     border: solid 2px gray;
+      width: 95%;
+     padding: 1em 1em 0 1em;
+
+ }
+
+ .repository-information > * {
+     padding-left: 1em;
+ }
+
+ .repository-information > .repository-name {
+     padding-left: 0;
+ }
+
+ .repository-address {
+     margin: 1em, 0;
+ }
+
+ h2 {
+     padding-top: 0.25em;
+     padding-bottom: 0.25em;
+     border-top: solid 2px #333;
+     border-bottom: dotted 1px #333;
+     font-size: 1.2em;
+ }
+
+ ul.toc a::after {
+     content: leader('.') target-counter(attr(href), page);
+ }
+
+ .print-record-border {
+/*     border-left: dashed 1px #ccc; */
+     padding-left: 0.5em;
+     margin: 0;
+
+     /* Get rid of annoying vertical whitespace */
+     margin-top: -8px;
+     padding-top: 8px;
+ }
+
+ .avoid-break {
+     margin-top: 10px;
+     break-inside: avoid;
+     page-break-inside: avoid;
+ }
+
+ .pbrb {
+   page-break-before: always;
+}
+ .print-record {
+     margin-bottom: 1em;
+    border-top: solid 1px #dedede;
+ }
+
+ .print-record-border.print-record.level-1 { padding-top: 0; margin-top: 1em; }
+
+ .print-record-border.level-1 { margin-left: 1em; }
+/* .print-record-border.level-2 { margin-left: 1em }
+ .print-record-border.level-3 { margin-left: 1em; }  
+ .print-record-border.level-4 { margin-left: .25em; }
+ .print-record-border.level-5 { margin-left: .25em; }
+ .print-record-border.level-6 { margin-left: .25em; }
+ .print-record-border.level-7 { margin-left: 1em; }
+ .print-record-border.level-8 { margin-left: 1em; }
+ .print-record-border.level-9 { margin-left: 1em; }
+ .print-record-border.level-10 { margin-left: 1em; } */
+
+ .print-record h3 {
+     margin: 0;
+ }
+
+ .print-record-border.series > h3 {
+    background-color: #999999;
+    font-size: 1.2em;
+}
+   .print-record-border.subseries > h3 {
+   background-color: #d6d6d6;
+}
+
+   .print-record-border.subfonds > h3 {
+   background-color: #f7f7f7;
+}
+
+
+
+ .print-record h4 {
+     margin: 0.25em 0 0.25em 0;
+ }
+
+ .print-record p {
+     margin: 0;
+ }
+
+ .print-record dl {
+     margin: 0 0 0.5em 0;
+ }
+
+ .container-information {
+     font-size: 80%;
+     text-align: right;
+     color: #aaa;
+ }
+
+ .italic, .title {
+     font-style: italic;
+ }
+
+ .inherit {
+     font-style: italic;
+ }
+
+.enumeration- ol {
+  list-style: disc;
+}
+
+.enumeration-null  ol {
+  list-style: disc;
+}
+
+
+.ret_toc { padding-top: 1em; padding-bottom: 1em;}
+
+.ret_toc a{ color: black; text-decoration: underline; }
+
+ <%# Don't show headers/footers on the titlepage %>
+ @page :first {
+     @top-center {
+         content: '';
+     }
+
+     @bottom-center {
+         content: '';
+     }
+ }
+
+ @page {
+     <%
+     short_title = record.finding_aid.fetch('title', '')
+     short_title = short_title.gsub(/\n.*/, '').strip
+     %>
+
+     <% if short_title != '' %>
+     @top-center {
+         font-size: 80%;
+         color: #666;
+         content: '<%= short_title %>';
+     }
+     <% end %>
+
+     @bottom-center {
+         font-size: 80%;
+         color: #666;
+         content: '- ' counter(page) ' -';
+     }
+ }
+
+
+        </style>
+    </head>
+    <body>
+

@@ -1,0 +1,22 @@
+
+<%= stylesheet_link_tag "#{@base_url}/assets/harvard_application.css", media: :all %>
+<%= stylesheet_link_tag "#{@base_url}/assets/harvard.css", media: :all %>
+
+<script type="text/javascript">var hrvd_controller = '<%= params[:controller] %>';
+                               var hrvd_action = '<%= params[:action] %>';
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52592218-14"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag()
+{dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config', 'UA-52592218-14');
+</script>
+
+<%= javascript_include_tag "#{@base_url}/assets/harvard.js" %>
+<%= javascript_include_tag "#{@base_url}/assets/infinite_scroll_replacement.js" %>

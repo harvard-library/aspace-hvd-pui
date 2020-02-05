@@ -1,0 +1,24 @@
+<div class="title-page">
+
+    <div class="logo">[logo]  </div>
+    <div class="title-block">
+        <h1 class="title"><%= record.identifier %></h1>
+	<%
+	   short_title = record.finding_aid.fetch('title',  record.display_string)
+	   short_title = short_title.gsub(/\n.*/, ' ').strip
+        %>
+        <h1 class="title"><%= short_title %></h1>
+    </div>
+
+    <% long = record.resolved_repository['name']
+       unless record.resolved_repository['repo_code'].blank?
+         long = I18n.t("repos.#{record.resolved_repository['repo_code'].downcase}.long", :default => long)
+       end
+    %>
+
+    <%= render(:partial => 'publication_statement', :locals => {
+        :repository_name => long,
+        :repository_information => record.repository_information
+    })
+    %>
+</div>

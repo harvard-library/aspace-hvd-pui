@@ -1,0 +1,25 @@
+
+<% unless record.subjects.blank? %>
+<div class='pbrb'>
+<a id="subjects"></a>
+<h2><%= I18n.t('pdf_reports.controlled_access_headings') %></h2>
+
+<ul>
+<% Array(record.subjects).each do |subject| %>
+    <li><%= subject['title'] %></li>
+<% end %>
+</ul>
+</div>
+<%= render(:partial => 'return_toc') %>
+<% end %>
+
+<% note = record.notes.dig('separatedmaterial') %>
+<% unless note.blank? %>
+<div>
+   <a id="separatedmaterial"></a>
+   <h2><% if note['label'] %><%= note['label'].titlecase %><% else %><%= I18n.t('enumerations._note_types.separatedmaterial') %> <% end %></h2>
+   <%= render(:partial =>  'shared/single_note', :locals => {:type => "separatedmaterial", :note_struct => note, :notitle => true, :pdf => true}) %>
+
+</div>
+<%= render(:partial => 'return_toc') %>
+<% end %>

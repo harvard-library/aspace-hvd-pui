@@ -1,0 +1,16 @@
+<%# THIS IS A COMPLETE RE-WRITE %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="repo_info" ><%= t('repository_count', count: @search_data['total_hits']) %> </h1>
+      <div class="repo_text"><%= t('repository_text') %> </div>
+        <div class="repo_list">
+	  <% @json.each do |result| %>
+	  <div class="row"><a class="repo_info" href="<%= app_prefix(result['uri']) %>"><%= result['name']%></a>
+	    <div class="res_count">Number of <%= t('resource._plural') %>: <%= result['count'] %></div>
+	  </div>
+	  <% end %>
+	</div>
+      </div>
+  </div>
+</div>

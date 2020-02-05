@@ -1,0 +1,112 @@
+<a id="summary-information"></a>
+<h2><%= I18n.t('pdf_reports.summary_information') %></h2>
+
+<dl>
+    <dt><%= I18n.t('repository._singular') %></dt>
+    <dd><%= record.resolved_repository['name'] %></dd>
+
+    <% if record.agents %>
+        <% record.agents.each do |role, relationships| %>
+            <% relationships.each do |relationship| %>
+                <dt><%= I18n.t("enumerations.linked_agent_role.#{role}", :default => role) %></dt>
+                <dd><%= relationship['_resolved']['title'] %></dd>
+            <% end %>
+        <% end %>
+    <% end %>
+
+    <dt><%= I18n.t('resource._public.finding_aid.title') %></dt><dd><%== record.display_string %></dd>
+
+    <dt><%= I18n.t('resource._public.identifier') %></dt><dd><%= record.identifier %></dd>
+
+    <% record.dates.each do |date| %>
+        <dt><%= I18n.t('resource._public.finding_aid.date') %></dt><dd><%= date['final_expression'] %></dd>
+    <% end %>
+
+    <% record.extents.each do |extent| %>
+        <dt><%= I18n.t('resource._public.physdesc') %></dt><dd><%= extent['display'] %></dd>
+    <% end %>
+
+    <% note = record.notes.dig('physdesc') || '' %>
+    <% unless note.blank? %>
+       <a id="note-physdesc"></a>
+       <dt><%= I18n.t("enumerations._note_types.physdesc") %></dt><dd><%== note['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></dd>
+    <% end %>
+
+    <% if record.container_display && !record.container_display.empty? %>
+        <dt><%= I18n.t('resource._public.storage') %></dt><dd><%= record.container_display.join(', ') %></dd>
+    <% end %>
+
+    <% %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial  prefercite).each do |type| %>
+       <% note = record.notes.dig(type) %>
+       <% if  type == 'processinfo'
+	    unless note.blank? || note['subnotes'].blank? || note['subnotes'].length < 2
+	      if (note['label']||'') != 'Processing Information'
+                note['subnotes'][0]['_inline_label'] =  note['label']
+                note['label'] = 'Processing Information'
+	      end
+	    end
+          end %>
+       <% unless note.blank? %>
+         <% label = note['label'] || ''
+	    if label.downcase == 'aleph id'
+	       label = t("pdf_reports.aleph")
+	    elsif label.downcase == 'alma id'
+	       label = t("pdf_reports.alma")
+	    elsif label.blank?
+	       label =  t("enumerations._note_types.#{type}")
+	    else 
+	       label = label.titlecase
+	    end %>
+         <dt><%= label %></dt>
+         <dd><%= render partial:  'shared/single_note', locals: {:type => type, :note_struct => note, :notitle => true, :pdf => true} %></dd>
+       <% end %>  
+    <% end %>
+    
+    <%= render(:partial => 'digital_object_links', :locals => {
+        :instances => record.instances
+    }) %>
+</dl>
+<%= render(:partial => 'return_toc') %>
+<% admin = false
+   order = %w( sponsor note edition_statement series_statement)
+   order.each do |item|
+     admin = true if !record.finding_aid[item].blank?
+   end
+%>
+<% if admin %>
+  <a id="administrative-information"></a>
+  <h2><%= I18n.t('pdf_reports.administrative_information') %></h2>
+
+  <% unless record.finding_aid.blank? %>
+    <dl>
+    <% order.each do |item| %>
+      <% unless record.finding_aid[item].blank? %>
+        <dt><%= t("resource._public.finding_aid.#{item}") %></dt>
+        <dd><%= record.finding_aid[item].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></dd>
+      <% end %>
+     <% end %>
+    </dl>
+  <% end %>
+  <%= render(:partial => 'return_toc') %>
+<% end %>
+
+<% record.notes.each do |note_type, note| %>
+    <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial separatedmaterial physdesc prefercite).include?(note_type) %>
+    <a id="note-<%= note_type %>"></a>
+    <h2><% if note['label'] %>
+            <%= note['label'].titlecase %>
+        <% else %>
+            <%= I18n.t("enumerations._note_types.#{note_type}") %>
+        <% end %> </h2>
+    <%= render partial: 'shared/single_note', locals: {:type => note_type, :note_struct => note, :notitle => true}   %>
+
+    <%= render(:partial => 'return_toc') %>
+<% end %>
+
+
+
+<div class="collection-inventory pbrb">
+<% if has_children %>
+    <a id="collection-inventory"></a>
+    <h2><%= I18n.t('pdf_reports.collection_inventory') %></h2>
+<% end %>
