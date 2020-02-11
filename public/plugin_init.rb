@@ -4,6 +4,7 @@ AppConfig[:pui_hide][:agents] = true
 AppConfig[:pui_hide][:accessions] = true
 AppConfig[:pui_hide][:classifications] = true
 AppConfig[:pui_branding_img] = '/assets/hl_logo_alt.png'
+AppConfig[:digital_accessibility_link] = 'https://accessibility.huit.harvard.edu/digital-accessibility-policy'
 AppConfig[:pui_hide][:classification_badge] = true
 AppConfig[:pui_hide][:subject_badge] = true
 AppConfig[:pui_hide][:agent_badge] = true

@@ -1,6 +1,7 @@
 <div class="container-fluid panel-footer">
   <div class="row">
     <div class="col-md-4">
+       <% if AppConfig[:digital_accessibility_link] && !AppConfig[:digital_accessibility_link].blank? %><a id='digitalAccessibilityLink' href='<%= AppConfig[:digital_accessibility_link]%>' target='_blank'><%= t('footer.accessibility') %></a> |<% end %>
        <% if AppConfig[:pui_feedback_link] && !AppConfig[:pui_feedback_link].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:pui_feedback_link]%>' target='_blank'><%= t('footer.feedback') %></a> |<% end %>
        <% if AppConfig[:pui_help_link] && !AppConfig[:pui_help_link].blank? %><a id='aspaceHelpLink' href='<%= AppConfig[:pui_help_link]%>' target='_blank'><%= t('footer.help') %></a> <% end %>
     </div>
