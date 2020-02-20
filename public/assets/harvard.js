@@ -150,28 +150,19 @@ function responsive_search(){
   }
   down_caret = $("#down-caret");
   down_caret.appendTo(keyword);
-  $("select.search-keyword").change(function(){
-	  $("select.search-keyword").children().remove(down_caret)
-	  keyword = $("select.search-keyword").children("option:selected");
-	  down_caret.appendTo(keyword);
-  });
-  
+
   limit = $("select.limit-field").children("option:selected")
   if (limit == null) {
 	  limit = $("select.limit-field").children().first();
   }
   limit_down_caret = down_caret.clone();
   limit_down_caret.appendTo(limit);
-  $("select.limit-field").change(function(){
-	  $("select.limit-field").children().remove(limit_down_caret)
-	  limit = $("select.limit-field").children("option:selected");
-	  limit_down_caret.appendTo(limit);
-  });
 	
 //Not sure what this code actually does so I'm not touching it
   $(document).ready(function(){
     var observer = new MutationObserver(function(mutations) {
       // For the sake of...observation...let's output the mutation to console to see how this all works
+      
       mutations.forEach(function(mutation) {
         let $down_caret = $("#down-caret")
         $new_keyword = $(mutation.addedNodes[0]).find($('select[id^="field"]')).children().first();
@@ -182,6 +173,10 @@ function responsive_search(){
         $new_keyword_down_caret.appendTo($new_keyword);
         $new_limit_down_caret.appendTo($new_limit)
       });
+
+      // making additional limit fields invisible and uninteractable instead of removing them to keep consistent formatting
+      $(".form-group.limit-filter-col:not(:first)").css("visibility", "hidden")
+      $(".limit-field:not(:first)").prop("disabled", "true")
     });
 
     // Notify me of everything!
@@ -247,33 +242,6 @@ function handleDropdownCarets(event) {
       }
     }
   })
-
-
-
-  // var keyword, down_caret, limit, limit_down_caret;	
-  // keyword = $("select.search-keyword").children("option:selected")
-  // if (keyword == null) {
-	//   keyword = $("select.search-keyword").children().first();
-  // }
-  // down_caret = $("#down-caret");
-  // down_caret.appendTo(keyword);
-  // $("select.search-keyword").change(function(){
-	//   $("select.search-keyword").children().remove(down_caret)
-	//   keyword = $("select.search-keyword").children("option:selected");
-	//   down_caret.appendTo(keyword);
-  // });
-  
-  // limit = $("select.limit-field").children("option:selected")
-  // if (limit == null) {
-	//   limit = $("select.limit-field").children().first();
-  // }
-  // limit_down_caret = down_caret.clone();
-  // limit_down_caret.appendTo(limit);
-  // $("select.limit-field").change(function(){
-	//   $("select.limit-field").children().remove(limit_down_caret)
-	//   limit = $("select.limit-field").children("option:selected");
-	//   limit_down_caret.appendTo(limit);
-  // });
 }
 
 // Keyboard controls for bootstrap dropdown menus
