@@ -173,10 +173,14 @@ function responsive_search(){
     var observer = new MutationObserver(function(mutations) {
       // For the sake of...observation...let's output the mutation to console to see how this all works
       mutations.forEach(function(mutation) {
+        let $down_caret = $("#down-caret")
         $new_keyword = $(mutation.addedNodes[0]).find($('select[id^="field"]')).children().first();
+        $new_limit = $(mutation.addedNodes[0]).find($('.limit-field')).children().first();
         // I don't know why I can't do this on one line but it breaks the plusminus fcnality when I do so.
-        $new_down_caret = $down_caret.clone();
-        $new_down_caret.appendTo($new_keyword);
+        $new_keyword_down_caret = $down_caret.clone();
+        $new_limit_down_caret = $down_caret.clone();
+        $new_keyword_down_caret.appendTo($new_keyword);
+        $new_limit_down_caret.appendTo($new_limit)
       });
     });
 
@@ -227,6 +231,51 @@ function responsive_search(){
   });
 }
 
+function handleDropdownCarets(event) {
+  // get all children of the changed dropdown
+  let $targetDropdownOptions = $(event.target).children()
+  $targetDropdownOptions.each(function() {
+    if ($(this)[0].selected) {
+      // If the option is selected, we add a down-caret to the end
+      let $down_caret = $("#down-caret")
+      let $new_down_caret = $down_caret.clone();
+      $new_down_caret.appendTo($(this));
+    } else {
+      // If the option is not selected, we make sure there is no down-caret on it
+      if ($(this).find("span").length > 0) {
+        $(this).find("span").remove();
+      }
+    }
+  })
+
+
+
+  // var keyword, down_caret, limit, limit_down_caret;	
+  // keyword = $("select.search-keyword").children("option:selected")
+  // if (keyword == null) {
+	//   keyword = $("select.search-keyword").children().first();
+  // }
+  // down_caret = $("#down-caret");
+  // down_caret.appendTo(keyword);
+  // $("select.search-keyword").change(function(){
+	//   $("select.search-keyword").children().remove(down_caret)
+	//   keyword = $("select.search-keyword").children("option:selected");
+	//   down_caret.appendTo(keyword);
+  // });
+  
+  // limit = $("select.limit-field").children("option:selected")
+  // if (limit == null) {
+	//   limit = $("select.limit-field").children().first();
+  // }
+  // limit_down_caret = down_caret.clone();
+  // limit_down_caret.appendTo(limit);
+  // $("select.limit-field").change(function(){
+	//   $("select.limit-field").children().remove(limit_down_caret)
+	//   limit = $("select.limit-field").children("option:selected");
+	//   limit_down_caret.appendTo(limit);
+  // });
+}
+
 // Keyboard controls for bootstrap dropdown menus
 function toggleDropdown(event) {
   let currentElement = $(event.currentTarget);
@@ -257,6 +306,7 @@ function toggleMoreFacets(event) {
   }
 }
 
+// Add listeners
 $(window).on('load', function() {
   $("body").on('keydown', '.dropdown-toggle, .dropdown > .dropdown-menu > li > a', function(event) {
     toggleDropdown(event)
@@ -264,5 +314,9 @@ $(window).on('load', function() {
 
   $("body").on('keydown', '.more.btn.refine, .less.btn.refine', function(event) {
     toggleMoreFacets(event)
+  })
+
+  $("body").on('change', 'select.search-keyword, select.limit-field', function(event) {
+    handleDropdownCarets(event)
   })
 })
