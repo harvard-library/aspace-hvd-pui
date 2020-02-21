@@ -173,8 +173,6 @@ function responsive_search(){
       });
 
       // making additional limit fields invisible and uninteractable instead of removing them to keep consistent formatting
-      $(".form-group.limit-filter-col:not(:first)").css("visibility", "hidden")
-      $(".limit-field:not(:first)").prop("disabled", "true")
     });
 
     // Notify me of everything!
