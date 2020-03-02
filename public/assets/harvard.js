@@ -1,5 +1,5 @@
 // create a down caret that we can use throughout for dropdown menus
-let $downCaret = '<span class="float-right search-down-caret hidden">&nbsp&nbsp&nbsp&#9662</span>'
+let $downCaret = '<span class="float-right search-down-caret hidden">&nbsp&nbsp&#9662</span>'
 
 function HarvardSidebar($sidebar) {
     this.$sidebar = $sidebar;
@@ -171,8 +171,6 @@ function responsive_search(){
         $($downCaret).appendTo($new_keyword);
         $($downCaret).appendTo($new_limit)
       });
-
-      // making additional limit fields invisible and uninteractable instead of removing them to keep consistent formatting
     });
 
     // Notify me of everything!
