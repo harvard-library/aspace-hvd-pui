@@ -14,7 +14,7 @@ en:
     welcome_page_title: Hollis Archival Collection Guides
     welcome_repo: <a href="/repositories" target="repos" title="see a list of repositories">CONTACT A REPOSITORY</a> <p class='serif'>Learn about hours, more detailed information, and specific policies for each location.</p>
     welcome_hollis: <a href="http://hollis.harvard.edu" target="hollis">EXPLORE MORE IN HOLLIS</a><p class='serif'>Use the Harvard Library catalog to search for additional materials including rare books, images, maps, and more special collections and archival materials.</p>
-    welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Can’t find what you’re looking for? Have questions? Contact an archivist or librarian for help!</p>
+    welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Have questions about using this system? Start with this <a href="https://guides.library.harvard.edu/hollisforarchivaldiscovery">Guide</a>. Can’t find what you need? Contact an archivist or librarian for help!</p>
 
   repository_count: "Repositories (%{count})"
   repository_text: Special collections and archival materials are held at various repositories at Harvard University.
@@ -24,6 +24,7 @@ en:
     aspace: "Powered by <a href='%{link}' target='_blank'>%{text}</a>"
     feedback: Send Feedback
     help: Help
+    accessibility: Digital Accessibility
 
   actions:
     digital_only: Digital Material

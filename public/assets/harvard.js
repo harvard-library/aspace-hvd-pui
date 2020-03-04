@@ -1,3 +1,6 @@
+// create a down caret that we can use throughout for dropdown menus
+let $downCaret = '<span class="float-right search-down-caret hidden">&nbsp&nbsp&#9662</span>'
+
 function HarvardSidebar($sidebar) {
     this.$sidebar = $sidebar;
     this.$row = $sidebar.closest('.row');
@@ -143,18 +146,30 @@ $(function() {
   }
 });
 function responsive_search(){
-  $keyword = $("select.search-keyword").children().first();
-  $down_caret = $("#down-caret");
-  $down_caret.appendTo($keyword);
+  var keyword, limit;	
+  keyword = $("select.search-keyword").children("option:selected")
+  if (keyword == null) {
+	  keyword = $("select.search-keyword").children().first();
+  }
+  $($downCaret).appendTo(keyword);
 
+  limit = $("select.limit-field").children("option:selected")
+  if (limit == null) {
+	  limit = $("select.limit-field").children().first();
+  }
+  $($downCaret).appendTo(limit);
+	
+//Not sure what this code actually does so I'm not touching it
   $(document).ready(function(){
     var observer = new MutationObserver(function(mutations) {
       // For the sake of...observation...let's output the mutation to console to see how this all works
+      
       mutations.forEach(function(mutation) {
         $new_keyword = $(mutation.addedNodes[0]).find($('select[id^="field"]')).children().first();
+        $new_limit = $(mutation.addedNodes[0]).find($('.limit-field')).children().first();
         // I don't know why I can't do this on one line but it breaks the plusminus fcnality when I do so.
-        $new_down_caret = $down_caret.clone();
-        $new_down_caret.appendTo($new_keyword);
+        $($downCaret).appendTo($new_keyword);
+        $($downCaret).appendTo($new_limit)
       });
     });
 
@@ -205,6 +220,22 @@ function responsive_search(){
   });
 }
 
+function handleDropdownCarets(event) {
+  // get all children of the changed dropdown
+  let $targetDropdownOptions = $(event.target).children()
+  $targetDropdownOptions.each(function() {
+    if ($(this)[0].selected) {
+      // If the option is selected, we add a down-caret to the end
+      $($downCaret).appendTo($(this));
+    } else {
+      // If the option is not selected, we make sure there is no down-caret on it
+      if ($(this).find("span.search-down-caret").length > 0) {
+        $(this).find("span.search-down-caret").remove();
+      }
+    }
+  })
+}
+
 // Keyboard controls for bootstrap dropdown menus
 function toggleDropdown(event) {
   let currentElement = $(event.currentTarget);
@@ -235,6 +266,7 @@ function toggleMoreFacets(event) {
   }
 }
 
+// Add listeners
 $(window).on('load', function() {
   $("body").on('keydown', '.dropdown-toggle, .dropdown > .dropdown-menu > li > a', function(event) {
     toggleDropdown(event)
@@ -242,5 +274,9 @@ $(window).on('load', function() {
 
   $("body").on('keydown', '.more.btn.refine, .less.btn.refine', function(event) {
     toggleMoreFacets(event)
+  })
+
+  $("body").on('change', 'select.search-keyword, select.limit-field', function(event) {
+    handleDropdownCarets(event)
   })
 })
