@@ -265,4 +265,12 @@ $(window).on('load', function() {
   $("body").on('keydown', '.more.btn.refine, .less.btn.refine', function(event) {
     toggleMoreFacets(event)
   })
+
+  $("button.expandme").focusin(function() {
+    $(this).find("i").addClass("focusIcon")
+  })
+
+  $("button.expandme").focusout(function() {
+    $(this).find("i").removeClass("focusIcon")
+  })
 })

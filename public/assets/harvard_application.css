@@ -13736,6 +13736,10 @@ span.head {
   padding-left: 10px;
 }
 
+#sidebar > .search {
+  text-align: center;
+}
+
 @media (min-width: 992px) {
   /* line 822, /home/aspaceadmbeta/archivesspace/public/app/assets/stylesheets/archivesspace/aspace.scss */
   #sidebar.resizable-sidebar {
@@ -13999,6 +14003,10 @@ span.head {
 .largetree-container button.expandme {
   background: none;
   border: 0;
+}
+.focusIcon {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 /* line 29, /home/aspaceadmbeta/archivesspace/public/vendor/assets/stylesheets/archivesspace/largetree.scss */
 .largetree-container .waypoint {
