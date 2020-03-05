@@ -4,7 +4,6 @@
   <% @search = Search.new unless defined?(@search) %>
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
-  <span id="down-caret" class="float-right search-down-caret hidden"><%= "   " + 9662.chr(Encoding::UTF_8) %></span>
   <div class="row search_row col-md-10" id="search_row_<%= i %>">
     <div class="search_row_container form-inline">
 
@@ -25,14 +24,14 @@
       </div>
     </div>
     <div class="search-filter-row form-inline">
-      <% if i == 0 %>
-        <div class="form-group limit-filter-col">
-          <%= label_tag(:limit, t('search-limit'),:class => 'sr-only') %>
-          <span class="inline-label repeats"><%= t('search-limit') %>:</span>
-          <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder limit-field') %>
+        <div class="form-group limit-filter-col norepeat">
+          <% if i == 0 %>
+            <%= label_tag(:limit, t('search-limit'),:class => 'sr-only') %>
+            <span class="inline-label repeats"><%= t('search-limit') %>:</span>
+            <%= select_tag(:limit, options_for_select(limit_options, @search[:limit]), :class=> 'form-control search_placeholder limit-field') %>
+          <% end %>
         </div>
-      <% end %>
-       <div class="<%= (i > 0)? 'col-sm-offset-4 ' : '' %> form-group years-filter-col search_placeholder">
+       <div class="form-group years-filter-col search_placeholder">
         <span class="inline-label repeats"><%= t('search_results.filter.years') %>:</span>
         <%= label_tag(:"from_year#{i}", "#{t('search_results.filter.from_year')}", :class => 'sr-only repeats') %>
         <%= text_field_tag('from_year[]', @search[:from_year][i], :size => 4,:maxlength => 4, :id=>"from_year#{i}",
