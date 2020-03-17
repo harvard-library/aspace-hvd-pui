@@ -282,6 +282,7 @@ $(window).on('load', function() {
 
   $("button.expandme").focusout(function() {
     $(this).find("i").removeClass("focusIcon")
+  })
 
   $("body").on('change', 'select.search-keyword, select.limit-field', function(event) {
     handleDropdownCarets(event)
