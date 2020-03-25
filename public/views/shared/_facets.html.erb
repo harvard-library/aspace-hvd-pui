@@ -29,7 +29,6 @@
    <% end %>
  <% end %>
 </div>
-
 <% if (!defined?(no_form) || no_form.blank?) && (@search[:dates_within] || @search[:text_within]) %>
 <h3><%= t('search_results.filter.head') %></h3>
  <div class="filter_more">
@@ -56,11 +55,9 @@
         <%= hidden_field_tag(:filter_to_year, @search[:filter_to_year], :id => nil) %>
     <% end %>
     </div>
-
    <%= submit_tag(t('search-button.label'), :class=>'btn btn-primary', :id => nil) %>
   <% end %>
  </div>
-
 <% end %>
 <div class="filters">
   <%= render partial: 'shared/only_facets' %>
