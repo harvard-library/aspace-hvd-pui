@@ -14,7 +14,15 @@ en:
     welcome_page_title: Hollis Archival Collection Guides
     welcome_repo: <a href="/repositories" target="repos" title="see a list of repositories">CONTACT A REPOSITORY</a> <p class='serif'>Learn about hours, more detailed information, and specific policies for each location.</p>
     welcome_hollis: <a href="http://hollis.harvard.edu" target="hollis">EXPLORE MORE IN HOLLIS</a><p class='serif'>Use the Harvard Library catalog to search for additional materials including rare books, images, maps, and more special collections and archival materials.</p>
-    welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Have questions about using this system? Start with this <a href="https://guides.library.harvard.edu/hollisforarchivaldiscovery">Guide</a>. Can’t find what you need? Contact an archivist or librarian for help!</p>
+    welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Have questions about using this system? Start with this <a href="https://guides.library.harvard.edu/hollisforarchivaldiscovery" target="_blank">Guide</a>. Can’t find what you need? Contact an archivist or librarian for help!</p>
+    welcome_notification: |
+      <div class="alert welcome_notification" role="alert">
+        <b>Coming Soon:</b> We’re adding a new feature! Soon you’ll be able to request materials for use in participating libraries and make reproduction requests directly from HOLLIS for Archival Discovery.
+        Check out <span><a href="https://docs.google.com/presentation/d/e/2PACX-1vQSjUgrykVO18_Ib1qOVFNOG-msg-HyPo6Zm49nA1JlkLRfmlVQjMv2_vL2myapiyRdWHevGJ9R5u_h/pub?start=true&loop=false&delayms=10000" target="_blank">this tutorial on direct requesting <i class="fa fa-external-link" aria-hidden="true"></i></a></span> to learn more.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
   repository_count: "Repositories (%{count})"
   repository_text: Special collections and archival materials are held at various repositories at Harvard University.
