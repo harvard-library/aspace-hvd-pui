@@ -1024,6 +1024,15 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
     margin-top: 1em;
 }
 
+/* welcome notification banner */
+.welcome_notification {
+    background-color: rgb(248, 194, 28);
+    box-sizing: border-box;
+    color: rgb(65, 65, 65);
+    display: block;
+    font-family: Lora, Georgia, serif;
+}
+
 /* for missing digital object thumbnails with no caption */
 
 .objectimage.nocaption {
