@@ -287,4 +287,12 @@ $(window).on('load', function() {
   $("body").on('change', 'select.search-keyword, select.limit-field', function(event) {
     handleDropdownCarets(event)
   })
+
+  // Copy the number of requests from the menu option to the top "REQUEST" level. Intended behavior
+  // is leaving it in both places, so no need to remove
+  let requestNumber = $("#request_list_menu_item").text().match(/ \(\d+\)/)
+  if (requestNumber) {
+    let currentRequestMenuText = $("#dropdownMenu2").find("span").text()
+    $("#dropdownMenu2").find("span").text(currentRequestMenuText + requestNumber[0])
+  }
 })
