@@ -29,7 +29,7 @@
             <% if (request_tool_link != nil) %>
             	<li><a id="request_list_menu_item" href="/plugin/request_list"><%= t(request_tool_link[1]) %></a></li>
 	    <% end %>
-            <li><a href="https://aeon.hul.harvard.edu/remoteauth/aeon.dll">HOLLIS Special Request <i class="fa fa-external-link-alt fa-icon"></i></a></li>
+            <li><a href="<%= t('request.how_to_request_link') %>"><%= t('request.how_to_request') %> <i class="fa fa-external-link-alt fa-icon"></i></a></li>
           </ul>
         </div>
         <a href="/"><%= t('search-button.label') %></a>
