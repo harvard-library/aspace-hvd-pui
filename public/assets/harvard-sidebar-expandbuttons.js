@@ -20,14 +20,13 @@ $(function () {
     var addExpandActions = function () {
         var $eadBtn = $("button.expandme");
         if ($eadBtn.length > 0) {
-        $("button.expandme").focusin(function() {
-            $(this).find("i").addClass("focusIcon")
-        })
-        
-        $("button.expandme").focusout(function() {
-            $(this).find("i").removeClass("focusIcon")
-        })
-        // expandActionsAdded = true;
+            $("button.expandme").focusin(function() {
+                $(this).find("i").addClass("focusIcon")
+            })
+            
+            $("button.expandme").focusout(function() {
+                $(this).find("i").removeClass("focusIcon")
+            })
         }
     };
     
