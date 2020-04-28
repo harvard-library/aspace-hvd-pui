@@ -276,14 +276,6 @@ $(window).on('load', function() {
     toggleMoreFacets(event)
   })
 
-  $("button.expandme").focusin(function() {
-    $(this).find("i").addClass("focusIcon")
-  })
-
-  $("button.expandme").focusout(function() {
-    $(this).find("i").removeClass("focusIcon")
-  })
-
   $("body").on('change', 'select.search-keyword, select.limit-field', function(event) {
     handleDropdownCarets(event)
   })
@@ -296,3 +288,4 @@ $(window).on('load', function() {
     $("#dropdownMenu2").find("span").text(currentRequestMenuText + requestNumber[0])
   }
 })
+
