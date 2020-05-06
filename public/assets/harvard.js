@@ -284,17 +284,16 @@ $(window).on('load', function() {
   
   //If the RL Action Button is present, add a listener there.
   if ($(".request_list_action_button") != null) {
-	  $(".request_list_action_button").on('click' updateRequestNumber);
+	  $(".request_list_action_button").on('click', updateRequestNumber);
   }
-	  
-})
+});
 
 function updateRequestNumber() {
 	// Copy the number of requests from the menu option to the top "REQUEST" level. Intended behavior
 	// is leaving it in both places, so no need to remove
 	if (window.request_list != null) {
 		var requestNumber = window.request_list.getList().length;
-		$("#request_list_top_menu").find("span").text$("#request_list_top_menu").find("span").text().replace(/ \(\d+\)/, " (" + requestNumber + ")"));
+		$("#request_list_top_menu").find("span").text($("#request_list_top_menu").find("span").text().replace(/ \(\d+\)/, " (" + requestNumber + ")"));
 	}
 }
 
