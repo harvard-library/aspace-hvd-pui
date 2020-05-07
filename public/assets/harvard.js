@@ -302,6 +302,13 @@ $(window).on('load', function() {
   else {
       setTimeout(function(){ $(".request_list_action_button").on('click', updateRequestNumber) }, 500);
   }
+  
+  //If this is the page that is displaying the list of requests, the user can
+  //remove requests from that list.  Add a listener and update request number handler
+  //to those buttons as well.
+  if ($(".rl-remove-from-list-button").length > 0) {
+	  $(".rl-remove-from-list-button").on('click', updateRequestNumber);
+  }
 });
 
 //Get the request_list object if it exists.  **The request_list object is from the request_list plugin.
