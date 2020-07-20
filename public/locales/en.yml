@@ -15,6 +15,14 @@ en:
     welcome_repo: <a href="/repositories" target="repos" title="see a list of repositories">CONTACT A REPOSITORY</a> <p class='serif'>Learn about hours, more detailed information, and specific policies for each location.</p>
     welcome_hollis: <a href="http://hollis.harvard.edu" target="hollis">EXPLORE MORE IN HOLLIS</a><p class='serif'>Use the Harvard Library catalog to search for additional materials including rare books, images, maps, and more special collections and archival materials.</p>
     welcome_ask: <a href="http://nrs.harvard.edu/urn-3:hul.ois:dsref" target="ask">ASK A LIBRARIAN</a><p class='serif'>Have questions about using this system? Start with this <a href="https://guides.library.harvard.edu/hollisforarchivaldiscovery" target="_blank">Guide</a>. Can’t find what you need? Contact an archivist or librarian for help!</p>
+    welcome_notification: |
+      <div class="alert welcome_notification" role="alert">
+        <b>Coming Soon:</b> We’re adding a new feature! Soon you’ll be able to request materials for use in participating libraries and make reproduction requests directly from HOLLIS for Archival Discovery.
+        Check out <span><a href="https://docs.google.com/presentation/d/e/2PACX-1vQSjUgrykVO18_Ib1qOVFNOG-msg-HyPo6Zm49nA1JlkLRfmlVQjMv2_vL2myapiyRdWHevGJ9R5u_h/pub?start=true&loop=false&delayms=10000" target="_blank">this tutorial on direct requesting <i class="fa fa-external-link" aria-hidden="true"></i></a></span> to learn more.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
   repository_count: "Repositories (%{count})"
   repository_text: Special collections and archival materials are held at various repositories at Harvard University.
@@ -86,6 +94,8 @@ en:
 
   request:
     default: "<strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact %{repo} at <a href='mailto:%{email}'>%{email}</a>.</p>"
+    how_to_request: "How to Request"
+    how_to_request_link: "http://nrs.harvard.edu/URN-3:HUL.OIS:ASPACEPUI_REQUESTS_HELP"
     bak: "To request materials for use in the Baker Library Special Collections reading room, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS catalog record</a> and click on the <strong>View in Library</strong> button. Please be sure to include specific Volume/Box/Folder/Item information in your request."
     ddo: "Ready to get to work? Once you have compiled a list of material you would like to consult in the reading room, please fill out our <a href='http://www.doaks.org/research/library-archives/access-and-hours/schedule-an-appointment' target='_new'>appointment request form</a>.
 Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm."

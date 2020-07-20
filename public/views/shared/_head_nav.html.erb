@@ -21,15 +21,15 @@
           </ul>
         </div>
         <div class="dropdown">
-          <a class="dropdown-toggle submenu" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
-            <span><%= t('actions.request') %></span>
+          <a class="dropdown-toggle submenu" type="button" id="request_list_top_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" tabindex="0">
+            <span><%= t('actions.request') %> (0)</span>
             <i class="fa fa-caret-down fa-icon"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-right">
             <% if (request_tool_link != nil) %>
             	<li><a id="request_list_menu_item" href="/plugin/request_list"><%= t(request_tool_link[1]) %></a></li>
 	    <% end %>
-            <li><a href="https://aeon.hul.harvard.edu/remoteauth/aeon.dll">HOLLIS Special Request <i class="fa fa-external-link-alt fa-icon"></i></a></li>
+            <li><a href="<%= t('request.how_to_request_link') %>" target="_blank"><%= t('request.how_to_request') %> <i class="fa fa-external-link-alt fa-icon"></i></a></li>
           </ul>
         </div>
         <a href="/"><%= t('search-button.label') %></a>

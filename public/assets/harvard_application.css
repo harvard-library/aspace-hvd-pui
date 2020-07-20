@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14006,8 +14007,10 @@ span.head {
 }
 .focusIcon {
   outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto Highlight;
   outline-offset: -2px;
 }
+
 /* line 29, /home/aspaceadmbeta/archivesspace/public/vendor/assets/stylesheets/archivesspace/largetree.scss */
 .largetree-container .waypoint {
   height: 0;

@@ -1024,6 +1024,15 @@ a.objectimagelnk:hover, a.objectimagelnk:visited {
     margin-top: 1em;
 }
 
+/* welcome notification banner */
+.welcome_notification {
+    background-color: rgb(248, 194, 28);
+    box-sizing: border-box;
+    color: rgb(65, 65, 65);
+    display: block;
+    font-family: Lora, Georgia, serif;
+}
+
 /* for missing digital object thumbnails with no caption */
 
 .objectimage.nocaption {
@@ -1115,6 +1124,10 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
       background-color: #f2f2f2;
 }
 
+#info-buttons {
+  float: right;
+}
+
 /* media query adjustments */
 @media screen and (max-width: 1200px) {
   .sorter-col {
@@ -1141,6 +1154,43 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   }
   .modal-button {
     display: inline-block;
+  }
+
+  /* ADJUSTMENTS TO TOP OF RESOURCE VIEW PAGE */
+  .identifier {
+    text-align: center;
+    float: none;
+    margin-top: 2em;
+  }
+
+  .identifier .id-label {
+    float: none;
+  }
+  
+  #info-buttons {
+    float: none;
+    text-align: center;
+  }
+
+  .page_actions .text-right {
+    text-align: center;
+  }
+
+  .nav.navbar-nav {
+    text-align: center;
+  }
+
+  .resources .full-chars {
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  .resources .breadcrumb {
+    text-align: center;
+  }
+
+  .large-badge {
+    margin-top: 0.5em;
   }
 }
 
