@@ -1,17 +1,25 @@
 <div class="container-fluid panel-footer">
   <div class="row">
-    <div class="col-md-4">
-       <% if AppConfig[:digital_accessibility_link] && !AppConfig[:digital_accessibility_link].blank? %><a id='digitalAccessibilityLink' href='<%= AppConfig[:digital_accessibility_link]%>' target='_blank'><%= t('footer.accessibility') %></a> |<% end %>
-       <% if AppConfig[:pui_feedback_link] && !AppConfig[:pui_feedback_link].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:pui_feedback_link]%>' target='_blank'><%= t('footer.feedback') %></a> |<% end %>
-       <% if AppConfig[:pui_help_link] && !AppConfig[:pui_help_link].blank? %><a id='aspaceHelpLink' href='<%= AppConfig[:pui_help_link]%>' target='_blank'><%= t('footer.help') %></a> <% end %>
+    <div class="col-md-6 col-sm-6 footer-left">
+      <div class="row">
+        <%= t('footer.aspace', :link => "http://archivesspace.org", :text=> 'ArchivesSpace').html_safe %>
+        <%= ASConstants.VERSION %>
+      </div>
+      <div class="row">
+        <%= t('footer.copyright').html_safe %>
+      </div>
     </div>
-    <div class="col-md-4"><a href="<%= t('brand.logo_link') %>" 
-     title="<%= t('brand.logo_link_title') %>"><img alt="<%= t('brand.logo_alt') %>" src="/assets/hl_logo.svg"/></a>
 
+    <div class="col-md-6 col-sm-6 footer-right">
+      <div class="row">
+        <span class="footerItem"><% if AppConfig[:digital_accessibility_link] && !AppConfig[:digital_accessibility_link].blank? %><a id='digitalAccessibilityLink' href='<%= AppConfig[:digital_accessibility_link]%>' target='_blank'><%= t('footer.accessibility') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:privacy_link] && !AppConfig[:privacy_link].blank? %><a id='privacyLink' href='<%= AppConfig[:privacy_link]%>' target='_blank'><%= t('footer.privacy') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:harmful_language_statement_link] && !AppConfig[:harmful_language_statement_link].blank? %><a id='harmfulLanguageLink' href='<%= AppConfig[:harmful_language_statement_link]%>' target='_blank'><%= t('footer.harmful_language_statement') %></a><% end %></span>
+      </div>
+      <div class="row">
+        <span class="footerItem"><% if AppConfig[:pui_feedback_link] && !AppConfig[:pui_feedback_link].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:pui_feedback_link]%>' target='_blank'><%= t('footer.feedback') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:pui_help_link] && !AppConfig[:pui_help_link].blank? %><a id='aspaceHelpLink' href='<%= AppConfig[:pui_help_link]%>' target='_blank'><%= t('footer.help') %></a> <% end %></span>
+      </div>
     </div>
-    <div class="col-md-4">
-      <%= t('footer.aspace', :link => "http://archivesspace.org", :text=> 'ArchivesSpace').html_safe %>
-          <%= ASConstants.VERSION %>
-     </div>
   </div>
 </div>
