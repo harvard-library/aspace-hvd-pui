@@ -8965,6 +8965,12 @@ button.close {
 }
 @font-face {
   font-family: 'Trueno';
+  src: url("/assets/Trueno/TruenoLt.otf") format("opentype");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Trueno';
   src: url("/assets/Trueno/TruenoBd.otf") format("opentype");
   font-weight: bold;
   font-style: normal;

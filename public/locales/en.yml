@@ -32,7 +32,10 @@ en:
     aspace: "Powered by <a href='%{link}' target='_blank'>%{text}</a>"
     feedback: Send Feedback
     help: Help
-    accessibility: Digital Accessibility
+    accessibility: Accessibility
+    copyright: © <b>2020</b> President and Fellows of Harvard College
+    harmful_language_statement: Harmful Language Statement
+    privacy: Privacy
 
   actions:
     digital_only: Digital Material
