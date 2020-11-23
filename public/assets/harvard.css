@@ -118,9 +118,9 @@ span.large_it {
     background-color: #1e1e1e;
     color: #FFFFFF;
     font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 300;
-
+    text-align: left;
 }
+
 .panel-footer a {
     background-color: #1e1e1e;
     color: #FFFFFF;
@@ -131,13 +131,15 @@ span.large_it {
 }
 
 .footer-left {
-  font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
-  text-align: left;
   font-weight: lighter;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .footer-right {
   text-align: right;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .footer-right .footerItem {
