@@ -128,7 +128,6 @@ span.large_it {
     font-family: "Trueno", "Helvetica Neue", Arial, sans-serif;
     font-weight: 300;
     text-decoration: none;
-    padding: 4px 0px 4px 0px;
 }
 
 .footer-left {
@@ -1323,8 +1322,7 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   .footer-right a {
     text-align: left;
     display: block;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 4px 0px 8px 0px;
   }
 }
 
