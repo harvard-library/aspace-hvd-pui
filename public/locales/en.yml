@@ -104,6 +104,7 @@ en:
 Appointments are available Monday – Friday between 9:30am-12pm and 1pm-4:30pm."
     hua: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Harvard University Archives at <a href="mailto:archives_reference@harvard.edu">archives_reference@harvard.edu</a>.</p>
     med: <strong>Ready to get to work?</strong><p>Once you have compiled a list of material you would like to consult in the reading room, please contact the Center for the History of Medicine at the Countway Library at <a href="http://asklib.hms.harvard.edu" target="_blank">asklib.hms.harvard.edu</a> for assistance and additional information</p>
+    sch: Please note that the Schlesinger Library’s manuscript collections cannot yet be requested directly from the finding aid. In the meantime, once you have compiled a list of material you would like to consult, please contact Schlesinger Library, Radcliffe Institute at <a href='https://asklib.schlesinger.radcliffe.edu/index.php' target='_blank'>https://asklib.schlesinger.radcliffe.edu/index.php</a>.
     room: To request materials for use in the %{room}, go to the <a  target='_blank' href='http://id.lib.harvard.edu/%{idpiece}/catalog'>HOLLIS catalog record</a> and click on the <strong>Request Item</strong> button . Please be sure to include the full Item Identifier in your request.
   ask:
     text:
