@@ -12,13 +12,13 @@
 
     <div class="col-md-6 col-sm-6 footer-right">
       <div class="row">
-        <span class="footerItem"><% if AppConfig[:digital_accessibility_link] && !AppConfig[:digital_accessibility_link].blank? %><a id='digitalAccessibilityLink' href='<%= AppConfig[:digital_accessibility_link]%>' target='_blank'><%= t('footer.accessibility') %></a><% end %></span>
-        <span class="footerItem"><% if AppConfig[:privacy_link] && !AppConfig[:privacy_link].blank? %><a id='privacyLink' href='<%= AppConfig[:privacy_link]%>' target='_blank'><%= t('footer.privacy') %></a><% end %></span>
-        <span class="footerItem"><% if AppConfig[:harmful_language_statement_link] && !AppConfig[:harmful_language_statement_link].blank? %><a id='harmfulLanguageLink' href='<%= AppConfig[:harmful_language_statement_link]%>' target='_blank'><%= t('footer.harmful_language_statement') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:digital_accessibility_link] && !AppConfig[:digital_accessibility_link].blank? %><a id='digitalAccessibilityLink' href='<%= AppConfig[:digital_accessibility_link]%>'><%= t('footer.accessibility') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:privacy_link] && !AppConfig[:privacy_link].blank? %><a id='privacyLink' href='<%= AppConfig[:privacy_link]%>'><%= t('footer.privacy') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:harmful_language_statement_link] && !AppConfig[:harmful_language_statement_link].blank? %><a id='harmfulLanguageLink' href='<%= AppConfig[:harmful_language_statement_link]%>'><%= t('footer.harmful_language_statement') %></a><% end %></span>
       </div>
       <div class="row">
-        <span class="footerItem"><% if AppConfig[:pui_feedback_link] && !AppConfig[:pui_feedback_link].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:pui_feedback_link]%>' target='_blank'><%= t('footer.feedback') %></a><% end %></span>
-        <span class="footerItem"><% if AppConfig[:pui_help_link] && !AppConfig[:pui_help_link].blank? %><a id='aspaceHelpLink' href='<%= AppConfig[:pui_help_link]%>' target='_blank'><%= t('footer.help') %></a> <% end %></span>
+        <span class="footerItem"><% if AppConfig[:pui_feedback_link] && !AppConfig[:pui_feedback_link].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:pui_feedback_link]%>'><%= t('footer.feedback') %></a><% end %></span>
+        <span class="footerItem"><% if AppConfig[:pui_help_link] && !AppConfig[:pui_help_link].blank? %><a id='aspaceHelpLink' href='<%= AppConfig[:pui_help_link]%>'><%= t('footer.help') %></a> <% end %></span>
       </div>
     </div>
   </div>
