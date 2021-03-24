@@ -314,7 +314,7 @@ Rails.application.config.after_initialize do
       aleph_id = ''
       alma_id = ''
       unless result.notes['processinfo'].blank?
-        notes = result.notes['processinfo']
+        notes = result.notes['processinfo'][0]
         label = notes.dig('label') || ''
         if label == 'Aleph ID'
           aleph_id = notes['note_text']
