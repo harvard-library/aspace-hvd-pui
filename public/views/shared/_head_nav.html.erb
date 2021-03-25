@@ -12,7 +12,7 @@
             <% $MAIN_MENU.each do |link| %>
             <%# We want the requests to move to the next menu but the plugin places it here so we
               # hve to move it ourselves since the plugin has all of the logistical code in it %>
-              <% if(link[0].upcase != "/PLUGIN/REQUEST_LIST")  %> 
+              <% if(link[0].upcase != "/PLUGIN/REQUEST_LIST/HARVARD")  %> 
               	<li><a href="<%= app_prefix(link[0]) %>"><%= t(link[1]) %></a></li>
               <% else %>
               <% 	request_tool_link = link %>
@@ -27,7 +27,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-right">
             <% if (request_tool_link != nil) %>
-            	<li><a id="request_list_menu_item" href="/plugin/request_list"><%= t(request_tool_link[1]) %></a></li>
+            	<li><a id="request_list_menu_item" href="/plugin/request_list/harvard"><%= t(request_tool_link[1]) %></a></li>
 	    <% end %>
             <li><a href="<%= t('request.how_to_request_link') %>" target="_blank"><%= t('request.how_to_request') %> <i class="fa fa-external-link-alt fa-icon"></i></a></li>
           </ul>
