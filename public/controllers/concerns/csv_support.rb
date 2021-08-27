@@ -55,7 +55,8 @@ module CsvSupport
      # get recs 20 at at time
      (1..(list.length-1)).step(20) do |start|
        stop = start + 19
-       res = archivesspace.search_records(list.slice(start,20).compact, { 'page_size' => (stop - start + 1)})
+
+       res = archivesspace.search_and_sort_records(list.slice(start,20).compact, { 'page_size' => (stop - start + 1)})
        res.records.each_index do |i|
          result = res.records[i]
 #Rails.logger.debug(result.json.pretty_inspect) if i < 3 && start == 1
