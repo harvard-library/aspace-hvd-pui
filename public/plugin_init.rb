@@ -78,6 +78,22 @@ Rails.application.config.after_initialize do
 #      Rails.application.routes.call(request_env)
       ActionController::Redirecting.redirect_to(path)
     end
+
+    # This method is intended to duplicate the functionality of search_records from aspace core, with the
+    # only difference being that the sort in core was updated to sort by 'uri' instead of 'id'
+    # This broke the order of our csv downloads. This new method has been created rather than overwriting
+    # the one in core to avoid unintended side effects
+    def search_and_sort_records(record_list, search_opts = {}, full_notes = false)
+      search_opts = DEFAULT_SEARCH_OPTS.merge(search_opts)
+
+      url = build_url('/search/records', search_opts.merge("uri[]" => record_list))
+      results = do_search(url)
+
+      # Ensure that the order of our results matches the order of `record_list`
+      results['results'] = results['results'].sort_by {|result| record_list.index(result.fetch('id'))}
+
+      SolrResults.new(results, search_opts, full_notes)
+    end
   end
 # override the citation construction
   class Resource
