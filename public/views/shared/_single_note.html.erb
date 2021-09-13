@@ -66,10 +66,10 @@ end %>
           <%= hollis_id %>
 	 <div class="sub-note">
 	 <span class="note-content"> <%= t('pdf_reports.perma') %></span>
-	   <%= t("pdf_reports.perma_link", :idpiece => "#{which_id}/#{hollis_id.gsub(/<p>|<\/p>/, '')}").html_safe %>
+	      <%= t("pdf_reports.perma_link", :idpiece => "#{which_id}/#{strip_tags hollis_id}").html_safe %>
 	 </div>
         <% else %>
-          <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{hollis_id.gsub(/<p>|<\/p>/, '')}").html_safe %>
+          <%= t("enumerations.hollis_link", :idpiece => "#{which_id}/#{strip_tags hollis_id}").html_safe %>
         <% end %>
      <% end %>
 
