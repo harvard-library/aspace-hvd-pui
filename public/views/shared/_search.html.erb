@@ -13,7 +13,7 @@
         <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>
         <%= label_tag(:"q#{i}", t('navbar.search_placeholder'),:class => 'sr-only repeats') %>
         <%= text_field_tag('q[]', CGI.unescape(@search[:q][i] || ''), placeholder:  t('navbar.search_placeholder'), :id => "q#{i}",
-          :class=> 'form-control search-field search_placeholder repeats col-xs-12') %>
+          :class=> 'form-control search-field search_placeholder js-search-box repeats col-xs-12') %>
         <span class="input-group-btn">
           <%= select_tag('field[]', options_for_select(field_options, @search[:field][i]), :id=> "field#{i}", :class=> 'form-control search-keyword search_placeholder repeats') %>
           <% if i == 0 %>
