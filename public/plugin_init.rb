@@ -118,6 +118,17 @@ Rails.application.config.after_initialize do
     end
   end
 
+  class Record
+    def get_this_components_id
+      # We want the component_id for this specific object, and do not want to return it if
+      # it's using an inherited id
+      if json.include?('component_id_inherited')
+        return ''
+      end
+      json.fetch('component_id', '')
+    end
+  end
+
 
   class ArchivalObject
     include ResultInfo
