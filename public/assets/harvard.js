@@ -82,7 +82,8 @@ function new_row_from_template() {
     replace_id_ref($row, 'select', 'id', num);
     $row.attr("id", "search_row_" + num);
     $row.find("input[type=submit]").remove();
-   new_button($row, true);
+    new_button($row, true);
+    $row.keypress(submit_on_enter);
     return $row;
 }
 
