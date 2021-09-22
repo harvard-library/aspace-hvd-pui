@@ -159,6 +159,38 @@ Rails.application.config.after_initialize do
       cite += " #{ cite_url_and_timestamp}"
       cite
     end
+
+    # Method overridden to use a customized citation format for Archival Objects
+    # Core 3.0.2 ASpace uses: 
+      # {display string}, {identifier}, {container}. {resource title}, {resource identifier}. {repository name}. {link} {date accessed} 
+    # This customization changes it to:
+      # {display string}. {resource title}, {identifier}, {container}. {repository name}. {link} {date accessed}
+    def cite_item_description
+      cite = note('prefercite')
+      if !cite.blank?
+        cite = strip_mixed_content(cite['note_text'])
+      else
+        cite = strip_mixed_content(display_string) + "."
+
+        if resolved_resource
+          ttl = resolved_resource.dig('title')
+          cite += " #{strip_mixed_content(ttl)}"
+
+          cite += identifier.blank? ? '' : ", #{identifier}"
+          cite += if container_display.blank? || container_display.length > 5
+                  '.'
+                else
+                  @citation_container_display ||= parse_container_display(:citation => true).join('; ')
+                  ", #{@citation_container_display}."
+                end
+        end
+        unless repository_information['top']['name'].blank?
+          cite += " #{ repository_information['top']['name']}."
+        end
+      end
+      HTMLEntities.new.decode("#{cite}   #{cite_url_and_timestamp}.")
+    end
+
   end
 
 
