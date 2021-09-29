@@ -129,6 +129,17 @@ Rails.application.config.after_initialize do
     end
   end
 
+  class Search
+    def Search.get_boolean_opts
+      if @@BooleanOpts.empty?
+        @@BooleanOpts = %w(AND OR NOT).map{|opt|
+          [I18n.t("advanced_search.operator.#{opt}"), opt]
+        }
+      end
+      @@BooleanOpts
+    end
+  end
+
 
   class ArchivalObject
     include ResultInfo
