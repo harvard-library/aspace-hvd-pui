@@ -171,12 +171,12 @@ Rails.application.config.after_initialize do
       cite
     end
 
-    # Method overridden to use a customized citation format for Archival Objects
+    # Cite_item and cite_item_description methods are overridden to use a customized citation format for Archival Objects
     # Core 3.0.2 ASpace uses: 
       # {display string}, {identifier}, {container}. {resource title}, {resource identifier}. {repository name}. {link} {date accessed} 
     # This customization changes it to:
       # {display string}. {resource title}, {identifier}, {container}. {repository name}. {link} {date accessed}
-    def cite_item_description
+    def harvard_citation
       cite = note('prefercite')
       if !cite.blank?
         cite = strip_mixed_content(cite['note_text'])
@@ -199,9 +199,16 @@ Rails.application.config.after_initialize do
           cite += " #{ repository_information['top']['name']}."
         end
       end
-      HTMLEntities.new.decode("#{cite}   #{cite_url_and_timestamp}.")
+      cite
     end
 
+    def cite_item
+      HTMLEntities.new.decode("#{harvard_citation}")
+    end
+
+    def cite_item_description      
+      HTMLEntities.new.decode("#{harvard_citation}   #{cite_url_and_timestamp}.")
+    end
   end
 
 
