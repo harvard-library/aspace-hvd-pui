@@ -26,7 +26,7 @@
         <dt><%= I18n.t('resource._public.physdesc') %></dt><dd><%= extent['display'] %></dd>
     <% end %>
 
-    <% note = record.notes.dig('physdesc') || '' %>
+    <% note = ASUtils.wrap(record.notes.dig('physdesc')).first || '' %>
     <% unless note.blank? %>
        <a id="note-physdesc"></a>
        <dt><%= I18n.t("enumerations._note_types.physdesc") %></dt><dd><%== note['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></dd>
@@ -37,7 +37,7 @@
     <% end %>
 
     <% %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial  prefercite).each do |type| %>
-       <% note = record.notes.dig(type) %>
+       <% note = ASUtils.wrap(record.notes.dig(type)).first %>
        <% if  type == 'processinfo'
 	    unless note.blank? || note['subnotes'].blank? || note['subnotes'].length < 2
 	      if (note['label']||'') != 'Processing Information'
@@ -54,14 +54,14 @@
 	       label = t("pdf_reports.alma")
 	    elsif label.blank?
 	       label =  t("enumerations._note_types.#{type}")
-	    else 
+	    else
 	       label = label.titlecase
 	    end %>
          <dt><%= label %></dt>
          <dd><%= render partial:  'shared/single_note', locals: {:type => type, :note_struct => note, :notitle => true, :pdf => true} %></dd>
-       <% end %>  
+       <% end %>
     <% end %>
-    
+
     <%= render(:partial => 'digital_object_links', :locals => {
         :instances => record.instances
     }) %>
@@ -91,16 +91,20 @@
 <% end %>
 
 <% record.notes.each do |note_type, note| %>
-    <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial separatedmaterial physdesc prefercite).include?(note_type) %>
+  <% next if %w(langmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial separatedmaterial physdesc prefercite).include?(note_type) %>
+
+  <% notes = ASUtils.wrap(note) %>
+  <% notes.each do |note| %>
     <a id="note-<%= note_type %>"></a>
     <h2><% if note['label'] %>
-            <%= note['label'].titlecase %>
-        <% else %>
-            <%= I18n.t("enumerations._note_types.#{note_type}") %>
-        <% end %> </h2>
+      <%= note['label'].titlecase %>
+    <% else %>
+      <%= I18n.t("enumerations._note_types.#{note_type}") %>
+    <% end %> </h2>
     <%= render partial: 'shared/single_note', locals: {:type => note_type, :note_struct => note, :notitle => true}   %>
 
     <%= render(:partial => 'return_toc') %>
+  <% end %>
 <% end %>
 
 

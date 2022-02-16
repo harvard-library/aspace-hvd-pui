@@ -1,68 +1,72 @@
 <%=  render(:partial => 'return_toc') if prev.to_i > level.to_i  %>
 
 <% (level - 1).times do |previous_level| %>
-<div class="print-record-border level-<%= previous_level + 1 %>">
+  <div class="print-record-border level-<%= previous_level + 1 %>">
 <% end %>
 
-  <div class="avoid-break">
-    <div class="print-record-border print-record level-<%= level %> <%= record.level %>">
-        <h3><a class="record-title" id="<%= record.uri %>"><%= record.display_string.gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></a></h3>
-	<% id = (record.direct_component_id.blank?)? '' : record.direct_component_id
-	   id << " #{container_string}"
-         %>
-        <div class="indented">
-	<% unless id.blank? %>
-	  <div><span class='label'><%= t('resource._public.finding_aid.identifier') %></span> <%= id %></div>
-	<% end %>
-        <% record.dates.each do |date| %>
-           <% next if date['_inherited'] %>
-              <div><span class='label'><%= I18n.t('resource._public.finding_aid.date') %></span> <%= date['final_expression'] %></div>
-        <% end %>
-        <% record.extents.each do |extent| %>
-            <% next if extent['_inherited'] %>
-              <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%= extent['display'] %></div>
-        <% end %>
-	<% if record.agents && Array(record.agents['creator']).length > 0 %>
-	   <% a_direct_creator = record.agents['creator'].reject{|r| r['_inherited']}.take(1) %>
-	   <% unless a_direct_creator.empty? %>
-	     <% a_direct_creator.each do |one| %>
-	       <div><span class='label'><%= I18n.t("enumerations.linked_agent_role.creator") %></span>
-	       <% agent = one.fetch('_resolved') %>
-	       <%= agent['title'] %> <% relator = (one['relator'].blank?) ? nil : t("enumerations.linked_agent_archival_record_relators.#{one['relator']}", :default => nil) %> <%= "( #{relator} )" unless relator.blank? %> 
-	       </div>
-	     <% end %>
-	   <% end %>
-	<% end %>
-	<% note = record.notes.dig('physdesc') %>
-	<% unless note.blank? || note['is_inherited'] %>
-              <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%== note['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;") %></div>
-        <% end %>
-	<% unless urn.blank? %>
-	    <div><a href='<%= urn %>' target='frmpdf'><%= urn %></a></div>
-	<% end %>
+<div class="avoid-break">
+  <div class="print-record-border print-record level-<%= level %> <%= record.level %>">
+    <h3><a class="record-title" id="<%= record.uri %>"><%= record.display_string.gsub(/&(?!(\w{2,};))/, "&amp;").html_safe %></a></h3>
+	  <% id = (record.direct_component_id.blank?)? '' : record.direct_component_id
+	  id << " #{container_string}"
+    %>
+    <div class="indented">
+	    <% unless id.blank? %>
+	      <div><span class='label'><%= t('resource._public.finding_aid.identifier') %></span> <%= id %></div>
+	    <% end %>
+      <% record.dates.each do |date| %>
+        <% next if date['_inherited'] %>
+        <div><span class='label'><%= I18n.t('resource._public.finding_aid.date') %></span> <%= date['final_expression'] %></div>
+      <% end %>
+      <% record.extents.each do |extent| %>
+        <% next if extent['_inherited'] %>
+        <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%= extent['display'] %></div>
+      <% end %>
+	    <% if record.agents && Array(record.agents['creator']).length > 0 %>
+	      <% a_direct_creator = record.agents['creator'].reject{|r| r['_inherited']}.take(1) %>
+	      <% unless a_direct_creator.empty? %>
+	        <% a_direct_creator.each do |one| %>
+	          <div><span class='label'><%= I18n.t("enumerations.linked_agent_role.creator") %></span>
+	            <% agent = one.fetch('_resolved') %>
+	            <%= agent['title'] %> <% relator = (one['relator'].blank?) ? nil : t("enumerations.linked_agent_archival_record_relators.#{one['relator']}", :default => nil) %> <%= "( #{relator} )" unless relator.blank? %>
+	          </div>
+	        <% end %>
+	      <% end %>
+	    <% end %>
+	    <% note = ASUtils.wrap(record.notes.dig('physdesc')).first %>
+	    <% unless note.blank? || note['is_inherited'] %>
+        <div><span class='label'><%= I18n.t('resource._public.physdesc') %></span> <%== note['note_text'].gsub(/&(?!(\w{2,};))/, "&amp;") %></div>
+      <% end %>
+	    <% unless urn.blank? %>
+	      <div><a href='<%= urn %>' target='frmpdf'><%= urn %></a></div>
+	    <% end %>
 
-        <% record.notes.each do |note_type, note| %>
-           <% if note_type != 'physdesc' && !note['is_inherited'] %>
-<!-- can't use shared/single_note here, because of div issues -->
-              <%= render(:partial => 'arch_obj_note', :locals => { :note => note, :note_type => note_type}) %>
-            <% end %>
+      <% record.notes.each do |note_type, note| %>
+        <% notes = ASUtils.wrap(note) %>
+        <% notes.each do |note| %>
+          <% if note_type != 'physdesc' && !note['is_inherited'] %>
+            <!-- can't use shared/single_note here, because of div issues -->
+            <%= render(:partial => 'arch_obj_note', :locals => { :note => note, :note_type => note_type}) %>
+          <% end %>
         <% end %>
-        <% subjects = Array(record.subjects).reject {|s| s['is_inherited']} %>
-           <% if !subjects.empty? %>
-	    <dl>
-              <dt><%= I18n.t('pdf_reports.controlled_access_headings') %></dt>
-               <dd>
-                 <ul>
-                   <% subjects.each do |subject| %>
-                    <li><%= subject['title'] %></li>
-                   <% end %>
-                 </ul>
-               </dd>
-	     </dl>
-           <% end %>
-        </div>
+      <% end %>
+
+      <% subjects = Array(record.subjects).reject {|s| s['is_inherited']} %>
+      <% if !subjects.empty? %>
+	      <dl>
+          <dt><%= I18n.t('pdf_reports.controlled_access_headings') %></dt>
+          <dd>
+            <ul>
+              <% subjects.each do |subject| %>
+                <li><%= subject['title'] %></li>
+              <% end %>
+            </ul>
+          </dd>
+	      </dl>
+      <% end %>
     </div>
   </div>
-<% (level - 1).times do |previous_level| %>
 </div>
+<% (level - 1).times do |previous_level| %>
+  </div>
 <% end %>

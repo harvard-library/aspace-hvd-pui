@@ -13,7 +13,7 @@
 <%= render(:partial => 'return_toc') %>
 <% end %>
 
-<% note = record.notes.dig('separatedmaterial') %>
+<% note = ASUtils.wrap(record.notes.dig('separatedmaterial')).first %>
 <% unless note.blank? %>
 <div>
    <a id="separatedmaterial"></a>

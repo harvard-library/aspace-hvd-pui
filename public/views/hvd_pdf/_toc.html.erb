@@ -15,8 +15,11 @@
 	<li class="level-1"><a href="#administrative-information"><%= I18n.t('pdf_reports.administrative_information') %></a></li>
 <% end %>
         <% resource.notes.each do |note_type, note| %>
-            <% next if %w(langmaterial separatedmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial prefercite).include?(note_type) %>
+          <% next if %w(langmaterial separatedmaterial abstract accessrestrict userestrict acqinfo processinfo relatedmaterial prefercite).include?(note_type) %>
+          <% notes = ASUtils.wrap(note) %>
+          <% notes.each do |note|  %>
             <li class="level-1"> <a href="#note-<%= note_type %>"><% if note['label'] %><%= note['label'].titlecase %><% else %><%= I18n.t("enumerations._note_types.#{note_type}") %> <% end %></a></li>
+          <% end %>
         <% end %>
 
 
@@ -29,7 +32,7 @@
 	<% unless resource.subjects.blank? %>
 	  <li class="level-1"><a href="#subjects"><%= I18n.t('pdf_reports.controlled_access_headings') %></a></li>
 	<% end %>
-	<% note = resource.notes.dig('separatedmaterial') %>
+	<% note = ASUtils.wrap(resource.notes.dig('separatedmaterial')).first %>
 	<% unless note.blank? %>
 	   <li class="level-1"><a href="#separatedmaterial"><% if note['label'] %><%= note['label'].titlecase %><% else %><%= I18n.t("enumerations._note_types.separatedmaterial") %> <% end %></a></li>
 	<% end %>
