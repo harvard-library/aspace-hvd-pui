@@ -88,18 +88,18 @@ class HvdPDF
           end
           [type, indicator].compact.join(' ')
         end
-        container_string = ''
+        container_array = []
         urn = ''
         Array(record.instances).each do |instance|
           if instance['sub_container']
-             container_string = [
+             container_array.append([
                                  format_container.call(instance['sub_container']['top_container']['_resolved']['type'],
                                                        instance['sub_container']['top_container']['_resolved']['indicator']),
                                  format_container.call(instance['sub_container']['type_2'],
                                                        instance['sub_container']['indicator_2']),
                                  format_container.call(instance['sub_container']['type_3'],
                                                        instance['sub_container']['indicator_3'])
-                                ].reject(&:empty?).join('; ')
+                                ].reject(&:empty?).join('; '))
 #            unless container_string.empty?
 #              if instance['instance_type']
 #                instance_type = I18n.t("enumerations.instance_instance_type.#{instance['instance_type']}",:default => instance['instance_type'])
@@ -116,6 +116,8 @@ class HvdPDF
             end
           end
         end
+
+        container_string = container_array.join("; ")
         
         out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         previous_level = entry.depth
