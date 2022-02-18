@@ -80,4 +80,38 @@ class HvdPdfController <  ApplicationController
     end
   end
 
+  def source_file
+    PDF_MUTEX.acquire
+    begin
+      repo_id = params.fetch(:rid, nil)
+      resource_id = params.fetch(:id, nil)
+      token = params.fetch(:token, nil)
+
+      pdf = HvdPDF.new(repo_id, resource_id, archivesspace, "#{request.protocol}#{request.host_with_port}")
+      source_file = pdf.source_file
+      filename = pdf.suggested_filename + ".html"
+      respond_to do |format|
+        format.all do
+          fh = File.open(pdf_file.path, "r")
+          self.headers["Content-type"] = "text/html"
+          self.headers["Content-disposition"] = "attachment; filename=\"#{filename}\""
+          self.response_body = Enumerator.new do |y|
+            begin
+              while chunk = fh.read(4096)
+                y << chunk
+              end
+            ensure
+              fh.close
+              pdf_file.unlink
+            end
+          end
+        end
+      end
+    ensure
+      PDF_MUTEX.release
+    end
+  end
+
+
+
 end
