@@ -24,8 +24,8 @@ AppConfig[:pui_page_custom_actions] << {
 
 #AppConfig[:pui_email_enabled] = true
 
-AppConfig[:pui_request_email_fallback_to_address] = 'bobbi_fox@harvard.edu'
-AppConfig[:pui_request_email_fallback_from_address] = 'bobbi_fox@harvard.edu'
+AppConfig[:pui_request_email_fallback_to_address] = 'dave_mayo@harvard.edu'
+AppConfig[:pui_request_email_fallback_from_address] = 'dave_mayo@harvard.edu'
 
 
 #AppConfig[:pui_email_delivery_method] = :sendmail
