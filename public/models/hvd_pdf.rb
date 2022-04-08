@@ -57,27 +57,36 @@ class HvdPDF
         false
       end
     }
+
+    Rails.logger.error("AOs filtered: #{Time.now - start_time} seconds elapsed")
     out_html = Tempfile.new
     out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
 
+    Rails.logger.error("Header rendered: #{Time.now - start_time} seconds elapsed")
+
     out_html.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
 
+    Rails.logger.error("Titlepage rendered: #{Time.now - start_time} seconds elapsed")
 
     out_html.write(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos})
 
+    Rails.logger.error("TOC rendered: #{Time.now - start_time} seconds elapsed")
     out_html.write(renderer.render_to_string partial: 'resource', layout: false, :locals => {:record => @resource, :has_children => has_children})
-
+    Rails.logger.error("Resource rendered: #{Time.now - start_time} seconds elapsed")
     page_size = 50
 
     previous_level = 1
-    
+
     @ordered_records.entries.drop(1).each_slice(page_size) do |entry_set|
+      Rails.logger.error("Page start: #{Time.now - start_time} seconds elapsed")
       if AppConfig[:pui_pdf_timeout] && AppConfig[:pui_pdf_timeout] > 0 && (Time.now.to_i - start_time.to_i) >= AppConfig[:pui_pdf_timeout]
         raise TimeoutError.new("PDF generation timed out.  Sorry!")
       end
 
       uri_set = entry_set.map(&:uri).map {|s| s + "#pui"}
+      Rails.logger.error("Record set get start: #{Time.now - start_time} seconds elapsed")
       record_set = archivesspace.search_and_sort_records(uri_set, {}, true).records
+      Rails.logger.error("Record set get end: #{Time.now - start_time} seconds elapsed")
 
       record_set.zip(entry_set).each do |record, entry|
         next unless record.is_a?(ArchivalObject)
@@ -116,23 +125,30 @@ class HvdPDF
             end
           end
         end
-
+        Rails.logger.error("Record set end: #{Time.now - start_time} seconds elapsed")
         container_string = container_array.join("; ")
-        
+
         out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
+        Rails.logger.error("AO rendered: #{Time.now - start_time} seconds elapsed")
         previous_level = entry.depth
       end
+      Rails.logger.error("Page rendered: #{Time.now - start_time} seconds elapsed")
     end
 
     out_html.write(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource})
+    Rails.logger.error("end_info rendered: #{Time.now - start_time} seconds elapsed")
     out_html.write(renderer.render_to_string partial: 'footer', layout: false)
+    Rails.logger.error("footer rendered: #{Time.now - start_time} seconds elapsed")
     out_html.close
 
     out_html
   end
 
   def generate
+    start_time = Time.now
+    Rails.logger.error("Starting generate at: #{Time.now}")
     out_html = source_file
+    Rails.logger.error("source_file complete: #{Time.now - start_time} seconds elapsed")
     begin
       XMLCleaner.new.clean(out_html.path)
     rescue Exception => bang
@@ -141,9 +157,7 @@ class HvdPDF
       copy_file(out_html.path)
       raise
     end
-
-#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
-    
+    Rails.logger.error("XMLCleaner run: #{Time.now - start_time} seconds elapsed")
     pdf_file = Tempfile.new
     pdf_file.close
     begin
@@ -159,6 +173,7 @@ class HvdPDF
       pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
       renderer.create_pdf(pdf_output_stream)
       pdf_output_stream.close
+      Rails.logger.error("PDF created: #{Time.now - start_time} seconds elapsed")
     rescue Exception => bang
       Rails.logger.error("Error during processing of /repositories/#{@repo_id}/resources/#{@resource_id}: #{$!}")
       Rails.logger.error(bang.backtrace.join("\n\t").pretty_inspect)
