@@ -148,6 +148,7 @@ class HvdPDF
     start_time = Time.now
     Rails.logger.error("Starting generate at: #{Time.now}")
     out_html = source_file
+    FileUtils.cp(out_html.path, "/archivesspace/logs/#{@repo_id}_#{@resource_id}.html")
     Rails.logger.error("source_file complete: #{Time.now - start_time} seconds elapsed")
     begin
       XMLCleaner.new.clean(out_html.path)
