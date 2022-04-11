@@ -150,15 +150,6 @@ class HvdPDF
     out_html = source_file
     FileUtils.cp(out_html.path, "/archivesspace/logs/#{@repo_id}_#{@resource_id}.html")
     Rails.logger.error("source_file complete: #{Time.now - start_time} seconds elapsed")
-    begin
-      XMLCleaner.new.clean(out_html.path)
-    rescue Exception => bang
-      Rails.logger.error("Error during processing of /repositories/#{@repo_id}/resources/#{@resource_id}: #{$!}")
-      Rails.logger.error(bang.backtrace.pretty_inspect)
-      copy_file(out_html.path)
-      raise
-    end
-    Rails.logger.error("XMLCleaner run: #{Time.now - start_time} seconds elapsed")
     pdf_file = Tempfile.new
     pdf_file.close
     begin
