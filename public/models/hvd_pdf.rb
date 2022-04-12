@@ -145,7 +145,7 @@ class HvdPDF
     Rails.logger.error("footer rendered: #{Time.now - start_time} seconds elapsed")
     html_fixer.finish
     out_html.close
-
+    FileUtils.cp(out_html.path, "/archivesspace/logs/#{@repo_id}_#{@resource_id}.html")
     out_html
   end
 
