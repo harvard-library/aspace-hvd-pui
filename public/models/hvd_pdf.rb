@@ -63,7 +63,7 @@ class HvdPDF
 
     Rails.logger.error("AOs filtered: #{Time.now - start_time} seconds elapsed")
     out_html = Tempfile.new
-    html_fixer = Nokorigi::HTML::SAX::PushParser.new(FixupDocument.new(out_html))
+    html_fixer = Nokogiri::HTML::SAX::PushParser.new(FixupDocument.new(out_html))
     html_fixer.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
 
     Rails.logger.error("Header rendered: #{Time.now - start_time} seconds elapsed")
