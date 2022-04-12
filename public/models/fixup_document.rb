@@ -8,22 +8,23 @@ class FixupDocument < Nokogiri::XML::SAX::Document
     @file << '<!DOCTYPE html>'
   end
 
-  def start_element(name, attrs=[])
-    @file << '<' << name.sub(/\A.*:/, '')
+  def start_element_namespace(name, attrs=[], prefix=nil, uri=nil, ns=[])
+    @file << '<#{name}'
     unless attrs.empty?
-      attrs.each do |name, value|
-        @file << " " << name.sub(/\A.*:/, '') << '="' << value.sub('"', '\"') << '"'
+      attrs.each do |attr|
+        @file << " #{attr.localname}=\"#{attr.value.sub('"', '\"')}\""
       end
     end
     @file << '>'
   end
 
   def characters(chars)
+    chars.gsub!(/&(?=\s+|[A-Za-z]+[^;])/, '&amp;')
     @file << chars
   end
 
-  def end_element(name)
-    @file << "</" << name.sub(/\A.*:/, '') << '>'
+  def end_element_namespace(name, prefix= nil, uri=nil)
+    @file << "</" << name << '>'
   end
 
 end
