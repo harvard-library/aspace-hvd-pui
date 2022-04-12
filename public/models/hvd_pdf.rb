@@ -1,6 +1,8 @@
 require 'tempfile'
 require 'fileutils'
 require 'pp'
+require_relative "fixup_document"
+
 class HvdPDF
 
   DEPTH_1_LEVELS = ['collection', 'recordgrp', 'series']
@@ -31,6 +33,7 @@ class HvdPDF
     filename.gsub(' ', '_') + '.pdf'
   end
 
+
   def short_title
     @short_title || suggested_filename
   end
@@ -42,7 +45,7 @@ class HvdPDF
      renderer = HvdPdfController.new
     start_time = Time.now
 
-    @repo_code = @resource.repository_information.fetch('top').fetch('repo_code')
+    @repo_code = @resource.repository_information.dig('top', 'repo_code')
 
     # .length == 1 would be just the resource itself.
     has_children = @ordered_records.entries.length > 1
@@ -60,18 +63,19 @@ class HvdPDF
 
     Rails.logger.error("AOs filtered: #{Time.now - start_time} seconds elapsed")
     out_html = Tempfile.new
-    out_html.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
+    html_fixer = Nokorigi::HTML::SAX::PushParser.new(FixupDocument.new(out_html))
+    html_fixer.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
 
     Rails.logger.error("Header rendered: #{Time.now - start_time} seconds elapsed")
 
-    out_html.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
+    html_fixer.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
 
     Rails.logger.error("Titlepage rendered: #{Time.now - start_time} seconds elapsed")
 
-    out_html.write(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos})
+    html_fixer.write(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos})
 
     Rails.logger.error("TOC rendered: #{Time.now - start_time} seconds elapsed")
-    out_html.write(renderer.render_to_string partial: 'resource', layout: false, :locals => {:record => @resource, :has_children => has_children})
+    html_fixer.write(renderer.render_to_string partial: 'resource', layout: false, :locals => {:record => @resource, :has_children => has_children})
     Rails.logger.error("Resource rendered: #{Time.now - start_time} seconds elapsed")
     page_size = 50
 
@@ -128,17 +132,18 @@ class HvdPDF
         Rails.logger.error("Record set end: #{Time.now - start_time} seconds elapsed")
         container_string = container_array.join("; ")
 
-        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
+        html_fixer.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         Rails.logger.error("AO rendered: #{Time.now - start_time} seconds elapsed")
         previous_level = entry.depth
       end
       Rails.logger.error("Page rendered: #{Time.now - start_time} seconds elapsed")
     end
 
-    out_html.write(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource})
+    html_fixer.write(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource})
     Rails.logger.error("end_info rendered: #{Time.now - start_time} seconds elapsed")
-    out_html.write(renderer.render_to_string partial: 'footer', layout: false)
+    html_fixer.write(renderer.render_to_string partial: 'footer', layout: false)
     Rails.logger.error("footer rendered: #{Time.now - start_time} seconds elapsed")
+    html_fixer.finish
     out_html.close
 
     out_html
@@ -148,7 +153,7 @@ class HvdPDF
     start_time = Time.now
     Rails.logger.error("Starting generate at: #{Time.now}")
     out_html = source_file
-    FileUtils.cp(out_html.path, "/archivesspace/logs/#{@repo_id}_#{@resource_id}.html")
+
     Rails.logger.error("source_file complete: #{Time.now - start_time} seconds elapsed")
     pdf_file = Tempfile.new
     pdf_file.close
