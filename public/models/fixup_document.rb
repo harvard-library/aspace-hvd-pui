@@ -9,12 +9,13 @@ class FixupDocument < Nokogiri::XML::SAX::Document
   end
 
   def start_element(name, attrs=[])
-    @file << "<" << name.sub(/\A.*:/, '')
+    @file << '<' << name.sub(/\A.*:/, '')
     unless attrs.empty?
-      @file << attrs.map do |name, value|
-        " " << name.sub(/\A.*:/, '') << '="' << value.sub('"', '\"') << '"'
+      attrs.each do |name, value|
+        @file << " " << name.sub(/\A.*:/, '') << '="' << value.sub('"', '\"') << '"'
       end
     end
+    @file << '>'
   end
 
   def characters(chars)
@@ -22,7 +23,7 @@ class FixupDocument < Nokogiri::XML::SAX::Document
   end
 
   def end_element(name)
-    @file << "</" << name.sub(/\A.*:/, '')
+    @file << "</" << name.sub(/\A.*:/, '') << '>'
   end
 
 end
