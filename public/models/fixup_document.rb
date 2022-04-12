@@ -4,10 +4,6 @@ class FixupDocument < Nokogiri::XML::SAX::Document
     @file = file
   end
 
-  def start_document
-    @file << '<!DOCTYPE html>'
-  end
-
   def start_element_namespace(name, attrs=[], prefix=nil, uri=nil, ns=[])
     @file << '<#{name}'
     unless attrs.empty?
