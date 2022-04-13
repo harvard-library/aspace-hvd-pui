@@ -40,7 +40,7 @@ class HvdPDF
 
   def strip_xlink_prefix(html)
     # Because the version of nokogiri in ASpace doesn't allow unbound namespaces in the sax parser
-    html.gsub!(/ xlink:([a-zA-Z]+)(?=\s+=)/, ' \1')
+    html.gsub!(/ xlink:(\S+)(?=\s*=)/, ' \1')
     html
   end
 
