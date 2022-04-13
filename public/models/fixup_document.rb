@@ -15,7 +15,7 @@ class FixupDocument < Nokogiri::XML::SAX::Document
   end
 
   def characters(chars)
-    chars.gsub!(/&(?=\s+|[A-Za-z]+[^;])/, '&amp;')
+    chars.gsub!(/&(?!amp;)/, '&amp;')
     @file << chars
   end
 
