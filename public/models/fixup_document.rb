@@ -5,7 +5,7 @@ class FixupDocument < Nokogiri::XML::SAX::Document
   end
 
   def start_element_namespace(name, attrs=[], prefix=nil, uri=nil, ns=[])
-    @file << '<#{name}'
+    @file << "<#{name}"
     unless attrs.empty?
       attrs.each do |attr|
         @file << " #{attr.localname}=\"#{attr.value.sub('"', '\"')}\""
@@ -20,7 +20,7 @@ class FixupDocument < Nokogiri::XML::SAX::Document
   end
 
   def end_element_namespace(name, prefix= nil, uri=nil)
-    @file << "</" << name << '>'
+    @file << '</' << name << '>'
   end
 
 end
