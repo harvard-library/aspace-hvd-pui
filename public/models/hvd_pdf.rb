@@ -38,6 +38,12 @@ class HvdPDF
     @short_title || suggested_filename
   end
 
+  def strip_xlink_prefix(html)
+    # Because the version of nokogiri in ASpace doesn't allow unbound namespaces in the sax parser
+    html.gsub!(/ xlink:([a-zA-Z]+)(?=\s+=)/, ' \1')
+    html
+  end
+
   def source_file
     # We'll use the original controller so we can find and render the PDF
     # partials, but just for its ERB rendering.
@@ -64,18 +70,18 @@ class HvdPDF
     Rails.logger.error("AOs filtered: #{Time.now - start_time} seconds elapsed")
     out_html = Tempfile.new
     html_fixer = Nokogiri::XML::SAX::PushParser.new(FixupDocument.new(out_html))
-    html_fixer.write(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos})
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'header', layout: false, :locals => {:record => @resource, :bottom => @last_level, :ordered_aos => toc_aos}))
 
     Rails.logger.error("Header rendered: #{Time.now - start_time} seconds elapsed")
 
-    html_fixer.write(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource})
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'titlepage', layout: false, :locals => {:record => @resource}))
 
     Rails.logger.error("Titlepage rendered: #{Time.now - start_time} seconds elapsed")
 
-    html_fixer.write(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos})
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'toc', layout: false, :locals => {:resource => @resource, :has_children => has_children, :ordered_aos => toc_aos}))
 
     Rails.logger.error("TOC rendered: #{Time.now - start_time} seconds elapsed")
-    html_fixer.write(renderer.render_to_string partial: 'resource', layout: false, :locals => {:record => @resource, :has_children => has_children})
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'resource', layout: false, :locals => {:record => @resource, :has_children => has_children}))
     Rails.logger.error("Resource rendered: #{Time.now - start_time} seconds elapsed")
     page_size = 50
 
@@ -132,16 +138,16 @@ class HvdPDF
         Rails.logger.error("Record set end: #{Time.now - start_time} seconds elapsed")
         container_string = container_array.join("; ")
 
-        html_fixer.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
+        html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string}))
         Rails.logger.error("AO rendered: #{Time.now - start_time} seconds elapsed")
         previous_level = entry.depth
       end
       Rails.logger.error("Page rendered: #{Time.now - start_time} seconds elapsed")
     end
 
-    html_fixer.write(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource})
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'end_info', layout: false,  :locals => {:record => @resource}))
     Rails.logger.error("end_info rendered: #{Time.now - start_time} seconds elapsed")
-    html_fixer.write(renderer.render_to_string partial: 'footer', layout: false)
+    html_fixer.write(strip_xlink_prefix(renderer.render_to_string partial: 'footer', layout: false))
     Rails.logger.error("footer rendered: #{Time.now - start_time} seconds elapsed")
     html_fixer.finish
     out_html.close
