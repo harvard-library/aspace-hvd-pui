@@ -159,16 +159,45 @@ class HvdPDF
     pdf_file.close
     begin
 
-      renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
-      renderer.set_document(java.io.File.new(out_html.path))
+      # renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
+      # font_resolver = renderer.get_font_resolver()
+      split_path = Rails.root.to_s.split('/')
+      fonts_path = split_path[0..split_path.rindex('archivesspace')].join('/') + "/stylesheets/fonts/*.ttf"
 
-    # FIXME: We'll need to test this with a reverse proxy in front of it.
-      renderer.shared_context.base_url = base_url
+      builder = com.openhtmltopdf.pdfboxout.PdfRendererBuilder.new
 
-      renderer.layout
 
+      Dir[fonts_path].each do |file|
+        builder.use_font(java.io.File.new(file), File.basename(file)[/.*(?=.ttf$)/])
+      end
+
+      # renderer.set_document(java.io.File.new(out_html.path))
+
+      # FIXME: We'll need to test this with a reverse proxy in front of it.
+      # renderer.shared_context.base_url = base_url
+
+      # renderer.layout
+
+      Rails.logger.error('1')
       pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
-      renderer.create_pdf(pdf_output_stream)
+      Rails.logger.error('2')
+      Rails.logger.error(out_html.path)
+      builder.with_file(java.io.File.new(out_html.path))
+      Rails.logger.error('3')
+      builder.to_stream(pdf_output_stream)
+      Rails.logger.error('4')
+      builder.run
+7
+      # Rails.logger.error('3')
+      # builder.to_stream(pdf_output_stream)
+      # Rails.logger.error('4')
+      # # builder.with_file(out_html)
+      # builder.withW3cDocument(org.jsoup.helper.W3CDom.new.fromJsoup(doc), baseUri);
+      # Rails.logger.error('5')
+      # builder.run
+      # Rails.logger.error('6')
+
+      # renderer.create_pdf(pdf_output_stream)
       pdf_output_stream.close
       Rails.logger.info("PDF created: #{Time.now - start_time} seconds elapsed")
     rescue Exception => bang
