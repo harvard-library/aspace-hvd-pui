@@ -160,6 +160,14 @@ class HvdPDF
     begin
 
       renderer = org.xhtmlrenderer.pdf.ITextRenderer.new
+      font_resolver = renderer.get_font_resolver()
+      split_path = Rails.root.to_s.split('/')
+      fonts_path = split_path[0..split_path.rindex('archivesspace')].join('/') + "/stylesheets/fonts/*.ttf"
+
+      Dir[fonts_path].each do |file|
+        font_resolver.add_font(file, 'Identity-H', true)
+      end
+      
       renderer.set_document(java.io.File.new(out_html.path))
 
     # FIXME: We'll need to test this with a reverse proxy in front of it.
