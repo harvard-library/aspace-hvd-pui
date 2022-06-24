@@ -157,7 +157,7 @@ class HvdPDF
 
 
       Dir[fonts_path].each do |file|
-        builder.use_font(file, File.basename(file)[/.*(?=.ttf$)/])
+        builder.use_font(file, File.basename(file)[/.*(?=.ttf$)/].to_java)
       end
 
       # renderer.set_document(java.io.File.new(out_html.path))
