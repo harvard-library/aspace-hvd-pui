@@ -156,9 +156,9 @@ class HvdPDF
       builder = com.openhtmltopdf.pdfboxout.PdfRendererBuilder.new
 
 
-      # Dir[fonts_path].each do |file|
-      #   font_resolver.add_font(file, 'Identity-H', true)
-      # end
+      Dir[fonts_path].each do |file|
+        builder.use_font(file, File.basename(file)[/.*(?=.ttf$)/])
+      end
 
       # renderer.set_document(java.io.File.new(out_html.path))
 
