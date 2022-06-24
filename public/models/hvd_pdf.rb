@@ -130,17 +130,9 @@ class HvdPDF
         end
         Rails.logger.debug("Record set end: #{Time.now - start_time} seconds elapsed")
         container_string = container_array.join("; ")
-<<<<<<< HEAD
 
         html_fixer.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         Rails.logger.debug("AO rendered: #{Time.now - start_time} seconds elapsed")
-||||||| parent of e05ec65 (First working version)
-        
-        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
-=======
-
-        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
->>>>>>> e05ec65 (First working version)
         previous_level = entry.depth
       end
       Rails.logger.debug("Page rendered: #{Time.now - start_time} seconds elapsed")
@@ -162,15 +154,7 @@ class HvdPDF
     Rails.logger.info("Starting generate at: #{Time.now}")
     out_html = source_file
 
-<<<<<<< HEAD
     Rails.logger.info("source_file complete: #{Time.now - start_time} seconds elapsed")
-||||||| parent of e05ec65 (First working version)
-#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
-    
-=======
-#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
-
->>>>>>> e05ec65 (First working version)
     pdf_file = Tempfile.new
     pdf_file.close
     begin
@@ -203,7 +187,7 @@ class HvdPDF
       builder.to_stream(pdf_output_stream)
       Rails.logger.error('4')
       builder.run
-
+7
       # Rails.logger.error('3')
       # builder.to_stream(pdf_output_stream)
       # Rails.logger.error('4')
