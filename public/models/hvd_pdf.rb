@@ -130,9 +130,17 @@ class HvdPDF
         end
         Rails.logger.debug("Record set end: #{Time.now - start_time} seconds elapsed")
         container_string = container_array.join("; ")
+<<<<<<< HEAD
 
         html_fixer.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
         Rails.logger.debug("AO rendered: #{Time.now - start_time} seconds elapsed")
+||||||| parent of e05ec65 (First working version)
+        
+        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
+=======
+
+        out_html.write(renderer.render_to_string partial: 'archival_object', layout: false, :locals => {:record => record, :level => entry.depth, :prev => previous_level, :urn => urn, :container_string => container_string})
+>>>>>>> e05ec65 (First working version)
         previous_level = entry.depth
       end
       Rails.logger.debug("Page rendered: #{Time.now - start_time} seconds elapsed")
@@ -154,7 +162,15 @@ class HvdPDF
     Rails.logger.info("Starting generate at: #{Time.now}")
     out_html = source_file
 
+<<<<<<< HEAD
     Rails.logger.info("source_file complete: #{Time.now - start_time} seconds elapsed")
+||||||| parent of e05ec65 (First working version)
+#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
+    
+=======
+#Pry::ColorPrinter.pp "HTML file: #{out_html.path}"
+
+>>>>>>> e05ec65 (First working version)
     pdf_file = Tempfile.new
     pdf_file.close
     begin
@@ -165,20 +181,15 @@ class HvdPDF
       fonts_path = split_path[0..split_path.rindex('archivesspace')].join('/') + "/stylesheets/fonts/*.ttf"
 
       builder = com.openhtmltopdf.pdfboxout.PdfRendererBuilder.new
-      
-      # builder.methods - Object.methods
-      # [:withProducer, :use_pd_document, :run, :toStream, :buildPdfRenderer, :use_slow_mode, :useFont, :usePdfVersion, :use_cache_store, :usePdfAConformance, :useColorProfile, :use_pdf_version, :use_font, :use_pdf_aconformance, :with_producer, :use_pdf_ua_accessbility, :useCacheStore, :usePageSupplier, :useSlowMode, :"__jcreate!", :use_page_supplier, :to_stream, :use_color_profile, :usePdfUaAccessbility, :usePDDocument, :equals, :build_pdf_renderer, :use_replacement_text, :with_uri, :withHtmlContent, :withUri, :withFile, :use_initial_page_number, :add_dom_mutator, :useProtocolsStreamImplementation, :useUriResolver, :use_unicode_to_lower_transformer, :use_math_ml_drawer, :useUnicodeToUpperTransformer, :use_object_drawer_factory, :useInitialPageNumber, :use_unicode_to_upper_transformer, :test_mode, :with_html_content, :useUnicodeCharacterBreaker, :useUnicodeToTitleTransformer, :useDocumentBuilderFactoryImplementationClass, :useObjectDrawerFactory, :useUnicodeToLowerTransformer, :addDOMMutator, :withDiagnosticConsumer, :with_file, :useUnicodeBidiSplitter, :use_transformer_factory_implementation_class, :use_svg_drawer, :useSVGDrawer, :use_uri_resolver, :useHttpStreamImplementation, :useReplacementText, :use_unicode_character_breaker, :use_unicode_bidi_splitter, :use_default_page_size, :useMathMLDrawer, :apply_diagnostic_consumer, :with_diagnostic_consumer, :use_external_resource_access_control, :useFastMode, :use_http_stream_implementation, :withW3cDocument, :useTransformerFactoryImplementationClass, :with_w3c_document, :defaultTextDirection, :default_text_direction, :useUnicodeLineBreaker, :use_fast_mode, :useDefaultPageSize, :applyDiagnosticConsumer, :use_unicode_line_breaker, :useUnicodeBidiReorderer, :use_protocols_stream_implementation, :useExternalResourceAccessControl, :testMode, :use_document_builder_factory_implementation_class, :use_unicode_to_title_transformer, :use_unicode_bidi_reorderer, :getClass, :wait, :notifyAll, :equals?, :notify, :hash_code, :hashCode, :finalize, :toString, :get_class, :notify_all, :to_string, :java_send, :marshal_load, :marshal_dump, :java_method, :java_object=, :synchronized, :to_java_object, :java_object]
-      10.times do { Rails.logger.error("************************")}
-      Rails.logger.error(out_html.methods - Object.methods)
-      10.times do { Rails.logger.error("************************")}
+
 
       # Dir[fonts_path].each do |file|
       #   font_resolver.add_font(file, 'Identity-H', true)
       # end
-      
+
       # renderer.set_document(java.io.File.new(out_html.path))
 
-    # FIXME: We'll need to test this with a reverse proxy in front of it.
+      # FIXME: We'll need to test this with a reverse proxy in front of it.
       # renderer.shared_context.base_url = base_url
 
       # renderer.layout
@@ -187,7 +198,7 @@ class HvdPDF
       pdf_output_stream = java.io.FileOutputStream.new(pdf_file.path)
       Rails.logger.error('2')
       Rails.logger.error(out_html.path)
-      builder.with_file(out_html.to_java)
+      builder.with_file(java.io.File.new(out_html.path))
       Rails.logger.error('3')
       builder.to_stream(pdf_output_stream)
       Rails.logger.error('4')
