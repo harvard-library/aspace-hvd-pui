@@ -3,7 +3,7 @@
 <dl id="facets">
 
   <%
-    preferred_facet_order = %w(repository primary_type creators subjects agents)
+    preferred_facet_order = %w(repository primary_type creators subjects agents langcode)
     ordered_facet_types = @facets.keys.sort{|a,b|
       if preferred_facet_order.include?(a) && preferred_facet_order.include?(b)
         preferred_facet_order.index(a) <=> preferred_facet_order.index(b)
@@ -18,33 +18,33 @@
   %>
 
   <% ordered_facet_types.each do |type| %>
-    <% h = @facets.fetch(type, false) %>
-    <% next unless h %>
+    <% facet_group = @facets.fetch(type, false) %>
+
+    <% next if facet_group.empty? %>
     <% if type == 'creators' %>
-    <% next unless controller.controller_name == 'resources' && controller.action_name == 'index' %>
-    <% h = Hash[h.sort] %>
+      <% next unless controller.controller_name == 'resources' && controller.action_name == 'index' %>
+      <% facet_group = Hash[facet_group.sort] %>
     <% end %>
     <dt><%= t("search_results.filter.#{type}") %></dt>
-    <% facet_count = 0 %>
-    <% h.each do |v, ct| %>
-      <% if facet_count == 5 %>
+    <% facet_group.each_with_index do |facet, i| %>
+      <% if i == 5 %>
         <div class="more-facets">
           <span class="more btn refine" tabindex="0">&or; <%= t('search_results.more_facets') %></span>
           <div class="below-the-fold">
       <% end %>
-      <% facet_count += 1 %>
-      <% unless type=='primary_type' && !['archival_object', 'resource', 'digital_object'].find_index(v) %>
-      <dd>
-        <a href="<%= app_prefix("#{@page_search}&filter_fields[]=#{type}&filter_values[]=#{CGI.escape(v)}") %>"
-           title="<%= t('search_results.filter_by')%> '<%= get_pretty_facet_value(type,v) %>'">
-          <%= get_pretty_facet_value(type,v) %>
-        </a>
-        <span class="recordnumber"><%= ct %></span>
-      </dd>
-     <% end %>
+      <% unless type == 'primary_type' && !['archival_object', 'resource', 'digital_object'].find_index(facet.key) %>
+        <dd>
+          <a href="<%= app_prefix("#{@page_search}&filter_fields[]=#{type}&filter_values[]=#{CGI.escape(facet.key)}") %>"
+             rel="nofollow"
+             title="<%= t('search_results.filter_by')%> '<%= facet.label %>'">
+            <%= facet.label %>
+          </a>
+          <span class="recordnumber"><%= facet.count %></span>
+        </dd>
+      <% end %>
     <% end %>
-    <% if facet_count > 5 %>
-        <span class="less btn refine" tabindex="0">&and; <%= t('search_results.fewer_facets') %></span>
+    <% if facet_group.size > 5 %>
+       <span class="less btn refine" tabindex="0">&and; <%= t('search_results.fewer_facets') %></span>
       </div>
     <% end %>
     <span class="type-spacer">&nbsp;</span>
