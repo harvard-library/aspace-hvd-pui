@@ -23,7 +23,7 @@
     <% next if facet_group.empty? %>
     <% if type == 'creators' %>
       <% next unless controller.controller_name == 'resources' && controller.action_name == 'index' %>
-      <% facet_group = Hash[facet_group.sort {|a, b| a.key <=> b.key} ] %>
+      <% facet_group = facet_group.sort {|a, b| a[:key] <=> b[:key]} %>
     <% end %>
     <dt><%= t("search_results.filter.#{type}") %></dt>
     <% facet_group.each_with_index do |facet, i| %>
