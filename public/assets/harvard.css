@@ -707,7 +707,7 @@ button.expandme:active {
     color: #A51C30;
 }
 
-#sidebar i.expandme-icon {
+ i.expandme-icon {
   line-height: 1.5;
 }
 
@@ -922,7 +922,7 @@ ul.breadcrumb {background-color: #FFFFFF; }
     background-color: #f8c21c;
     outline: 0;
 }
-.largetree-nopde.current > .table-cell {
+.largetree-node.current > .table-cell {
   background-color: #f8c21c;
   outline: 0;
 }
