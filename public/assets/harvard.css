@@ -707,6 +707,10 @@ button.expandme:active {
     color: #A51C30;
 }
 
+ i.expandme-icon {
+  line-height: 1.5;
+}
+
 a.thumbnail.digital_object{
     color: #0579b8;
 }
@@ -914,12 +918,13 @@ ul.breadcrumb {background-color: #FFFFFF; }
 
 }
 
-.largetree-container tr.current {
+.largetree-node.current {
     background-color: #f8c21c;
     outline: 0;
 }
-.largetree-container tr.current td {
-    background-color: #f8c21c;
+.largetree-node.current > .table-cell {
+  background-color: #f8c21c;
+  outline: 0;
 }
 
 .inline-search-btn {
@@ -1188,7 +1193,7 @@ form.form-inline #from_year0, form.form-inline #to_year0 {
   .identifier .id-label {
     float: none;
   }
-  
+
   #info-buttons {
     float: none;
     text-align: center;
