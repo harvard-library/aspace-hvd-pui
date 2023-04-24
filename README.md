@@ -1,6 +1,9 @@
 # aspace-hvd-pui
 The customizations needed for Harvard's ArchivesSpace PUI
 
+## **DEPRECATED** 
+The current version of this plugin is maintained at https://github.com/harvard-lts/aspace-hvd-pui
+
 *NOTE*: Version 1.0.7+ has a temporary patch in public/plugin_init.rb to handle a bug that is fixed in a subsequent 
 release of ArchivesSpace.  It will be removed when we upgrade to that version.
 
